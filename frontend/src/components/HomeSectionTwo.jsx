@@ -1,29 +1,51 @@
-import React from 'react'
-import "../styles/HomeSectionTwo.css"
-function HomeSectionTwo() {
+import React from "react";
+import "../styles/HomeSectionTwo.css";
 
+const HomeSectionTwo = () => {
+  const speacialitymain =[
+    {
+      title:"title",
+      desc:"Experienced and renowned doctors who work towards bringing International standard healthcare within the reach of every individual."
+    },
+    {
+      title:"title",
+      desc:"Experienced and renowned doctors who work towards bringing International standard healthcare within the reach of every individual."
+    },
+    {
+      title:"title",
+      desc:"Experienced and renowned doctors who work towards bringing International standard healthcare within the reach of every individual."
+    }
 
-    return (
-        <div className='hs2_main'>
-            <div className='hs2_div1'>
-                <h3>Our Centres of Excellence</h3>
-            </div>
-            <div className="hs2_div2">
-                <div class="card one">
-                    1
-                </div>
-                <div class="card two">
-                    2
-                </div>
-                <div class="card three">
-                    3
-                </div>
-                <div class="card four">
-                    4
-                </div>
-            </div>
+  ]
+  return (
+    <div className="hst_container">
+      <div className="hst_wrapper">
+        <div className="sticky-heading">
+          <h5>Speacilaity</h5>
+          <h4 >An Ecosystem for Clinical Excellence</h4>
         </div>
-    )
-}
+        {
+          speacialitymain.map((e,i)=>(
+            <div id={i+1} className={`card card${i+1}`}>
+                <div className="hst_card_div1">
+                  <p>00{i+1}</p>
 
-export default HomeSectionTwo
+                </div>
+                <div  className="hst_card_div2">
+                    <span>{e.title}</span>
+                    <div>{e.desc}</div>
+                </div>
+                <div  className="hst_card_div3">
+
+                </div>
+            </div>
+            
+          ))
+        }       
+      </div>
+    </div>
+  );
+};
+
+
+export default HomeSectionTwo;

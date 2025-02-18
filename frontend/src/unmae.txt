@@ -3,3 +3,9 @@ hello
 
 https://codepen.io/PREMKUMAR-ANANTHAN/pen/KwKpoYL
 card animation
+
+page reference
+https://demoxml.com/html/archway/?storefront=envato-elements
+
+
+https://codepen.io/devansh-takkar/pen/xxPyxzR

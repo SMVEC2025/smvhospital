@@ -1,0 +1,81 @@
+/* InternationalPatients.css */
+.international-patients {
+    background-color: #f8f0e3; /* Off-white background */
+    padding: 40px;
+    text-align: center; /* Center the content */
+    overflow: hidden; /* For animations */
+  }
+  
+  .section-title {
+    color: #6a4c2b; /* Chocolate brown */
+    margin-bottom: 20px;
+    font-size: 2em;
+  }
+  
+  .patient-carousel {
+    display: flex; /* Arrange cards horizontally */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snapping for smooth scrolling */
+    padding-bottom: 20px; /* Space for the button */
+  }
+  
+  .patient-card {
+    background-color: #fff; /* White card background */
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 0 300px; /* Cards take 300px width */
+    scroll-snap-align: start; /* Snap to the start of each card */
+    transition: transform 0.3s ease; /* For hover effect */
+  }
+  
+  .patient-card:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+  }
+  
+  .patient-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Make image circular */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 15px;
+  }
+  
+  .patient-name {
+    color: #6a4c2b; /* Chocolate brown */
+    margin-bottom: 5px;
+  }
+  
+  .patient-story {
+    color: #333; /* Dark gray text */
+    margin-bottom: 10px;
+    text-align: left; /* Align text to the left */
+  }
+  
+  .patient-country {
+    color: #a0522d; /* Sienna brown */
+    font-style: italic;
+  }
+  
+  .view-more-button {
+    background-color: #e67e22; /* Orange */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-more-button:hover {
+    background-color: #d35400; /* Darker orange on hover */
+  }
+  
+  .loading, .no-patients { /* Style for loading/no data states */
+    text-align: center;
+    padding: 20px;
+    color: #6a4c2b;
+  }
+  
+  /* Add any other necessary styles */

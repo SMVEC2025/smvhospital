@@ -1,0 +1,63 @@
+.ha_container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .ha_left-section {
+    width: 40%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
+  }
+  
+  .ha_left-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .ha_right-section {
+    width: 60%;
+    overflow-y: auto;
+  }
+  
+  .section {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    color: white;
+    align-items: start;
+    background-color: rgb(41, 41, 41);
+  }
+  
+  .ha_right-section h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  .ha_right-section h3{
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    font-weight: 500;
+  }
+  .ha_right-section p{
+    width: 50%;
+    font-weight: 300;
+  }
+  .ha_right-section span{
+    color: rgb(240, 183, 79);
+  }
+  .ha_right-section button{
+    margin-top: 3rem;
+    margin-left: 0.2rem;
+
+  }
+
+  
