@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/Whysmv.css'
 import { FaHandHoldingHeart,FaHospital,FaHandHoldingMedical   } from "react-icons/fa";
 import { FaUserDoctor,FaTruckMedical } from "react-icons/fa6";
 import { MdBloodtype } from "react-icons/md";
+import "../styles/WhySmv.css"
 
 function WhySmv() {
   const whysmvdata=[
