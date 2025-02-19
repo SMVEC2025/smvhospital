@@ -1,27 +1,50 @@
 .why-smv-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: start;
+    gap: 10%;
     padding: 10rem 50px;
   }
-  
+  .feature-box .logo{
+    font-size: 2rem;
+    border: 1px solid #8d4f226c;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 50%;
+    color: #8d4f22d5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .why-smv-left {
-    width: 40%;
+    width: 30%;
   }
   
   .why-smv-left h2 {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 500;
     margin-bottom: 10px;
+    color: rgb(175, 98, 43);
   }
-  
+  /* 8b5e3b */
+  /* 2f4858 */
   .why-smv-left p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 0.9rem;
+    width: 80%;
+    color: #643d0a;
+    line-height: 22px;
+    margin-bottom: 2rem;
   }
-  
+  .why-smv-left button {
+    background-color: transparent;
+    border: 1px solid #8b5e3b;
+    font-size: 1rem;
+    padding: 9px 25px;
+    border-radius: 25px;
+    color: #8b5e3b;
+  }
   .why-smv-right {
-    width: 55%;
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -29,9 +52,10 @@
   
   .feature-box {
     display: flex;
-    align-items: center;
+    align-items: start;
     width: 45%;
     gap: 10px;
+    margin-bottom: 2rem;
   }
   
   .feature-box img {
@@ -43,14 +67,16 @@
   }
   
   .feature-box h3 {
-    margin: 0;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: rgb(141, 78, 34);
   }
   
   .feature-box p {
     margin: 0;
     font-size: 0.9rem;
-    color: #666;
+    color: rgb(80, 45, 20);
+    font-weight: 400;
   }
   

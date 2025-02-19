@@ -20,6 +20,8 @@
     max-width: 80%;
     height: auto;
     margin-bottom: 20px;
+    transition: all 0.5s ease-in-out;
+
   }
   
   .ha_right-section {
@@ -35,7 +37,7 @@
     padding: 50px;
     color: white;
     align-items: start;
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(35, 54, 59);
   }
   
   .ha_right-section h2 {
@@ -48,11 +50,14 @@
     font-weight: 500;
   }
   .ha_right-section p{
-    width: 50%;
-    font-weight: 300;
+    width: 60%;
+    font-weight: 400;
+    color: rgb(179, 179, 179);
+    line-height: 25px;
+
   }
   .ha_right-section span{
-    color: rgb(240, 183, 79);
+    color: rgb(236, 135, 52);
   }
   .ha_right-section button{
     margin-top: 3rem;

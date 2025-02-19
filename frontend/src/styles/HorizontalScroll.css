@@ -1,7 +1,26 @@
 .sticky-parent {
-    height: 700vh;
-  }
+  height: 200vh;
+  background: linear-gradient(#6e4646ea,rgba(136, 102, 102, 0.918)), 
+  url('../assets/images/Gradientnoise.jpg');
+  background-position: center;
+}
+.hs_sticky_title{
+  padding: 30px;
+}
+.sticky-parent .sticky-heading{
+  padding: 30px;
+  color:#c8bca6;
+
+}
+.hs_main1{
+  background-color: #664242;
+  color: #ece9e2;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
   
+}
+
   .sticky {
     position: sticky;
     top: 0;
@@ -12,14 +31,19 @@
   
   .dim {
     display: block;
-    min-width: 50vw;
+    min-width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    position: relative;
+  
   }
   
   .horizontal {
     display: flex;
   }
-  
+
   .br {
     outline: solid;
     scroll-behavior: smooth;
@@ -31,5 +55,20 @@
     }
   }
   
+.hs_mainend{
+  background-color:#7e6060 ;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
 
-  
+}
+.hs_mainend>button{
+  border: 1px solid rgb(105, 68, 12);
+  background-color: #664242;
+  padding: 12px 35px;
+  color: #f9f9f9;
+  border-radius: 35px;
+
+
+}

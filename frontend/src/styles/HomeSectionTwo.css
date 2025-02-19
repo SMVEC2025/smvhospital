@@ -5,13 +5,18 @@
 	padding-top: 80px;
 	
   }
-  .sticky-heading>h5{
+  .sticky-heading{
+	display:flex ;
+	justify-content: space-between;
+	align-items: center;
+  }
+  .sticky-heading h5{
 	font-size: 15px;
 	font-weight: 400;
 	text-transform: uppercase;
 	
   }
-  .sticky-heading>h4{
+  .sticky-heading h4{
 	font-size: 3rem;
 	font-weight: 500;
 	text-transform: capitalize;
@@ -34,7 +39,7 @@
   
   .hst_wrapper .card {
 	width: 100%;
-	height: 400px;
+	height: 300px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -59,13 +64,33 @@
   .hst_wrapper .card2 {
 	background: #d9cdb7;
 	z-index: 2;
-	top: 250px;
+	top: 230px;
   }
   
   /* This is where we control the gap between the second and third card */
   .hst_wrapper .card3 {
-	background: #c3b497;
+	background: #beb298;
 	z-index: 3;
+	top: 310px;
+
+
+  }
+  .hst_wrapper .card4 {
+	background: #afa38b;
+	z-index: 3;
+	top: 390px;
+
+  }
+  .hst_wrapper .card5 {
+	background: #948b78;
+	z-index: 3;
+	top: 470px;
+
+  }
+  .hst_wrapper .card6 {
+	background: #665a42;
+	z-index: 3;
+	top: 550px;
 
   }
   .hst_card_div2{
@@ -80,13 +105,29 @@
 	font-weight: 400;
   }
   .hst_card_div2>span{
-	font-size: 2rem;
+	font-size: 1.6rem;
 	font-weight: 500;
 	color: rgb(77, 42, 11);
+	text-transform: uppercase;
   }
   .hst_card_div2>div{
-	font-size: 18px;
-	font-weight: 500;
+	font-size: 16px;
+	font-weight: 400;
 	color: rgb(77, 42, 11);
 	
+  }
+  .sticky-heading button{
+	padding: 12px 35px;
+	background-color: #664242;
+	border: none;
+	color: white;
+	font-weight: 300;
+	border-radius: 25px;
+  }
+  .hst_card_div3{
+	height: 100%;
+  }
+  .hst_card_div3>img{
+	height: 100%;
+	border-radius: 5px;
   }

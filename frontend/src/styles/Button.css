@@ -2,11 +2,11 @@
 .button {
     position: relative;
     padding: 10px 22px;
-    border-radius: 6px;
+    border-radius: 2px;
     border: none;
     color: #fff;
     cursor: pointer;
-    background-color: #974823;
+    background-color: #c95723;
     transition: all 0.2s ease;
   }
   

@@ -1,0 +1,77 @@
+/* App.css */
+.hne_container {
+    position: relative;
+    overflow: hidden; /* ensures the image doesn't cause scrollbars if near edges */
+    background: #f9f9f9;
+    padding: 5rem 30px;
+  }
+  
+  .event-list {
+    list-style: none;
+    padding: 2rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .event-item {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    width: 80%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(194, 192, 192);
+    padding: 20px;
+  }
+  
+  .event-item:hover {
+    color: #cc6300; /* highlight color on hover */
+  }
+  
+  .event-title {
+    display: block;
+    font-weight: 600;
+  }
+  
+  .event-year {
+    display: block;
+    font-size: 0.85rem;
+    color: #777;
+  }
+  .event-desc {
+    font-size: 0.85rem;
+    color: #777;
+    width: 60%;
+  }
+  .preview-image {
+    position: absolute;
+    width: 300px; /* adjust to your preference */
+    height: auto;
+    pointer-events: none; /* so the image doesn't block hovering on list items */
+    transform: translate(10px, -100%);
+    border-radius: 10px;
+    animation: zoomInOut 0.5s ease forwards;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+/* Zoom-in-out keyframes */
+@keyframes zoomInOut {
+    0% {
+      transform: translate(10px, 10px) scale(1);
+      opacity: 0.9;
+    }
+    50% {
+      transform: translate(10px, 10px) scale(1.02);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(10px, 10px) scale(1);
+      opacity: 1;
+    }
+  }
+  

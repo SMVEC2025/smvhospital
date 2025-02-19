@@ -1,0 +1,133 @@
+.ht_main{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.ht_main1{
+  padding: 30px;
+}
+.ht_container1{
+    width: 60%;
+    height: 80%;
+    background-image: url("https://img.freepik.com/free-photo/medical-team-helping-sick-patient-with-leg-injury-fracture-putting-wheelchair_482257-8715.jpg?t=st=1739962938~exp=1739966538~hmac=9ab116e298e9fc36d2e38e4f93da52a08ac4bca63df468478ffb34122ad60e1b&w=1380");
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+.ht_container2{
+    width: 30%;
+    height: 80%;
+    border-radius: 20px;
+    transform: translateX(-100px);
+}
+.ht_container1_div1{
+    padding: 20px;
+    background-color: rgba(128, 128, 128, 0.267);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid gray;
+}
+.ht_container1_div1>h5{
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+}
+.ht_container1_div1>button{
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    border: none;
+    background-color: #F96714;
+    padding: 12px 35px;
+    border-radius: 25px;
+}
+.swiper {
+    width: 90%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+
+  /* testimonial card */
+
+
+  .testimonial-card {
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    background: #456195;
+    color: white;
+    border-radius: 15px;
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+  
+  .quote-icon {
+    font-size: 100px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: transparent; /* Hide fill color */
+    -webkit-text-stroke: 0.001px rgb(226, 116, 26); 
+    color: rgba(255, 136, 0, 0);
+
+  }
+  
+  .stars {
+    color: gold;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .testimonial-text {
+    font-size: 14px;
+    margin: 10px 0;
+    font-weight: 300;
+    width: 80%;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .name {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .role {
+    font-size: 12px;
+    color: #ccc;
+  }
+  

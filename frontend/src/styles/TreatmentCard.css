@@ -1,0 +1,89 @@
+.tc_main{
+    width: 65%;
+    height: 70%;
+    background-color: white;
+    background-position: center;
+    background-size: 110%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    border: 0px solid white;
+    transition: background-size 0.5s ease-in-out;
+
+}
+.tc_main:hover{
+    background-size: 100%;
+    border: 1px solid rgb(255, 220, 197);
+}
+.tc_content{
+    opacity: 0;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: start;
+}
+.tc_content>div{
+    transform: translateY(50px);
+    transition: all 0.3s ease;
+
+}
+.tc_main:hover .tc_content>div{
+    transform: translateY(0);
+}
+.tc_main:hover .tc_content{
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+    background-image: linear-gradient(rgba(54, 54, 54, 0) 20%,rgba(0, 0, 0, 0.822) 80%);
+
+}
+.tc_title::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    cursor: alias;
+    height: 2px; 
+    transition: all 0.3s ease-in;
+    background-color: rgb(190, 71, 27);
+
+    bottom: -3px; /* Adjust positioning */
+    left: 0;
+}
+.tc_main:hover .tc_title::after {
+
+    width: 100%;
+}
+.tc_button{
+    padding: 7px 20px;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer;
+
+}
+.tc_title{
+    color: rgb(226, 92, 43);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.tc_desc{
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+.tc_num{
+    position: absolute;
+    font-size: 100px;
+    top: -10%;
+    left: -6%;
+    z-index: -1;
+    color: transparent; /* Hide fill color */
+    -webkit-text-stroke: 1px rgb(255, 255, 255); 
+}

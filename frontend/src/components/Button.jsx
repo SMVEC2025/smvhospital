@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/Button.css';
 
-function Button() {
+function Button({name}) {
     return (
         <button class="button">
-          About Us
+          {name}
         </button>
             );
         }

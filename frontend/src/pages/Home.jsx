@@ -5,6 +5,8 @@ import HomeAbout from '../components/HomeAbout'
 import WhySmv from '../components/WhySmv'
 import HorizontalScroll from '../components/HorizontalScroll'
 import InternationalPatients from '../components/InternationalPatients'
+import HomeNewsEvents from '../components/HomeNewsEvents'
+import HomeTestimonial from '../components/HomeTestimonial'
 
 function Home() {
   return (
@@ -14,7 +16,8 @@ function Home() {
         <HomeSectionTwo/>
         <WhySmv/>
         <HorizontalScroll/>
-        <InternationalPatients/>
+        <HomeNewsEvents/>
+        <HomeTestimonial/>
       
     </div>
   )
