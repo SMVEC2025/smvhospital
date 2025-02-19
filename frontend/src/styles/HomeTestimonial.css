@@ -73,7 +73,6 @@
     width: 100%;
     padding: 20px;
     height: 100%;
-    background: #456195;
     color: white;
     border-radius: 15px;
     position: relative;
@@ -81,6 +80,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background-size: cover;
+    background-repeat: no-repeat;
 
   }
   
@@ -96,9 +97,8 @@
   }
   
   .stars {
-    color: gold;
+    color: rgb(240, 148, 43);
     font-size: 18px;
-    margin-top: 20px;
   }
   
   .testimonial-text {

@@ -1,9 +1,9 @@
 import React from "react";
 import '../styles/HomeTestimonial.css'
-
+import testimonialbackground from '../assets/images/testimonialbackground.jpg'
 const TestimonialCard = () => {
   return (
-    <div className="testimonial-card">
+    <div className="testimonial-card" style={{backgroundImage:`url(${testimonialbackground})`}}>
       <div className="quote-icon">❝</div>
       <p className="testimonial-text">
         Quickly fashion backend strategic theme areas with virtual growth
@@ -23,7 +23,8 @@ const TestimonialCard = () => {
         />
         <div>
           <h4 className="name">John D. Alexon</h4>
-        </div>
+          <div className="stars">★★★★★</div>
+          </div>
       </div>
     </div>
   );
