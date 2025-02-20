@@ -1,0 +1,104 @@
+.hd_main{
+    margin-top: 2rem;
+}
+.hd_main{
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    border-radius: 15px;
+    max-width: 300px;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 400px;
+    padding-top: 10px;
+    margin: 20px auto;
+  }
+  .mySwiper {
+    width: 100%;
+  }
+}
+.hd_container2 {
+    width: 80%;
+    margin: auto;
+    margin-top: 6rem;
+
+  }
+  
+
+.hd_container1{
+    padding: 30px;
+
+}
+
+/* doctortscard templtae */
+
+.dcmain{
+    width: 90%;
+    height: 100%;
+    background-image: url("https://gerow-react.vercel.app/static/media/h2_team_img02.f59a2f84cde19672322b.jpg");
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 25px;
+
+    
+}
+.dc_container1{
+    padding: 20px;
+    text-align: start;
+
+}
+.dc_container1>h2{
+    font-size: 1.5rem;
+    font-weight: 500;
+
+}
+.dc_container1>p{
+    font-weight: 400;
+    font-size: 0.9rem;
+
+}
+.dc_container2{
+    margin: 20px;
+    width: 40px;
+    height: 120px;
+    background-color: #ffffff69;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.dc_container2>div{
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(-90deg);
+
+}
+.dc_container2>div:hover{
+    cursor: pointer;
+    transform: rotate(0deg);
+
+
+}

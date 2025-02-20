@@ -35,9 +35,9 @@
     flex-direction: column;
     justify-content: center;
     padding: 50px;
-    color: white;
+    color: #5C4033;
     align-items: start;
-    background-color: rgb(35, 54, 59);
+    background-color:#FDFBF8;
   }
   
   .ha_right-section h2 {
@@ -50,9 +50,9 @@
     font-weight: 500;
   }
   .ha_right-section p{
-    width: 60%;
+    width: 70%;
     font-weight: 400;
-    color: rgb(179, 179, 179);
+    color: #5C4033;
     line-height: 25px;
 
   }
@@ -60,7 +60,7 @@
     color: rgb(236, 135, 52);
   }
   .ha_right-section button{
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-left: 0.2rem;
 
   }

@@ -7,11 +7,11 @@
   }
   .feature-box .logo{
     font-size: 2rem;
-    border: 1px solid #8d4f226c;
     height: 60px;
     min-width: 60px;
     border-radius: 50%;
-    color: #8d4f22d5;
+    color: #5c4033c5;
+    box-shadow: 0 1px 1px 1px #5c403352;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,14 +24,14 @@
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 10px;
-    color: rgb(175, 98, 43);
+    color: rgb(236, 135, 52);
   }
   /* 8b5e3b */
   /* 2f4858 */
   .why-smv-left p {
     font-size: 0.9rem;
     width: 80%;
-    color: #643d0a;
+    color: #5C4033;
     line-height: 22px;
     margin-bottom: 2rem;
   }
@@ -47,14 +47,14 @@
     width: 50%;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
   }
   
   .feature-box {
     display: flex;
     align-items: start;
     width: 45%;
-    gap: 10px;
+    gap: 20px;
     margin-bottom: 2rem;
   }
   
@@ -70,13 +70,13 @@
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
-    color: rgb(141, 78, 34);
+    color: rgb(187, 115, 56);
   }
   
   .feature-box p {
     margin: 0;
     font-size: 0.9rem;
-    color: rgb(80, 45, 20);
+    color: #5C4033;
     font-weight: 400;
   }
   

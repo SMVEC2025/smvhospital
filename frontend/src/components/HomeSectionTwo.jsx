@@ -44,7 +44,7 @@ const HomeSectionTwo = () => {
           speacialitymain.map((e,i)=>(
             <div id={i+1} className={`card card${i+1}`}>
                 <div className="hst_card_div1">
-                  <p>00{i+1}</p>
+                  <p>0{i+1}</p>
 
                 </div>
                 <div  className="hst_card_div2">

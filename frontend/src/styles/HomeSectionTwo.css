@@ -55,34 +55,34 @@
   
   /* Individual card colors */
   .hst_wrapper .card1 {
-	background: #e9e0cf;
+	background: #F5E1C4;
 	z-index: 1;
 	margin-top: 50px;
 	top: 150px;
   }
   
   .hst_wrapper .card2 {
-	background: #d9cdb7;
+	background: #E3CDA8;
 	z-index: 2;
 	top: 230px;
   }
   
   /* This is where we control the gap between the second and third card */
   .hst_wrapper .card3 {
-	background: #beb298;
+	background: #D2B48C;
 	z-index: 3;
 	top: 310px;
 
 
   }
   .hst_wrapper .card4 {
-	background: #afa38b;
+	background: #b99672;
 	z-index: 3;
 	top: 390px;
 
   }
   .hst_wrapper .card5 {
-	background: #948b78;
+	background: #F5FFFA;
 	z-index: 3;
 	top: 470px;
 
@@ -101,8 +101,8 @@
   }
   .hst_card_div1>p{
 	color: chocolate;
-	font-size: 1.5rem;
-	font-weight: 400;
+	font-size: 2.5rem;
+	font-weight: 600;
   }
   .hst_card_div2>span{
 	font-size: 1.6rem;
