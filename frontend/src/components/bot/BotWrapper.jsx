@@ -58,11 +58,10 @@ function BotWrapper() {
           </div>
           <div className={`bw_big_translator ${openLang}`} >
             <span onClick={()=>setOpenLang(!openLang)}>Language Transalator <span><HiMiniLanguage/></span></span>
-            <LanguageSwitcher /> 
-            
+            <LanguageSwitcher />
+
           </div>
           <div>
-            hello
           </div>
           <div className='bw_big_chatbot'>
             <div className='bw_big_chatbot1'>
@@ -76,9 +75,9 @@ function BotWrapper() {
                   <p>Online</p>
                 </span>
               </div>
-              
+
             </div>
-            <ChatBot openLang={openLang}/>
+            {/* <ChatBot openLang={openLang}/> */}
           </div>
 
         </div>
