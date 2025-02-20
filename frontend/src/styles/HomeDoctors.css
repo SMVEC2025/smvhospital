@@ -1,5 +1,6 @@
 .hd_main{
     margin-top: 2rem;
+    padding-bottom: 5rem;
 }
 .hd_main{
 .swiper {
@@ -40,6 +41,10 @@
     width: 80%;
     margin: auto;
     margin-top: 6rem;
+    padding: 20px;
+    border: 2px solid rgba(128, 128, 128, 0.089);
+    border-radius: 20px;
+    background-color: rgb(230, 230, 230);
 
   }
   

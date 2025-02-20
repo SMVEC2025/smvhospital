@@ -51,7 +51,7 @@
     cursor: alias;
     height: 2px; 
     transition: all 0.3s ease-in;
-    background-color: rgb(190, 71, 27);
+    background-color: rgb(216, 127, 94);
 
     bottom: -3px; /* Adjust positioning */
     left: 0;
@@ -68,7 +68,7 @@
 
 }
 .tc_title{
-    color: rgb(226, 92, 43);
+    color: rgb(255, 241, 236);
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 0.5rem;

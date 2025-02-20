@@ -13,7 +13,7 @@ export default function HomeDoctors() {
   useEffect(() => {
     if (swiperRef.current) {
       setTimeout(() => {
-        swiperRef.current.update();  // 👈 Force update Swiper
+        swiperRef.current.update(); 
       }, 500);
     }
   }, []);
