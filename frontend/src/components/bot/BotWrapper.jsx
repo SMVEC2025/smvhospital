@@ -77,7 +77,7 @@ function BotWrapper() {
               </div>
 
             </div>
-            {/* <ChatBot openLang={openLang}/> */}
+            <ChatBot openLang={openLang}/>
           </div>
 
         </div>
