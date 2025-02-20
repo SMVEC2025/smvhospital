@@ -1,4 +1,242 @@
 .bw_main{
     position: fixed;
+    bottom: 40px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(255, 196, 118);
+    z-index: 1000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.bw_main.true{
+animation: expandWidthThenHeight 1.5s ease-in-out forwards;
+}
+.bw_main.false{
+    animation: shrinkWidthThenHeight 0.8s ease-in-out forwards;
+    }
+@keyframes expandWidthThenHeight {
+    0% {
+      width: 70px;
+      height: 70px;
+    }
+    50% {
+      width: 400px;
+      height: 70px;
+    }
+    100% {
+        width: 400px;
+        height: 80vh;
+    }
+  }
+  @keyframes shrinkWidthThenHeight {
+    0% {
+        width: 400px;
+        height: 80vh;
+    }
+    60% {
+      width: 400px;
+      height: 70px;
+    }
+    100% {
+        width: 70px;
+      height: 70px;
+    }
+  }
+.bw_small{
+    display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: gap 0.2s ease-in-out;
+}
+.bw_small:hover{
+    gap: 0px;
+
+
+}
+
+.bw_small img{
+    width: 5px;
+    transition: width 0.2s ease;
+    padding: 1px;
+    border-radius: 50%;
+    background-color: rgb(255, 126, 6);
+
+
+}
+.bw_small:hover.bw_small img{
+    width: 20px;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+   
+
+}
+.bw_small:hover{
     
+.bw_small_div1{
+    transform: translate(15px,15px);
+
+}
+.bw_small_div2{
+    transform: translate(-15px,15px);
+
+
+}
+.bw_small_div3{
+    transform: translate(15px,-15px);
+
+
+}
+.bw_small_div4{
+    transform: translate(-15px,-15px);
+
+}
+
+    
+}
+
+.bw_small_div1{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    transform: translate(15px,15px);
+    transition: transform 0.3s ease-in-out;
+
+}
+.bw_small_div2{
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    transform: translate(-15px,15px);
+    transition: transform 0.3s ease-in-out;
+
+
+}
+.bw_small_div3{
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    transform: translate(15px,-15px);
+    transition: transform 0.3s ease-in-out;
+
+
+}
+.bw_small_div4{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    transform: translate(-15px,-15px);
+    transition: transform 0.3s ease-in-out;
+
+}
+.bw_big{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bw_big_close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.bw_big_translator{
+    width: 350px;
+    height: 60px;
+    background-color: rgba(221, 114, 42, 0.993);
+    margin-top: 4rem;
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 10px;
+    transition: height 0.3s ease;
+    color: rgb(235, 235, 235);
+    font-size: 20px;
+}
+.bw_big_translator.true{
+    
+    height: 330px;
+
+
+}
+.bw_big_translator>div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.bw_big_translator>div>button{
+    height: 50px;
+    border: 1px solid rgba(128, 128, 128, 0);
+    border-radius: 25px;
+    background-color: rgb(223, 217, 217);
+    width: 90%;
+}
+.bw_big_translator>span{
+    min-height: 60px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bw_big_translator>span>span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+.bw_big_chatbot{
+    position: absolute;
+    bottom: 20px;
+}
+.bw_big_chatbot1{
+    width: 350px;
+    height: 60px;
+    background-color: rgb(238, 126, 22);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.bw_big_chatbot12{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.bw_big_chatbot11>img{
+    width: 30px;
+    margin-left: 10px;
+}
+.bw_big_chatbot12>h2{
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+}
+.bw_big_chatbot12_2{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.bw_big_chatbot12_2>span{
+    color: lightgreen;
+    font-size: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+.bw_big_chatbot12_2>p{
+    color: white;
+    font-size: 12px;
+    margin-left: 3px;
 }

@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import "../styles/HomeAbout.css"; // External CSS
 import Button from "./Button";
 import mobileapp from '../assets/images/mobileapp.png'
+import { useTranslation } from "react-i18next";
+import '../i18n'
 const HomeAbout = () => {
   const [activeSection, setActiveSection] = useState("about");
+  const { t } = useTranslation("home");
 
   useEffect(() => {
     const sections = document.querySelectorAll(".section");
@@ -60,7 +63,7 @@ const HomeAbout = () => {
         <div id="about" className="section">
           <h2>Welcome to SMV Super Speciality Hospital</h2>
           <h3><span>Bringing Hope </span>And Healing Through <br/> Innovative Medicine.</h3>
-          <p>Our mission is to improve the health of our community by providing high quality, comprehensive medical care in a welcoming and compassionate environment.On behalf of the entire staff, we would like to welcome you to our clinic. We are pleased to have the opportunity to assist you with your physical therapy care. Our goal is to provide the highest quality and most up-to-date physical therapy. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>{t("description")}</p>
          <div >
          <Button  name="About us"/>
          </div>

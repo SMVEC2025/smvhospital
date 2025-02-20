@@ -9,9 +9,11 @@ import HomeNewsEvents from '../components/HomeNewsEvents'
 import HomeTestimonial from '../components/HomeTestimonial'
 import videoback from '../assets/images/videoback.png'
 import HomeDoctors from '../components/HomeDoctors'
+import BotWrapper from '../components/bot/BotWrapper'
 function Home() {
   return (
     <div>
+      <BotWrapper/>
         <Hero/>
         <HomeAbout/>
         <img src={videoback} style={{width:"100%"}} alt="" />
