@@ -182,7 +182,7 @@ const Chatbot = ({ openLang }) => {
                                 ))}
                             </div>
                         )}
-                    </div>
+                    </div> 
                 ))}
                 <div ref={messagesEndRef} />
                 {botTyping && <div className="message bot typing-animation"><span></span><span></span><span></span></div>}
