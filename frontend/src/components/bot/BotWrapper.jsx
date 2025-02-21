@@ -14,7 +14,7 @@ import smviconwhite from '../../assets/images/smviconwhite.png'
 function BotWrapper() {
   const { openWrap, setOpenWrap } = useContext(AppContext)
   const [showWrapContent, setShowWrapContent] = useState(false)
-  const [openLang,setOpenLang] = useState(false)
+  const [openLang, setOpenLang] = useState(false)
   function handleOpen() {
     setOpenWrap(true)
     setTimeout(() => {
@@ -32,8 +32,38 @@ function BotWrapper() {
   return (
     <div className={`bw_main ${openWrap}`}>
       {openWrap ? (
-        <div>
+        <div className='bw_big_container'>
+{showWrapContent ? (
+        <div className='bw_big'>
+          <div className='bw_big_close' onClick={handleClose}>
+            <IoMdClose />
+          </div>
+          <div className={`bw_big_translator ${openLang}`} >
+            <span onClick={() => setOpenLang(!openLang)}>Language Transalator <span><HiMiniLanguage /></span></span>
+            <LanguageSwitcher />
 
+          </div>
+          <div className={`bw_big_chatbot ${openLang}`}>
+            <div className='bw_big_chatbot1'>
+              <div className='bw_big_chatbot11'>
+                <img src={smviconwhite} alt="" />
+              </div>
+              <div className='bw_big_chatbot12'>
+                <h2>SMV hospital</h2>
+                <span className='bw_big_chatbot12_2'>
+                  <span><RiRadioButtonLine /></span>
+                  <p>Online</p>
+                </span>
+              </div>
+
+            </div>
+            <div className={`chatbotcontainer`}>
+              <ChatBot openLang={openLang} />
+            </div>
+          </div>
+
+        </div>
+      ) : null}
         </div>
       ) : (
         <div className='bw_small' onClick={handleOpen}>
@@ -51,37 +81,7 @@ function BotWrapper() {
           </div>
         </div>
       )}
-      {showWrapContent ? (
-        <div className='bw_big'>
-          <div className='bw_big_close' onClick={handleClose}>
-            <IoMdClose />
-          </div>
-          <div className={`bw_big_translator ${openLang}`} >
-            <span onClick={()=>setOpenLang(!openLang)}>Language Transalator <span><HiMiniLanguage/></span></span>
-            <LanguageSwitcher />
-
-          </div>
-          <div>
-          </div>
-          <div className='bw_big_chatbot'>
-            <div className='bw_big_chatbot1'>
-              <div className='bw_big_chatbot11'>
-                  <img src={smviconwhite} alt="" />
-              </div>
-              <div className='bw_big_chatbot12'>
-                <h2>SMV hospital</h2>
-                <span className='bw_big_chatbot12_2'>
-                  <span><RiRadioButtonLine/></span>
-                  <p>Online</p>
-                </span>
-              </div>
-
-            </div>
-            <ChatBot openLang={openLang}/>
-          </div>
-
-        </div>
-      ) : null}
+      
 
 
     </div>

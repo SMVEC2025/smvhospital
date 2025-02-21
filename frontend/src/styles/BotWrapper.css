@@ -3,18 +3,23 @@
     bottom: 40px;
     right: 30px;
     width: 70px;
+    padding: 5px;
     height: 70px;
-    background-color: rgb(255, 196, 118);
+    background-color: #e2dbc9;
     z-index: 1000;
     border-radius: 10px;
     cursor: pointer;
+    backdrop-filter: blur(5px);
 }
 .bw_main.true{
+    width: 400px;
 animation: expandWidthThenHeight 1.5s ease-in-out forwards;
 }
+
 .bw_main.false{
     animation: shrinkWidthThenHeight 0.8s ease-in-out forwards;
-    }
+   }   
+
 @keyframes expandWidthThenHeight {
     0% {
       width: 70px;
@@ -26,13 +31,13 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     }
     100% {
         width: 400px;
-        height: 80vh;
+        height: 600px;
     }
   }
   @keyframes shrinkWidthThenHeight {
     0% {
         width: 400px;
-        height: 80vh;
+        height: 600px;
     }
     60% {
       width: 400px;
@@ -43,12 +48,15 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
       height: 70px;
     }
   }
+  .bw_big_container{
+    width: 100%;
+    height: 100%;
+  }
 .bw_small{
     display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 0;
-
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -56,8 +64,6 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
 }
 .bw_small:hover{
     gap: 0px;
-
-
 }
 
 .bw_small img{
@@ -66,19 +72,15 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     padding: 1px;
     border-radius: 50%;
     background-color: rgb(255, 126, 6);
-
-
 }
 .bw_small:hover.bw_small img{
     width: 20px;
     padding: 0;
     border-radius: 0;
     background-color: transparent;
-   
-
 }
 .bw_small:hover{
-    
+
 .bw_small_div1{
     transform: translate(15px,15px);
 
@@ -98,7 +100,7 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
 
 }
 
-    
+
 }
 
 .bw_small_div1{
@@ -139,6 +141,10 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2%;
+    justify-content:space-between;
+    width: 100%;
+    height: 100%;
 }
 .bw_big_close{
     position: absolute;
@@ -146,10 +152,10 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     right: 10px;
 }
 .bw_big_translator{
-    width: 350px;
+    width: 100%;
     height: 60px;
-    background-color: rgba(221, 114, 42, 0.993);
-    margin-top: 4rem;
+    background-color:#bd6009;
+    margin-top: 2rem;
     border-radius:10px;
     display: flex;
     flex-direction: column;
@@ -160,23 +166,23 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     font-size: 20px;
 }
 .bw_big_translator.true{
-    
-    height: 330px;
-
-
+    height: 200px;
 }
 .bw_big_translator>div{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 10px;
-    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
 }
 .bw_big_translator>div>button{
-    height: 50px;
+    height: 40px;
     border: 1px solid rgba(128, 128, 128, 0);
     border-radius: 25px;
     background-color: rgb(223, 217, 217);
-    width: 90%;
+    width: 80%;
 }
 .bw_big_translator>span{
     min-height: 60px;
@@ -192,11 +198,19 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     margin-left: 5px;
 }
 .bw_big_chatbot{
-    position: absolute;
-    bottom: 20px;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+
+}
+.bw_big_chatbot.true{
+    height: calc(60%);
 }
 .bw_big_chatbot1{
-    width: 350px;
+    width: 100%;
     height: 60px;
     background-color: rgb(238, 126, 22);
     border-top-left-radius: 10px;
@@ -204,9 +218,6 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-left: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    border-right: 1px solid #ccc;
 }
 .bw_big_chatbot12{
     display: flex;
@@ -239,4 +250,7 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     color: white;
     font-size: 12px;
     margin-left: 3px;
+}
+.chatbotcontainer{
+    height: calc(100% - 60px);
 }
