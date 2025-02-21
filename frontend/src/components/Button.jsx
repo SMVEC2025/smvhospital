@@ -5,7 +5,7 @@ function Button({name}) {
     return (
         <button class="button">
           {name}
-        </button>
+        </button> 
             );
         }
         
