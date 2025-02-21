@@ -7,7 +7,7 @@ import { AppContext } from "../context/AppContext";
 export default function IntroAnimation() {
         const {setIntroOne} =useContext(AppContext)
     return (
-      <div className="Ia-container">
+      <div className="Ia-container"> 
         {/* Rotating & Moving Logo */}
         <motion.img
           src={SMV_icon} // Replace with your actual logo path
