@@ -25,7 +25,7 @@ const StrokeTextAnimation = () => {
 
       // Start filling at 25% of stroke duration
       gsap.to(letter, {
-        fill: "#fff", // Make the text white for visibility
+        fill: "white", // Make the text white for visibility
         strokeOpacity: 0,
         duration: fillDuration,
         ease: "power2.out",

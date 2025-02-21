@@ -14,9 +14,11 @@ export default function IntroAnimation() {
           alt="Logo"
           className="Ia-logo"
           initial={{ x: -100, opacity: 1, rotate: 0 }}
-          animate={{ x: 100, opacity: 1, rotate: 360 }}
+          animate={{ x: 110, opacity: 1, rotate: 360 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         />
+       
+        
         
         {/* Welcome Text Appearing Sequentially with Logo Movement */}
         <div className="Ia-text-container">
@@ -26,7 +28,7 @@ export default function IntroAnimation() {
               className="Ia-text"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: (index + 1) * 0.1, duration: 1 }}
+              transition={{ delay: (index + 1) * 0.15, duration: 1.2 }}
               onAnimationComplete={() => {setIntroOne(false)}}
 
             >
