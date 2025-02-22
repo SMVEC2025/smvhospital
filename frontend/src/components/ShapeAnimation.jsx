@@ -64,8 +64,8 @@ export default function ShapeAnimation() {
             style={{ backgroundImage: `url(${snap})`, willChange: "transform, opacity" }}
             initial={{ scale: 1, borderRadius: "100px" }}
             animate={{
-              scale: 1.2,  // Small bounce effect for smoothness
-              width: "100vw",
+              scale: 1 ,  // Small bounce effect for smoothness
+              width: "100%",
               height: "100vh",
               borderRadius: "0%",
               transition: { duration: 1, ease: "easeInOut" },
