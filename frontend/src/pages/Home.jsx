@@ -13,7 +13,7 @@ import BotWrapper from '../components/bot/BotWrapper'
 function Home() {
   return (
     <div>
-      <BotWrapper/>
+        <BotWrapper/>
         <Hero/>
         <HomeAbout/>
         <img src={videoback} style={{width:"100%"}} alt="" />
@@ -22,8 +22,7 @@ function Home() {
         <HorizontalScroll/>
         <HomeNewsEvents/>
         <HomeTestimonial/>
-        <HomeDoctors/>
-      
+      <HomeDoctors/>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import "../styles/ShapeAnimation.css";
 import homepagevideo from '../assets/images/homepagevideo.mp4';
 import StrokeTextAnimation from "./StrokeTextAnimation";
-
+import snap from '../assets/images/snap.jpg'
 export default function ShapeAnimation() {
   const [expand, setExpand] = useState(false);
   const [playVideo, setPlayVideo] = useState(false);
@@ -44,7 +44,7 @@ export default function ShapeAnimation() {
         </div>
       ) : (
         <div className="Ia-fullscreen">
-          <motion.div
+          <motion.div style={{backgroundImage:`url(${snap})`}}
             className="Ia-shape"
             initial={{ y: 500, scale: 1, borderRadius: "100px" }}
             animate={{ 
