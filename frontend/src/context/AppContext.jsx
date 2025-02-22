@@ -7,9 +7,11 @@ export const AppContext = createContext();
 export function AppProvider({ children }) {
   const [introOne,setIntroOne] = useState(true); 
   const [openWrap,setOpenWrap] = useState(null); 
+  const [introAnim,setIntroAnim] = useState('one'); 
+
 
   return (
-    <AppContext.Provider value={{ introOne,setIntroOne,openWrap,setOpenWrap }}>
+    <AppContext.Provider value={{ introOne,setIntroOne,openWrap,setOpenWrap,introAnim,setIntroAnim }}>
       {children}
     </AppContext.Provider>
   );

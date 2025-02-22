@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
 export default function IntroAnimation() {
-        const {setIntroOne} =useContext(AppContext)
+        const {setIntroOne,setIntroAnim} =useContext(AppContext)
     return (
       <div className="Ia-container"> 
         {/* Rotating & Moving Logo */}
@@ -29,7 +29,7 @@ export default function IntroAnimation() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: (index + 1) * 0.15, duration: 1.2 }}
-              onAnimationComplete={() => {setIntroOne(false)}}
+              onAnimationComplete={() => {setIntroAnim('two')}}
 
             >
               {letter}

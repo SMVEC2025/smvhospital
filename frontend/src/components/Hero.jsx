@@ -1,16 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext,useEffect } from 'react'
 import '../styles/Hero.css'
 import IntroAnimation from './IntroAnimation'
 import ShapeAnimation from './ShapeAnimation'
 import { AppContext } from '../context/AppContext'
 function Hero() {
-    const {introOne} =useContext(AppContext)
+    const {introAnim,setIntroAnim} =useContext(AppContext)
+    useEffect(() => {
+      
+    }, [])
+    
 
   return (
     <div className='hero_main'>
-       {introOne?(
-        <IntroAnimation/>
-       ):<ShapeAnimation/>}
+        {introAnim == 'one' && (<IntroAnimation/>)}
+        {introAnim == 'two' && (<ShapeAnimation/>)}
+       
 
     </div>
   )
