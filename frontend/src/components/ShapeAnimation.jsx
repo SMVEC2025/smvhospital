@@ -48,11 +48,11 @@ export default function ShapeAnimation() {
         {/* Initial Shape Animation */}
         <motion.div
           className="Ia-shape"
-          style={{ backgroundImage: `url(${snap})` }}
+          style={{ backgroundImage: `url(${snap})`, willChange: "transform, opacity" }}
           initial={{ y: 300, scale: 1, borderRadius: "100px" }}
           animate={{
             y: 0,
-            transition: { duration: 0.5, ease: "easeOut" },
+            transition: { duration: 0.4, ease: "easeOut" }, // Smoother easing
           }}
           onAnimationComplete={() => setExpand(true)}
         />
@@ -61,13 +61,14 @@ export default function ShapeAnimation() {
         {expand && (
           <motion.div
             className="Ia-shape"
-            style={{ backgroundImage: `url(${snap})` }}
-            initial={{ width: "300px", height: "200px", borderRadius: "100px" }}
+            style={{ backgroundImage: `url(${snap})`, willChange: "transform, opacity" }}
+            initial={{ scale: 1, borderRadius: "100px" }}
             animate={{
+              scale: 1.2,  // Small bounce effect for smoothness
               width: "100vw",
               height: "100vh",
-              borderRadius: ["100px", "200px", "0%"],
-              transition: { duration: 1, ease: "easeOut" },
+              borderRadius: "0%",
+              transition: { duration: 1, ease: "easeInOut" },
             }}
             onAnimationComplete={() => setPlayVideo(true)}
           />
