@@ -44,7 +44,7 @@ export default function ShapeAnimation() {
         </div>
       ) : (
         <div className="Ia-fullscreen">
-          <motion.div style={{backgroundImage:`url(${snap})`}}
+          <motion.div 
             className="Ia-shape"
             initial={{ y: 500, scale: 1, borderRadius: "100px" }}
             animate={{ 
@@ -55,7 +55,7 @@ export default function ShapeAnimation() {
               setTimeout(() => setExpand(true), 0);
             }}
           />
-           <motion.img 
+           {/* <motion.img 
             className="Ia-shape"
             src={snap}
             initial={{ y: 500, scale: 1, borderRadius: "100px" }}
@@ -66,7 +66,7 @@ export default function ShapeAnimation() {
             onAnimationComplete={() => {
               setTimeout(() => setExpand(true), 0);
             }}
-          />
+          /> */}
           {/* Expansion Animation */}
           {expand && (
             <motion.div

@@ -14,6 +14,7 @@
     background-size: cover;
     background-position: center;
     position: absolute;
+    background-color: red;
   }
 
   .ia-container-main {
