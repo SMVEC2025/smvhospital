@@ -69,7 +69,7 @@ export default function ShapeAnimation() {
               }}
               onAnimationComplete={() => {
                 if (videoLoaded) {
-                  setPlayVideo(true); // Play only if video is loaded
+                  setPlayVideo(true), console.log(first)('hi'); // Play only if video is loaded
                 }
               }}
             />
