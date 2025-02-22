@@ -55,18 +55,18 @@ export default function ShapeAnimation() {
               setTimeout(() => setExpand(true), 0);
             }}
           />
-           {/* <motion.img style={{backgroundImage:`url(${snap})`}}
+           <motion.img 
             className="Ia-shape"
-            src=""
+            src={snap}
             initial={{ y: 500, scale: 1, borderRadius: "100px" }}
             animate={{ 
               y: [300,0], // Ball throw with bounce effect
-              transition: { duration: 0.4, ease: "easeOut" } 
+              transition: { duration: 0.8, ease: "easeOut" } 
             }}
             onAnimationComplete={() => {
               setTimeout(() => setExpand(true), 0);
             }}
-          /> */}
+          />
           {/* Expansion Animation */}
           {expand && (
             <motion.div
