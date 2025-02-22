@@ -55,6 +55,7 @@ export default function ShapeAnimation() {
               setTimeout(() => setExpand(true), 0);
             }}
           />
+          {console.log("channged")}
            {/* <motion.img 
             className="Ia-shape"
             src={snap}
