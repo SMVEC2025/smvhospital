@@ -1,33 +1,177 @@
-// import React, { useEffect } from "react";
-// import '../styles/LedContainer.css'
-// import React, { useEffect, useState } from "react";
-// import "./LEDMatrix.css";
+// LedContainer.js
+import React from 'react';
+import '../styles/LedContainer.css'; // Import the external CSS file
 
-// const LEDMatrix = ({ text = "WELCOME TO SMV HOSPITAL" }) => {
-//   const [displayText, setDisplayText] = useState(text);
-//   const [scrollIndex, setScrollIndex] = useState(0);
+// Define a 5x7 pixel grid for each character
+const characterMap = {
+    'E': [
+        [1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1],
+    ],
+    'M': [
+        [1, 0, 0, 0, 1],
+        [1, 1, 0, 1, 1],
+        [1, 0, 1, 0, 1],
+        [1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1],
+    ],
+    'R': [
+        [1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 1],
+        [1, 1, 1, 1, 0],
+        [1, 0, 1, 0, 0],
+        [1, 0, 0, 1, 1],
+    ],
+    'G': [
+        [0, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0],
+        [1, 0, 1, 1, 1],
+        [1, 0, 0, 0, 1],
+        [0, 1, 1, 1, 0],
+    ],
+    'N': [
+        [1, 0, 0, 0, 1],
+        [1, 1, 0, 0, 1],
+        [1, 0, 1, 0, 1],
+        [1, 0, 0, 1, 1],
+        [1, 0, 0, 0, 1],
+    ],
+    'C': [
+        [0, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0],
+    ],
+    'Y': [
+        [1, 0, 0, 0, 1],
+        [0, 1, 0, 1, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+    ],
+    'A': [
+        [0, 1, 1, 1, 0],
+        [1, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1],
+    ],
+    'L': [
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1],
+    ],
+    '*': [
+        [0, 0, 1, 0, 0],
+        [0, 1, 1, 1, 0],
+        [1, 1, 1, 1, 1],
+        [0, 1, 1, 1, 0],
+        [0, 0, 1, 0, 0],
+    ],
+    'c': [
+        [0, 0, 1, 0, 0],
+        [0, 1, 1, 1, 0],
+        [1, 1, 1, 1, 0],
+        [1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+    ],
+    '0': [
+        [0, 1, 1, 1, 0],
+        [1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1],
+        [0, 1, 1, 1, 0],
+    ],
+    '4': [
+        [0, 0, 1, 0, 0],
+        [0, 1, 1, 0, 0],
+        [1, 0, 1, 0, 0],
+        [1, 1, 1, 1, 1],
+        [0, 0, 1, 0, 0],
+    ],
+    '1': [
+        [0, 0, 1, 0, 0],
+        [0, 1, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 1, 1, 1, 0],
+    ],
+    '3': [
+        [1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 0],
+        [0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 0],
+    ],
+    '5': [
+        [1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 0],
+    ],
+    '8': [
+        [0, 1, 1, 1, 0],
+        [1, 0, 0, 0, 1],
+        [0, 1, 1, 1, 0],
+        [1, 0, 0, 0, 1],
+        [0, 1, 1, 1, 0],
+    ],
+    '6': [
+        [0, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 1],
+        [0, 1, 1, 1, 0],
+    ],
+    ' ': [
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+    ],
+    ':': [
+        [0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0],
+    ],
+};
+    // Add more characters here...
 
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setScrollIndex((prev) => (prev + 1) % (displayText.length + 20));
-//     }, 150);
 
-//     return () => clearInterval(interval);
-//   }, [displayText]);
+const LedContainer = () => {
+    const text = "EMERGENCY CALL:0413-586 * EMERGENCY CALL:0413-586 * EMERGENCY CALL:0413-586 * EMERGENCY CALL:0413-586 * EMERGENCY CALL:0413-586 * EMERGENCY CALL:0413-586";
 
-//   return (
-//     <div className="led-board">
-//       {[...Array(10)].map((_, row) => (
-//         <div key={row} className="led-row">
-//           {[...Array(40)].map((_, col) => {
-//             const charIndex = (scrollIndex + col) % displayText.length;
-//             const isLit = Math.random() > 0.8 || displayText[charIndex] !== " ";
-//             return <div key={col} className={`led-dot ${isLit ? "on" : "off"}`} />;
-//           })}
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
+    return (
+        <div className="LedContainer">
+            <div className="scrolling-text">
+                {text.split('').map((char, index) => (
+                    <div key={index} className="led-matrix">
+                        {characterMap[char]?.map((row, rowIndex) => (
+                            <div key={rowIndex} className="led-row">
+                                {row.map((pixel, pixelIndex) => (
+                                    <div
+                                        key={pixelIndex}
+                                        className="led-pixel"
+                                        style={{ opacity: pixel ? 1 : 0 }} // Hide pixels with value 0
+                                    />
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
 
-// export default LedContainer;
+export default LedContainer;
