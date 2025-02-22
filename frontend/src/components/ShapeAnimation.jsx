@@ -58,7 +58,7 @@ export default function ShapeAnimation() {
           {/* Expansion Animation */}
           {expand && (
             <motion.div
-              className="Ia-shape"
+              className="Ia-shape" style={{backgroundImage:`url(${snap})`}}
               initial={{ scale: 1, borderRadius: "100px", width: "300px", height: "200px" }}
               animate={{ 
                 scale: [1, 1], 
@@ -69,7 +69,7 @@ export default function ShapeAnimation() {
               }}
               onAnimationComplete={() => {
                 if (videoLoaded) {
-                  setPlayVideo(true), console.log(first)('hi'); // Play only if video is loaded
+                  setPlayVideo(true); // Play only if video is loaded
                 }
               }}
             />
