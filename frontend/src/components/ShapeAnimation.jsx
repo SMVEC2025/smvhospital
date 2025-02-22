@@ -24,15 +24,11 @@ export default function ShapeAnimation() {
       <div className="ia-container-main">
         {/* Video Background */}
         <div className="Ia-video-container">
-  <iframe
-    className="Ia-video-bg"
-    src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&controls=0&loop=1&playlist=ScMzIvxBSi4&modestbranding=1&showinfo=0"
-    title="YouTube Background Video"
-    frameBorder="0"
-    allow="autoplay; encrypted-media"
-    allowFullScreen
-  ></iframe>
-</div>
+          <video ref={videoRef} loop muted playsInline className="Ia-video">
+            <source src={homepagevideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
         {/* Overlay Text */}
         <div className='overlay-content'>
