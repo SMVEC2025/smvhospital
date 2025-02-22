@@ -3,7 +3,7 @@ import { useState, useEffect, useRef, useContext } from "react";
 import "../styles/ShapeAnimation.css";
 import homepagevideo from '../assets/images/homepagevideo.mp4';
 import StrokeTextAnimation from "./StrokeTextAnimation";
-import snap from '../assets/images/snap.jpg';
+import snap from '../assets/images/snapp.jpg';
 import { AppContext } from "../context/AppContext";
 
 export default function ShapeAnimation() {
