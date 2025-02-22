@@ -1,37 +1,37 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import "../styles/ShapeAnimation.css";
 import homepagevideo from '../assets/images/homepagevideo.mp4';
 import StrokeTextAnimation from "./StrokeTextAnimation";
 import snap from '../assets/images/snap.jpg'
+import { AppContext } from "../context/AppContext";
 export default function ShapeAnimation() {
   const [expand, setExpand] = useState(false);
   const [playVideo, setPlayVideo] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef(null);
+  const {introAnim,setIntroAnim} = useContext(AppContext)
 
   // Preload video
   useEffect(() => {
-    const video = document.createElement("video");
-    video.src = homepagevideo;
-    video.preload = "auto"; // Preload the video
-    video.oncanplaythrough = () => setVideoLoaded(true); // Mark as loaded
-  }, []);
-
+    if (playVideo && videoRef.current) {
+      videoRef.current.play();
+    }
+  }, [playVideo]);
+  
   return (
     <>
-      {playVideo && videoLoaded ? (
         <div className="ia-container-main">
           {/* Video Background */}
           <div className="Ia-video-container">
-            <video ref={videoRef} autoPlay loop muted playsInline className="Ia-video">
+            <video ref={videoRef}  loop muted playsInline className="Ia-video">
               <source src={homepagevideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
 
           {/* Overlay Text */}
-          <div className="overlay-content">
+          <div className='overlay-content'>
             <div className="oc_1">
               <StrokeTextAnimation />
             </div>
@@ -42,9 +42,9 @@ export default function ShapeAnimation() {
             <button>About Us</button>
           </div>
         </div>
-      ) : (
-        <div className="Ia-fullscreen">
-          <motion.div 
+
+        <div className={`Ia-fullscreen ${playVideo}`}>
+          <motion.div  style={{backgroundImage:`url(${snap})`}}
             className="Ia-shape"
             initial={{ y: 500, scale: 1, borderRadius: "100px" }}
             animate={{ 
@@ -80,14 +80,11 @@ export default function ShapeAnimation() {
                 transition: { duration: 1, ease: "easeOut" }
               }}
               onAnimationComplete={() => {
-                if (videoLoaded) {
-                  setPlayVideo(true); // Play only if video is loaded
-                }
+                setPlayVideo(true)
               }}
             />
           )}
         </div>
-      )}
     </>
   );
 }

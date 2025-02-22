@@ -1,11 +1,19 @@
 .Ia-fullscreen {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: black;
+    opacity: 1;
+  }
+  .Ia-fullscreen.true{
+    opacity: 0;
   }
   
   .Ia-shape {
@@ -14,7 +22,6 @@
     background-size: cover;
     background-position: center;
     position: absolute;
-    background-color: red;
   }
 
   .ia-container-main {
