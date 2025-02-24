@@ -11,10 +11,12 @@ import videoback from '../assets/images/videoback.png'
 import HomeDoctors from '../components/HomeDoctors'
 import BotWrapper from '../components/bot/BotWrapper'
 import LedContainer from '../components/LedContainer'
+import Navbar from '../components/navbar/Navbar'
 function Home() {
   return (
     <div>
         <BotWrapper/>
+        <Navbar/>
         <Hero/>
         <HomeAbout/>
         <LedContainer/>
