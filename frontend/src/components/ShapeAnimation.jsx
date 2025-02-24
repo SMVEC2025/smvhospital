@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef, useContext } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../styles/ShapeAnimation.css";
 import homepagevideo from '../assets/images/homepagevideo.mp4';
 import StrokeTextAnimation from "./StrokeTextAnimation";
@@ -8,15 +8,16 @@ import TitleAnimation from "./TitleAnimation";
 export default function ShapeAnimation() {
   const [expand, setExpand] = useState(false);
   const [playVideo, setPlayVideo] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef(null);
-  const { setIntroAnim } = useContext(AppContext);
 
-  // Play video when animation completes
+  // Preload video
   useEffect(() => {
-    if (playVideo && videoRef.current) {
-      videoRef.current.play();
-    }
-  }, [playVideo]);
+    const video = document.createElement("video");
+    video.src = homepagevideo;
+    video.preload = "auto"; // Preload the video
+    video.oncanplaythrough = () => setVideoLoaded(true); // Mark as loaded
+  }, []);
 
   return (
     <>
@@ -50,51 +51,40 @@ export default function ShapeAnimation() {
             >About Us</motion.button>
           </div>
         </div>
-
-        {/* Overlay Text */}
-        <div className='overlay-content'>
-          <div className="oc_1">
-            <StrokeTextAnimation />
-          </div>
-          <div className="oc_2">
-            Whatever you're struggling with, we’ve got your back. From depression to money worries,
-            <br /> we’ve got loads of practical advice and information.
-          </div>
-          <button>About Us</button>
-        </div>
-      </div>
-
-      {/* Animation Section */}
-      <div className={`Ia-fullscreen ${playVideo}`}>
-        {/* Initial Shape Animation */}
-        <motion.div
-          className="Ia-shape"
-          style={{ backgroundImage: `url(${snap})`, willChange: "transform, opacity" }}
-          initial={{ y: 300, scale: 1, borderRadius: "100px" }}
-          animate={{
-            y: 0,
-            transition: { duration: 0.4, ease: "easeOut" }, // Smoother easing
-          }}
-          onAnimationComplete={() => setExpand(true)}
-        />
-
-        {/* Expansion Animation */}
-        {expand && (
+      ) : (
+        <div className="Ia-fullscreen">
           <motion.div
             className="Ia-shape"
-            style={{ backgroundImage: `url(${snap})`, willChange: "transform, opacity" }}
-            initial={{ scale: 1, borderRadius: "100px" }}
-            animate={{
-              scale: 1 ,  // Small bounce effect for smoothness
-              width: "100%",
-              height: "100vh",
-              borderRadius: "0%",
-              transition: { duration: 1, ease: "easeInOut" },
+            initial={{ y: 500, scale: 1, borderRadius: "100px" }}
+            animate={{ 
+              y: [300,0], // Ball throw with bounce effect
+              transition: { duration: 0.4, ease: "easeOut" } 
             }}
-            onAnimationComplete={() => setPlayVideo(true)}
+            onAnimationComplete={() => {
+              setTimeout(() => setExpand(true), 0);
+            }}
           />
-        )}
-      </div>
+          {/* Expansion Animation */}
+          {expand && (
+            <motion.div
+              className="Ia-shape"
+              initial={{ scale: 1, borderRadius: "100px", width: "300px", height: "200px" }}
+              animate={{ 
+                scale: [1, 1], 
+                width: ["200px", "100vw"],
+                height: ["200px", "100vh"],
+                borderRadius: ["100px", "200px", "0%"], // Capsule effect
+                transition: { duration: 1, ease: "easeOut" }
+              }}
+              onAnimationComplete={() => {
+                if (videoLoaded) {
+                  setPlayVideo(true); // Play only if video is loaded
+                }
+              }}
+            />
+          )}
+        </div>
+      )}
     </>
   );
 }
