@@ -1,19 +1,17 @@
-import React, { useContext } from 'react'
-import '../styles/Hero.css'
-import IntroAnimation from './IntroAnimation'
-import ShapeAnimation from './ShapeAnimation'
-import { AppContext } from '../context/AppContext'
+import React, { useContext } from 'react';
+import '../styles/Hero.css';
+import IntroAnimation from './IntroAnimation';
+import ShapeAnimation from './ShapeAnimation';
+import { AppContext } from '../context/AppContext';
+
 function Hero() {
-    const {introOne} =useContext(AppContext)
+    const { introAnim } = useContext(AppContext);
 
-  return (
-    <div className='hero_main'>
-       {introOne?(
-        <IntroAnimation/>
-       ):<ShapeAnimation/>}
-
-    </div>
-  )
+    return (
+        <div className='hero_main'>
+            {introAnim === 'one' ? <IntroAnimation /> : <ShapeAnimation />}
+        </div>
+    );
 }
 
-export default Hero
+export default Hero;

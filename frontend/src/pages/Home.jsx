@@ -10,20 +10,22 @@ import HomeTestimonial from '../components/HomeTestimonial'
 import videoback from '../assets/images/videoback.png'
 import HomeDoctors from '../components/HomeDoctors'
 import BotWrapper from '../components/bot/BotWrapper'
+import LedContainer from '../components/LedContainer'
 function Home() {
   return (
     <div>
-      <BotWrapper/>
+        <BotWrapper/>
         <Hero/>
         <HomeAbout/>
+        <LedContainer/>
         <img src={videoback} style={{width:"100%"}} alt="" />
         <HomeSectionTwo/>
+       
         <WhySmv/>
         <HorizontalScroll/>
         <HomeNewsEvents/>
         <HomeTestimonial/>
-        <HomeDoctors/>
-      
+      <HomeDoctors/>
     </div>
   )
 }

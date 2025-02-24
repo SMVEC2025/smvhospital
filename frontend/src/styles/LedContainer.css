@@ -1,0 +1,60 @@
+/* styles.css */
+.LedContainer {
+  width: 100%;
+  height: 80px; /* Reduced height */
+  background-color: #000; /* Black background */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scrolling-text {
+  position: absolute;
+  left: 100%; /* Start off-screen to the right */
+  white-space: nowrap;
+  animation: scroll-left 10s linear infinite;
+}
+
+/* LED pixel grid */
+.led-matrix {
+  display: inline-block;
+  margin-right: 20px; /* Spacing between characters */
+}
+
+.led-row {
+  display: flex;
+}
+
+.led-pixel {
+  width: 4px; /* Size of each pixel */
+  height: 4px; /* Size of each pixel */
+  margin: 1px; /* Spacing between pixels */
+  background-color: #50f25e; /* Red pixel color */
+  border-radius: 50%; /* Make pixels circular */
+  box-shadow: 
+      0 0 5px #50f25e, 
+      0 0 10px #50f25e, 
+      0 0 20px #50f25e; /* Glowing effect for pixels */
+}
+
+@keyframes scroll-left {
+  0% {
+      left: 100%; /* Start off-screen to the right */
+  }
+  100% {
+      left: -100%; /* Move off-screen to the left */
+  }
+}
+@keyframes flicker {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.9;
+  }
+}
+
+.LedContainer {
+  animation: flicker 0.1s infinite;
+}
