@@ -37,6 +37,7 @@ export default function IntroAnimation() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: (index + 1) * 0.1, duration: 1.0 }}
+                        onAnimationComplete={()=>setIntroAnim('two')}
                     >
                         {letter}
                     </motion.span>
