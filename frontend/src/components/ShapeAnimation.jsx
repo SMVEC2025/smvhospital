@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import "../styles/ShapeAnimation.css";
 import homepagevideo from '../assets/images/homepagevideo.mp4';
 import StrokeTextAnimation from "./StrokeTextAnimation";
+import TitleAnimation from "./TitleAnimation";
 
 export default function ShapeAnimation() {
   const [expand, setExpand] = useState(false);
@@ -33,13 +34,21 @@ export default function ShapeAnimation() {
           {/* Overlay Text */}
           <div className="overlay-content">
             <div className="oc_1">
-              <StrokeTextAnimation />
+              <TitleAnimation />
             </div>
-            <div className="oc_2">
+            <motion.div className="oc_2"
+                initial={{ y: '10px', opacity: 0 }}
+                animate={{ y: '0', opacity: 1 }}
+                transition={{ duration: 0.5, ease:'easeOut',delay:5 }}
+            >
               Whatever you're struggling with, we’ve got your back. From depression to money worries,
               <br /> we’ve got loads of practical advice and information.
-            </div>
-            <button>About Us</button>
+            </motion.div>
+            <motion.button
+                initial={{ y: '10px', opacity: 0 }}
+                animate={{ y: '0', opacity: 1 }}
+                transition={{ duration: 0.5, ease:'easeOut',delay:5.2 }}
+            >About Us</motion.button>
           </div>
         </div>
       ) : (
