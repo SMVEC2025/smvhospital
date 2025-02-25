@@ -1,6 +1,6 @@
 .sticky-parent {
   height: 200vh;
-  background: linear-gradient(#6e4646ea,rgba(136, 102, 102, 0.918)), 
+  background: linear-gradient(#365eb3ea,rgba(180, 112, 48, 0.918)), 
   url('../assets/images/Gradientnoise.jpg');
   background-position: center;
 }
@@ -11,9 +11,9 @@
   padding: 30px;
   color:#c8bca6;
 
-}
+} 
 .hs_main1{
-  background-color: #664242;
+  background-color: #3458a6;
   color: #ece9e2;
   padding: 30px;
   display: flex;
@@ -21,7 +21,7 @@
   
 }
 
-  .sticky {
+  .sticky{
     position: sticky;
     top: 0;
     max-height: 100vh;
@@ -56,7 +56,7 @@
   }
   
 .hs_mainend{
-  background-color:#7e6060 ;
+  background-color:#a5672e ;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -71,4 +71,9 @@
   border-radius: 35px;
 
 
+}
+@media screen and (max-width: 900px) {
+  .dim {
+    min-width: 100vw;
+  }
 }

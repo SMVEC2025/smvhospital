@@ -2,6 +2,10 @@
     margin-top: 2rem;
     padding-bottom: 5rem;
 }
+.hd_container1 .sticky-heading h4{
+  color: chocolate;
+}
+
 .hd_main{
 .swiper {
     width: 100%;

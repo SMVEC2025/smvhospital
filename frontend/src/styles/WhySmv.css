@@ -21,7 +21,7 @@
   }
   
   .why-smv-left h2 {
-    font-size: 2rem;
+    font-size: calc(1.8rem + 0.5vw);
     font-weight: 500;
     margin-bottom: 10px;
     color: rgb(236, 135, 52);
@@ -29,8 +29,8 @@
   /* 8b5e3b */
   /* 2f4858 */
   .why-smv-left p {
-    font-size: 0.9rem;
-    width: 80%;
+    font-size: calc(0.4rem + 0.5vw);
+    width: 90%;
     color: #5C4033;
     line-height: 22px;
     margin-bottom: 2rem;
@@ -67,7 +67,7 @@
   }
   
   .feature-box h3 {
-    font-size: 1.2rem;
+    font-size: calc(0.9rem + 0.5vw);
     font-weight: 500;
     margin-bottom: 0.5rem;
     color: rgb(187, 115, 56);
@@ -78,5 +78,25 @@
     font-size: 0.9rem;
     color: #5C4033;
     font-weight: 400;
+    font-size: calc(0.4rem + 0.5vw);
+
   }
-  
+  @media screen and (max-width: 900px) {
+    .why-smv-container {
+      flex-direction: column;
+      gap: 5rem;
+    }
+    .why-smv-container>div{
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .why-smv-left p {
+      width: 100%;
+    }
+   
+    .why-smv-container {
+      padding: 1rem 10px;
+    }
+  }

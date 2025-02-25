@@ -62,22 +62,22 @@ const HomeAbout = () => {
       <div className="ha_right-section">
         <div id="about" className="section">
           <h2>Welcome to SMV Super Speciality Hospital</h2>
-          <h3><span>Bringing Hope </span>And Healing Through <br/> Innovative Medicine.</h3>
-          <p>{t("description")}</p>
+          <h3>{t("abouttitle")}</h3>
+          <p>{t("aboutdescription")}</p>
          <div >
          <Button  name="About us"/>
          </div>
         </div>
         <div id="mobile" className="section">
           <h2>Mobile Application</h2>
-          <h3><span> Schedule your appointment </span>on the go with our mobile app<br/>  simple, and convenient</h3>
-          <p>Our mission is to improve the health of our community by providing high quality, comprehensive medical care in a welcoming and compassionate environment.On behalf of the entire staff, we would like to welcome you to our clinic. We are pleased to have the opportunity to assist you with your physical therapy care. Our goal is to provide the highest quality and most up-to-date physical therapy. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <Button name="Download amobile app"/>
+          <h3>{t("mobileapphead")}</h3>
+          <p style={{ whiteSpace: "pre-line" }}>{t("mobileappdesc")}</p>
+          <Button name="Download mobile app"/>
         </div>
         <div id="appointment" className="section">
           <h2>Book an Appointment</h2>
-          <h3><span>Easily book your </span> doctor’s appointment online quick, <br/> and hassle-free from our website</h3>
-          <p>Our mission is to improve the health of our community by providing high quality, comprehensive medical care in a welcoming and compassionate environment.On behalf of the entire staff, we would like to welcome you to our clinic. We are pleased to have the opportunity to assist you with your physical therapy care. Our goal is to provide the highest quality and most up-to-date physical therapy. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>{t("appointmenthead")}</h3>
+          <p>{t("appointmentdesc")}</p>
           <Button name='Book Appointment'/>
         </div>
       </div>

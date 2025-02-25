@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import '../styles/HomeNewsEvents.css'
+import '../i18n'
+import { useTranslation } from "react-i18next";
 function HomeNewsEvents() {
     const [hoveredImage, setHoveredImage] = useState(null);
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+    const { t } = useTranslation("home");
+    
   
     // For demonstration, we’ll inline the data here.
     // Replace or import your data from eventsData if you prefer.
@@ -35,7 +39,7 @@ function HomeNewsEvents() {
           <div className="sticky-heading">
           <div>
           <h5>NEWS & EVENTS</h5>
-          <h4 >An Ecosystem for Clinical Excellence</h4>
+          <h4 >{t("newsandeventshead")}</h4>
           </div>
           <div>
             <button>View ALL</button>

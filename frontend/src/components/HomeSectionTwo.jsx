@@ -1,7 +1,12 @@
 import React from "react";
 import "../styles/HomeSectionTwo.css";
-
+import '../i18n'
+import { useTranslation } from "react-i18next";
 const HomeSectionTwo = () => {
+    const { t } = useTranslation("home");
+    const specialties = Object.entries(t("specialtydesc", { returnObjects: true }));
+
+  console.log(specialties)
   const speacialitymain=[
     {
      title:"General Medicine",
@@ -34,25 +39,25 @@ const HomeSectionTwo = () => {
         <div className="sticky-heading">
           <div>
           <h5>Speacilaity</h5>
-          <h4 >An Ecosystem for Clinical Excellence</h4>
+          <h4 >{t("specialtyhead")}</h4>
           </div>
           <div>
             <button>View ALL</button>
           </div>
         </div>
         {
-          speacialitymain.map((e,i)=>(
-            <div id={i+1} className={`card card${i+1}`}>
+          specialties.map(([id,value])=>(
+            <div id={id} className={`card card${Number(id)+1}`}>
                 <div className="hst_card_div1">
-                  <p>0{i+1}</p>
+                  <p>00{Number(id)+1}</p>
 
                 </div>
                 <div  className="hst_card_div2">
-                    <span>{e.title}</span>
-                    <div>{e.para}</div>
+                    <span>{value.title}</span>
+                    <div style={{whiteSpace:"pre-line"}}>{value.desc}</div>
                 </div>
                 <div  className="hst_card_div3">
-                  <img src={e.imgurl} alt="" />
+                  <img src={value.imgurl} alt="" />
 
                 </div>
             </div>

@@ -8,6 +8,10 @@
 .ht_main1{
   padding: 30px;
 }
+.ht_main1 .sticky-heading h4{
+  color: chocolate;
+}
+
 .ht_container1{
     width: 60%;
     height: 80%;
@@ -68,8 +72,7 @@
 
   /* testimonial card */
 
-
-  .testimonial-card {
+.testimonial-card {
     width: 100%;
     padding: 20px;
     height: 100%;
@@ -84,8 +87,7 @@
     background-repeat: no-repeat;
 
   }
-  
-  .quote-icon {
+.quote-icon {
     font-size: 100px;
     position: absolute;
     top: 15px;
@@ -93,35 +95,34 @@
     color: transparent; /* Hide fill color */
     -webkit-text-stroke: 0.001px rgb(226, 116, 26); 
     color: rgba(255, 136, 0, 0);
+}
 
-  }
-  
-  .stars {
+.stars {
     color: rgb(240, 148, 43);
     font-size: 18px;
-  }
+}
   
-  .testimonial-text {
+.testimonial-text {
     font-size: 14px;
     margin: 10px 0;
     font-weight: 300;
     width: 80%;
-  }
+}
   
-  .profile {
+.profile {
     display: flex;
     align-items: center;
     margin-top: 20px;
-  }
+}
   
-  .profile-img {
+.profile-img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
-  }
+}
   
-  .name {
+.name {
     font-size: 16px;
     font-weight: 500;
   }
@@ -131,3 +132,4 @@
     color: #ccc;
   }
   
+

@@ -1,5 +1,32 @@
 {
-    "title": "Welcome to Our Website",
-    "description": "We provide the best services."
+    "abouttitle": "Welcome to Our Website",
+    "aboutdescription": "Nestled in the heart of Pondicherry, SMV Super Specialty Hospital is a leading healthcare institution dedicated to delivering exceptional medical services. As part of a prestigious group of institutes, our hospital upholds a legacy of excellence in patient care, education, and medical research, We offer a wide range of specialized treatments, covering departments like Cardiology, Neurology, Urology, Orthopedics, and more. Our team of highly skilled doctors, surgeons, and healthcare professionals work tirelessly to provide accurate diagnoses, effective treatments, and personalized care tailored to each patient’s needs.With modern facilities, advanced medical equipment, and a patient-first approach, we strive to create a healing environment where quality healthcare is accessible to all. At SMV Super Specialty Hospital, your health and well-being are our top priorities.",
+    "mobileapphead":"Healthcare at Your Fingertips",
+    "mobileappdesc":"Managing your health has never been easier! With the SMV Super Specialty Hospital Mobile App, you can access world-class healthcare services anytime, anywhere.\n✅ Book Appointments Instantly – Schedule consultations with top specialists in just a few taps.\n✅ Check Doctor Availability – View real-time schedules and choose a convenient time.\n✅ Health Packages & Reports – Access health checkup packages and digital medical records.\n✅ Reminders & Notifications – Get timely reminders for your appointments and health updates.\n✅ Emergency Assistance – Quick access to emergency contacts and hospital services.",
+    "appointmenthead":"Easy & Fast Online Appointment Booking",
+    "appointmentdesc":"Skip the long queues and book your doctor’s appointment anytime, anywhere! With our easy-to-use online booking system, you can choose your preferred specialist, select a convenient time slot, and confirm your visit in just a few clicks. Experience hassle-free healthcare with quick access to expert medical care at SMV Super Specialty Hospital.\nBook your appointment now and take control of your health with ease!",
+    "specialtyhead":"Expert Care Across Key Specialties",
+    "specialtydesc":[
+      {
+        "title":"Cardiology",
+        "desc":"At SMV Super Specialty Hospital, our Cardiology Department is dedicated to providing world-class heart care. Our expert cardiologists specialize in the diagnosis, treatment, and prevention of various cardiovascular diseases, including hypertension, coronary artery disease, heart failure, arrhythmias, and valvular heart disorders.We offer advanced diagnostic techniques such as echocardiography, stress tests, angiography, and cardiac CT scans to ensure early detection and precise treatment. Our state-of-the-art cardiac catheterization lab enables us to perform angioplasty, pacemaker implantation, and minimally invasive cardiac surgeries with precision and care."
+      },
+      {
+        "title":"Neurology",
+        "desc":"The Neurology Department at SMV Super Specialty Hospital provides cutting-edge care for brain, spinal cord, and nervous system disorders. Our highly skilled neurologists and neurosurgeons specialize in treating stroke, epilepsy, migraines, movement disorders (like Parkinson’s disease), multiple sclerosis, Alzheimer’s, and neuropathy.We use advanced neuroimaging techniques such as MRI, CT scans, EEG, and EMG for precise diagnosis. Our hospital also offers thrombolysis therapy for stroke patients, ensuring immediate and effective treatment to prevent long-term complications."
+      },
+      {
+        "title":"Orthopaedics",
+        "desc":"At SMV Super Specialty Hospital, our Orthopaedics Department is committed to providing specialized care for bone, joint, and muscle disorders. Whether it’s fractures, arthritis, sports injuries, spinal disorders, or joint replacements, our expert orthopaedic surgeons, physiotherapists, and rehabilitation specialists ensure the best possible recovery.\n We offer a wide range of treatments, including:\n✔ Total Knee & Hip Replacements for arthritis patients.\n✔ Minimally Invasive Spine Surgery for back pain and spinal disorders.\n✔ Sports Medicine & Injury Treatment for athletes and fitness enthusiasts.\n✔ Pediatric Orthopaedics for congenital deformities and childhood fractures."
+      },
+      {
+        "title":"Obstetrics & Gynaecology",
+        "desc":"The Obstetrics & Gynaecology (OBGYN) Department at SMV Super Specialty Hospital offers comprehensive women’s healthcare services, from pregnancy care to reproductive health and gynecological treatments.\n🔹 Maternity & Childbirth Care – From prenatal check-ups to safe deliveries, our team ensures the best care for both mother and baby. We specialize in high-risk pregnancy management, painless deliveries, and cesarean sections when required.\n🔹 Infertility & IVF Treatments – We provide advanced fertility treatments, including IVF, IUI, and hormonal therapy, helping couples achieve their dream of parenthood."
+      }
+    ],
+    "treatmenthead":"Advanced Treatments for Better Health & Faster Recovery",
+    "newsandeventshead":"Latest Updates & Medical Insights",
+    "testimonialhead":"Real Stories, Real Healing – Hear from Our Patients",
+    "doctorshead":"Meet Our Specialists – Experts in Care & Treatment"
   }
   

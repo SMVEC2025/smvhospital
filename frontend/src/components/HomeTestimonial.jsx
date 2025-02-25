@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import '../i18n'
+import { useTranslation } from "react-i18next";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
@@ -12,13 +13,15 @@ import { EffectCards } from 'swiper/modules';
 import TestimonialCard from './TestimonialCard';
 
 export default function HomeTestimonial() {
+    const { t } = useTranslation("home");
+    
     return (
         <>  
         <div className='ht_main1'>
         <div className="sticky-heading">
           <div>
           <h5>Patient's Testimonial</h5>
-          <h4 >An Ecosystem for Clinical Excellence</h4>
+          <h4 >{t("testimonialhead")}</h4>
           </div>
       
         </div>

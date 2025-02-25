@@ -6,9 +6,12 @@ import 'swiper/css/navigation';
 import '../styles/HomeDoctors.css';
 import { Pagination, Navigation } from 'swiper/modules';
 import DoctorsCard from './DoctorsCard';
-
+import '../i18n'
+import { useTranslation } from "react-i18next";
 export default function HomeDoctors() {
   const swiperRef = useRef(null);
+      const { t } = useTranslation("home");
+  
 
   useEffect(() => {
     if (swiperRef.current) {
@@ -24,7 +27,7 @@ export default function HomeDoctors() {
         <div className="sticky-heading">
           <div>
             <h5>Expert doctors</h5>
-            <h4>An Ecosystem for Clinical Excellence</h4>
+            <h4>{t("doctorshead")}</h4>
           </div>
         </div>
       </div>

@@ -41,19 +41,25 @@
   }
   
   .ha_right-section h2 {
-    font-size: 1.2rem;
+    font-size: calc(0.5rem + 0.5vw);
     font-weight: 400;
+    background: linear-gradient(45deg, #ff8c00, #ff0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
   }
   .ha_right-section h3{
-    font-size: 2rem;
+    font-size: calc(1.8rem + 0.5vw);
     margin: 0.5rem 0;
     font-weight: 500;
+    color:  rgb(238, 111, 20);
   }
   .ha_right-section p{
-    width: 70%;
+    font-size: calc(0.4rem + 0.5vw);
+    width: calc(70%);
     font-weight: 400;
     color: #5C4033;
-    line-height: 25px;
+    line-height: calc(0.5rem + 1vw);
 
   }
   .ha_right-section span{

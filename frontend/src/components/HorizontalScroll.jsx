@@ -1,9 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/HorizontalScroll.css";
 import TreatmentCard from "./TreatmentCard";
+import '../i18n'
+import { useTranslation } from "react-i18next";
 const HorizontalScroll = () => {
   const stickyRef = useRef(null);
   const stickyParentRef = useRef(null);
+    const { t } = useTranslation("home");
 
   useEffect(() => {
     const horizontalScroll = () => {
@@ -32,7 +35,7 @@ const HorizontalScroll = () => {
      <div className="sticky-heading">
         <div>
         <h5>treatments</h5>
-        <h4>An Ecosystem for Clinical Excellence</h4>
+        <h4>{t("treatmenthead")}</h4>
         </div>
         </div>
      </div>

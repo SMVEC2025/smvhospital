@@ -15,6 +15,9 @@
     align-items: center;
     flex-direction: column;
   }
+  .hne_container .sticky-heading h4{
+    color: chocolate;
+  }
   
   .event-item {
     margin-bottom: 1rem;
