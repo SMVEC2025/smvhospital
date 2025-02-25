@@ -75,3 +75,14 @@ svg text {
 
 
 
+@media screen and (max-width: 500px) {
+  .ta_main .box {
+    font-size: 19px;
+    height: 80%;
+
+  }
+  .ta_s1, .ta_s2, .ta_s3 {
+    font-size:50px;
+  }
+  
+}
