@@ -94,6 +94,8 @@
   @media screen and (max-width: 500px) {
     .why-smv-left p {
       width: 100%;
+      font-size: calc(0.6rem + 0.5vw);
+      line-height: 19px;
     }
    
     .why-smv-container {

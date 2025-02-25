@@ -153,6 +153,8 @@
 	margin: 5px;
 	color: white;
 	padding: 5px;
+	padding-bottom: 10px;
+	padding-top: 10px;
   }
   .hst_wrapper{
 	width: 100%;
@@ -165,6 +167,15 @@
   .hst_card_div2{
    width: 80%;
    gap: 5px;
+  }
+  .hst_container{
+	padding: 5px;
+  }
+  .hst_card_div2>div{
+	font-size: calc(0.6rem + 0.5vw);
+  }
+  .hst_card_div2>span{
+	font-size: calc(1rem + 0.5vw);
   }
   
 
