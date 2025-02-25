@@ -99,4 +99,11 @@
     .why-smv-container {
       padding: 1rem 10px;
     }
+    .why-smv-right{
+      width: 100%;
+      gap: 5px;
+    }
+    .feature-box{
+      width: 100%;
+    }
   }

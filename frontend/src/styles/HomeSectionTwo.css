@@ -10,6 +10,7 @@
 	justify-content: space-between;
 	align-items: center;
   }
+
   .sticky-heading h5{
 	font-size: 15px;
 	font-weight: 400;
@@ -131,3 +132,40 @@
 	height: 100%;
 	border-radius: 5px;
   }
+
+  
+@media screen and (max-width: 500px) {
+
+  .sticky-heading h5{
+	font-size: 15px;
+	
+  }
+  .sticky-heading h4{
+	font-size: calc(1.5rem + 0.5vw);
+	
+  }
+  .sticky-heading{
+	flex-direction: column;
+	gap: 1rem;
+  }
+  .hst_wrapper .card {
+	width: fit-content;
+	margin: 5px;
+	color: white;
+	padding: 5px;
+  }
+  .hst_wrapper{
+	width: 100%;
+  }
+  .hst_card_div1>p{
+	color: chocolate;
+	font-size: 1rem;
+	font-weight: 600;
+  }
+  .hst_card_div2{
+   width: 80%;
+   gap: 5px;
+  }
+  
+
+}

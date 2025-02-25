@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -8,9 +8,11 @@ import { Pagination, Navigation } from 'swiper/modules';
 import DoctorsCard from './DoctorsCard';
 import '../i18n'
 import { useTranslation } from "react-i18next";
+import { AppContext } from '../context/AppContext';
 export default function HomeDoctors() {
   const swiperRef = useRef(null);
       const { t } = useTranslation("home");
+      const {isMobile} =useContext(AppContext)
   
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export default function HomeDoctors() {
 
       <div className='hd_container2'>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={isMobile?1 : 3}
         spaceBetween={30}
         pagination={{
           clickable: true,

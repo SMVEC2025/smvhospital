@@ -77,4 +77,21 @@
       opacity: 1;
     }
   }
-  
+
+
+  @media screen and (max-width: 500px) {
+    .event-list{
+      padding: 0;
+    }
+    .event-item{
+      width: 100%;
+      flex-direction: column;
+      height: fit-content;
+    }
+    .event-desc{
+      width: 100%;
+      margin-bottom: 0.5rem;
+      font-size: calc(0.6rem + 0.5vw);
+    }
+
+  }

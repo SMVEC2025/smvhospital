@@ -111,3 +111,73 @@
 
 
 }
+@media screen and (max-width: 500px) {
+  .hd_main{
+    margin-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+.hd_main{
+
+  
+  .swiper {
+    width: 100%;
+    height: 300px;
+    padding-top: 10px;
+    margin: 20px auto;
+    
+  }
+  .mySwiper {
+    width: 60%;
+  }
+}
+.hd_container2 {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0;
+
+  }
+  
+
+.hd_container1{
+    padding: 0;
+
+}
+
+/* doctortscard templtae */
+
+.dcmain{
+    width: 100%;
+    border-radius: 15px;
+  
+
+    
+}
+.dc_container1{
+    padding: 20px;
+    text-align: start;
+
+}
+.dc_container1>h2{
+    font-size: 1rem;
+    font-weight: 500;
+
+}
+.dc_container1>p{
+    font-weight: 400;
+    font-size: 0.9rem;
+
+}
+
+.dc_container2>div{
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(-90deg);
+
+}
+.dc_container2>div:hover{
+    cursor: pointer;
+    transform: rotate(0deg);
+
+
+}
+}

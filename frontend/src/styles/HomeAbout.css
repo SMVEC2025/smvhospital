@@ -54,6 +54,7 @@
     font-weight: 500;
     color:  rgb(238, 111, 20);
   }
+
   .ha_right-section p{
     font-size: calc(0.4rem + 0.5vw);
     width: calc(70%);
@@ -70,5 +71,22 @@
     margin-left: 0.2rem;
 
   }
+  @media screen and (max-width: 500px) {
 
+  .ha_left-section{
+     display: none;
+  }
+  .ha_right-section{
+    width: 100%;
+  }
+  .section{
+    height: fit-content;
+  }
   
+  .ha_right-section p{
+    font-size: calc(0.4rem + 0.5vw);
+    width: calc(100%);
+    line-height: calc(0.6rem + 1vw);
+
+  }
+}

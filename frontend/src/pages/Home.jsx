@@ -16,7 +16,7 @@ function Home() {
   return (
     <div>
         <BotWrapper/>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Hero/>
         <HomeAbout/>
         <LedContainer/>
@@ -24,9 +24,9 @@ function Home() {
         <HomeSectionTwo/>
        
         <WhySmv/>
-        <HorizontalScroll/>
+        {/* <HorizontalScroll/> */}
         <HomeNewsEvents/>
-        <HomeTestimonial/>
+        {/* <HomeTestimonial/> */}
       <HomeDoctors/>
     </div>
   )

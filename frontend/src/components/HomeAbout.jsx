@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../styles/HomeAbout.css"; // External CSS
 import Button from "./Button";
 import mobileapp from '../assets/images/mobileapp.png'
 import { useTranslation } from "react-i18next";
+import { AppContext } from "../context/AppContext";
 import '../i18n'
 const HomeAbout = () => {
   const [activeSection, setActiveSection] = useState("about");
   const { t } = useTranslation("home");
+  const { isMobile } =useContext(AppContext)
 
   useEffect(() => {
     const sections = document.querySelectorAll(".section");
