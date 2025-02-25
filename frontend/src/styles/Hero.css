@@ -1,9 +1,17 @@
 .hero_main{
-    height: 100vh;
-    width: 100%;
+    height: calc(100vh);
+    width: calc(100%);
+    overflow: hidden;
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    transition: all 0.3s ease-out;
+}
+.hero_main.true{
+    height: calc(100vh - 20px);
+    width: calc(100% - 20px);
+    margin: 10px;
+    border-radius: 20px;
 }

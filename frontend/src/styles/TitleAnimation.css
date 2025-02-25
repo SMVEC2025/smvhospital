@@ -13,19 +13,33 @@
  
 }
 .ta_s1.true{
-  background-image: linear-gradient(90deg,rgba(255, 195, 138, 0.952),rgb(255, 220, 187),rgb(255, 255, 255));
-  -webkit-background-clip: text;
+  background-image: url('../assets/images/textbackk.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-background-clip: text; 
+   background-clip: text;
   -webkit-text-fill-color: transparent;
   
 }
 .ta_s2.true{
-  background-image: linear-gradient(90deg,rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255));
-  -webkit-background-clip: text;
+  background-image: url("https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?cs=srgb&dl=pexels-pixabay-235994.jpg&fm=jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-background-clip: text; 
+   background-clip: text;
   -webkit-text-fill-color: transparent;
+  
 }
 .ta_s3.true{
-  background-image: linear-gradient(90deg,rgb(255, 255, 255),rgb(255, 255, 255),rgb(140, 236, 196));
-  -webkit-background-clip: text;
+  background-image: url('https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?cs=srgb&dl=pexels-pixabay-235994.jpg&fm=jpg');
+
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-background-clip: text; 
+   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

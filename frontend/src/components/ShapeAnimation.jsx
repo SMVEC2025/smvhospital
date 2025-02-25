@@ -41,8 +41,7 @@ export default function ShapeAnimation() {
                 animate={{ y: '0', opacity: 1 }}
                 transition={{ duration: 0.5, ease:'easeOut',delay:5 }}
             >
-              Whatever you're struggling with, we’ve got your back. From depression to money worries,
-              <br /> we’ve got loads of practical advice and information.
+             Advanced Care, Expert Hands, Your Health First!
             </motion.div>
             <motion.button
                 initial={{ y: '10px', opacity: 0 }}
@@ -71,9 +70,9 @@ export default function ShapeAnimation() {
               initial={{ scale: 1, borderRadius: "100px", width: "300px", height: "200px" }}
               animate={{ 
                 scale: [1, 1], 
-                width: ["200px", "100vw"],
-                height: ["200px", "100vh"],
-                borderRadius: ["100px", "200px", "0%"], // Capsule effect
+                width: ["200px", "100%"],
+                height: ["200px", "100%"],
+                borderRadius: ["100px", "200px", "10px"], // Capsule effect
                 transition: { duration: 1, ease: "easeOut" }
               }}
               onAnimationComplete={() => {

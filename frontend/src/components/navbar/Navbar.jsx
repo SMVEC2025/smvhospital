@@ -4,6 +4,7 @@ import { IoAppsSharp } from "react-icons/io5";
 import logofull from '../../assets/images/logofull.png'
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
+    const [showNav,setShowNav] = useState(false)
 
     useEffect(() => {
       const handleScroll = () => {
@@ -16,9 +17,18 @@ function Navbar() {
   
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
+
+      
     }, []);
+    useEffect(() => {
+      setTimeout(() => {
+        setShowNav(true)
+      }, 6000);
+    }, [])
+    
   return (
-    <div className={`nav_main ${scrolled}`}>
+    <>
+    {showNav?(<div className={`nav_main ${scrolled}`}>
         <div className='ns_con1'>
             <img src={logofull} alt="" />
         </div>
@@ -34,7 +44,8 @@ function Navbar() {
         <div className='ns_con3'>
              <span>EMERGENCY</span>
         </div>
-    </div>
+    </div>):null}
+    </>
   )
 }
 

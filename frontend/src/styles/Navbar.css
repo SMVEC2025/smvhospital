@@ -1,9 +1,10 @@
 .nav_main{
-    width: 100%;
+    width: 98%;
+    margin-left: 1%;
     height: 70px;
     position: fixed;
     z-index: 20;
-    top: 0;
+    top: 10px;
     left: 0;
     display: flex;
     flex-direction: row;
@@ -14,7 +15,6 @@
 .ns_con1{}
 
 .ns_con2{
-    border-radius: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -29,6 +29,9 @@
     background-color: rgba(255, 255, 246, 0.916);
     color: chocolate;
     backdrop-filter: blur(5px);
+    top: 0;
+    margin: 0;
+    width: 100%;
 }
 
 .ns_con3>span{
@@ -36,6 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
     background-color: chocolate;
     padding: 12px 25px;
 }
