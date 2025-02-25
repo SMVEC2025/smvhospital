@@ -16,7 +16,7 @@ function Home() {
   return (
     <div>
         <BotWrapper/>
-        {/* <Navbar/> */}
+        <Navbar/>
         <Hero/>
         <HomeAbout/>
         <LedContainer/>
