@@ -24,9 +24,9 @@ function Home() {
         <HomeSectionTwo/>
        
         <WhySmv/>
-        {/* <HorizontalScroll/> */}
+        <HorizontalScroll/>
         <HomeNewsEvents/>
-        {/* <HomeTestimonial/> */}
+        <HomeTestimonial/>
       <HomeDoctors/>
     </div>
   )
