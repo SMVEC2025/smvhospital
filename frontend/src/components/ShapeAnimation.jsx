@@ -13,15 +13,27 @@ export default function ShapeAnimation() {
 
   // Preload video
   useEffect(() => {
+   function startVideo(){
     const video = document.createElement("video");
     video.src = homepagevideo;
     video.preload = "auto"; // Preload the video
-    video.oncanplaythrough = () => setVideoLoaded(true); // Mark as loaded
+    video.oncanplaythrough = () => setVideoLoaded(true); 
+   }
+   startVideo()
   }, []);
+  function handlePlay(){
+    if(videoLoaded){
+      setPlayVideo(true)
+
+    }
+    else{
+      setPlayVideo(true)
+    }
+  }
 
   return (
     <>
-      {playVideo && videoLoaded ? (
+      {playVideo ?(
         <div className="ia-container-main">
           {/* Video Background */}
           <div className="Ia-video-container">
@@ -75,11 +87,7 @@ export default function ShapeAnimation() {
                 borderRadius: ["100px", "200px", "10px"], // Capsule effect
                 transition: { duration: 1, ease: "easeOut" }
               }}
-              onAnimationComplete={() => {
-                if (videoLoaded) {
-                  setPlayVideo(true); // Play only if video is loaded
-                }
-              }}
+              onAnimationComplete={handlePlay}
             />
           )}
         </div>

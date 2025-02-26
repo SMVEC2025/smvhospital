@@ -12,6 +12,7 @@ import HomeDoctors from '../components/HomeDoctors'
 import BotWrapper from '../components/bot/BotWrapper'
 import LedContainer from '../components/LedContainer'
 import Navbar from '../components/navbar/Navbar'
+import Footer from '../components/footer/Footer'
 function Home() {
   return (
     <div>
@@ -28,6 +29,7 @@ function Home() {
         <HomeNewsEvents/>
         <HomeTestimonial/>
       <HomeDoctors/>
+      <Footer/>
     </div>
   )
 }
