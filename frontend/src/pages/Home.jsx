@@ -14,11 +14,19 @@ import LedContainer from '../components/LedContainer'
 import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
 
-useEffect(() => {
-  sessionStorage.setItem('reload', true);
-}, [])
+
 
 function Home() {
+  useEffect(() => {
+    const reload = sessionStorage.getItem('reload')
+   setTimeout(() => {
+    if(reload == 'false'){
+      sessionStorage.setItem('reload', "false")
+    }else{
+    sessionStorage.setItem('reload', "true")
+  }
+   }, 100);
+  }, [])
   return (
     <div>
         <BotWrapper/>

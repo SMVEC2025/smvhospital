@@ -9,11 +9,13 @@ export default function IntroAnimation() {
 
     useEffect(() => {
         const reload = sessionStorage.getItem('reload')
-        if(reload){
-            sessionStorage.setItem('reload', false);
-            location.reload();
+        sessionStorage.setItem('reload', "false");
 
-        }
+        setTimeout(() => {
+            if(reload == "true"){
+                location.reload();
+            } 
+        }, 100);
         const timer = setTimeout(() => {
             setIntroAnim('two');
         }, 2000); // Slightly increased to ensure smooth transition
