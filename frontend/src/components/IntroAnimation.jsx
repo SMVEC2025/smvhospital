@@ -8,7 +8,12 @@ export default function IntroAnimation() {
     const { setIntroAnim } = useContext(AppContext);
 
     useEffect(() => {
-        // Automatically transition to ShapeAnimation after animation completes
+        const reload = sessionStorage.getItem('reload')
+        if(reload){
+            sessionStorage.setItem('reload', false);
+            location.reload();
+
+        }
         const timer = setTimeout(() => {
             setIntroAnim('two');
         }, 2000); // Slightly increased to ensure smooth transition

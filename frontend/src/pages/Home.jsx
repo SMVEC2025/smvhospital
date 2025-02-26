@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Hero from '../components/Hero'
 import HomeSectionTwo from '../components/HomeSectionTwo'
 import HomeAbout from '../components/HomeAbout'
@@ -13,6 +13,11 @@ import BotWrapper from '../components/bot/BotWrapper'
 import LedContainer from '../components/LedContainer'
 import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
+
+useEffect(() => {
+  sessionStorage.setItem('reload', true);
+}, [])
+
 function Home() {
   return (
     <div>
