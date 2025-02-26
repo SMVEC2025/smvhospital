@@ -24,7 +24,7 @@ export default function ShapeAnimation() {
     if (expand && videoLoaded) {
       const timer = setTimeout(() => {
         setPlayVideo(true);
-      }, 1000); // Adjust the delay as needed
+      }, 800); // Adjust the delay as needed
 
       return () => clearTimeout(timer);
     }
