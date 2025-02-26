@@ -1,7 +1,6 @@
 @media screen and (max-width: 500px) {
     .hmt_main{
         width: 100%;
-        padding: 3rem 5px;
         height: 70vh;
         background: linear-gradient(#365eb3ea,#192e5cf5), 
         url('../assets/images/Gradientnoise.jpg');    }

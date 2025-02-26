@@ -96,6 +96,7 @@
         width: 80%;
         background-size: cover;
         border: 1px solid rgb(92, 55, 37);
+        box-sizing: 100%;
 
         
     }
