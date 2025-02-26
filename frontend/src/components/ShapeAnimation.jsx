@@ -13,6 +13,7 @@ export default function ShapeAnimation() {
   const videoRef = useRef(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [makeFirstImage,setMakeFirstImage] = useState(false)
    // Preload video efficiently
    useEffect(() => {
     const video = document.createElement("video");
@@ -79,6 +80,7 @@ export default function ShapeAnimation() {
           {/* Bouncing Ball Effect */}
           <motion.div
             className="Ia-shape"
+            id={`Ia_first ${expand}`}
             initial={{ y: 500, scale: 1, borderRadius: "100px" }}
             animate={{ y: [500,500,0], transition: { duration: 1.5, ease: "easeOut" } }}
             onAnimationComplete={() => setExpand(true)}
