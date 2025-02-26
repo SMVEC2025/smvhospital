@@ -15,7 +15,12 @@ function Hero() {
       }, [])
     return (
         <div className={`hero_main ${showNav}`}>
-            {introAnim === 'one' ? <IntroAnimation /> : <ShapeAnimation />}
+            <div className={`hero_main_con1 ${introAnim!=='one'?"true":null}`}>
+            <IntroAnimation/>
+            </div>
+            <div  className='hero_main_con2'>
+            <ShapeAnimation/>
+            </div>
         </div>
     );
 }

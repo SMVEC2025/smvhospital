@@ -5,7 +5,7 @@ import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
 
 export default function IntroAnimation() {
-    const { setIntroAnim } = useContext(AppContext);
+    const { setIntroAnim,introAnim } = useContext(AppContext);
 
     useEffect(() => {
         // Automatically transition to ShapeAnimation after animation completes

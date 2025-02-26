@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import "../styles/ShapeAnimation.css";
 import homepagevideo from "../assets/images/homepagevideo.mp4";
 import StrokeTextAnimation from "./StrokeTextAnimation";
 import TitleAnimation from "./TitleAnimation";
+import { AppContext } from "../context/AppContext";
 
 export default function ShapeAnimation() {
+  const { introAnim } = useContext(AppContext)
   const [expand, setExpand] = useState(false);
   const [playVideo, setPlayVideo] = useState(false);
   const videoRef = useRef(null);
@@ -78,7 +80,7 @@ export default function ShapeAnimation() {
           <motion.div
             className="Ia-shape"
             initial={{ y: 500, scale: 1, borderRadius: "100px" }}
-            animate={{ y: 0, transition: { duration: 0.5, ease: "easeOut" } }}
+            animate={{ y: [500,500,0], transition: { duration: 1.5, ease: "easeOut" } }}
             onAnimationComplete={() => setExpand(true)}
           />
 
