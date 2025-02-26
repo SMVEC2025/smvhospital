@@ -16,10 +16,12 @@
     transition: background-size 0.5s ease-in-out;
 
 }
+
 .tc_main:hover{
     background-size: 100%;
     border: 1px solid rgb(255, 220, 197);
 }
+
 .tc_content{
     opacity: 0;
     padding: 20px;
@@ -37,6 +39,7 @@
 .tc_main:hover .tc_content>div{
     transform: translateY(0);
 }
+
 .tc_main:hover .tc_content{
     transition: all 0.3s ease;
     opacity: 1;
@@ -44,6 +47,7 @@
     background-image: linear-gradient(rgba(54, 54, 54, 0) 20%,rgba(0, 0, 0, 0.822) 80%);
 
 }
+
 .tc_title::after {
     content: "";
     position: absolute;
@@ -91,5 +95,30 @@
     .tc_main{
         width: 80%;
         background-size: cover;
+        border: 1px solid rgb(92, 55, 37);
+
+        
     }
+    
+.tc_content{
+    opacity: 1;
+    padding:5px;
+    height: 100%;
+    background-image: linear-gradient(rgba(54, 54, 54, 0) 20%,rgba(0, 0, 0, 0.822) 80%);
+    text-align: left;
+
+}
+.tc_content>div{
+    transform: translateY(0);
+
+}
+.tc_num{
+    position: absolute;
+    font-size: 100px;
+    top: -20%;
+    left: -10%;
+    z-index: -1;
+    color: transparent; /* Hide fill color */
+    -webkit-text-stroke: 1px rgb(255, 115, 0); 
+}
 }

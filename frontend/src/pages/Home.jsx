@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Hero from '../components/Hero'
 import HomeSectionTwo from '../components/HomeSectionTwo'
 import HomeAbout from '../components/HomeAbout'
@@ -13,10 +13,12 @@ import BotWrapper from '../components/bot/BotWrapper'
 import LedContainer from '../components/LedContainer'
 import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
-
+import { AppContext } from '../context/AppContext'
+import HomeMobileTreatment from '../components/HomeMobileTreatment'
 
 
 function Home() {
+  const { isMobile } = useContext(AppContext)
   useEffect(() => {
     const reload = sessionStorage.getItem('reload')
    setTimeout(() => {
@@ -38,7 +40,7 @@ function Home() {
         <HomeSectionTwo/>
        
         <WhySmv/>
-        <HorizontalScroll/>
+        {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)}
         <HomeNewsEvents/>
         <HomeTestimonial/>
       <HomeDoctors/>
