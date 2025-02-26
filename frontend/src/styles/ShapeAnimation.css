@@ -28,7 +28,7 @@
 }
 
   
-  .Ia-shape {
+  .Ia-shape,.Ia-shape-1{
     width: 300px;
     height: 200px;
     background-size: cover;
@@ -105,5 +105,8 @@
     .oc_2{
       font-size: 13px;
 
+    }
+    .Ia-shape-1.true{
+      display: none;
     }
   }

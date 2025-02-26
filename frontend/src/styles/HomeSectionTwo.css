@@ -69,14 +69,14 @@
   
   /* This is where we control the gap between the second and third card */
   .hst_wrapper .card3 {
-	background: #D2B48C;
+	background: #d4bb9b;
 	z-index: 3;
 	top: 310px;
 
 
   }
   .hst_wrapper .card4 {
-	background: #b99672;
+	background: #D2B48C;
 	z-index: 3;
 	top: 390px;
 
