@@ -172,10 +172,37 @@
 	padding: 5px;
   }
   .hst_card_div2>div{
-	font-size: calc(0.6rem + 0.5vw);
+	font-size: calc(0.8rem + 0.5vw);
   }
   .hst_card_div2>span{
 	font-size: calc(1rem + 0.5vw);
+  }
+  .hst_wrapper .card1 {
+	background: #F5E1C4;
+	z-index: 1;
+	margin-top: 50px;
+	top: 70px;
+  }
+  
+  .hst_wrapper .card2 {
+	background: #E3CDA8;
+	z-index: 2;
+	top: 110px;
+  }
+  
+  /* This is where we control the gap between the second and third card */
+  .hst_wrapper .card3 {
+	background: #D2B48C;
+	z-index: 3;
+	top: 150px;
+
+
+  }
+  .hst_wrapper .card4 {
+	background: #b99672;
+	z-index: 3;
+	top: 180px;
+
   }
   
 

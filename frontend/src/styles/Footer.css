@@ -152,7 +152,7 @@
   
     .footer-column {
       width: 100%;
-      text-align: center;
+      text-align: start;
     }
   
     .footer-social ul {
@@ -162,5 +162,12 @@
     .footer-bottom {
       flex-direction: column;
     }
+    .footer-app h4{
+      font-size: 25px;
+    }
+    .footer-app img {
+      max-width: 80px
+    }
+    
   }
   
