@@ -5,21 +5,29 @@ import ShapeAnimation from './ShapeAnimation';
 import { AppContext } from '../context/AppContext';
 
 function Hero() {
-
     const { introAnim } = useContext(AppContext);
-    const [showNav,setShowNav ] =useState(false)
+    const [showNav, setShowNav] = useState(false);
+
     useEffect(() => {
-        setTimeout(() => {
-          setShowNav(true)
+        const timer = setTimeout(() => {
+            setShowNav(true);
         }, 6000);
-      }, [])
+
+        // Clean up the timeout if the component unmounts before the time is up
+        return () => clearTimeout(timer);
+    }, []);
+
+    // Use conditional classNames more explicitly
+    const heroMainClass = `hero_main ${showNav ? 'show' : ''}`;
+    const heroMainCon1Class = introAnim !== 'one' ? 'hero_main_con1 true' : 'hero_main_con1';
+
     return (
-        <div className={`hero_main ${showNav}`}>
-            <div className={`hero_main_con1 ${introAnim!=='one'?"true":null}`}>
-            <IntroAnimation/>
+        <div className={heroMainClass}>
+            <div className={heroMainCon1Class}>
+                <IntroAnimation />
             </div>
-            <div  className='hero_main_con2'>
-            <ShapeAnimation/>
+            <div className='hero_main_con2'>
+                <ShapeAnimation />
             </div>
         </div>
     );
