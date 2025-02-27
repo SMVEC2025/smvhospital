@@ -15,7 +15,6 @@ import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
 import { AppContext } from '../context/AppContext'
 import HomeMobileTreatment from '../components/HomeMobileTreatment'
-import axiosInstance from '../api'
 
 
 function Home() {
@@ -29,28 +28,6 @@ function Home() {
     sessionStorage.setItem('reload', "true")
   }
    }, 100);
-  }, [])
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axiosInstance.post('/api/submit-form',
-          {
-            "name": "John Doe",
-            "age": 30,
-            "gender": "Male",
-            "phone": "1234567890",
-            "concern": "Consultation",
-            "packageType": "Health Packages",
-            "selectedPackage": "Basic Package"
-          });
-        console.log(response.data);
-      } catch (error) {
-        console.error('Error fetching data', error);
-      }
-    };
-    
-    getData();
-
   }, [])
   
   return (
