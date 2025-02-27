@@ -19,16 +19,8 @@ import HomeMobileTreatment from '../components/HomeMobileTreatment'
 
 function Home() {
   const { isMobile } = useContext(AppContext)
-  useEffect(() => {
-    const reload = sessionStorage.getItem('reload')
-   setTimeout(() => {
-    if(reload == 'false'){
-      sessionStorage.setItem('reload', "false")
-    }else{
-    sessionStorage.setItem('reload', "true")
-  }
-   }, 100);
-  }, [])
+
+
   
   return (
     <div>
