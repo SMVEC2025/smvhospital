@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../../styles/ChatBot.css'; // Make sure this path is correct
+import axios from 'axios'; // Import axios for API requests
+import '../../styles/ChatBot.css';
 
 const Chatbot = ({ openLang }) => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
     const [currentStep, setCurrentStep] = useState('mainMenu');
-    const [userData, setUserData] = useState({ name: '', age: '', gender: '', phone: '', concern: '' });
+    const [userData, setUserData] = useState({ name: '', age: '', gender: '', phone: '', concern: '', packageType: '', package: '' });
     const messagesEndRef = useRef(null);
     const [botTyping, setBotTyping] = useState(false);
     const [error, setError] = useState(null);
@@ -25,15 +26,17 @@ const Chatbot = ({ openLang }) => {
     const showMainMenu = () => {
         setBotTyping(true);
         setTimeout(() => {
-            setMessages([{
-                text: "Hello! How can I assist you today? Please choose an option:",
-                user: false,
-                options: [
-                    { text: 'Health Packages', value: 'health package' },
-                    { text: 'Book Appointment', value: 'book appointment' },
-                    { text: 'Emergency Inquiry', value: 'emergency' },
-                ],
-            }]);
+            setMessages([
+                {
+                    text: "Hello! How can I assist you today? Please choose an option:",
+                    user: false,
+                    options: [
+                        { text: 'Health Packages', value: 'health package' },
+                        { text: 'Book Appointment', value: 'book appointment' },
+                        { text: 'Emergency Inquiry', value: 'emergency' },
+                    ],
+                }
+            ]);
             setCurrentStep('mainMenu');
             setBotTyping(false);
         }, 500);
@@ -46,7 +49,10 @@ const Chatbot = ({ openLang }) => {
 
     const handleSend = () => {
         const trimmedInput = input.trim();
-        if (trimmedInput === '') return;
+        if (trimmedInput === '') {
+            setError("Please enter a message.");
+            return;
+        }
 
         setMessages([...messages, { text: trimmedInput, user: true }]);
         handleBotResponse(trimmedInput);
@@ -61,21 +67,22 @@ const Chatbot = ({ openLang }) => {
     const handleBotResponse = (input) => {
         setBotTyping(true);
         setError(null);
-
+    
         setTimeout(() => {
             try {
                 const lowerInput = input.toLowerCase();
-                let botMessage;
-
+                let botMessage = { text: '', user: false }; // Default bot message
+    
                 if (lowerInput === 'main menu') {
                     showMainMenu();
                     setBotTyping(false);
                     return;
                 }
-
+    
                 switch (currentStep) {
                     case 'mainMenu':
                         if (lowerInput === 'health package') {
+                            setUserData({ ...userData, packageType: 'Health Packages' });
                             setCurrentStep('healthPackage');
                             botMessage = {
                                 text: "Please select a health package:",
@@ -88,7 +95,8 @@ const Chatbot = ({ openLang }) => {
                                 ],
                             };
                         } else if (lowerInput === 'book appointment') {
-                            setCurrentStep('bookAppointment');
+                            setUserData({ ...userData, package: 'Appointment Booking' });
+                            setCurrentStep('collectDetails');
                             botMessage = { text: "What is your name?", user: false };
                         } else if (lowerInput === 'emergency inquiry' || lowerInput === 'emergency') {
                             botMessage = {
@@ -100,104 +108,120 @@ const Chatbot = ({ openLang }) => {
                             botMessage = { text: "I didn't understand that. Please choose an option.", user: false, options: [{ text: 'Main Menu', value: 'main menu' }] };
                         }
                         break;
+    
                     case 'healthPackage':
-                        botMessage = { text: "Please provide your details to proceed. What is your name?", user: false };
+                        setUserData({ ...userData, package: input });
                         setCurrentStep('collectDetails');
+                        botMessage = { text: "What is your name?", user: false };
                         break;
-                    case 'bookAppointment':
-                    case 'collectDetails':
-                        if (!userData.name) {
-                            setUserData({ ...userData, name: input });
-                            botMessage = { text: "What is your age?", user: false };
-                        } else if (!userData.age) {
-                            setUserData({ ...userData, age: input });
-                            botMessage = {
-                                text: "What is your gender?",
-                                user: false,
-                                options: [
-                                    { text: 'Male', value: 'male' },
-                                    { text: 'Female', value: 'female' },
-                                    { text: 'Other', value: 'other' },
-                                ],
-                            };
-                        } else if (!userData.gender) {
-                            setUserData({ ...userData, gender: input });
-                            botMessage = { text: "What is your phone number?", user: false };
-                        } else if (!userData.phone) {
-                            setUserData({ ...userData, phone: input });
-                            botMessage = { text: "What is your concern?", user: false };
-                        } else if (!userData.concern) {
-                            setUserData({ ...userData, concern: input });
-                            botMessage = { text: `Thank you, ${userData.name}! Your details have been saved.`, user: false, options: [{ text: 'Main Menu', value: 'main menu' }] };
-                            setCurrentStep('mainMenu');
-                            setUserData({ name: '', age: '', gender: '', phone: '', concern: '' }); // Reset
-                        }
-                        break;
+    
+                        case 'collectDetails':
+                            if (!userData.name) {
+                                setUserData(prevData => ({ ...prevData, name: input }));
+                                botMessage = { text: "What is your age?", user: false };
+                            } else if (!userData.age) {
+                                if (isNaN(input) || input <= 0) {
+                                    botMessage = { text: "Please enter a valid age (must be a number greater than 0).", user: false };
+                                } else {
+                                    setUserData(prevData => ({ ...prevData, age: input }));
+                                    botMessage = {
+                                        text: "What is your gender?",
+                                        user: false,
+                                        options: [
+                                            { text: 'Male', value: 'male' },
+                                            { text: 'Female', value: 'female' },
+                                            { text: 'Other', value: 'other' },
+                                        ],
+                                    };
+                                }
+                            } else if (!userData.gender) {
+                                setUserData(prevData => ({ ...prevData, gender: input }));
+                                botMessage = { text: "What is your phone number?", user: false };
+                            } else if (!userData.phone) {
+                                if (!/^\d{10}$/.test(input)) {
+                                    botMessage = { text: "Please enter a valid 10-digit phone number.", user: false };
+                                } else {
+                                    setUserData(prevData => ({ ...prevData, phone: input }));
+                                    botMessage = { text: "What is your concern?", user: false };
+                                }
+                            } else if (!userData.concern) {
+                                const updatedData = { ...userData, concern: input };
+
+                                
+                                setUserData(updatedData);
+                                postUserData(updatedData); 
+                        
+                                botMessage = {
+                                    text: `Thank you, ${updatedData.name}! Your details have been saved.`,
+                                    user: false,
+                                    options: [{ text: 'Main Menu', value: 'main menu' }]
+                                };
+                        
+                                setCurrentStep('mainMenu');
+                                setUserData({ name: '', age: '', gender: '', phone: '', concern: '', packageType: '', package: '' }); // ✅ Reset only after posting
+                            }
+                            break;
+                        
+    
                     default:
                         botMessage = { text: "Something went wrong.", user: false };
                 }
-
+    
+                // Ensure botMessage is properly constructed
+                if (!botMessage.text) {
+                    botMessage = { text: "Sorry, I didn't understand that.", user: false };
+                }
+    
                 setMessages(prev => [...prev, botMessage]);
                 setBotTyping(false);
-
+                console.log("Messages:", messages);
+                console.log("Bot Message:", botMessage);
             } catch (err) {
+                
                 console.error("Chatbot Error:", err);
                 setError("An error occurred. Please try again later.");
                 setBotTyping(false);
                 setMessages(prev => [...prev, { text: "Sorry, an error occurred.", user: false }]);
             }
-
+    
         }, 500);
+        
     };
+console.log(userData)
+    const postUserData = async (data) => {
+        try {
+            // const response = await axios.post('https://your-api-endpoint.com/submit', data);
+            // console.log('User data submitted:', response.data);
+            console.log('data',data);
+        } catch (error) {
+            console.error('Error posting user data:', error);
+            setError("Failed to submit details. Please try again.");
+        }
 
-    const handleReset = () => {
-        setMessages([]);
-        setCurrentStep('mainMenu');
-        setUserData({ name: '', age: '', gender: '', phone: '', concern: '' });
-        setInput('');
-        setError(null);
-        showMainMenu();
-    };
-
-    const displayUserData = () => {
-        alert(JSON.stringify(userData, null, 2));
     };
 
     return (
         <div className="chatbot-container">
-            <div className={`chatbot-messages ${openLang}`}>
+            <div className="chatbot-messages">
                 {messages.map((message, index) => (
                     <div key={index} className={`message ${message.user ? 'user' : 'bot'}`}>
                         {message.text}
-                        {message.options && (
-                            <div className="chatbot-options">
-                                {message.options.map((option, idx) => (
-                                    <button
-                                        key={idx}
-                                        className="option-button"
-                                        onClick={() => handleOptionClick(option.value)}
-                                    >
-                                        {option.text}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
-                    </div> 
+                        {message.options && message.options.map((option, idx) => (
+                            <button key={idx} className="option-button" onClick={() => handleOptionClick(option.value)}>
+                                {option.text}
+                            </button>
+                        ))}
+                    </div>
                 ))}
+                {botTyping && <div className="message bot">Typing...</div>}
                 <div ref={messagesEndRef} />
-                {botTyping && <div className="message bot typing-animation"><span></span><span></span><span></span></div>}
-                {error && <div className="message error">{error}</div>}
             </div>
+
             <div className="chatbot-input">
-                <input
-                    type="text"
-                    value={input}
-                    onChange={handleInputChange}
-                    placeholder="Type your message..."
-                />
+                <input type="text" value={input} onChange={handleInputChange} placeholder="Type your message..." />
                 <button onClick={handleSend}>Send</button>
-               
             </div>
+            {error && <div className="error-message">{error}</div>}
         </div>
     );
 };

@@ -39,9 +39,9 @@
 @media screen and (max-width: 500px) {
     
 .hero_main.true{
-    height: calc(100vh - 5px);
-    width: calc(100% - 5px);
-    margin: 2.5px;
-    border-radius: 10px;
+    height: calc(100vh);
+    width: calc(100%);
+    margin: 0;
+    border-radius: 0;
 }
 }
