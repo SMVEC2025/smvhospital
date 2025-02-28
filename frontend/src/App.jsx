@@ -5,6 +5,8 @@ import About from "./pages/About";
 import { AppProvider } from "./context/AppContext";
 import "./App.css";
 import "./i18n";
+import Doctors from "./pages/Doctors";
+import DoctorsDetail from "./pages/DoctorsDetail";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/doctors" element={<Doctors />} />
+          <Route path="/doctor/:id" element={<DoctorsDetail />} />
         </Routes>
       </Router>
     </AppProvider>

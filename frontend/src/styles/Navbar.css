@@ -25,6 +25,9 @@
     gap: 2rem;
     padding: 0 2rem;
 }
+.ns_con2 span{
+  cursor: pointer;
+}
 .nav_main.true{
     background-color: rgba(255, 255, 246, 0.916);
     color: chocolate;

@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import '../../styles/Navbar.css'
+import { useNavigate } from 'react-router-dom';
 import { IoAppsSharp } from "react-icons/io5";
 import { AppContext } from '../../context/AppContext';
 import logofull from '../../assets/images/logofull.png'
 function Navbar() {
+  const navigate = useNavigate()
   const [scrolled, setScrolled] = useState(false);
   const [showNav, setShowNav] = useState(false)
   const { isMobile } = useContext(AppContext)
@@ -47,8 +49,9 @@ function Navbar() {
         ) : (
           <>
             <div className='ns_con2'>
-              <span>Home</span>
-              <span>About us</span>
+              <span onClick={()=>{navigate('/')}}>Home</span>
+              <span onClick={()=>{navigate('/about')}}>About us</span>
+              <span onClick={()=>{navigate('/doctors')}}>Doctors</span>
               <span>Treatments</span>
               <span>Speacialty</span>
               <span>Contact us</span>

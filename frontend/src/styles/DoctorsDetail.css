@@ -1,0 +1,129 @@
+.doctor-detail{
+background-color: white;
+
+    /* Banner Section */
+.banner {
+    background: linear-gradient(to right, #cfe8fc, #e7f3ff);
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+  }
+  
+  .container {
+    display: flex;
+    max-width: 1000px;
+    align-items: center;
+    gap: 2rem;
+    
+
+  }
+  
+  .doctor-card {
+    position: relative;
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  .doctor-image {
+    width: auto;
+    height: 250px;
+    border-radius: 5px;
+  }
+  
+  .department {
+    background: #3178f2;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .doctor-info {
+    flex: 1;
+  }
+  
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(63, 61, 61);
+  }
+  
+  h4 {
+    font-size: 18px;
+    color: #666;
+    font-weight: 600;
+  }
+  
+  .intro {
+    margin-top: 10px;
+    color: #555;
+  }
+  
+  .social-links {
+    margin-top: 15px;
+  }
+  
+  .social-icon {
+    margin-right: 10px;
+    font-size: 18px;
+    color: white;
+    background: #f29e31;
+    padding: 8px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .social-icon:hover {
+    background: #b46923;
+  }
+  
+  /* Doctor Details */
+  .details-container {
+display: grid;
+padding: 6rem 0;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal rows */
+  gap: 10px; /* Adjust spacing between rows */
+  width: 90%; /* Full width */
+  margin: auto; /* Centering */
+  justify-content: space-around;
+ }
+  
+  .details-section {
+    text-align: left;
+  }
+  
+  .details-section h3 {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    
+    color: #f28831;
+    font-size: 22px;
+  }
+  
+  .details-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+    list-style-type: disc;  /* Ensures bullets are shown */
+
+  }
+  
+  .details-section ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444;
+    display: list-item; /* Ensures bullets appear */
+
+  }
+  .details-section ul li::marker {
+    color: rgb(216, 97, 42); /* Change bullet color */
+  }
+  
+}

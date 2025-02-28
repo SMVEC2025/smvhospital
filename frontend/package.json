@@ -12,6 +12,7 @@
   "dependencies": {
     "@iconify/react": "^5.2.0",
     "axios": "^1.8.1",
+    "bootstrap": "^5.3.3",
     "framer-motion": "^12.4.3",
     "gsap": "^3.12.7",
     "html-react-parser": "^5.2.2",
@@ -29,7 +30,7 @@
     "react-slick": "^0.30.3",
     "react-text-transition": "^3.1.0",
     "react-water-wave": "^2.0.1",
-    "sass": "^1.85.0",
+    "sass": "^1.85.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1",
     "swiper": "^11.2.4"

@@ -12,3 +12,12 @@ https://codepen.io/devansh-takkar/pen/xxPyxzR||
 
 
 npm install @iconify/react react-text-transition react-water-wave react-slick slick-carousel html-react-parser
+
+
+https://templates.envytheme.com/bexi/default/department.html
+
+https://templates.envytheme.com/bexi/default/doctor-details.html
+
+https://brivona.themetechmount.com/brivona-onepage/2018/11/20/the-benifits-of-middle-age-fitness/
+
+https://brivona-demo.preyantechnosys.com/

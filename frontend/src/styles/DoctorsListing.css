@@ -1,0 +1,52 @@
+.doctors-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #fdf8f6;
+  }
+  
+  .doctors-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0b3b2f;
+    margin-bottom: 20px;
+  }
+  
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .doctor-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 280px;
+  }
+  
+  .doctor-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .doctor-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #0b3b2f;
+  }
+  
+  .doctor-specialty {
+    font-size: 16px;
+    color: #ff7f50;
+    margin: 5px 0;
+  }
+  
+  .doctor-description {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+  }
+  

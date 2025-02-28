@@ -1,0 +1,36 @@
+.headings_main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.headings_main>h3{
+    font-size: calc(1.8rem + 0.5vw);
+    text-transform: uppercase;
+    color: rgb(48, 48, 48);
+
+}
+.headings_main>p{
+    font-size: calc(0.4rem + 0.5vw);
+    width: 50%;
+    text-align: center;
+
+}
+.headings_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+
+}
+.headings_div>div{
+    width: 200px;
+    height: 2px;
+    background-color: chocolate;
+}
+.headings_div>img{
+    width: 30px;
+    height: auto;
+    
+}

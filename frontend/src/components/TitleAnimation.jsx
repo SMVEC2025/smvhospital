@@ -73,7 +73,7 @@ const TitleAnimation = () => {
          animate={{ x: 0, opacity: 1 }}
          transition={{ duration: 0.5, ease:'easeInOut' }}
      >
-         S{['s', 'p', 'e', 'c', 'i', 'a', 'l', 't', 'y'].map((letter, i) => (
+         S{['p', 'e', 'c', 'i', 'a', 'l', 't', 'y'].map((letter, i) => (
              <motion.span key={i} className='box' 
              initial={{ rotateY: 90, opacity: 0 }}
              animate={{ rotateY: 0, opacity: 1 }}
