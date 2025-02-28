@@ -8,4 +8,7 @@ page reference
 https://demoxml.com/html/archway/?storefront=envato-elements
 
 
-https://codepen.io/devansh-takkar/pen/xxPyxzR
+https://codepen.io/devansh-takkar/pen/xxPyxzR||
+
+
+npm install @iconify/react react-text-transition react-water-wave react-slick slick-carousel html-react-parser
