@@ -1,17 +1,12 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef, useContext } from "react";
+import { useContext } from "react";
 import "../styles/ShapeAnimation.css";
 import homepagevideo from "../assets/images/homepagevideo.mp4";
-import StrokeTextAnimation from "./StrokeTextAnimation";
 import TitleAnimation from "./TitleAnimation";
 import { AppContext } from "../context/AppContext";
 
 export default function ShapeAnimation({ videoRef }) {
-  const { introAnim,animCase } = useContext(AppContext);
-  const [expand, setExpand] = useState(false);
-  const [playVideo, setPlayVideo] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const { animCase } = useContext(AppContext);
  
 
 
@@ -67,14 +62,14 @@ export default function ShapeAnimation({ videoRef }) {
             className="oc_2"
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 5 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: `${animCase=='allset'?0.3:5}`}}
           >
             Advanced Care, Expert Hands, Your Health First!
           </motion.div>
           <motion.button
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 5.2 }}
+            transition={{ duration: 0.5, ease: "easeOut",  delay: `${animCase=='allset'?0.3:5.2}`}}
           >
             About Us
           </motion.button>

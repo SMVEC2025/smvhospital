@@ -15,7 +15,6 @@ import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
 import { AppContext } from '../context/AppContext'
 import HomeMobileTreatment from '../components/HomeMobileTreatment'
-import Hero2 from '../components/Hero2'
 
 
 function Home() {
@@ -27,7 +26,7 @@ function Home() {
     <div>
         <BotWrapper/>
         <Navbar/>
-        {refreshAnim?(<Hero/>):(<Hero2/>)}
+    <Hero/>
         <HomeAbout/>
         <LedContainer/>
         <img src={videoback} style={{width:"100%"}} alt="" />

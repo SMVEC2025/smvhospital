@@ -7,8 +7,7 @@ import logofull from '../../assets/images/logofull.png'
 function Navbar() {
   const navigate = useNavigate()
   const [scrolled, setScrolled] = useState(false);
-  const [showNav, setShowNav] = useState(false)
-  const { isMobile,setRefreshAnim,refreshAnim } = useContext(AppContext)
+  const { isMobile,animCase} = useContext(AppContext)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,19 +23,11 @@ function Navbar() {
 
 
   }, []);
-  useEffect(() => {
-    if(refreshAnim){
-      setTimeout(() => {
-        setShowNav(true)
-      }, 6000);
-    }else{
-      setShowNav(true)
-    }
-  }, [])
+
 
   return (
     <>
-      {showNav ? (<div className={`nav_main ${scrolled}`}>
+      {animCase=='allset' ? (<div className={`nav_main ${scrolled}`}>
         <div className='ns_con1'>
           <img src={logofull} alt="" />
         </div>

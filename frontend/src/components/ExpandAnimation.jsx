@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef, useContext } from "react";
+import { useState, useContext } from "react";
 import "../styles/ShapeAnimation.css";
-import homepagevideo from "../assets/images/homepagevideo.mp4";
-import StrokeTextAnimation from "./StrokeTextAnimation";
-import TitleAnimation from "./TitleAnimation";
 import { AppContext } from "../context/AppContext";
 
 export default function ExpandAnimation( {restartVideo}) {
@@ -34,8 +31,6 @@ export default function ExpandAnimation( {restartVideo}) {
           }}
           onAnimationComplete={()=>setExpand(true)}
         />
-
-        {/* Expansion Animation */}
         {expand && (
           <motion.div
             className="Ia-shape"
