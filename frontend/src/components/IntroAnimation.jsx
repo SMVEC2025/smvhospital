@@ -5,17 +5,16 @@ import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
 
 export default function IntroAnimation() {
-    const { setIntroAnim,introAnim } = useContext(AppContext);
+    const {animCase,setAnimCase} = useContext(AppContext);
 
-    useEffect(() => {
-        // Automatically transition to ShapeAnimation after animation completes
-        const timer = setTimeout(() => {
-            setIntroAnim('two');
-        }, 2000); // Slightly increased to ensure smooth transition
+    function handleAnimationComplete(){
+        if(animCase=='welcome'){
+            setAnimCase('expand')
+        }else{
+            return
+        }
 
-        return () => clearTimeout(timer); // Cleanup timer to prevent memory leaks
-    }, [setIntroAnim]);
-
+    }
     return (
         <div className="Ia-container">
             {/* Rotating & Moving Logo */}
@@ -37,7 +36,7 @@ export default function IntroAnimation() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: (index + 1) * 0.1, duration: 1.0 }}
-                        onAnimationComplete={()=>setIntroAnim('two')}
+                        onAnimationComplete={handleAnimationComplete}
                     >
                         {letter}
                     </motion.span>

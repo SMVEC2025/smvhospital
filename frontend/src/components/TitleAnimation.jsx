@@ -7,7 +7,7 @@ import { AppContext } from '../context/AppContext';
 const TitleAnimation = () => {
     const [controlAnim,setControlAnim] = useState('one')
     const [gradient,setGradient] = useState(false)
-    const {setRefreshAnim} = useContext(AppContext)
+    const {setAnimCase} = useContext(AppContext)
     return (
       <>
        {controlAnim == 'one' && (
@@ -55,7 +55,6 @@ const TitleAnimation = () => {
              >{letter}</motion.span>
          ))}
      </motion.div>
-{console.log(gradient)}
      <motion.div
          className={`ta_s3 ${gradient}`}
          initial={{ x: -40, opacity: 1 }}
@@ -69,6 +68,8 @@ const TitleAnimation = () => {
              transition={{ duration: 0.3,delay: 1.6 + i * 0.1 }}
              onAnimationComplete={()=>setTimeout(() => {
                 setGradient(true)
+                setAnimCase('allset')
+            
              }, 1000)}
              >{letter}</motion.span>
          ))}

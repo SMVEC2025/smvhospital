@@ -10,7 +10,7 @@ export function AppProvider({ children }) {
   const [introAnim, setIntroAnim] = useState("one");
   const [refreshAnim,setRefreshAnim] = useState(true)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Initial check
-
+  const [animCase,setAnimCase] = useState("welcome")
   // Effect to track screen size changes
   useEffect(() => {
     const handleResize = () => {
@@ -23,6 +23,7 @@ export function AppProvider({ children }) {
     // Cleanup on unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+ 
 
   return (
     <AppContext.Provider
@@ -35,7 +36,9 @@ export function AppProvider({ children }) {
         setIntroAnim,
         isMobile,
         refreshAnim,
-        setRefreshAnim
+        setRefreshAnim,
+        animCase,setAnimCase
+        
       }}
     >
       {children}

@@ -1,33 +1,31 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import '../styles/Hero.css';
 import IntroAnimation from './IntroAnimation';
 import ShapeAnimation from './ShapeAnimation';
 import { AppContext } from '../context/AppContext';
+import ExpandAnimation from './ExpandAnimation';
 
 function Hero() {
-    const { introAnim,refreshAnim } = useContext(AppContext);
+    const { animCase,setAnimCase } = useContext(AppContext);
     const [showNav, setShowNav] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowNav(true);
-        }, 6000);
-
-        // Clean up the timeout if the component unmounts before the time is up
-        return () => clearTimeout(timer);
-    }, []);
-
-    // Use conditional classNames more explicitly
-    const heroMainClass = `hero_main ${showNav ? 'show' : ''}`;
-    const heroMainCon1Class = introAnim !== 'one' ? 'hero_main_con1 true' : 'hero_main_con1';
-
+    const videoRef = useRef(null);
+    const restartVideo = () => {
+        if (videoRef.current) {
+          videoRef.current.currentTime = 0; // Reset to start
+          videoRef.current.play(); // Ensure playback
+        }
+      };
+console.log("animCase",animCase)
     return (
-        <div  className={heroMainClass}>
-            <div className={heroMainCon1Class}>
+        <div  className={`hero_main`}>
+            <div className={`hero_main_con1 ${animCase!=='welcome'?'true':''}`}>
                 <IntroAnimation />
             </div>
-            <div className='hero_main_con2'>
-                <ShapeAnimation />
+            <div className={`hero_main_con2 ${animCase!=='expand'?'true':''}`} >
+                <ExpandAnimation restartVideo={restartVideo} />
+            </div>
+            <div className='hero_main_con3'>
+                <ShapeAnimation videoRef={videoRef} />
             </div>
         </div>
     );
