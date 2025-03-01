@@ -396,3 +396,62 @@
   .about_end button {
     margin-top: 2rem;
   }
+
+  .aboutwhy-container {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: row;
+    padding: 50px 10%;
+    background: #fff;
+  }
+  
+  .aboutwhy-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: left;
+    width: fit-content;
+  }
+  
+  .aboutwhy-content {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+  }
+  
+  .aboutwhy-left {
+    width: 100%;
+  }
+  
+  .aboutwhy-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .aboutwhy-heading {
+    flex: 1;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: right;
+    padding-right: 20px;
+    text-transform: uppercase;
+  }
+  
+  .aboutwhy-image {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .aboutwhy-text {
+    flex: 2;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+  

@@ -1,24 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import '../styles/TitleAnimation.css';
+import { AppContext } from '../context/AppContext';
 
-const letterVariants = {
-    hidden: { opacity: 0, rotateY: 90 },
-    visible: (i) => ({
-        opacity: 1,
-        rotateY: 0,
-        transition: { duration: 0.6, ease: 'easeOut', delay: i * 0.2 }
-    })
-};
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
-};
 
 const TitleAnimation = () => {
     const [controlAnim,setControlAnim] = useState('one')
     const [gradient,setGradient] = useState(false)
+    const {setRefreshAnim} = useContext(AppContext)
     return (
       <>
        {controlAnim == 'one' && (
@@ -79,7 +68,7 @@ const TitleAnimation = () => {
              animate={{ rotateY: 0, opacity: 1 }}
              transition={{ duration: 0.3,delay: 1.6 + i * 0.1 }}
              onAnimationComplete={()=>setTimeout(() => {
-                setGradient("true")
+                setGradient(true)
              }, 1000)}
              >{letter}</motion.span>
          ))}

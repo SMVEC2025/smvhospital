@@ -8,7 +8,7 @@ function Navbar() {
   const navigate = useNavigate()
   const [scrolled, setScrolled] = useState(false);
   const [showNav, setShowNav] = useState(false)
-  const { isMobile } = useContext(AppContext)
+  const { isMobile,setRefreshAnim,refreshAnim } = useContext(AppContext)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,9 +25,13 @@ function Navbar() {
 
   }, []);
   useEffect(() => {
-    setTimeout(() => {
+    if(refreshAnim){
+      setTimeout(() => {
+        setShowNav(true)
+      }, 6000);
+    }else{
       setShowNav(true)
-    }, 6000);
+    }
   }, [])
 
   return (
@@ -52,10 +56,8 @@ function Navbar() {
               <span onClick={()=>{navigate('/')}}>Home</span>
               <span onClick={()=>{navigate('/about')}}>About us</span>
               <span onClick={()=>{navigate('/doctors')}}>Doctors</span>
-              <span>Treatments</span>
-              <span>Speacialty</span>
-              <span>Contact us</span>
-
+              <span onClick={()=>{navigate('/specialty')}}>Speacialty</span>
+              <span onClick={()=>{navigate('/contact-us')}}>Contact us</span>
             </div>
 
             <div className='ns_con3'>

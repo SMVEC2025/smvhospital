@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Doctors.css";
 import Hero6 from "../components/Hero6";
-
+import { AppContext } from "../context/AppContext";
+import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 const doctors = [
     {
         id: 1,
@@ -73,6 +75,7 @@ const heroData = {
 const Doctors = () => {
   const [filter, setFilter] = useState("All");
   const [search, setSearch] = useState("");
+  const { setRefreshAnim } =useContext(AppContext)
   const navigate = useNavigate();
 
   const filteredDoctors = doctors.filter(
@@ -83,10 +86,14 @@ const Doctors = () => {
   const handleDoctorClick = (doctor) => {
     navigate(`/doctor/${doctor.id}`, { state: { doctor } });
   };
-
+ useEffect(() => {
+  setRefreshAnim(false)
+ }, [])
+ 
 
   return (
     <>
+    <Navbar/>
       <Hero6 data={heroData}/>
       <div className="doctor-container">
       <div className="filter-bar">
@@ -159,6 +166,7 @@ const Doctors = () => {
         ))}
       </div>
     </div>
+    <Footer/>
     </>
   );
 };

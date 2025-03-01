@@ -15,18 +15,20 @@ import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
 import { AppContext } from '../context/AppContext'
 import HomeMobileTreatment from '../components/HomeMobileTreatment'
+import Hero2 from '../components/Hero2'
 
 
 function Home() {
-  const { isMobile } = useContext(AppContext)
+  const { isMobile,refreshAnim } = useContext(AppContext)
 
-
+  console.log("refreshAnim",refreshAnim)
   
   return (
     <div>
         <BotWrapper/>
         <Navbar/>
-        <Hero/>
+        {refreshAnim?(<Hero/>):(<Hero2/>)}
+      
         <HomeAbout/>
         <LedContainer/>
         <img src={videoback} style={{width:"100%"}} alt="" />

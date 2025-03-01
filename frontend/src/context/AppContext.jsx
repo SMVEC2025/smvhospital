@@ -8,6 +8,7 @@ export function AppProvider({ children }) {
   const [introOne, setIntroOne] = useState(true);
   const [openWrap, setOpenWrap] = useState(null);
   const [introAnim, setIntroAnim] = useState("one");
+  const [refreshAnim,setRefreshAnim] = useState(true)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Initial check
 
   // Effect to track screen size changes
@@ -32,7 +33,9 @@ export function AppProvider({ children }) {
         setOpenWrap,
         introAnim,
         setIntroAnim,
-        isMobile, // Add mobile state
+        isMobile,
+        refreshAnim,
+        setRefreshAnim
       }}
     >
       {children}

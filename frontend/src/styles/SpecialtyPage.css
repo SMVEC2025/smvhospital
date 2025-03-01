@@ -1,0 +1,110 @@
+.sp_main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+    padding: 5rem 20px;
+    gap: 2rem;
+}
+.sp_container1{
+    width: 50%;
+}
+.sp_container1>img{
+    width: 100%;
+    border-radius: 25px;
+}
+.sp_container2{
+  
+    background-color: #8d6a4d28;
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px 10px;
+    height: fit-content;
+
+}
+.sp_con2div1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+.sp_container2>h1{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: chocolate;
+    position: relative;
+    text-transform: uppercase;
+}
+.sp_container2>h1::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: rgb(240, 165, 111);
+    left: 0;
+    bottom: -5px;
+
+width: 40px;
+}
+.sp_con2div1>div{
+    background-color: rgb(224, 140, 61);
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.sp_con2div1>div:hover{
+    background-color: rgb(190, 105, 25);
+
+}
+.sp_con2div1>div>span{
+    display: flex;justify-content: center;
+    align-items: center;
+
+}
+.sp_container1_faq{
+    
+}
+.sp_container1_faq1{
+    background-color: rgba(216, 95, 25, 0.185);
+    margin-top: 20px;
+    border-radius: 8px;
+    height: 50px;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+
+}
+.sp_container1_faq1.true{
+    height: 150px;
+}
+.sp_container1_faq_ques{
+    height: 50px;
+    background-color: rgb(126, 73, 38);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 1rem;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+
+}
+.sp_container1_faq_ans{
+    padding: 20px 20px;
+    color: rgb(65, 65, 65);
+}
+.sp_title{
+    font-size: 1.8rem;
+    color: chocolate;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+.sp_desc{
+    color: rgb(83, 83, 83);
+}

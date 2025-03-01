@@ -46,6 +46,29 @@ const careHeading=[
     subTitle:"SMV Superspecialty Hospital is a leader in advanced medical care, offering specialized treatments across Neurology, Cardiology, Orthopaedics, Oncology, and more. With cutting-edge technology and expert doctors, we are committed to delivering excellence in patient care."
   }
 ]
+const whyHeading=[
+  {
+    title:"What we are about",
+    subTitle:"SMV Superspecialty Hospital is a leader in advanced medical care, offering specialized treatments across Neurology, Cardiology, Orthopaedics, Oncology, and more. With cutting-edge technology and expert doctors, we are committed to delivering excellence in patient care."
+  }
+]
+const content = [
+  {
+    title: "Our Mission",
+    image: "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=600", // Replace with actual image URL
+    text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+  },
+  {
+    title: "Our Vision",
+    image: "https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600", // Replace with actual image URL
+    text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+  },
+  {
+    title: "Our Value",
+    image: "https://images.pexels.com/photos/1350560/pexels-photo-1350560.jpeg?auto=compress&cs=tinysrgb&w=600", // Replace with actual image URL
+    text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+  },
+];
 const About = () => {
   return (
     <>
@@ -55,6 +78,21 @@ const About = () => {
       <AboutSection1/>
       <Headings data={careHeading}  />
       <AboutCare/>
+      <Headings data={whyHeading}  />
+
+    <div className="aboutwhy-container">
+      <div className="aboutwhy-content">
+        <div className="aboutwhy-left">
+          {content.map((item, index) => (
+            <div className="aboutwhy-item" key={index}>
+              <h3 className="aboutwhy-heading">{item.title}</h3>
+              <img className="aboutwhy-image" src={item.image} alt={item.title} />
+              <p className="aboutwhy-text">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
       <Headings data={specialtyHeading}  />
       <AboutSpeciality/>
       <div className='as_end'>
