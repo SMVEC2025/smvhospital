@@ -26,7 +26,7 @@ function Home() {
     <div>
         <BotWrapper/>
         <Navbar/>
-    <Hero/>
+        <Hero/>
         <HomeAbout/>
         <LedContainer/>
         <img src={videoback} style={{width:"100%"}} alt="" />
