@@ -28,7 +28,6 @@ function Home() {
         <BotWrapper/>
         <Navbar/>
         {refreshAnim?(<Hero/>):(<Hero2/>)}
-      
         <HomeAbout/>
         <LedContainer/>
         <img src={videoback} style={{width:"100%"}} alt="" />

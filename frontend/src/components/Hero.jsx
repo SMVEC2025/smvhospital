@@ -5,7 +5,7 @@ import ShapeAnimation from './ShapeAnimation';
 import { AppContext } from '../context/AppContext';
 
 function Hero() {
-    const { introAnim } = useContext(AppContext);
+    const { introAnim,refreshAnim } = useContext(AppContext);
     const [showNav, setShowNav] = useState(false);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ function Hero() {
     const heroMainCon1Class = introAnim !== 'one' ? 'hero_main_con1 true' : 'hero_main_con1';
 
     return (
-        <div className={heroMainClass}>
+        <div  className={heroMainClass}>
             <div className={heroMainCon1Class}>
                 <IntroAnimation />
             </div>
