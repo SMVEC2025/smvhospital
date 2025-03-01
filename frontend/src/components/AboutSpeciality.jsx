@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/About.css'
-import SpecialtyCard from './SpecialtyCard.JSX';
+import SpecialtyCard from './SpecialtyCard';
 function AboutSpeciality() {
     const [isHovered, setIsHovered] = useState(false);
     const cards = [
