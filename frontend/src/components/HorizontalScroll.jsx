@@ -34,7 +34,6 @@ const HorizontalScroll = () => {
      <div className="hs_main1">
      <div className="sticky-heading">
         <div>
-        <h5>treatments</h5>
         <h4>{t("treatmenthead")}</h4>
         </div>
         </div>

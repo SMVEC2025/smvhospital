@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../styles/HomeNewsEvents.css'
 import '../i18n'
 import { useTranslation } from "react-i18next";
+import HomeHeadings from './HomeHeadings';
 function HomeNewsEvents() {
     const [hoveredImage, setHoveredImage] = useState(null);
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
@@ -37,13 +38,8 @@ function HomeNewsEvents() {
   return (
     <div className="hne_container" onMouseMove={handleMouseMove}>
           <div className="sticky-heading">
-          <div>
-          <h5>NEWS & EVENTS</h5>
-          <h4 >{t("newsandeventshead")}</h4>
-          </div>
-          <div>
-            <button>View ALL</button>
-          </div>
+          <HomeHeadings title={t("newsandeventshead")}/>
+         
         </div>
       <ul className="event-list">
         {eventsData.map((event) => (

@@ -10,7 +10,7 @@
 		display:flex ;
 		justify-content: space-between;
 		align-items: center;
-	  }
+	flex-direction: row;	  }
 	
 	  .sticky-heading h5{
 		font-size: 15px;

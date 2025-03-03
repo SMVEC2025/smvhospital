@@ -5,133 +5,128 @@ import Hero6 from "../components/Hero6";
 import { AppContext } from "../context/AppContext";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
-const doctors = [
-    {
-        id: 1,
-        name: "Dr. Sarah Lee, MD, MPH, FAPA",
-        designation: "Board-certified Psychiatrist",
-        introduction: "With more than 15 years of experience learning human psychology...",
-        image: "https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg",
-        department: "Psychiatry Department",
-        degrees: [
-          { title: "Medical Degree", institution: "University of California, San Francisco" },
-          { title: "Residency in Psychiatry", institution: "UCLA Medical Center" },
-          { title: "Master of Public Health", institution: "University of California, Berkeley" }
-        ],
-        experiences: [
-          "Worked in community mental health clinics...",
-          "Expertise in mood disorders...",
-          "Special interest in women’s mental health...",
-          "Experience managing complex mental health issues."
-        ],
-        contact: {
-          phone: "+123-456-7890",
-          email: "sarahlee@prohealth.com"
-        }
-      },
-  {
-    id: 2,
-    name: "Dr. Michael Johnson, MD",
-    specialty: "Emergency",
-    description:
-      "Dr. Johnson is a highly experienced emergency medicine physician with over 15 years of experience.",
-    image: "https://via.placeholder.com/200",
-  },
-  {
-    id: 3,
-    name: "Dr. Karen Lee, MD",
-    specialty: "Emergency",
-    description:
-      "Dr. Lee is a skilled emergency medicine physician with expertise in the treatment of acute medical conditions.",
-    image: "https://via.placeholder.com/200",
-  },
-];
+import axios from "axios";
+
 const heroData = {
-    bgImg: 'images/hero-bg9.jpg',
-    bgShape: 'shape/hero-shape.png',
-    page:"Our Doctors",
-    sliderImages: [
-      {
-        img: 'images/hero-img.png',
-      },
-      {
-        img: 'images/hero-img1.png',
-      },
-      {
-        img: 'images/hero-img2.png',
-      },
-      {
-        img: 'images/hero-img.png',
-      },
-      {
-        img: 'images/hero-img1.png',
-      },
-      {
-        img: 'images/hero-img2.png',
-      },
-    ],
-    title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
-  };
+  bgImg: 'images/hero-bg9.jpg',
+  bgShape: 'shape/hero-shape.png',
+  page: "Our Doctors",
+  sliderImages: [
+    { img: 'images/hero-img.png' },
+    { img: 'images/hero-img1.png' },
+    { img: 'images/hero-img2.png' },
+    { img: 'images/hero-img.png' },
+    { img: 'images/hero-img1.png' },
+    { img: 'images/hero-img2.png' },
+  ],
+  title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
+};
+
 const Doctors = () => {
   const [filter, setFilter] = useState("All");
   const [search, setSearch] = useState("");
-  const { setRefreshAnim } =useContext(AppContext)
+  const { setRefreshAnim } = useContext(AppContext);
   const navigate = useNavigate();
+  const [doctors, setDoctors] = useState([]);
+  const [specialties, setSpecialties] = useState([]);
 
-  const filteredDoctors = doctors.filter(
-    (doctor) =>
-      (filter === "All" || doctor.specialty === filter) &&
-      doctor.name.toLowerCase().includes(search.toLowerCase())
-  );
+  // Fetch doctors
+  useEffect(() => {
+    axios
+      .get("http://localhost:1337/api/doctors?populate=*")
+      .then((response) => {
+        setDoctors(response.data.data);
+        console.log("Doctors:", response.data.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching doctors:", error);
+      });
+  }, []);
+
+  // Fetch specialties dynamically
+  useEffect(() => {
+    axios
+      .get("http://localhost:1337/api/specialties") // Adjust your endpoint if needed
+      .then((response) => {
+        const specialtyNames = response.data.data.map((item) => item.name).slice(0, 3);
+        setSpecialties(specialtyNames);
+      })
+      .catch((error) => {
+        console.error("Error fetching specialties:", error);
+      });
+  }, []);
+  
+
+  // Filter doctors based on selected specialty and search term
+  const filteredDoctors = doctors.filter((doctor) => {
+    const name = doctor.name?.toLowerCase() || "";
+    const specialty = doctor.specialty.toLowerCase() || "unknown";
+
+    return (
+      (filter === "All" || specialty === filter.toLowerCase()) &&
+      name.includes(search.toLowerCase())
+    );
+  });
+
   const handleDoctorClick = (doctor) => {
     navigate(`/doctor/${doctor.id}`, { state: { doctor } });
   };
- useEffect(() => {
-  setRefreshAnim(false)
- }, [])
- 
 
+  useEffect(() => {
+    setRefreshAnim(false);
+  }, []);
   return (
     <>
-    <Navbar/>
-      <Hero6 data={heroData}/>
-      <div className="doctor-container">
-      <div className="filter-bar">
-        <input
-          type="text"
-          placeholder="Search doctors..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <div className="filter-buttons">
-          {["All", "Emergency", "Cardiology", "Pediatric"].map((category) => (
-            <button
-              key={category}
-              className={filter === category ? "active" : ""}
-              onClick={() => setFilter(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      
-      </div>
+      <Navbar />
+      <Hero6 data={heroData} />
 
-      <div className={`doctor-list`}>
-        {filteredDoctors.map((doctor) => (
-          <div key={doctor.id} className="doctor-card" onClick={()=>{handleDoctorClick(doctor)}}>
-           <div class="card">
- 
-  <div class="profile-pic"></div>
-  <div class="bottom">
-    <div class="content">
-      <span class="name">{doctor.name}</span>
-      <span class="about-me"
-        >{doctor.specialty}
-      </span>
-    </div>
-    <div class="bottom-bottom">
-      <div class="social-links-container">
+      <div className="doctor-container">
+        <div className="filter-bar">
+          <input
+            type="text"
+            placeholder="Search doctors..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <div className="filter-buttons">
+            <button
+              className={filter === "All" ? "active" : ""}
+              onClick={() => setFilter("All")}
+            >
+              All
+            </button>
+            {specialties.map((specialty) => (
+              <button
+                key={specialty}
+                className={filter === specialty ? "active" : ""}
+                onClick={() => setFilter(specialty)}
+              >
+                {specialty}
+              </button>
+            ))}
+          </div>
+        </div>
+
+
+        <div className="doctor-list">
+          {filteredDoctors.map((doctor) => (
+            <div key={doctor.id} className="doctor-card" onClick={() => handleDoctorClick(doctor)}>
+              <div className="card">
+                <div
+                  className="profile-pic"
+                  style={{
+                    backgroundImage: `url(http://localhost:1337${doctor.image.url})`,
+                  }}
+                ></div>
+                <div className="bottom">
+                  <div className="content">
+                    <span className="name">{doctor.name}</span>
+                    <span className="about-me">
+                      {doctor.designation}
+                    </span>
+                  </div>
+                  <div className="bottom-bottom">
+                  <div class="social-links-container">
         <svg
           viewBox="0 0 16 15.999"
           height="15.999"
@@ -157,16 +152,16 @@ const Doctors = () => {
           ></path>
         </svg>
       </div>
-      <button class="button">View</button>
-    </div>
-  </div>
-</div>
-
-          </div>
-        ))}
+                    <button className="button">View</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-    <Footer/>
+{/* /////////////////////////////////////////////////// */}
+      <Footer />
     </>
   );
 };

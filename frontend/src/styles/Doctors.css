@@ -106,7 +106,6 @@
     z-index: 1;
     border: 0px solid #fbb9b6;
     overflow: hidden;
-    background-image: url("https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg");
     background-size: cover;
     background-position: center;
     transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;

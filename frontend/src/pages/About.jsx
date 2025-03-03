@@ -9,7 +9,7 @@ import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
 const heroData = {
   bgImg: 'images/hero-bg9.jpg',
-  bgShape: 'shape/hero-shape.png',
+  bgShape: 'shape/hero-shape.png', 
   page:"About SMV",
 
   sliderImages: [
@@ -69,6 +69,7 @@ const content = [
     text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
   },
 ];
+
 const About = () => {
   return (
     <>
@@ -78,9 +79,8 @@ const About = () => {
       <AboutSection1/>
       <Headings data={careHeading}  />
       <AboutCare/>
-      <Headings data={whyHeading}  />
 
-    <div className="aboutwhy-container">
+    {/* <div className="aboutwhy-container">
       <div className="aboutwhy-content">
         <div className="aboutwhy-left">
           {content.map((item, index) => (
@@ -92,6 +92,43 @@ const About = () => {
           ))}
         </div>
       </div>
+    </div> */}
+    <div className='about_what'> 
+    <Headings data={whyHeading}  color='white'/>
+    <div className='about_what_con1 rigth'>
+      <div>
+      <img src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+      <div className='about_what_content'>
+        <h2>Mission</h2>
+        <p>At SMV Hospital, our mission is to provide compassionate, patient-centered healthcare with a commitment to excellence in medical care, innovation, and education. We strive to improve lives by delivering affordable, accessible, and high-quality healthcare using advanced medical technology and a dedicated team of professionals.</p>
+      </div>
+
+      </div>
+          
+          <span>01</span>
+    </div>
+    <div className='about_what_con1 left'>
+    <div>
+      <img src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+      <div className='about_what_content'>
+        <h2>Vision</h2>
+        <p>To be a leading healthcare institution recognized for excellence in clinical care, research, and innovation. We envision a future where every individual has access to world-class medical care, fostering a healthier and more resilient community.</p>
+      </div>
+
+      </div>          <span>01</span>
+    </div>
+    <div className='about_what_con1 rigth'>
+    <div>
+      <img src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+      <div className='about_what_content'>
+        <h2>Our Values</h2>
+        <p>At SMV Hospital, we are committed to delivering compassionate and patient-centered care while upholding the highest standards of integrity, excellence, and innovation. We believe in fostering a culture of empathy, ethical practice, and continuous learning, ensuring that every patient receives the best possible treatment. Our team works collaboratively, leveraging cutting-edge medical technology and expertise to provide accessible, inclusive, and high-quality healthcare for all. Through dedication and innovation, we strive to make a lasting impact on the health and well-being of our community.</p>
+      </div>
+
+      </div>          <span>01</span>
+    </div>
+
+
     </div>
       <Headings data={specialtyHeading}  />
       <AboutSpeciality/>
@@ -106,10 +143,15 @@ const About = () => {
 
         <div className='about_testimonial'>
      
+            <div>
+        <img src='https://img.freepik.com/premium-photo/she39s-well-cared-portrait-smiling-nurse-with-her-senior-patient-hospital_590464-867.jpg?w=360' alt="" />
+            </div>
+            <div className='about_testimonial_div2'>
             <h3>Life-Changing Care at SMV Hospital</h3>
             <p>"I can't thank the doctors and staff at SMV Hospital enough for their exceptional care. I was diagnosed with a severe heart condition, and from my very first consultation, I felt reassured and confident in my treatment. Dr. Sharma and his team took the time to explain every step, ensuring I was comfortable and informed. The nurses were compassionate, always checking on me and making sure I was at ease during my recovery. Today, I feel healthier than ever, and it's all because of the outstanding medical expertise and support I received here. Thank you, SMV Hospital, for giving me a second chance at life!"</p>
         <span>— Rajesh Kumar, 52
         Chennai, India</span>
+            </div>
         </div>
         <div className='about_end'>
             <h3>Take the next step</h3>

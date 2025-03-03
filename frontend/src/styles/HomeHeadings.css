@@ -1,0 +1,10 @@
+.homeheadings_main{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 3rem 0;
+}
+.homeheadings_main>h1{
+    font-size: 3rem;
+}

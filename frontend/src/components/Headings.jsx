@@ -1,9 +1,9 @@
 import React from 'react'
 import '../styles/Headings.css'
 import SMV_icon from '../assets/images/SMV_icon.png';
-function Headings({ data }) {
+function Headings({ data,color }) {
   return (
-    <div className='headings_main'>
+    <div className='headings_main' style={{color:`${color}`}}>
         <h3>{data[0].title}</h3>
         <div className='headings_div'>
             <div></div>

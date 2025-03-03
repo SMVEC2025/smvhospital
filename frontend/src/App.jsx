@@ -8,6 +8,7 @@ import "./i18n";
 import Doctors from "./pages/Doctors";
 import DoctorsDetail from "./pages/DoctorsDetail";
 import SpecialtyPage from "./pages/SpecialtyPage";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/doctor/:id" element={<DoctorsDetail />} />
           <Route path="/Specialty" element={<SpecialtyPage />} />
+          <Route path="/contact-us" element={<ContactUs />} />
 
         </Routes>
       </Router>

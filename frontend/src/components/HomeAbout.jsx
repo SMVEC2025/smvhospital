@@ -63,7 +63,7 @@ const HomeAbout = () => {
       {/* Right Scrollable Section */}
       <div className="ha_right-section">
         <div id="about" className="section">
-          <h2>Welcome to SMV Super Speciality Hospital</h2>
+          <h2>SMV Super Speciality Hospital</h2>
           <h3>{t("abouttitle")}</h3>
           <p>{t("aboutdescription")}</p>
          <div >

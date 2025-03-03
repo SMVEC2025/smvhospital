@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/HomeSectionTwo.css";
 import '../i18n'
 import { useTranslation } from "react-i18next";
+import HomeHeadings from "./HomeHeadings";
 const HomeSectionTwo = () => {
     const { t } = useTranslation("home");
     const specialties = Object.entries(t("specialtydesc", { returnObjects: true }));
@@ -37,13 +38,7 @@ const HomeSectionTwo = () => {
     <div className="hst_container">
       <div className="hst_wrapper">
         <div className="sticky-heading">
-          <div>
-          <h5>Speacilaity</h5>
-          <h4 >{t("specialtyhead")}</h4>
-          </div>
-          <div>
-            <button>View ALL</button>
-          </div>
+         <HomeHeadings title={t("specialtyhead")}/>
         </div>
         {
           specialties.map(([id,value])=>(

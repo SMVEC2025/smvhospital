@@ -1,6 +1,6 @@
 .doctor-profile-container {
   display: flex;
-  align-items: center;
+  align-items: start;
   background: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -11,8 +11,9 @@
 }
 
 .doctor-image img {
-  width: 500px;
-  height: auto;
+  width: 400px;
+  height: 500px !important;
+  object-fit: cover;
   border-radius: 2px;
 }
 
@@ -20,6 +21,7 @@
   flex: 1;
   padding-left: 30px;
   max-width: 50%;
+  margin-top: 2rem;
   
 }
 
@@ -43,6 +45,7 @@ h3 {
   font-size: 14px;
   color: #666;
   margin: 10px 0;
+  width: 50%;
 }
 
 .contact-info {
