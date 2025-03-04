@@ -8,34 +8,56 @@ import { IoCall } from "react-icons/io5";
 import { IoIosMail } from "react-icons/io";
 
 function ContactUs() {
-    const [faqExpand,setFaqExpand]=useState()
-    const heroData = {
-        bgImg: 'images/hero-bg9.jpg',
-        bgShape: 'shape/hero-shape.png', 
-        page:"Contact Us",
-      
-        sliderImages: [
-          {
-            img: 'images/hero-img.png',
-          },
-          {
-            img: 'images/hero-img1.png',
-          },
-          {
-            img: 'images/hero-img2.png',
-          },
-          {
-            img: 'images/hero-img.png',
-          },
-          {
-            img: 'images/hero-img1.png',
-          },
-          {
-            img: 'images/hero-img2.png',
-          },
-        ],
-        title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
-      };
+    const [faqExpand, setFaqExpand] = useState();
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setSuccessMessage("");
+        setErrorMessage("");
+
+        try {
+            const response = await fetch("http://localhost:1337/api/contactforms", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    data: {
+                        name: formData.name,
+                        email: formData.email,
+                        message: formData.message,
+                    },
+                }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setSuccessMessage("Your message has been sent successfully!");
+                setFormData({ name: "", email: "", message: "" }); // Reset form
+            } else {
+                setErrorMessage(result?.error?.message || "Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            setErrorMessage("Failed to submit. Please check your internet connection.");
+        } finally {
+            setLoading(false);
+        }
+    };
 
       const images = [
         "https://cdn.prod.website-files.com/67768c0a49679fc4278cc1a2/6785623ead28ab4b84e673d0_Loop%20Img%205-p-500.webp",
@@ -72,12 +94,39 @@ function ContactUs() {
         }
       ];
       const items = Array.from({ length: 9 }, (_, index) => `Item ${index + 1}`);
+      const heroData = {
+        bgImg: 'images/hero-bg9.jpg',
+        bgShape: 'shape/hero-shape.png', 
+        page:"Contact Us",
+      
+        sliderImages: [
+          {
+            img: 'images/hero-img.png',
+          },
+          {
+            img: 'images/hero-img1.png',
+          },
+          {
+            img: 'images/hero-img2.png',
+          },
+          {
+            img: 'images/hero-img.png',
+          },
+          {
+            img: 'images/hero-img1.png',
+          },
+          {
+            img: 'images/hero-img2.png',
+          },
+        ],
+        title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
+      };
 
   return (
     <>
     <Navbar/>
-    <Hero6 data={heroData}/>
-    <div className="marquee-container">
+    <Hero6 data={heroData} />   
+     <div className="marquee-container">
       <div className="marquee">
         {[...images, ...images].map((img, index) => (
           <img key={index} src={img} alt={`marquee-img-${index}`} className="marquee-image" />
@@ -98,15 +147,18 @@ function ContactUs() {
 
         </div>
         <div className='contact_con_div2'>
-            <h3>Send us a message</h3>
-            <p>Feel free to reach out to us using the contact form below, or connect with us directly through the phone number and email provided.</p>
-            <form action="">
-                <input type="text" placeholder='Your name' />
-                <input type="text"  placeholder='Your email'/>
-                <textarea name="" id="" placeholder='Your Message'></textarea>
-                <button>Submit</button>
-            </form>
-        </div>
+                    <h3>Send us a message</h3>
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" name="name" placeholder='Your Name' value={formData.name} onChange={handleChange} required />
+                        <input type="email" name="email" placeholder='Your Email' value={formData.email} onChange={handleChange} required />
+                        <textarea name="message" placeholder='Your Message' value={formData.message} onChange={handleChange} required></textarea>
+                        <button type="submit" disabled={loading}>
+                            {loading ? "Submitting..." : "Submit"}
+                        </button>
+                    </form>
+                    {successMessage && <p className="success-message">{successMessage}</p>}
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                </div>
       
     </div>
     <h2 className='contact_faq_head'>We can answer all your burning questions now</h2>

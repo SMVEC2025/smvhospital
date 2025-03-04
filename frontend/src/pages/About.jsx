@@ -79,20 +79,6 @@ const About = () => {
       <AboutSection1/>
       <Headings data={careHeading}  />
       <AboutCare/>
-
-    {/* <div className="aboutwhy-container">
-      <div className="aboutwhy-content">
-        <div className="aboutwhy-left">
-          {content.map((item, index) => (
-            <div className="aboutwhy-item" key={index}>
-              <h3 className="aboutwhy-heading">{item.title}</h3>
-              <img className="aboutwhy-image" src={item.image} alt={item.title} />
-              <p className="aboutwhy-text">{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div> */}
     <div className='about_what'> 
     <Headings data={whyHeading}  color='white'/>
     <div className='about_what_con1 rigth'>
@@ -122,7 +108,7 @@ const About = () => {
       <img src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
       <div className='about_what_content'>
         <h2>Our Values</h2>
-        <p>At SMV Hospital, we are committed to delivering compassionate and patient-centered care while upholding the highest standards of integrity, excellence, and innovation. We believe in fostering a culture of empathy, ethical practice, and continuous learning, ensuring that every patient receives the best possible treatment. Our team works collaboratively, leveraging cutting-edge medical technology and expertise to provide accessible, inclusive, and high-quality healthcare for all. Through dedication and innovation, we strive to make a lasting impact on the health and well-being of our community.</p>
+        <p>At SMV Hospital, we are committed to delivering compassionate and patient-centered care while upholding the highest standards of integrity, excellence, and innovation. We believe in fostering a culture of empathy, ethical practice, and continuous learning, ensuring that every patient receives the best possible treatment. Our team works collaboratively, leveraging cutting-edge medical technology and expertise to provide accessible, inclusive, and high-quality healthcare for all.</p>
       </div>
 
       </div>          <span>01</span>

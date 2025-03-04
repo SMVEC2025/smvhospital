@@ -4,11 +4,11 @@ import "../styles/About.css";
 const AboutSection1 = () => {
   return (
     <section className="about-section">
-    <div className="container">
+    <div className="as_container">
       <div className="about-content">
         <span className="sub-title">WHO WE ARE</span>
-        <h2 className="title">SMV Super Speciality Hospital</h2>
-        <p className="description">
+        <h2 className="as_title">SMV Super Speciality Hospital</h2>
+        <p className="as_description">
         SMV Superspecialty Hospital was established with a vision to provide world-class healthcare that is both accessible and affordable. Founded in 1999 with a modest 30-bed facility, the hospital set out to redefine patient care with a commitment to excellence and a personal touch. At a time when Trichy lacked advanced tertiary care facilities, SMV Superspecialty Hospital emerged as a pioneer, bridging the gap in high-quality medical services. Today, the hospital has grown into a leading multi-specialty institution, offering state-of-the-art treatments across various disciplines. With a dedicated team of medical professionals and cutting-edge technology, SMV Superspecialty Hospital continues its mission to deliver exceptional secondary and tertiary healthcare.
         </p>
         <div className="stats">
