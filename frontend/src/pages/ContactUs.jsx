@@ -88,7 +88,7 @@ function ContactUs() {
 
     <div className='contact_container'>
         <div className='contact_con_div1'>
-            <h2>contact us</h2>
+            <h2>Contact us</h2>
             <h4>we're here to assist you in any way we can</h4>
             <p>We value your feedback and strive to continuously improve our services. If you have any comments, suggestions, or concerns, please don't hesitate to let us know. Your input helps us serve you better.</p>
             <h3>Pondicherry</h3>

@@ -28,7 +28,6 @@ export default function HomeDoctors() {
       <div className='hd_container1'>
         <div className="sticky-heading">
           <div>
-            <h5>Expert doctors</h5>
             <h4>{t("doctorshead")}</h4>
           </div>
         </div>

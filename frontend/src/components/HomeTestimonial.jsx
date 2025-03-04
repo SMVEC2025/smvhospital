@@ -20,7 +20,7 @@ export default function HomeTestimonial() {
         <div className='ht_main1'>
         <div className="sticky-heading">
           <div>
-          <h5>Patient's Testimonial</h5>
+          <h5></h5>
           <h4 >{t("testimonialhead")}</h4>
           </div>
       

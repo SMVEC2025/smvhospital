@@ -1,35 +1,92 @@
+/* From Uiverse.io by elijahgummer */ 
 .button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  outline: none;
   cursor: pointer;
-  padding: 12PX 25PX;
-  background-image: linear-gradient(to top, chocolate 0%, chocolate 80%, chocolate 100%);
-  border-radius: 30px;
-  border: 1px solid #ffc698;
-  transition: all 0.2s ease;
-  font-size: 14px;
-  font-weight: 400;
-  color: WHITE;
+  position: relative;
+  padding: 12px 20px;
+  text-decoration: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  overflow: hidden;
+  background: rgb(216, 98, 30);
 }
-
-.button:hover {
-  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
-  background-image: linear-gradient(to top, #dbd9d8 0%, #fff 80%, #FDFDFD 100%);
-  color: chocolate;
-
+.button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
 }
-
-.button:active {
-  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
-  background-image: linear-gradient(to top, #dbd9d8 0%, #fff 80%, #FDFDFD 100%);
-  color: chocolate;
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+  transition-delay: 0.5s;
 }
-
-.button:focus {
-  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
-  background-image: linear-gradient(to top, #dbd9d8 0%, #fff 80%, #FDFDFD 100%);
-  color: chocolate;
+.button:hover:after {
+  left: 100%;
 }
-
+.button span {
+  position: absolute;
+  display: block;
+  transition: 0.5s ease;
+}
+.button span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #e06767;
+}
+.button:hover span:nth-child(1) {
+  width: 100%;
+  transform: translateX(100%);
+}
+.button span:nth-child(2) {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 0;
+  background: #fff;
+}
+.button:hover span:nth-child(2) {
+  height: 100%;
+  transform: translateY(100%);
+}
+.button span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: #ff0000;
+}
+.button:hover span:nth-child(3) {
+  width: 100%;
+  transform: translateX(-100%);
+}
+.button span:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  height: 0;
+  background: #fff;
+}
+.button:hover span:nth-child(4) {
+  height: 100%;
+  transform: translateY(-100%);
+}
