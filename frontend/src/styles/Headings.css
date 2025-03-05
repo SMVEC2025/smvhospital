@@ -41,8 +41,9 @@
     }
   
     .headings_main>p{
-        font-size: calc(0.6rem + 0.5vw);
+        font-size: medium;
         width: 90%;
+        font-weight: 300;
     
     }
 }
