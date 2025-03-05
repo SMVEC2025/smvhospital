@@ -127,6 +127,12 @@
     right: 20px;
     bottom: -50px;
   }
+  .as_description{
+    font-size:calc(12px + 0.4vw);
+    font-weight: 400;
+     line-height: 18px;
+    width: 95%;
+  }
   
   
     
@@ -379,7 +385,18 @@
           margin-bottom: 1rem;
           
         }
+    
+      
       }
+  .ac_main .card-para{
+      font-size:calc(12px + 0.4vw);
+      font-weight: 400;
+       line-height: 18px;
+  
+    
+    
+  }
+     
   }
 
   /* about testimonial */
@@ -662,6 +679,11 @@
   }
 }
 @media (max-width: 480px) {
+  .about_what_con1{
+    height: fit-content !important;
+    padding: 10px;
+    width: calc(100% - 20px);
+  }
   .about_what_con1>div{
     display: flex;
     gap: 2rem;
@@ -682,5 +704,11 @@
     justify-content: center;align-items: center;
     color: white;
     font-size: 2rem;
+  }
+  .about_what_content>p{
+    font-size:calc(12px + 0.4vw);
+    font-weight: 400;
+     line-height: 18px;
+
   }
 }
