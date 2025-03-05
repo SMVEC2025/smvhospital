@@ -683,6 +683,7 @@
     height: fit-content !important;
     padding: 10px;
     width: calc(100% - 20px);
+    gap: 4px;
   }
   .about_what_con1>div{
     display: flex;
@@ -710,5 +711,8 @@
     font-weight: 400;
      line-height: 18px;
 
+  }
+  .about_what_content>h2{
+    font-size: calc(1.3rem + 0.5vw);
   }
 }
