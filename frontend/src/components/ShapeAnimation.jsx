@@ -4,9 +4,11 @@ import "../styles/ShapeAnimation.css";
 import homepagevideo from "../assets/images/homepagevideo.mp4";
 import TitleAnimation from "./TitleAnimation";
 import { AppContext } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 export default function ShapeAnimation({ videoRef }) {
   const { animCase } = useContext(AppContext);
+   const navigate = useNavigate()
  
 
 
@@ -69,6 +71,7 @@ export default function ShapeAnimation({ videoRef }) {
           <motion.button
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
+            onClick={()=>navigate('/about')}
             transition={{ duration: 0.5, ease: "easeOut",  delay: `${animCase=='allset'?0.3:5.2}`}}
           >
             About Us
