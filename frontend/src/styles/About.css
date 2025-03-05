@@ -118,6 +118,16 @@
     max-width: 98%;
 
   }
+    
+  .main-image {
+    height: auto;
+    width: 90vw;
+  }
+  .experience-box {
+    right: 20px;
+    bottom: -50px;
+  }
+  
   
     
   }

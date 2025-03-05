@@ -33,3 +33,16 @@
     height: auto;
     
 }
+@media (max-width: 480px) {
+    .headings_div>div{
+        width: 70px;
+        height: 2px;
+        background-color: chocolate;
+    }
+  
+    .headings_main>p{
+        font-size: calc(0.6rem + 0.5vw);
+        width: 90%;
+    
+    }
+}

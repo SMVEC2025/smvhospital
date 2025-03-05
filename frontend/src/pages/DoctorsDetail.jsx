@@ -18,28 +18,28 @@ const DoctorDetail = () => {
     <>
       <Navbar />
       <div className="doctorshead">
-        {doctor.name}
+        {doctor.acf.name}
       </div>
       <div className="doctor-profile-container">
         <div className="doctor-image">
-          <img src={`http://localhost:1337${doctor.image.url}`} alt="Doctor" />
+          <img src={`${doctor.acf.image}`} alt="Doctor" />
         </div>
         <div className="doctor-info">
-          <h2> {doctor.name}</h2>
-          <p className="designation">{doctor.designation}</p>
+          <h2> {doctor.acf.name}</h2>
+          <p className="designation">{doctor.acf.designation}</p>
           <h3>My Biography</h3>
           <p className="bio-text">
-            {doctor.introduction}
+            {doctor.acf.introduction}
           </p>
           <div className="contact-info">
             <div className="address">
               <strong>Address Info :</strong>
-              <p>{doctor.address}</p>
+              <p>{doctor.acf.address}</p>
             </div>
             <div className="phone">
               <strong>Phone :</strong>
-              <p><b> {doctor.phone}</b></p>
-              <a href={`mailto:${doctor.email}`}> {doctor.email}</a>
+              <p><b> {doctor.acf.phone}</b></p>
+              <a href={`mailto:${doctor.acf.email}`}> {doctor.acf.email}</a>
             </div>
           </div>
           <div className="social-info">
@@ -57,20 +57,26 @@ const DoctorDetail = () => {
         <div className="passion-section">
           <h2>Professional passion?</h2>
           <p>
-            {doctor.professionalpassion}
+            {doctor.acf.passion}
           </p>
         </div>
         <div className="skill-section">
           <h2>Experience & Skill</h2>
-          {doctor.skills.map((element, index) => (
-            <div className="skill">
-              <span>{element.skill}</span>
+          <div className="skill">
+              <span>{doctor.acf.skills?.skill1}</span>
               <div className="progress-bar">
-                <div className="progress" style={{ width: `${element.percentage}%}` }}></div>
+                <div className="progress" style={{ width:`${doctor.acf.skills?.percentage1}%` }}></div>
               </div>
-              <span className="percentage">{element.percentage}%</span>
+              <span className="percentage">{doctor.acf.skills?.percentage1}%</span>
             </div>
-          ))}
+            <div className="skill">
+              <span>{doctor.acf.skills?.skill2}</span>
+              <div className="progress-bar">
+                <div className="progress" style={{ width:`${doctor.acf.skills?.percentage2}%` }}></div>
+              </div>
+              <span className="percentage">{doctor.acf.skills?.percentage2}%</span>
+            </div>
+        
         </div>
       </div>
       <Footer />

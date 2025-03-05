@@ -25,24 +25,28 @@ const heroData = {
 const Doctors = () => {
   const [filter, setFilter] = useState("All");
   const [search, setSearch] = useState("");
-  const { setRefreshAnim } = useContext(AppContext);
+  const { setRefreshAnim,doctorsList,setAnimCase } = useContext(AppContext);
   const navigate = useNavigate();
   const [doctors, setDoctors] = useState([]);
   const [specialties, setSpecialties] = useState([]);
+  console.log("doctorsList",doctorsList)
 
-  // Fetch doctors
   useEffect(() => {
-    axios
-      .get("http://localhost:1337/api/doctors?populate=*")
-      .then((response) => {
-        setDoctors(response.data.data);
-        console.log("Doctors:", response.data.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching doctors:", error);
-      });
-  }, []);
-
+    const fetchDoctorsData = async () => {
+      try {
+      const response =  await axios.get('http://localhost/wordpress/wp-json/wp/v2/doctors?_fields=acf');
+      setDoctors(response.data)
+      } catch (error) {
+       
+      }
+    }
+    fetchDoctorsData()
+   }, [])
+   useEffect(() => {
+    setAnimCase('allset')
+   }, [])
+   
+   
   // Fetch specialties dynamically
   useEffect(() => {
     axios
@@ -59,8 +63,8 @@ const Doctors = () => {
 
   // Filter doctors based on selected specialty and search term
   const filteredDoctors = doctors.filter((doctor) => {
-    const name = doctor.name?.toLowerCase() || "";
-    const specialty = doctor.specialty.toLowerCase() || "unknown";
+    const name = doctor.acf?.name?.toLowerCase() || "";
+    const specialty = doctor.acf?.specialty.toLowerCase() || "unknown";
 
     return (
       (filter === "All" || specialty === filter.toLowerCase()) &&
@@ -115,14 +119,14 @@ const Doctors = () => {
                 <div
                   className="profile-pic"
                   style={{
-                    backgroundImage: `url(http://localhost:1337${doctor.image.url})`,
+                    backgroundImage: `url(${doctor.acf.image})`,
                   }}
                 ></div>
                 <div className="bottom">
                   <div className="content">
-                    <span className="name">{doctor.name}</span>
+                    <span className="name">{doctor.acf.name}</span>
                     <span className="about-me">
-                      {doctor.designation}
+                      {doctor.acf.specialty}
                     </span>
                   </div>
                   <div className="bottom-bottom">

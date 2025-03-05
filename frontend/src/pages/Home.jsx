@@ -15,12 +15,13 @@ import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
 import { AppContext } from '../context/AppContext'
 import HomeMobileTreatment from '../components/HomeMobileTreatment'
+import axios from 'axios'
 
 
 function Home() {
-  const { isMobile,refreshAnim } = useContext(AppContext)
+  const { isMobile,refreshAnim,setDoctorsList } = useContext(AppContext)
 
-  console.log("refreshAnim",refreshAnim)
+
   
   return (
     <div>
