@@ -57,7 +57,7 @@ const DoctorDetail = () => {
         <div className="passion-section">
           <h2>Professional passion?</h2>
           <p>
-            {doctor.acf.passion}
+            {doctor.acf.professionalpassion}
           </p>
         </div>
         <div className="skill-section">

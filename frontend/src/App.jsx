@@ -9,13 +9,15 @@ import Doctors from "./pages/Doctors";
 import DoctorsDetail from "./pages/DoctorsDetail";
 import SpecialtyPage from "./pages/SpecialtyPage";
 import ContactUs from "./pages/ContactUs";
+import Maintenance from "./pages/Maintenance";
 
 function App() {
   return (
     <AppProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Maintenance />} />
           <Route path="/about" element={<About />} />
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/doctor/:id" element={<DoctorsDetail />} />

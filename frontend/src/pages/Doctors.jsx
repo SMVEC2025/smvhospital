@@ -34,7 +34,7 @@ const Doctors = () => {
   useEffect(() => {
     const fetchDoctorsData = async () => {
       try {
-      const response =  await axios.get('http://localhost/wordpress/wp-json/wp/v2/doctors?_fields=acf');
+      const response =  await axios.get('https://cms.smvhospital.com/wp-json/wp/v2/doctors?_fields=acf');
       setDoctors(response.data)
       } catch (error) {
        

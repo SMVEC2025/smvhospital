@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Hero from '../components/Hero'
 import HomeSectionTwo from '../components/HomeSectionTwo'
 import HomeAbout from '../components/HomeAbout'
@@ -16,11 +16,26 @@ import Footer from '../components/footer/Footer'
 import { AppContext } from '../context/AppContext'
 import HomeMobileTreatment from '../components/HomeMobileTreatment'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 function Home() {
   const { isMobile,refreshAnim,setDoctorsList } = useContext(AppContext)
-
+  const [newsAndEvents,setNewsAndEvents]=useState([])
+  const navigate =useNavigate()
+  useEffect(() => {
+    const fetchnewsandevents = async () => {
+      try {
+        const response = await axios.get("https://cms.smvhospital.com/wp-json/wp/v2/newsandevents?_fields=acf");
+        setNewsAndEvents(response.data);
+      } catch (error) {
+        console.error("Error fetching doctors:", error);
+      } finally{
+      }
+    };
+  
+    fetchnewsandevents();
+  }, []);
 
   
   return (
@@ -35,7 +50,7 @@ function Home() {
        
         <WhySmv/>
         {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)}
-        <HomeNewsEvents/>
+        <HomeNewsEvents  newsAndEvents={newsAndEvents}/>
         <HomeTestimonial/>
       <HomeDoctors/>
       <Footer/>

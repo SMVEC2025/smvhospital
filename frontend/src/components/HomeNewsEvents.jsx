@@ -3,7 +3,7 @@ import '../styles/HomeNewsEvents.css'
 import '../i18n'
 import { useTranslation } from "react-i18next";
 import HomeHeadings from './HomeHeadings';
-function HomeNewsEvents() {
+function HomeNewsEvents( {newsAndEvents} ) {
     const [hoveredImage, setHoveredImage] = useState(null);
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
     const { t } = useTranslation("home");
@@ -42,16 +42,16 @@ function HomeNewsEvents() {
          
         </div>
       <ul className="event-list">
-        {eventsData.map((event) => (
+        {newsAndEvents.map((event,index) => (
           <li
-            key={event.id}
+            key={index}
             className="event-item"
-            onMouseEnter={() => handleMouseEnter(event.image)}
+            onMouseEnter={() => handleMouseEnter(event.acf.image)}
             onMouseLeave={handleMouseLeave}
           >
-            <span className="event-title">{event.title}</span>
-            <span className="event-desc">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</span>
-            <span className="event-year">{event.year}</span>
+            <span className="event-title">{event.acf.shorttitle}</span>
+            <span className="event-desc">{event.acf.shortdescription}</span>
+            <span className="event-year">{event.acf.date.split(" ").slice(0, 3).join(" ")}</span>
           </li>
         ))}
       </ul>
