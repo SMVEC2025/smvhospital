@@ -9,7 +9,6 @@ import Doctors from "./pages/Doctors";
 import DoctorsDetail from "./pages/DoctorsDetail";
 import SpecialtyPage from "./pages/SpecialtyPage";
 import ContactUs from "./pages/ContactUs";
-import WordPressPosts from "./pages/WordPressPosts";
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
           <Route path="/doctor/:id" element={<DoctorsDetail />} />
           <Route path="/Specialty" element={<SpecialtyPage />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/test" element={<WordPressPosts />} />
 
         </Routes>
       </Router>
