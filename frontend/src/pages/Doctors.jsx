@@ -50,9 +50,9 @@ const Doctors = () => {
   // Fetch specialties dynamically
   useEffect(() => {
     axios
-      .get("http://localhost:1337/api/specialties") // Adjust your endpoint if needed
+      .get("https://cms.smvhospital.com/wp-json/wp/v2/specialties?_fields=acf") // Adjust your endpoint if needed
       .then((response) => {
-        const specialtyNames = response.data.data.map((item) => item.name).slice(0, 3);
+        const specialtyNames = response.data.map((item) => item.acf.name).slice(0, 3);
         setSpecialties(specialtyNames);
       })
       .catch((error) => {

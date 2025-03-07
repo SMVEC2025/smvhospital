@@ -16,8 +16,8 @@ function App() {
     <AppProvider>
       <Router>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/" element={<Maintenance />} />
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Maintenance />} /> */}
           <Route path="/about" element={<About />} />
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/doctor/:id" element={<DoctorsDetail />} />
