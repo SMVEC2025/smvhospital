@@ -69,7 +69,7 @@ function SpecialtyPage() {
         <img src="https://www.themetechmount.com/wordpress/brivona/elementor/wp-content/uploads/sites/5/2019/01/single-one.jpg" alt="" />
         <div className='sp_title'>{showSpecialty?.name}</div>
         
-        <p>{showSpecialty?.description}</p>
+        <p className='sp_desc'>{showSpecialty?.description}</p>
        
          <div className='sp_container1_faq'>
             {/* {faq.map((e,index)=>(

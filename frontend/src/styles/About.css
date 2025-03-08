@@ -193,7 +193,7 @@
 
   .card {
     position: absolute;
-    border: 1px solid gray;
+    border: 2px solid rgba(104, 104, 104, 0.527);
     border-radius: 12px;
     cursor: pointer;
     overflow: hidden;
@@ -248,21 +248,34 @@
   .sc_content{
     position: absolute;
     width: 100%;
-    height: 90%;
+    height: 100%;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.144);
-    padding: 1rem 5px;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: end;
   }
-  .sc_content>h3{
+  .sc_content>div{
     font-size: 13px;
+    width: 100%;
+    padding-bottom: 1rem;
     color: rgb(255, 173, 106);
     background-color: rgb(248, 248, 248);
-    padding: 5px 10px;
-    border-radius: 25px;
+    font-weight: 400;
+  }
+  .sc_content>div>h3{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 7px;
+  }
+  .sc_content>div>button{
+    background-color: chocolate;
+    border: none;
+    font-size: 9px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
     font-weight: 400;
   }
 

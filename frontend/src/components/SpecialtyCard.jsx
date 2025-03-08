@@ -5,7 +5,10 @@ function SpecialtyCard({name,image}) {
     <div className='sc_main'>
         <img src={image} alt="" />
         <div className='sc_content'>
-            <h3>{name}</h3>
+            <div>
+              <h3>{name}</h3>
+              <button>See More</button>
+            </div>
         </div>
     </div>
   )
