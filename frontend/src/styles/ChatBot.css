@@ -33,7 +33,12 @@
     background-color: #e9ecef;
     color: black;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: start;
   }
+
   
   .chatbot-options {
     display: flex;

@@ -6,7 +6,6 @@ export const AppContext = createContext();
 // Create Provider Component
 export function AppProvider({ children }) {
   const [introOne, setIntroOne] = useState(true);
-  const [openWrap, setOpenWrap] = useState(null);
   const [introAnim, setIntroAnim] = useState("one");
   const [refreshAnim,setRefreshAnim] = useState(true)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Initial check
@@ -32,8 +31,7 @@ export function AppProvider({ children }) {
       value={{
         introOne,
         setIntroOne,
-        openWrap,
-        setOpenWrap,
+      
         introAnim,
         setIntroAnim,
         isMobile,

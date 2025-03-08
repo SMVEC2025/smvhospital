@@ -75,7 +75,22 @@
   justify-content: space-around;
 }
 
-
+.mbile_menu_button{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1005;
+  color: white;
+  font-size: 35px;
+}
+.mbile_menu_button.true{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1005;
+  color: chocolate;
+  font-size: 35px;
+}
 @keyframes emergencryEnter {
   from {
     opacity: 0;

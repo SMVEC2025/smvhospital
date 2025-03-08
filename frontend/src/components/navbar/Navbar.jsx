@@ -65,7 +65,7 @@ console.log(showEmer)
       {isMobile && (
         <>
          {animCase == 'allset'&&(
-         <div className="mbile_menu_button" onClick={()=>setShowSideBar(!showSideBar)}>
+         <div className={`mbile_menu_button ${scrolled}`} onClick={()=>setShowSideBar(!showSideBar)}>
          {showSideBar?(<IoClose/>):(
        <IoMenu/>
        )}

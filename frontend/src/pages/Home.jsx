@@ -18,10 +18,10 @@ import HomeMobileTreatment from '../components/HomeMobileTreatment'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import MobileSideBar from '../components/navbar/MobileSideBar'
-
+ 
 
 function Home() {
-  const { isMobile,refreshAnim,setDoctorsList } = useContext(AppContext)
+  const { isMobile,refreshAnim,setShowSideBar } = useContext(AppContext)
   const [newsAndEvents,setNewsAndEvents]=useState([])
   const navigate =useNavigate()
   useEffect(() => {
@@ -36,6 +36,8 @@ function Home() {
     };
   
     fetchnewsandevents();
+    setShowSideBar(false)
+
   }, []);
 
   

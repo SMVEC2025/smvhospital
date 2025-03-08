@@ -8,3 +8,17 @@
 .homeheadings_main>h1{
     font-size: 3rem;
 }
+
+@media screen and (max-width: 500px) {
+    .homeheadings_main{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        padding: 1rem 0;
+        flex-direction: column      ;
+    }
+    .homeheadings_main>h1{
+        font-size: 1.2rem;
+    }
+}

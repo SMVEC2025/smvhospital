@@ -12,7 +12,7 @@ import { HiMiniLanguage } from "react-icons/hi2";
 import { RiRadioButtonLine } from "react-icons/ri";
 import smviconwhite from '../../assets/images/smviconwhite.png'
 function BotWrapper() {
-  const { openWrap, setOpenWrap } = useContext(AppContext)
+  const [openWrap, setOpenWrap] = useState(null);
   const [showWrapContent, setShowWrapContent] = useState(false)
   const [openLang, setOpenLang] = useState(false)
   function handleOpen() {
@@ -28,7 +28,13 @@ function BotWrapper() {
       setOpenWrap(false)
 
     }, 0);
-  }
+    setTimeout(() => {
+      setOpenWrap(null)
+
+    }, 1000);
+  } 
+  console.log("openWrap",openWrap)
+
   return (
     <div className={`bw_main ${openWrap}`}>
       {openWrap ? (
