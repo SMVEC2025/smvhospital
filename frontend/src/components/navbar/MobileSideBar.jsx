@@ -3,6 +3,8 @@ import '../../styles/MobileSideBar.css'
 import { motion } from "framer-motion";
 import { AppContext } from '../../context/AppContext';
 import { IoClose } from "react-icons/io5";
+import { IoMdCall } from "react-icons/io";
+import { IoTimeOutline,IoMail } from "react-icons/io5";
 
 function MobileSideBar() {
 
@@ -31,10 +33,11 @@ function MobileSideBar() {
           <p>info@smvmch.in</p>
           <h4>Contact number</h4>
           <p>+91 9562561695</p> */}
-          <button>Contact Us</button>
 
-
-        </div>
+                 <div> <IoMdCall/> +91 5545145451</div>
+                 <div> <IoTimeOutline/> 24 x 7</div>
+                 <div><IoMail/> emergency@smvmch.in</div>
+                </div> 
         <div className='msb_close' onClick={()=>setShowSideBar(false)}>
           <IoClose/>
         </div>
