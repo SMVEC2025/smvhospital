@@ -1,0 +1,128 @@
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Wrapper for Content */
+  .hero-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.281); /* Dark overlay */
+  }
+  
+  /* Content Container */
+  .hero-container {
+    width: 80%;
+    color: #fff;
+  }
+  
+  /* Hero Title */
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  /* Transition Text */
+  .hero-title-transition {
+    display: inline-block;
+    color: #fda14a;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  
+  /* Subtitle */
+  .hero-subtitle {
+    font-size: 2rem;
+    color: #ddd;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  /* Button Wrapper */
+  .hero-button {
+    margin-top: 20px;
+  }
+  
+  /* Button */
+  .hero-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: chocolate;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hero-btn:hover {
+    background-color: #e64c2b;
+  }
+  @media screen and (max-width: 500px) {
+   
+
+/* Hero Section */
+.hero-section {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  }
+  
+
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  
+  /* Transition Text */
+  .hero-title-transition {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  
+  /* Subtitle */
+  .hero-subtitle {
+    font-size: 2rem;
+    color: #ddd;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  /* Button Wrapper */
+  .hero-button {
+    margin-top: 20px;
+  }
+  
+  /* Button */
+  .hero-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hero-btn:hover {
+    background-color: #e64c2b;
+  }
+}

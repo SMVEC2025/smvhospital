@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import TextTransition, { presets } from "react-text-transition";
 import WaterWave from "react-water-wave";
-
+import '../styles/Hero6.css'
 const Hero6 = ({ data }) => {
   const { bgImg, title,page } = data;
 

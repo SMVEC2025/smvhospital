@@ -9,7 +9,7 @@ import { IoTimeOutline,IoMail } from "react-icons/io5";
 function Navbar() {
   const navigate = useNavigate()
   const [scrolled, setScrolled] = useState(false);
-  const { isMobile,animCase} = useContext(AppContext)
+  const { isMobile,animCase,setShowSideBar} = useContext(AppContext)
   const [showEmer,setShowEmer] = useState(false)
 
   useEffect(() => {
@@ -37,7 +37,7 @@ console.log(showEmer)
         {isMobile ? (
           <div className='mobilemenudiv'>
 
-            <input id="burger-checkbox" type="checkbox" />
+            <input id="burger-checkbox" type="checkbox" onClick={()=>setShowSideBar(true)} />
             <label class={`burger ${scrolled}`} for="burger-checkbox">
               <span></span>
               <span></span>

@@ -12,6 +12,7 @@ export function AppProvider({ children }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Initial check
   const [animCase,setAnimCase] = useState("welcome")
   const [doctorsList,setDoctorsList] = useState()
+  const [showSideBar,setShowSideBar] = useState(false)
   // Effect to track screen size changes
   useEffect(() => {
     const handleResize = () => {
@@ -38,7 +39,8 @@ export function AppProvider({ children }) {
         isMobile,
         refreshAnim,
         setRefreshAnim,
-        animCase,setAnimCase,doctorsList,setDoctorsList
+        animCase,setAnimCase,doctorsList,setDoctorsList,
+        showSideBar,setShowSideBar
         
       }}
     >

@@ -17,6 +17,7 @@ import { AppContext } from '../context/AppContext'
 import HomeMobileTreatment from '../components/HomeMobileTreatment'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import MobileSideBar from '../components/navbar/MobileSideBar'
 
 
 function Home() {
@@ -41,6 +42,7 @@ function Home() {
   return (
     <div>
         <BotWrapper/>
+        <MobileSideBar/>
         <Navbar/>
         <Hero/>
         <HomeAbout/>
