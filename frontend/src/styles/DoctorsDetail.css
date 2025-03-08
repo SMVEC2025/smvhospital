@@ -174,3 +174,50 @@ strong {
   font-weight: bold;
   margin-left: 10px;
 }
+@media (max-width: 500px) {
+  .doctor-profile-container {
+    border-radius: 10px;
+    padding: 2rem 0;
+    flex-direction: column;
+    border-radius: 0;
+
+  }
+  
+.doctor-info {
+  flex: 1;
+  padding-left: 10px;
+  max-width: 98%;
+  margin-top: 2rem;
+  
+}
+.bio-text{
+  width: 90%;
+}
+.experience-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fff;
+  padding: 10px 10px ;
+  flex-direction: column;
+  border-radius: 0;
+}
+.passion-section {
+  width: 98% !important;
+}
+
+.skill-section {
+  width: 90%;
+}
+.doctor-image{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.doctor-image img {
+  width: 80vw;
+  height: auto;
+  object-fit: cover;
+  border-radius: 2px;
+}
+}
