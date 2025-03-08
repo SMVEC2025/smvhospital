@@ -8,7 +8,7 @@ import { IoTimeOutline,IoMail } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
 function MobileSideBar() {
 
-  const { showSideBar,setShowSideBar,animCase } = useContext(AppContext)
+  const { showSideBar,setShowSideBar,animCase,isMobile } = useContext(AppContext)
 
   const menuItems = ['Home', 'About us', 'Doctors', 'Speacialty', 'Contact us'];
   return (
@@ -44,13 +44,18 @@ function MobileSideBar() {
     )}
 
     </div>
-       {animCase == 'allset'&&(
+      {isMobile && (
+        <>
+         {animCase == 'allset'&&(
          <div className="mbile_menu_button" onClick={()=>setShowSideBar(!showSideBar)}>
          {showSideBar?(<IoClose/>):(
-       <IoMenu/>)}
+       <IoMenu/>
+       )}
        
    </div>
        )}
+        </>
+      )}
    </>
   )
 }
