@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { FaFacebookF, FaLinkedinIn, FaYoutube, FaPhoneAlt, FaEnvelope, FaGraduationCap, FaBriefcase } from "react-icons/fa";
 import '../styles/DoctorsDetail.css'
@@ -6,17 +6,25 @@ import { RxCross2 } from 'react-icons/rx';
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Hero6 from "../components/Hero6";
+import MobileSideBar from "../components/navbar/MobileSideBar";
+import { AppContext } from "../context/AppContext";
 const DoctorDetail = () => {
+  const { setShowSideBar,setAnimCase }=useContext(AppContext)
   const location = useLocation();
   const doctor = location.state?.doctor;
   console.log(doctor)
   if (!doctor) {
     return <h2>Doctor not found!</h2>;
   }
-
+ useEffect(() => {
+  setShowSideBar(false)
+  setAnimCase('allset')
+ }, [])
+ 
   return (
     <>
       <Navbar />
+      <MobileSideBar/>
       <div className="doctorshead">
         {doctor.acf.name}
       </div>

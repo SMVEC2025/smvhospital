@@ -6,10 +6,13 @@ import { AppContext } from '../../context/AppContext';
 import logofull from '../../assets/images/logofull.png'
 import { IoMdCall } from "react-icons/io";
 import { IoTimeOutline,IoMail } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
+
 function Navbar() {
   const navigate = useNavigate()
   const [scrolled, setScrolled] = useState(false);
-  const { isMobile,animCase,setShowSideBar} = useContext(AppContext)
+  const { isMobile,animCase,setShowSideBar,showSideBar} = useContext(AppContext)
   const [showEmer,setShowEmer] = useState(false)
 
   useEffect(() => {
@@ -59,6 +62,18 @@ console.log(showEmer)
         )}
 
       </div>) : null}
+      {isMobile && (
+        <>
+         {animCase == 'allset'&&(
+         <div className="mbile_menu_button" onClick={()=>setShowSideBar(!showSideBar)}>
+         {showSideBar?(<IoClose/>):(
+       <IoMenu/>
+       )}
+       
+   </div>
+       )}
+        </>
+      )}
     </>
   )
 }

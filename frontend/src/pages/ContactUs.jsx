@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../styles/ContactUs.css'
 import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
@@ -6,8 +6,11 @@ import Hero6 from '../components/Hero6';
 import { IoLocationSharp } from "react-icons/io5";
 import { IoCall } from "react-icons/io5";
 import { IoIosMail } from "react-icons/io";
+import { AppContext } from '../context/AppContext';
+import MobileSideBar from '../components/navbar/MobileSideBar';
 
 function ContactUs() {
+  const { setAnimCase,setShowSideBar } = useContext(AppContext)
     const [faqExpand, setFaqExpand] = useState();
     const [formData, setFormData] = useState({
         name: "",
@@ -22,6 +25,10 @@ function ContactUs() {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+     useEffect(() => {
+        setAnimCase('allset');
+        setShowSideBar(false)
+       }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -125,6 +132,7 @@ function ContactUs() {
   return (
     <>
     <Navbar/>
+    <MobileSideBar/>
     <Hero6 data={heroData} />   
      <div className="marquee-container">
       <div className="marquee">

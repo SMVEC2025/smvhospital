@@ -6,6 +6,7 @@ import { AppContext } from "../context/AppContext";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import axios from "axios";
+import MobileSideBar from "../components/navbar/MobileSideBar";
 
 const heroData = {
   bgImg: 'images/hero-bg9.jpg',
@@ -25,7 +26,7 @@ const heroData = {
 const Doctors = () => {
   const [filter, setFilter] = useState("All");
   const [search, setSearch] = useState("");
-  const { setRefreshAnim,doctorsList,setAnimCase } = useContext(AppContext);
+  const { setRefreshAnim,doctorsList,setAnimCase,setShowSideBar } = useContext(AppContext);
   const navigate = useNavigate();
   const [doctors, setDoctors] = useState([]);
   const [specialties, setSpecialties] = useState([]);
@@ -44,6 +45,7 @@ const Doctors = () => {
    }, [])
    useEffect(() => {
     setAnimCase('allset')
+    setShowSideBar(false)
    }, [])
    
    
@@ -76,12 +78,11 @@ const Doctors = () => {
     navigate(`/doctor/${doctor.id}`, { state: { doctor } });
   };
 
-  useEffect(() => {
-    setRefreshAnim(false);
-  }, []);
+
   return (
     <>
       <Navbar />
+      <MobileSideBar/>
       <Hero6 data={heroData} />
 
       <div className="doctor-container">

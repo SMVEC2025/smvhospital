@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Hero6 from '../components/Hero6';
 import AboutSection1 from '../components/AboutSection1';
 import AboutSpeciality from '../components/AboutSpeciality';
@@ -7,6 +7,9 @@ import Button from '../components/Button';
 import AboutCare from '../components/AboutCare';
 import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
+import { AppContext } from '../context/AppContext';
+import MobileSideBar from '../components/navbar/MobileSideBar';
+
 const heroData = {
   bgImg: 'images/hero-bg9.jpg',
   bgShape: 'shape/hero-shape.png', 
@@ -70,10 +73,17 @@ const content = [
   },
 ];
 
+
 const About = () => {
+    const { setAnimCase,setShowSideBar } = useContext(AppContext)
+    useEffect(() => {
+      setAnimCase('allset');
+      setShowSideBar(false)
+     }, [])
   return (
     <>
     <Navbar/>
+    <MobileSideBar/>
     <div className='about_main'>
       <Hero6 data={heroData}/>
       <AboutSection1/>

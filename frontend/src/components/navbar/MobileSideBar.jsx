@@ -6,18 +6,22 @@ import { IoClose } from "react-icons/io5";
 import { IoMdCall } from "react-icons/io";
 import { IoTimeOutline,IoMail } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 function MobileSideBar() {
 
   const { showSideBar,setShowSideBar,animCase,isMobile } = useContext(AppContext)
+  const navigate = useNavigate()
 
   const menuItems = ['Home', 'About us', 'Doctors', 'Speacialty', 'Contact us'];
+  const redirect =[ '/', '/about', '/doctors', '/specialty', '/contact-us' ]
   return (
    <>
     <div className={`msb_main ${showSideBar}`}>
     {showSideBar &&(
         <div className='msb_container'>
         {menuItems.map((item,index)=>(
-          <motion.h1
+          <motion.h1  key={index}
+          onClick={()=>{navigate(redirect[index])}}
           className=""
           initial={{ x: "300px", opacity: 0 }}
           animate={{ x: 0.5, opacity: 1 }}
@@ -43,18 +47,7 @@ function MobileSideBar() {
     )}
 
     </div>
-      {isMobile && (
-        <>
-         {animCase == 'allset'&&(
-         <div className="mbile_menu_button" onClick={()=>setShowSideBar(!showSideBar)}>
-         {showSideBar?(<IoClose/>):(
-       <IoMenu/>
-       )}
-       
-   </div>
-       )}
-        </>
-      )}
+
    </>
   )
 }

@@ -38,11 +38,11 @@ function BotWrapper() {
           <div className='bw_big_close' onClick={handleClose}>
             <IoMdClose />
           </div>
-          <div className={`bw_big_translator ${openLang}`} >
+          {/* <div className={`bw_big_translator ${openLang}`} >
             <span onClick={() => setOpenLang(!openLang)}>Language Transalator <span><HiMiniLanguage /></span></span>
             <LanguageSwitcher />
 
-          </div>
+          </div> */}
           <div className={`bw_big_chatbot ${openLang}`}>
             <div className='bw_big_chatbot1'>
               <div className='bw_big_chatbot11'>

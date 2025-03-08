@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../styles/SpecialtyPage.css'
 import Hero6 from '../components/Hero6'
 import { LuMoveRight } from "react-icons/lu";
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import axios from 'axios';
+import { AppContext } from '../context/AppContext';
+import MobileSideBar from '../components/navbar/MobileSideBar';
 
 function SpecialtyPage() {
   const [specialty,setSpecialty] = useState([])
   const [loading,setLoading]=useState(true)
+  const { setAnimCase,setShowSideBar } = useContext(AppContext)
     const heroData = {
         bgImg: 'images/hero-bg9.jpg',
         bgShape: 'shape/hero-shape.png',
@@ -54,6 +57,11 @@ function SpecialtyPage() {
         fetchSpecialties();
       }, []);
       
+    useEffect(() => {
+          setAnimCase('allset')
+          setShowSideBar(false)
+
+         }, [])
   
   const [showSpecialty,setShowSpecialty]=useState([])
   const [faqContainer,setFaqConatiner]=useState(0)
@@ -63,6 +71,7 @@ function SpecialtyPage() {
   return (
    <>
    <Navbar/>
+   <MobileSideBar/>
    <Hero6 data={heroData}/>
    <div className='sp_main'>
     <div className='sp_container1'>
