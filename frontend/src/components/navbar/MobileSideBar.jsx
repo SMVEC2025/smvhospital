@@ -36,7 +36,6 @@ function MobileSideBar() {
           <p>+91 9562561695</p> */}
 
                  <div> <IoMdCall/> +91 5545145451</div>
-                 <div> <IoTimeOutline/> 24 x 7</div>
                  <div><IoMail/> emergency@smvmch.in</div>
                 </div> 
        

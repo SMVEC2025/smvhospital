@@ -67,14 +67,15 @@
 
 .msb_container_end>div{
     height: 50px;
-    background-color: rgba(255, 255, 255, 0.781);
+    background-color: rgba(255, 255, 255, 0.658);
     margin-bottom: 10px;
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     gap: 10px;
     padding-left: 10px;
     width: 90%;
-    border-radius: 40px;
+    border-radius: 10px;
     color: chocolate;
 
 }
