@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'; // Import axios for API requests
 import '../../styles/ChatBot.css';
+import { toast } from 'react-toastify';
 
 const Chatbot = ({ openLang }) => {
     const [messages, setMessages] = useState([]);
@@ -189,13 +190,31 @@ const Chatbot = ({ openLang }) => {
     };
 console.log(userData)
     const postUserData = async (data) => {
+        const googleFormURL ="https://docs.google.com/forms/u/0/d/e/1FAIpQLScOCZvXCksjUJEQwutB3skeHEZjH4VS8ihtQLwYwd781MkAfw/formResponse"; 
+      
+        const formPayload = new FormData();
+        formPayload.append("entry.1334534231", data.name); 
+        formPayload.append("entry.1617454534", data.package); 
+        formPayload.append("entry.617143351", data.packageType);
+        formPayload.append("entry.410812961", data.age);
+        formPayload.append("entry.876016914", data.gender);
+        formPayload.append("entry.1306757982", data.concern);
+        formPayload.append("entry.1305942355", data.phone);
+
         try {
-            // const response = await axios.post('https://your-api-endpoint.com/submit', data);
-            // console.log('User data submitted:', response.data);
-            console.log('data',data);
+
+            fetch(googleFormURL, {
+              method: "POST",
+              body: formPayload,
+              mode: "no-cors", // Required for Google Forms submission
+            })
+              .then(() => toast.success("Appointment Sent"))
+              .catch((error) =>  toast.error("Network error"));
+  
         } catch (error) {
             console.error('Error posting user data:', error);
             setError("Failed to submit details. Please try again.");
+            toast.error('Network error')
         }
 
     };

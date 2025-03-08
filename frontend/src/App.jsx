@@ -10,12 +10,25 @@ import DoctorsDetail from "./pages/DoctorsDetail";
 import SpecialtyPage from "./pages/SpecialtyPage";
 import ContactUs from "./pages/ContactUs";
 import Maintenance from "./pages/Maintenance";
-
+import { ToastContainer,Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <AppProvider>
-  
+  <ToastContainer
+position="top-right"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition={Bounce}
+/>
       <Router>
         <Routes>
          
