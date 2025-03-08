@@ -5,13 +5,14 @@ import { AppContext } from '../../context/AppContext';
 import { IoClose } from "react-icons/io5";
 import { IoMdCall } from "react-icons/io";
 import { IoTimeOutline,IoMail } from "react-icons/io5";
-
+import { IoMenu } from "react-icons/io5";
 function MobileSideBar() {
 
-  const { showSideBar,setShowSideBar } = useContext(AppContext)
+  const { showSideBar,setShowSideBar,animCase } = useContext(AppContext)
 
   const menuItems = ['Home', 'About us', 'Doctors', 'Speacialty', 'Contact us'];
   return (
+   <>
     <div className={`msb_main ${showSideBar}`}>
     {showSideBar &&(
         <div className='msb_container'>
@@ -38,13 +39,19 @@ function MobileSideBar() {
                  <div> <IoTimeOutline/> 24 x 7</div>
                  <div><IoMail/> emergency@smvmch.in</div>
                 </div> 
-        <div className='msb_close' onClick={()=>setShowSideBar(false)}>
-          <IoClose/>
-        </div>
+       
         </div>
     )}
 
     </div>
+       {animCase == 'allset'&&(
+         <div className="mbile_menu_button" onClick={()=>setShowSideBar(!showSideBar)}>
+         {showSideBar?(<IoClose/>):(
+       <IoMenu/>)}
+       
+   </div>
+       )}
+   </>
   )
 }
 

@@ -34,17 +34,8 @@ console.log(showEmer)
         <div className='ns_con1'>
           <img src={logofull} alt="" />
         </div>
-        {isMobile ? (
-          <div className='mobilemenudiv'>
-
-            <input id="burger-checkbox" type="checkbox" onClick={()=>setShowSideBar(true)} />
-            <label class={`burger ${scrolled}`} for="burger-checkbox">
-              <span></span>
-              <span></span>
-              <span></span>
-            </label>
-          </div>
-        ) : (
+        {!isMobile && (
+         
           <>
             <div className='ns_con2'>
               <span onClick={()=>{navigate('/')}}>Home</span>
