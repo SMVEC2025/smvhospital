@@ -141,6 +141,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: fixed;
+        right: 10px;
+        top: 20px;
+        z-index: 1005;
     }
     .burger {
         display: inline-block;
