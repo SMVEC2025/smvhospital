@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { IoAppsSharp } from "react-icons/io5";
 import { AppContext } from '../../context/AppContext';
 import logofull from '../../assets/images/logofull.png'
+import smvwhite from '../../assets/images/smvwhite.png'
+
 import { IoMdCall } from "react-icons/io";
 import { IoTimeOutline,IoMail } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
@@ -35,7 +37,7 @@ console.log(showEmer)
     <>
       {animCase=='allset' ? (<div className={`nav_main ${scrolled}`}>
         <div className='ns_con1'>
-          <img src={logofull} alt="" />
+          <img src={`${scrolled?logofull:smvwhite}`} alt="" />
         </div>
         {!isMobile && (
          

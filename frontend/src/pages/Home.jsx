@@ -18,6 +18,7 @@ import HomeMobileTreatment from '../components/HomeMobileTreatment'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import MobileSideBar from '../components/navbar/MobileSideBar'
+import ScrollToTop from '../components/ScrollToTop'
  
 
 function Home() {
@@ -43,6 +44,7 @@ function Home() {
   
   return (
     <div>
+       <ScrollToTop/>
         <BotWrapper/>
         <MobileSideBar/>
         <Navbar/>

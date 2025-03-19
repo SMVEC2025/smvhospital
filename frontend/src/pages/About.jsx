@@ -9,6 +9,7 @@ import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
 import { AppContext } from '../context/AppContext';
 import MobileSideBar from '../components/navbar/MobileSideBar';
+import ScrollToTop from '../components/ScrollToTop';
 
 const heroData = {
   bgImg: 'images/hero-bg9.jpg',
@@ -83,6 +84,7 @@ const About = () => {
   return (
     <>
     <Navbar/>
+    <ScrollToTop/>
     <MobileSideBar/>
     <div className='about_main'>
       <Hero6 data={heroData}/>

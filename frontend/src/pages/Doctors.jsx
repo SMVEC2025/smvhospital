@@ -7,6 +7,7 @@ import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import axios from "axios";
 import MobileSideBar from "../components/navbar/MobileSideBar";
+import ScrollToTop from "../components/ScrollToTop";
 
 const heroData = {
   bgImg: 'images/hero-bg9.jpg',
@@ -81,6 +82,7 @@ const Doctors = () => {
 
   return (
     <>
+     <ScrollToTop/>
       <Navbar />
       <MobileSideBar/>
       <Hero6 data={heroData} />

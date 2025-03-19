@@ -8,6 +8,7 @@ import { IoCall } from "react-icons/io5";
 import { IoIosMail } from "react-icons/io";
 import { AppContext } from '../context/AppContext';
 import MobileSideBar from '../components/navbar/MobileSideBar';
+import ScrollToTop from '../components/ScrollToTop';
 
 function ContactUs() {
   const { setAnimCase,setShowSideBar } = useContext(AppContext)
@@ -132,6 +133,7 @@ function ContactUs() {
   return (
     <>
     <Navbar/>
+    <ScrollToTop/>
     <MobileSideBar/>
     <Hero6 data={heroData} />   
      <div className="marquee-container">

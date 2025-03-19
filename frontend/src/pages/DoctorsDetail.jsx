@@ -8,6 +8,7 @@ import Footer from "../components/footer/Footer";
 import Hero6 from "../components/Hero6";
 import MobileSideBar from "../components/navbar/MobileSideBar";
 import { AppContext } from "../context/AppContext";
+import ScrollToTop from "../components/ScrollToTop";
 const DoctorDetail = () => {
   const { setShowSideBar,setAnimCase }=useContext(AppContext)
   const location = useLocation();
@@ -23,6 +24,7 @@ const DoctorDetail = () => {
  
   return (
     <>
+      <ScrollToTop/>
       <Navbar />
       <MobileSideBar/>
       <div className="doctorshead">

@@ -7,6 +7,7 @@ import Footer from '../components/footer/Footer';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';
 import MobileSideBar from '../components/navbar/MobileSideBar';
+import ScrollToTop from '../components/ScrollToTop';
 
 function SpecialtyPage() {
   const [specialty,setSpecialty] = useState([])
@@ -14,33 +15,10 @@ function SpecialtyPage() {
   const { setAnimCase,setShowSideBar } = useContext(AppContext)
     const heroData = {
         bgImg: 'images/hero-bg9.jpg',
-        bgShape: 'shape/hero-shape.png',
         page:"Specialties",
-        sliderImages: [
-          {
-            img: 'images/hero-img.png',
-          },
-          {
-            img: 'images/hero-img1.png',
-          },
-          {
-            img: 'images/hero-img2.png',
-          },
-          {
-            img: 'images/hero-img.png',
-          },
-          {
-            img: 'images/hero-img1.png',
-          },
-          {
-            img: 'images/hero-img2.png',
-          },
-        ],
         title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
       };
-
-   
-
+      
       useEffect(() => {
         const fetchSpecialties = async () => {
           try {
@@ -71,6 +49,7 @@ function SpecialtyPage() {
   return (
    <>
    <Navbar/>
+   <ScrollToTop/>
    <MobileSideBar/>
    <Hero6 data={heroData}/>
    <div className='sp_main'>
