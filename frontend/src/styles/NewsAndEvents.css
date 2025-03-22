@@ -1,0 +1,45 @@
+.nae_main{
+    padding-top: 80px;
+    background-color: rgb(130, 87, 33);
+
+}
+.nae_main>div{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    font-size: 40px;
+    color: rgb(249, 248, 248);
+    background-image: linear-gradient(45deg,rgb(185, 116, 32),#f8b692 20%,rgb(208, 157, 128));
+}
+.nae_container{
+    background-color: white;
+    padding: 2rem 30px;
+
+}
+.nae_container>h2{
+    color: rgb(109, 61, 27);
+    font-weight: 500;
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 0;
+
+}
+.nae_container>h3{
+    color: rgb(109, 61, 27);
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+
+}
+.nae_container>p{
+    width: 90%;
+    color: rgb(56, 56, 56);
+    margin-bottom: 20px;
+}
+.nae_container img{
+    margin-top: 40px;
+    width: 500px;
+    height: auto;
+}

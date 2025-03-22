@@ -12,6 +12,9 @@ import ContactUs from "./pages/ContactUs";
 import Maintenance from "./pages/Maintenance";
 import { ToastContainer,Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Appointment from "./pages/Appointment";
+import AppointmentSuccess from "./pages/AppointmentSuccess";
+import NewsAndEvents from "./pages/NewsAndEvents";
 
 function App() {
   return (
@@ -39,6 +42,9 @@ transition={Bounce}
           <Route path="/doctor/:id" element={<DoctorsDetail />} />
           <Route path="/Specialty" element={<SpecialtyPage />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/appointment" element={<Appointment />} />
+          <Route path="/AppointmentSuccess" element={<AppointmentSuccess />} />
+          <Route path="/newsandevents/:name" element={<NewsAndEvents />} />
 
         </Routes>
       </Router>

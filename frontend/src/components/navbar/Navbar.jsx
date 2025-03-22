@@ -47,6 +47,7 @@ console.log(showEmer)
               <span onClick={()=>{navigate('/about')}}>About us</span>
               <span onClick={()=>{navigate('/doctors')}}>Doctors</span>
               <span onClick={()=>{navigate('/specialty')}}>Speacialty</span>
+              <span onClick={()=>{navigate('/appointment')}}>Appointment</span>
               <span onClick={()=>{navigate('/contact-us')}}>Contact us</span>
             </div>
 

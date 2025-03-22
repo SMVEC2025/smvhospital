@@ -1,0 +1,338 @@
+.appointment_main{
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+    background-color: rgb(253, 251, 251);
+}
+.app_progress{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #ffffff;
+    width: fit-content;
+    height: fit-content;
+    padding:20px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.601);
+}
+.app_progress1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    padding: 7px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.app_progress h2{
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+.app_progress1.true{
+  color: #f7a683;
+  border: 1px solid #f7a683;
+}
+.app_progress1.true h2{
+  color: #f7a683;
+}
+.app_progress1 span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app_form{
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    padding:40px 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.601);
+    position: relative;
+    padding-bottom: 150px;
+
+}
+
+.app_form_service{
+    width: 50vw;
+    
+}
+
+.app_service_package{
+    border: 1px solid rgba(128, 128, 128, 0.367);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    padding: 30px 20px;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+.app_service_package.true{
+    border: 1px solid #f7a683;
+    box-shadow: 0 2px 5px 3px rgba(128, 128, 128, 0.158);
+
+}
+.app_service_package>span img{
+    width: 70px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.app_service_package>div{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+.app_form_service>h2{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.packages_name{
+    font-size: 1.3rem;
+    color: rgb(86, 86, 86);
+    font-weight: 500;
+    text-transform: capitalize;
+
+}
+.service_select{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 1rem;
+
+}
+.service_select1{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #f7a683;
+    cursor: pointer;
+    color: rgb(57, 57, 57);
+}
+.service_select1:hover{
+    background-color: #f99368;
+}
+.service_select1.true{
+    background: #f7a683;
+    color: white;
+
+}
+.packages_price{
+  color: white;
+  background-color: #f99368;
+  padding: 1px 5px;
+  border-radius: 2px;
+  margin-left: 5px;
+
+}
+.app_service_package p{
+  margin-top: 8px;
+}
+.packages_desc{
+  color: rgb(59, 59, 59);
+  font-weight: 400;
+  width: 70%;
+  font-size: 15px;
+}
+
+.app_form_end{
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid gray;
+}
+.app_form_end>button{
+    margin-right: 50px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 25px;
+    gap: 10px;
+    border-radius: 25px;
+    background-color: rgb(243, 135, 59);
+    border: 1px solid #f7a683;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+
+}
+.app_form_end>button:hover{
+    cursor: pointer;
+    background-color: #f7a683;
+    color: white;
+}
+.app_form_end>button:active{
+    scale: 98%;
+}
+.app_service_selected{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #f7a683;
+}
+
+.app_form_date{
+    min-width: 400px;
+}
+
+
+.booking-container {
+  margin: auto;
+  font-family: Arial, sans-serif;
+  width: 50vw;
+}
+
+.title {
+  color: #2c3e50;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.booking-content {
+  display: flex;
+  justify-content: space-between;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.calendar-section {
+  flex: 1;
+}
+
+.time-slot-section {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.time-slot-title {
+  color: #2c3e50;
+  font-size: 20px;
+}
+
+.time-slot-section h4 {
+  color: #e67e22;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time-slot {
+  padding: 10px 15px;
+  border: 1px solid #e67e22;
+  background: white;
+  color: #e67e22;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.time-slot:hover,
+.time-slot.selected {
+  background: #e67e22;
+  color: white;
+}
+
+
+/* Custom Datepicker Styles */
+.react-datepicker {
+    border: 1px solid #e67e22;
+    border-radius: 10px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .react-datepicker__header {
+    background: #e67e22;
+    color: white;
+    border-bottom: none;
+  }
+  
+  .react-datepicker__current-month,
+  .react-datepicker-time__header,
+  .react-datepicker-year-header {
+    color: white;
+  }
+  
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    color: #333;
+  }
+  
+  .react-datepicker__day:hover {
+    background: #f39c12;
+    color: white;
+  }
+  
+  .react-datepicker__day--selected {
+    background: #e67e22 !important;
+    color: white !important;
+    border-radius: 50%;
+  }
+  
+  .react-datepicker__navigation {
+    top: 25px;
+    margin-top: 10px;
+  }
+  
+  .react-datepicker__navigation--previous {
+    left: 10px;
+  }
+  
+  .react-datepicker__navigation--next {
+    right: 10px;
+  }
+  
+
+  .form-container {
+    width: 50vw;
+    margin: auto;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  label span {
+    color: red;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  textarea {
+    height: 100px;
+    resize: none;
+  }
+  

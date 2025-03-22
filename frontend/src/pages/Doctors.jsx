@@ -31,7 +31,6 @@ const Doctors = () => {
   const navigate = useNavigate();
   const [doctors, setDoctors] = useState([]);
   const [specialties, setSpecialties] = useState([]);
-  console.log("doctorsList",doctorsList)
 
   useEffect(() => {
     const fetchDoctorsData = async () => {

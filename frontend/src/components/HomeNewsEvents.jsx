@@ -3,12 +3,16 @@ import '../styles/HomeNewsEvents.css'
 import '../i18n'
 import { useTranslation } from "react-i18next";
 import HomeHeadings from './HomeHeadings';
+import { useNavigate } from "react-router-dom";
+
 function HomeNewsEvents( {newsAndEvents} ) {
     const [hoveredImage, setHoveredImage] = useState(null);
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
     const { t } = useTranslation("home");
+    const navigate = useNavigate();
+
     
-  
+    console.log(newsAndEvents)
     // For demonstration, we’ll inline the data here.
     // Replace or import your data from eventsData if you prefer.
     const eventsData = [
@@ -34,6 +38,9 @@ function HomeNewsEvents( {newsAndEvents} ) {
     const handleMouseMove = (e) => {
       setCursorPos({ x: e.clientX, y: e.clientY });
     };
+    const handleClick = (event) => {
+      navigate(`/newsandevents/${event.acf.shorttitle}`, { state: { event } });
+    };
   
   return (
     <div className="hne_container" onMouseMove={handleMouseMove}>
@@ -48,6 +55,7 @@ function HomeNewsEvents( {newsAndEvents} ) {
             className="event-item"
             onMouseEnter={() => handleMouseEnter(event.acf.image)}
             onMouseLeave={handleMouseLeave}
+            onClick={()=>handleClick(event)}
           >
             <span className="event-title">{event.acf.shorttitle}</span>
             <span className="event-desc">{event.acf.shortdescription}</span>

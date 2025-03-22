@@ -1,0 +1,86 @@
+.appointment-success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    background: #fffafa;
+  }
+  
+  .success-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.43);
+    width: 70vw;
+  }
+  
+  .icon {
+    font-size: 50px;
+    color: #ff8a65;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  h3 {
+    color: #333;
+  }
+  
+  .details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    margin: 45px 0;
+    justify-content: center;
+  }
+  
+  .details div {
+    margin-bottom: 5px;
+  }
+  
+  .calendar-buttons a {
+    margin: 5px;
+    padding: 4px 20px;
+    background: none;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.353);
+  }
+  
+  .print-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: none;
+    color: rgb(96, 96, 96);
+    border: 1px solid rgba(0, 0, 0, 0.626);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .print-button:hover {
+    background: #e06035;
+    border: none;
+    color: white;
+  }
+  .lottie{
+  }
+  .calendar-buttons img{
+    width: 30px;
+  }
+  .calendar-buttons a{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(96, 96, 96);
+    font-weight: 400;
+  }
+  .calendar-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
