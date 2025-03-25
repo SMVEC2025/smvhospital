@@ -45,7 +45,7 @@ console.log(showEmer)
             <div className='ns_con2'>
               <span onClick={()=>{navigate('/')}}>Home</span>
               <span onClick={()=>{navigate('/about')}}>About us</span>
-              <span onClick={()=>{navigate('/doctors')}}>Doctors</span>
+              {/* <span onClick={()=>{navigate('/doctors')}}>Doctors</span> */}
               <span onClick={()=>{navigate('/specialty')}}>Speacialty</span>
               <span onClick={()=>{navigate('/appointment')}}>Appointment</span>
               <span onClick={()=>{navigate('/contact-us')}}>Contact us</span>
@@ -56,9 +56,10 @@ console.log(showEmer)
                 emergency
                 </div> 
                 <div className={`emergency_expand ${showEmer?"true":null}`}>
-                 <div> <IoMdCall/> +91 5545145451</div>
+                 <div> <IoMdCall/>818-758-4076
+                 </div>
                  <div> <IoTimeOutline/> 24 x 7</div>
-                 <div><IoMail/> emergency@smvmch.in</div>
+                 <div><IoMail/> info@smvhospital.com</div>
                 </div> 
             </div>
           </>

@@ -51,9 +51,9 @@ function Footer() {
             <ul>
               <li><span><MdLocationOn/></span><a href="#">Kalitheerthal kuppam, Madagadipet, <br/>
               Puducherry - 605 107</a></li>
-              <li><span><MdCall/></span><a href="#"> +91 5455444544</a></li>
-              <li><span><FaAmbulance/></span><a href="#"> +91 5455444544</a></li>
-              <li><span><IoMailSharp/></span><a href="#">info@smvmch.ac.in</a></li>
+              <li><span><MdCall/></span><a href="#"> +91 98765 43210</a></li>
+              <li><span><FaAmbulance/></span><a href="#"> +91 98765 43210</a></li>
+              <li><span><IoMailSharp/></span><a href="#">contact@smvssh.com</a></li>
               
 
 

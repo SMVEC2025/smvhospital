@@ -55,10 +55,10 @@ function Home() {
         <HomeSectionTwo/>
        
         <WhySmv/>
-        {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)}
+        {/* {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)} */}
         <HomeNewsEvents  newsAndEvents={newsAndEvents}/>
-        <HomeTestimonial/>
-      <HomeDoctors/>
+        {/* <HomeTestimonial/> */}
+      {/* <HomeDoctors/> */}
       <Footer/>
     </div>
   )
