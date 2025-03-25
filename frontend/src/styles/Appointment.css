@@ -378,7 +378,7 @@
 
   
 
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 550px) {
     .appointment_main{
       padding: 1rem 0;
       flex-direction: column;
