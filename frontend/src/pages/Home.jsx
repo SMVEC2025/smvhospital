@@ -20,7 +20,9 @@ import { useNavigate } from 'react-router-dom'
 import MobileSideBar from '../components/navbar/MobileSideBar'
 import ScrollToTop from '../components/ScrollToTop'
  
-
+import '../styles/Home.css'
+import HomeYoutube from '../components/HomeYoutube'
+import ExternalScriptLoader from '../components/ExternalScriptLoader'
 function Home() {
   const { isMobile,refreshAnim,setShowSideBar } = useContext(AppContext)
   const [newsAndEvents,setNewsAndEvents]=useState([])
@@ -50,8 +52,8 @@ function Home() {
         <Navbar/>
         <Hero/>
         <HomeAbout/>
-        <LedContainer/>
-        <img src={videoback} style={{width:"100%"}} alt="" />
+        {/* <LedContainer/> */}
+        <HomeYoutube/>
         <HomeSectionTwo/>
        
         <WhySmv/>
@@ -59,6 +61,8 @@ function Home() {
         <HomeNewsEvents  newsAndEvents={newsAndEvents}/>
         {/* <HomeTestimonial/> */}
       {/* <HomeDoctors/> */}
+      <ExternalScriptLoader/>
+      
       <Footer/>
     </div>
   )
