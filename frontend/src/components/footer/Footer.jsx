@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../styles/Footer.css'
-import logofull from '../../assets/images/logofull.png'
+import logofull from '../../assets/images/smvwhite.png'
 import { MdCall } from "react-icons/md";
 import { IoMailSharp } from "react-icons/io5";
 import { FaAmbulance } from "react-icons/fa";
