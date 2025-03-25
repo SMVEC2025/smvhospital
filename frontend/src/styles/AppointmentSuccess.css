@@ -14,7 +14,8 @@
     border: 1px solid rgba(128, 128, 128, 0.43);
     width: 70vw;
   }
-  
+  .appointment-success{
+    
   .icon {
     font-size: 50px;
     color: #ff8a65;
@@ -41,6 +42,7 @@
     margin-bottom: 5px;
   }
   
+}
   .calendar-buttons a {
     margin: 5px;
     padding: 4px 20px;
