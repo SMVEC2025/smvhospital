@@ -40,7 +40,7 @@ const Appointment = () => {
     const [selectedPackage, setSelectedPackage] = useState()
     const [selectedDate, setSelectedDate] = useState(new Date()); // Set default date to today
     const [selectedTime, setSelectedTime] = useState(null);
-    const processes =['services','date&time','basicdetail']
+    const processes = ['services', 'date&time', 'basicdetail']
     const sectionRef = useRef(null);
     const navigate = useNavigate();
 
@@ -49,83 +49,83 @@ const Appointment = () => {
     const Packages = ['Primary', 'economy', 'premium', 'clasic']
     const healthPackages = [
         {
-          id: 1,
-          name: "Basic Health Checkup",
-          price: 2999,
-          description: "A fundamental health checkup covering essential tests to assess overall well-being.",
-          testsIncluded: [
-            "Complete Blood Count (CBC)",
-            "Blood Sugar (Fasting & PP)",
-            "Lipid Profile",
-            "Liver Function Test (LFT)",
-            "Kidney Function Test (KFT)",
-            "Urine Routine & Microscopy"
-          ],
-          duration: "1 Day",
-          suitableFor: "Individuals looking for routine health assessment."
+            id: 1,
+            name: "Basic Health Checkup",
+            price: 2999,
+            description: "A fundamental health checkup covering essential tests to assess overall well-being.",
+            testsIncluded: [
+                "Complete Blood Count (CBC)",
+                "Blood Sugar (Fasting & PP)",
+                "Lipid Profile",
+                "Liver Function Test (LFT)",
+                "Kidney Function Test (KFT)",
+                "Urine Routine & Microscopy"
+            ],
+            duration: "1 Day",
+            suitableFor: "Individuals looking for routine health assessment."
         },
         {
-          id: 2,
-          name: "Advanced Full Body Checkup",
-          price: 5999,
-          description: "Comprehensive health screening including organ function tests and vitamin analysis.",
-          testsIncluded: [
-            "Complete Blood Count (CBC)",
-            "Blood Sugar (Fasting & PP)",
-            "Lipid Profile",
-            "Liver Function Test (LFT)",
-            "Kidney Function Test (KFT)",
-            "Thyroid Function Test (TFT)",
-            "Vitamin D & B12",
-            "ECG & Chest X-ray"
-          ],
-          duration: "1-2 Days",
-          suitableFor: "Adults over 30 or those with lifestyle-related risks."
+            id: 2,
+            name: "Advanced Full Body Checkup",
+            price: 5999,
+            description: "Comprehensive health screening including organ function tests and vitamin analysis.",
+            testsIncluded: [
+                "Complete Blood Count (CBC)",
+                "Blood Sugar (Fasting & PP)",
+                "Lipid Profile",
+                "Liver Function Test (LFT)",
+                "Kidney Function Test (KFT)",
+                "Thyroid Function Test (TFT)",
+                "Vitamin D & B12",
+                "ECG & Chest X-ray"
+            ],
+            duration: "1-2 Days",
+            suitableFor: "Adults over 30 or those with lifestyle-related risks."
         },
         {
-          id: 3,
-          name: "Cardiac Health Package",
-          price: 7999,
-          description: "Specialized tests for heart health assessment, ideal for individuals with heart risks.",
-          testsIncluded: [
-            "ECG",
-            "2D Echocardiography",
-            "Lipid Profile",
-            "Blood Sugar (Fasting & PP)",
-            "Liver Function Test (LFT)",
-            "Kidney Function Test (KFT)",
-            "Treadmill Test (TMT)",
-            "Cardiologist Consultation"
-          ],
-          duration: "1-2 Days",
-          suitableFor: "People with heart conditions, high BP, or cholesterol issues."
+            id: 3,
+            name: "Cardiac Health Package",
+            price: 7999,
+            description: "Specialized tests for heart health assessment, ideal for individuals with heart risks.",
+            testsIncluded: [
+                "ECG",
+                "2D Echocardiography",
+                "Lipid Profile",
+                "Blood Sugar (Fasting & PP)",
+                "Liver Function Test (LFT)",
+                "Kidney Function Test (KFT)",
+                "Treadmill Test (TMT)",
+                "Cardiologist Consultation"
+            ],
+            duration: "1-2 Days",
+            suitableFor: "People with heart conditions, high BP, or cholesterol issues."
         },
         {
-          id: 4,
-          name: "Diabetes Care Package",
-          price: 4999,
-          description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
-          testsIncluded: [
-            "Blood Sugar (Fasting, PP, HbA1c)",
-            "Lipid Profile",
-            "Kidney Function Test (KFT)",
-            "Liver Function Test (LFT)",
-            "Urine Routine & Microalbuminuria",
-            "Foot Examination",
-            "Ophthalmologist Consultation"
-          ],
-          duration: "1 Day",
-          suitableFor: "Diabetic patients or individuals at risk of diabetes."
+            id: 4,
+            name: "Diabetes Care Package",
+            price: 4999,
+            description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
+            testsIncluded: [
+                "Blood Sugar (Fasting, PP, HbA1c)",
+                "Lipid Profile",
+                "Kidney Function Test (KFT)",
+                "Liver Function Test (LFT)",
+                "Urine Routine & Microalbuminuria",
+                "Foot Examination",
+                "Ophthalmologist Consultation"
+            ],
+            duration: "1 Day",
+            suitableFor: "Diabetic patients or individuals at risk of diabetes."
         }
-      ];
-      
+    ];
+
     const [process, setProcess] = useState('services')
     useEffect(() => {
         setAnimCase('allset')
         setShowSideBar(false)
     }, [])
 
-  console.log("selectedPackage",process)
+    console.log("selectedPackage", process)
     const handleTimeSelect = (time) => {
         setSelectedTime(time);
     };
@@ -141,41 +141,41 @@ const Appointment = () => {
         email: "",
         phone: "",
         note: "",
-      });
-    
-      const handleChange = (e) => {
+    });
+
+    const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
-      };
-      const scrollToRef = (ref) => {
+    };
+    const scrollToRef = (ref) => {
         sectionRef.current?.scrollIntoView({ behavior: "smooth" });
     };
 
-    function handleIncrement(val){
-        if(process == 'services'){
+    function handleIncrement(val) {
+        if (process == 'services') {
             setProcess(processes[1])
             scrollToRef()
-        }else if(process == 'date&time'){
+        } else if (process == 'date&time') {
             setProcess(processes[2])
             scrollToRef()
-        }else{
+        } else {
             return
         }
 
     }
-    function handleDecrement(val){
-        if(process == 'date&time'){
+    function handleDecrement(val) {
+        if (process == 'date&time') {
             setProcess(processes[0])
             scrollToRef()
-        }else if(process == 'basicdetail'){
+        } else if (process == 'basicdetail') {
             setProcess(processes[1])
             scrollToRef()
-        }else{
+        } else {
             return
         }
 
     }
-    function handleSubmit(){
-        navigate("/appointmentsuccess", { state: { name: "John Doe", date: "March 21, 2025" , time:"12:00 PM",service:"NA" } });
+    function handleSubmit() {
+        navigate("/appointmentsuccess", { state: { name: "John Doe", date: "March 21, 2025", time: "12:00 PM", service: "NA" } });
 
     }
     return (
@@ -186,18 +186,18 @@ const Appointment = () => {
             <Hero6 data={heroData} />
             <div className="appointment_main" ref={sectionRef}>
                 <div className="app_progress">
-                    <div className={`app_progress1 ${process=='services'?"true":""}`}
-                    onClick={()=>setProcess('services')}>
+                    <div className={`app_progress1 ${process == 'services' ? "true" : ""}`}
+                        onClick={() => setProcess('services')}>
                         <span><MdMedicalServices /></span>
                         <h2>Services</h2>
                     </div>
-                    <div className={`app_progress1 ${process=='date&time'?"true":""}`}
-                    onClick={()=>setProcess('date&time')}>
+                    <div className={`app_progress1 ${process == 'date&time' ? "true" : ""}`}
+                        onClick={() => setProcess('date&time')}>
                         <span><BsFillCalendarDateFill /></span>
                         <h2>Date & Time</h2>
                     </div>
-                    <div className={`app_progress1 ${process=='basicdetail'?"true":""}`}
-                    onClick={()=>setProcess('basicdetail')}>
+                    <div className={`app_progress1 ${process == 'basicdetail' ? "true" : ""}`}
+                        onClick={() => setProcess('basicdetail')}>
                         <span><FaNotesMedical /></span>
                         <h2>Basic Detail</h2>
                     </div>
@@ -296,76 +296,76 @@ const Appointment = () => {
 
 
 
-                         {/* Date & Time  */}
+                    {/* Date & Time  */}
 
                     {process == 'basicdetail' && (
                         <div className="app_form_date">
                             <form className="form-container">
-      {/* Firstname */}
-      <div className="form-group">
-        <label>Firstname <span>*</span></label>
-        <input
-          type="text"
-          name="firstname"
-          placeholder="Enter your firstname"
-          value={formData.firstname}
-          onChange={handleChange}
-        />
-      </div>
+                                {/* Firstname */}
+                                <div className="form-group">
+                                    <label>Firstname <span>*</span></label>
+                                    <input
+                                        type="text"
+                                        name="firstname"
+                                        placeholder="Enter your firstname"
+                                        value={formData.firstname}
+                                        onChange={handleChange}
+                                    />
+                                </div>
 
-      {/* Lastname */}
-      <div className="form-group">
-        <label>Lastname <span>*</span></label>
-        <input
-          type="text"
-          name="lastname"
-          placeholder="Enter your lastname"
-          value={formData.lastname}
-          onChange={handleChange}
-        />
-      </div>
+                                {/* Lastname */}
+                                <div className="form-group">
+                                    <label>Lastname <span>*</span></label>
+                                    <input
+                                        type="text"
+                                        name="lastname"
+                                        placeholder="Enter your lastname"
+                                        value={formData.lastname}
+                                        onChange={handleChange}
+                                    />
+                                </div>
 
-      {/* Email Address */}
-      <div className="form-group">
-        <label>Email Address <span>*</span></label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email address"
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </div>
+                                {/* Email Address */}
+                                <div className="form-group">
+                                    <label>Email Address <span>*</span></label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Enter your email address"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                    />
+                                </div>
 
-      {/* Phone Number */}
-      <div className="form-group">
-        <label>Phone Number <span>*</span></label>
-        <PhoneInput
-          country={"us"}
-          value={formData.phone}
-          onChange={(phone) => setFormData({ ...formData, phone })}
-          inputStyle={{ width: "100%" }}
-        />
-      </div>
+                                {/* Phone Number */}
+                                <div className="form-group">
+                                    <label>Phone Number <span>*</span></label>
+                                    <PhoneInput
+                                        country={"us"}
+                                        value={formData.phone}
+                                        onChange={(phone) => setFormData({ ...formData, phone })}
+                                        inputStyle={{ width: "100%" }}
+                                    />
+                                </div>
 
-      {/* Note */}
-      <div className="form-group">
-        <label>Note</label>
-        <textarea
-          name="note"
-          placeholder="Enter note details"
-          value={formData.note}
-          onChange={handleChange}
-        />
-      </div>
-    </form>
+                                {/* Note */}
+                                <div className="form-group">
+                                    <label>Note</label>
+                                    <textarea
+                                        name="note"
+                                        placeholder="Enter note details"
+                                        value={formData.note}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                            </form>
                         </div>)}
 
 
 
                     <div className="app_form_end">
-                        {process!=='services'?( <button onClick={()=>handleDecrement()}><FaArrowLeft /> Go Back</button>):null}
-                        {process=='basicdetail'?(<button onClick={handleSubmit} >Submit <FaArrowRight /></button>):(<button onClick={()=>handleIncrement()}>Next <FaArrowRight /></button>)}
+                        {process !== 'services' ? (<button onClick={() => handleDecrement()}><FaArrowLeft /> Go Back</button>) : null}
+                        {process == 'basicdetail' ? (<button onClick={handleSubmit} >Submit <FaArrowRight /></button>) : (<button onClick={() => handleIncrement()}>Next <FaArrowRight /></button>)}
 
                     </div>
 

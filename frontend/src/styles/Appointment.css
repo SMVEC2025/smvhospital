@@ -336,3 +336,157 @@
     resize: none;
   }
   
+
+
+  @media only screen and (max-width: 730px) {
+    .appointment_main{
+      padding: 3rem 0;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+  }
+  .app_progress{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-around;
+    background-color: #ffffff;
+    width: 90vw;
+    height: fit-content;
+    padding: 20px 0;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.601);
+}
+.app_form_service{
+  width: 80vw;
+  
+}
+.app_form_date{
+  min-width: 100px;
+}
+.booking-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.booking-container {
+  width: 90%;
+}
+
+  }
+
+  
+
+  @media only screen and (max-width: 450px) {
+    .appointment_main{
+      padding: 1rem 0;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+  }
+  .app_progress{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-around;
+    background-color: #ffffff;
+    width: 90vw;
+    height: fit-content;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.601);
+}
+.app_form{
+  width: fit-content;
+  padding:20px 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.601);
+  position: relative;
+  padding-bottom: 150px;
+  width: 90vw;
+
+}
+
+.app_form_service{
+  width: 80vw;
+  
+}
+
+.app_form_date{
+  min-width: 100px;
+  width: 90%;
+}
+.booking-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.booking-container {
+  width: 90%;
+}
+
+.app_progress h2{
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+.service_select{
+  gap: 1rem;
+  font-size: 12px;
+
+}
+.service_select1{
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #f7a683;
+  cursor: pointer;
+  color: rgb(57, 57, 57);
+}
+.form-container {
+  width: 100%;
+  margin: auto;
+  padding: 0;
+}
+input,
+textarea {
+  width:90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.app_form_end{
+  display: flex;
+  justify-content: center;
+}
+
+.app_form_end>button{
+  margin-right: 20px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 15px;
+  gap: 10px;
+  border-radius: 25px;
+  background-color: rgb(243, 135, 59);
+  border: 1px solid #f7a683;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+
+}
+
+.app_progress1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 7px 5px;
+}
+  }
