@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 .ticket-card {
     width: 300px;
     height: 150px;
     position: relative;
 
-    margin-left: 20px;
-    margin-top: 20px;
+   
     overflow: hidden;
     border-radius: 5px;
   }
@@ -23,7 +23,7 @@
     top: 50%;
     width: 40px;
     height: 40px;
-    background: #f7f4ef;
+    background: #f0efed;
     border-radius: 50%;
     transform: translateY(-50%);
   }
@@ -39,8 +39,8 @@
     background-size: 10px 10px;
     background-repeat: repeat-y;
     background-position: 0 0, 0 0, 100% 0, 100% 0;
-    background-image: linear-gradient(135deg, transparent 75%, #f7f4ef 75%),
-                      linear-gradient(45deg, transparent 75%, #f7f4ef 75%);
+    background-image: linear-gradient(135deg, transparent 75%, #f0efed 75%),
+                      linear-gradient(45deg, transparent 75%, #f0efed 75%);
     line-height: 1.9;
     transform: rotate(180deg);
     font-size: 90px;
@@ -48,7 +48,8 @@
 }
 
 .mnae_main{
-
+    font-family: "Old Standard TT", serif;
+    font-style: normal;
 }
 .mnae_main header{
     height: 70vh;
@@ -67,14 +68,18 @@
 }
 .mnae_main h2{
     color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
 
 }
 .mnae_slider{
-    width: 600px;
-    height: 250px;
+    width: 750px;
+    height: 200px;
     background-color: white;
     margin-top: 1rem;
     position: relative;
+    padding: 20px;
+    padding-left: 50px;
 
 }
   
@@ -104,8 +109,139 @@
   position: absolute;
   right: 10px;
   height: 90%;
-  top: -8px;
+  top: 5%;
+  
 }
 .mnae_slider>.ticket-card::before{
     height: 700px;
+    background-image: linear-gradient(135deg, transparent 75%, #ffffff 75%),
+    linear-gradient(45deg, transparent 75%, #ffffff 75%);
+}
+.mnae_slider>.ticket-card::after{
+    background-color: white;
+}
+.mnae_slider1 h3{
+    font-size: 2rem;
+    color: rgb(136, 88, 53);
+    letter-spacing: 0.8px;
+    font-weight: 700;
+}
+.mnae_slider1>div{
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+.mnae_slider1>div>span{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: rgb(136, 88, 53);
+    font-weight: 100;
+
+}
+.mnae_slider1 button{
+    margin-top: 2rem;
+    background-color: chocolate;
+    border: none;
+    padding: 9px 20px;
+    color: white;
+}
+.leftarrow{
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+
+}
+.rightarrow{
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    z-index: 2;
+    cursor: pointer;
+}
+.allevents{
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ align-items: center;
+}
+.allevents_card{
+    display: flex;
+    flex-direction: row;
+    background-color: #f0efed;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+    align-items: center;
+}
+.allevents_card1{
+   
+}
+.allevents_card11{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 15px 0 15px;
+    background-color: #f3dad3;
+}
+.allevents_card12{
+    background-color: #be5f1f;
+    text-align: center;
+    color: white;
+    padding: 7px 15px 7px 15px;
+
+}
+.allevents_card2{
+  margin-left: 5rem;
+  width: 400px;
+}
+.allevents_card3{
+    margin-left: 10rem;
+  }
+.allevents_card2 h3{
+    font-size: 1.5rem;
+    color: rgb(136, 88, 53);
+    letter-spacing: 0.8px;
+    font-weight: 700;
+}
+.allevents_card2>div{
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+.allevents_card2>div>span{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: rgb(136, 88, 53);
+    font-weight: 100;
+
+}
+.allevents_card2 button{
+    margin-top: 2rem;
+    background-color: chocolate;
+    border: none;
+    padding: 9px 20px;
+    color: white;
+}
+.allnewsevent_headings{
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 0;
+    color: rgb(107, 71, 23);
+    font-weight: 700;
 }

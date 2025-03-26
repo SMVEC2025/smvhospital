@@ -22,7 +22,6 @@ import ScrollToTop from '../components/ScrollToTop'
  
 import '../styles/Home.css'
 import HomeYoutube from '../components/HomeYoutube'
-import ExternalScriptLoader from '../components/ExternalScriptLoader'
 function Home() {
   const { isMobile,refreshAnim,setShowSideBar } = useContext(AppContext)
   const [newsAndEvents,setNewsAndEvents]=useState([])
@@ -47,21 +46,20 @@ function Home() {
   return (
     <div>
        <ScrollToTop/>
-        <BotWrapper/>
-        <MobileSideBar/>
-        <Navbar/>
+        {/* <BotWrapper/> */}
+        {/* <MobileSideBar/> */}
+        {/* <Navbar/> */}
         <Hero/>
-        <HomeAbout/>
+        {/* <HomeAbout/> */}
         {/* <LedContainer/> */}
         <HomeYoutube/>
         <HomeSectionTwo/>
        
         <WhySmv/>
-        {/* {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)} */}
+        {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)}
         <HomeNewsEvents  newsAndEvents={newsAndEvents}/>
-        {/* <HomeTestimonial/> */}
-      {/* <HomeDoctors/> */}
-      {/* <ExternalScriptLoader/> */}
+        <HomeTestimonial/>
+      <HomeDoctors/>
       <Footer/>
     </div>
   )
