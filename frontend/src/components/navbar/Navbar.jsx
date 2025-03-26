@@ -32,7 +32,6 @@ function Navbar() {
 
   }, []);
 
-console.log(showEmer)
   return (
     <>
       {animCase=='allset' ? (<div className={`nav_main ${scrolled}`}>

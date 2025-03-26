@@ -1,0 +1,111 @@
+.ticket-card {
+    width: 300px;
+    height: 150px;
+    position: relative;
+
+    margin-left: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  
+  .ticket-image {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+  }
+  
+  .ticket-card::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background: #f7f4ef;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  
+/* Ticket Label */
+.ticket-card::before {
+    content: '';
+    width: 24px;
+    height: 150px;
+    position: absolute;
+    left: -14px;
+    top: 0px;
+    background-size: 10px 10px;
+    background-repeat: repeat-y;
+    background-position: 0 0, 0 0, 100% 0, 100% 0;
+    background-image: linear-gradient(135deg, transparent 75%, #f7f4ef 75%),
+                      linear-gradient(45deg, transparent 75%, #f7f4ef 75%);
+    line-height: 1.9;
+    transform: rotate(180deg);
+    font-size: 90px;
+    text-align: left;
+}
+
+.mnae_main{
+
+}
+.mnae_main header{
+    height: 70vh;
+    background-size: cover;
+    background-image: url('https://assets-eu-01.kc-usercontent.com/8ff24b0e-57a3-0157-62d1-fa4ac9734eb5/c4569d4a-aa6b-4fd0-abcc-4a086da12b9a/hd-3d-printing-hospitals-sig.jpg?w=3840&q=90&lossless=true&auto=format');
+    background-repeat: no-repeat;
+}
+.mnae_main header>div{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.486);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.mnae_main h2{
+    color: white;
+
+}
+.mnae_slider{
+    width: 600px;
+    height: 250px;
+    background-color: white;
+    margin-top: 1rem;
+    position: relative;
+
+}
+  
+.mnae_slider::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+.mnae_slider::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+.mnae_slider>.ticket-card{
+  position: absolute;
+  right: 10px;
+  height: 90%;
+  top: -8px;
+}
+.mnae_slider>.ticket-card::before{
+    height: 700px;
+}

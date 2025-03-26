@@ -11,13 +11,14 @@ const TitleAnimation = () => {
     return (
       <>
        {controlAnim == 'one' && (
-        <motion.svg viewBox="0 0 100px 100" 
+        <motion.svg  viewBox="0 0 100px 100" xmlns="http://www.w3.org/2000/svg"
+
         initial={{ scale: 1.5}}
         animate={{ scale: 0.5}}
         transition={{ duration: 2  }}
         onAnimationEnd={()=>{setControlAnim('two')}}
         >
-        <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+        <text x="50%" y="50%" dy=".35em" textAnchor="middle">
             S
         </text>
     </motion.svg>	

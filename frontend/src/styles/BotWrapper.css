@@ -2,9 +2,9 @@
     position: fixed;
     bottom: 40px;
     right: 30px;
-    width: 70px;
+    width: 60px;
     padding: 5px;
-    height: 70px;
+    height: 60px;
     background-color: #e2dbc9;
     z-index: 1000;
     border-radius: 10px;
@@ -13,7 +13,7 @@
 }
 .bw_main.true{
     width: 400px;
-animation: expandWidthThenHeight 1.5s ease-in-out forwards;
+animation: expandWidthThenHeight 0.8s ease-in-out forwards;
 }
 
 .bw_main.false{
@@ -22,12 +22,12 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
 
 @keyframes expandWidthThenHeight {
     0% {
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
     }
     50% {
       width: 400px;
-      height: 70px;
+      height: 60px;
     }
     100% {
         width: 400px;
@@ -41,11 +41,11 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     }
     60% {
       width: 400px;
-      height: 70px;
+      height: 60px;
     }
     100% {
-        width: 70px;
-      height: 70px;
+        width: 60px;
+      height: 60px;
     }
   }
   .bw_big_container{
@@ -67,7 +67,7 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
 }
 
 .bw_small img{
-    width: 5px;
+    width: 4px;
     transition: width 0.2s ease;
     padding: 1px;
     border-radius: 50%;
@@ -82,21 +82,21 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
 .bw_small:hover{
 
 .bw_small_div1{
-    transform: translate(15px,15px);
+    transform: translate(10px,10px);
 
 }
 .bw_small_div2{
-    transform: translate(-15px,15px);
+    transform: translate(-10px,10px);
 
 
 }
 .bw_small_div3{
-    transform: translate(15px,-15px);
+    transform: translate(10px,-10px);
 
 
 }
 .bw_small_div4{
-    transform: translate(-15px,-15px);
+    transform: translate(-10px,-10px);
 
 }
 
@@ -107,7 +107,7 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     display: flex;
     justify-content: start;
     align-items: start;
-    transform: translate(15px,15px);
+    transform: translate(10px,10px);
     transition: transform 0.3s ease-in-out;
 
 }
@@ -115,7 +115,7 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     display: flex;
     justify-content: end;
     align-items: start;
-    transform: translate(-15px,15px);
+    transform: translate(-10px,10px);
     transition: transform 0.3s ease-in-out;
 
 
@@ -124,7 +124,7 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     display: flex;
     justify-content: start;
     align-items: end;
-    transform: translate(15px,-15px);
+    transform: translate(10px,-10px);
     transition: transform 0.3s ease-in-out;
 
 
@@ -133,7 +133,7 @@ animation: expandWidthThenHeight 1.5s ease-in-out forwards;
     display: flex;
     justify-content: end;
     align-items: end;
-    transform: translate(-15px,-15px);
+    transform: translate(-10px,-10px);
     transition: transform 0.3s ease-in-out;
 
 }

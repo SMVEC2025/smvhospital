@@ -15,7 +15,6 @@ function Hero() {
           videoRef.current.play(); // Ensure playback
         }
       };
-console.log("animCase",animCase)
     return (
         <div  className={`hero_main`}>
             <div className={`hero_main_con1 ${animCase!=='welcome'?'true':''}`}>

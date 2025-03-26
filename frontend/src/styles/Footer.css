@@ -3,7 +3,7 @@
     background-position: center center;
     padding: 60px 0;
     color: #fff;
-    background-color: rgb(4, 4, 41);
+    background-color: #381018;
   }
   
   .footer-container {
@@ -61,6 +61,7 @@
   .footer-links h4 {
     font-size: 18px;
     margin-bottom: 15px;
+    color: #ea622a;
   }
   
   .footer-links ul {
@@ -78,10 +79,11 @@
 
   }
   .footer-links ul li span {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: start;
+    color: #dad9d9;
   }
   
   .footer-links ul li a {
@@ -99,7 +101,22 @@
     max-width: 120px;
     margin: 5px 0;
     margin-top: 1rem;
-    margin-left: 1rem;
+    margin-left: 0rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+  }
+  .footer-app img:hover{
+    scale: 97%;
+  }
+  
+  .footer-app p{
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .footer-app h4{
+    font-size: 2rem;
+    line-height: 1.6;
+    color: rgb(230, 230, 230);
   }
   
   /* Footer Bottom Section */

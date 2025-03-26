@@ -43,7 +43,7 @@ function Home() {
 
   }, []);
 
-  
+
   return (
     <div>
        <ScrollToTop/>
@@ -61,8 +61,7 @@ function Home() {
         <HomeNewsEvents  newsAndEvents={newsAndEvents}/>
         {/* <HomeTestimonial/> */}
       {/* <HomeDoctors/> */}
-      <ExternalScriptLoader/>
-      
+      {/* <ExternalScriptLoader/> */}
       <Footer/>
     </div>
   )

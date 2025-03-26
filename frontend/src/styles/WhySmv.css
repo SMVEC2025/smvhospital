@@ -42,6 +42,12 @@
     padding: 9px 25px;
     border-radius: 25px;
     color: #8b5e3b;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  .why-smv-left button:hover{
+    background-color: #8b5e3b;
+    color: white;
   }
   .why-smv-right {
     width: 50%;

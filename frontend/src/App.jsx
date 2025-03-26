@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Appointment from "./pages/Appointment";
 import AppointmentSuccess from "./pages/AppointmentSuccess";
 import NewsAndEvents from "./pages/NewsAndEvents";
+import MainNewsAndEvents from "./pages/MainNewsAndEvents";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ transition={Bounce}
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/AppointmentSuccess" element={<AppointmentSuccess />} />
           <Route path="/newsandevents/:name" element={<NewsAndEvents />} />
+          <Route path="/news-events" element={<MainNewsAndEvents />} />
 
         </Routes>
       </Router>

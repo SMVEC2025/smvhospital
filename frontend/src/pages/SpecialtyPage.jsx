@@ -45,7 +45,6 @@ function SpecialtyPage() {
   const [faqContainer,setFaqConatiner]=useState(0)
   const faq = [1,2,3]
 
-      console.log("showSpecialty",showSpecialty)
   return (
    <>
    <Navbar/>

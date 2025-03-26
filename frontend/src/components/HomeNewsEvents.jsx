@@ -12,7 +12,6 @@ function HomeNewsEvents( {newsAndEvents} ) {
     const navigate = useNavigate();
 
     
-    console.log(newsAndEvents)
     // For demonstration, we’ll inline the data here.
     // Replace or import your data from eventsData if you prefer.
     const eventsData = [
@@ -45,7 +44,7 @@ function HomeNewsEvents( {newsAndEvents} ) {
   return (
     <div className="hne_container" onMouseMove={handleMouseMove}>
           <div className="sticky-heading">
-          <HomeHeadings title={t("newsandeventshead")}/>
+          <HomeHeadings event='/new' title={t("newsandeventshead")}/>
          
         </div>
       <ul className="event-list">

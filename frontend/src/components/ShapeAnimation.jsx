@@ -68,7 +68,7 @@ export default function ShapeAnimation({ videoRef }) {
           >
             Advanced Care, Expert Hands, Your Health First!
           </motion.div>
-          <motion.button
+          <motion.button 
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             onClick={()=>navigate('/about')}

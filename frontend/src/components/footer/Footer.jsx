@@ -7,10 +7,10 @@ import { FaAmbulance } from "react-icons/fa";
 import playstore from '../../assets/images/playstore.png'
 import appstore from '../../assets/images/appstore.png'
 import { MdLocationOn } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 
 function Footer() {
-    const Link = 'hello'
   return (
     <footer className="footer">
     <div className="footer-container">
@@ -66,7 +66,7 @@ function Footer() {
             <h4>Download App</h4>
             <p>Get easy access to healthcare services anytime, anywhere. Download our app for appointments, medical records, and more.</p>
             <Link to="/"><img src={playstore} className="footer-app-img" alt="Play Store" /></Link>
-            <Link to="/"><img src={appstore} className="footer-app-img" alt="App Store" /></Link>
+            <Link to="/"><img src={appstore} style={{marginLeft:"1rem"}} className="footer-app-img" alt="App Store" /></Link>
           </div>
         </div>
       </div>

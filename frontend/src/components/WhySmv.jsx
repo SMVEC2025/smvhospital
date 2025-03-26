@@ -3,8 +3,10 @@ import { FaHandHoldingHeart,FaHospital,FaHandHoldingMedical   } from "react-icon
 import { FaUserDoctor,FaTruckMedical } from "react-icons/fa6";
 import { MdBloodtype } from "react-icons/md";
 import '../styles/WhySmv.css'
+import { useNavigate } from 'react-router-dom';
 
 function WhySmv() {
+  const  navigate = useNavigate()
   const whysmvdata=[
      {
       title:"Empathy",
@@ -49,14 +51,14 @@ function WhySmv() {
 
         We are a leading, multi-speciality hospital offering best-in-class medical services for nearly 2 decades. With paramount focus on patient care, patient safety and patient satisfaction, we are committed to offer exemplary medical services going beyond the norm of healthcare.
         </p>
-        <button>Learn More</button>
+        <button onClick={()=>{navigate('/about')}}>Learn More</button>
       </div>
 
       {/* Right Section */}
       <div className="why-smv-right">
        
           {whysmvdata.map((e,i)=>(
-             <div className="feature-box">
+             <div key={i} className="feature-box">
               <div className='logo'>{e.logo}</div>
             <div>
             <h3>{e.title}</h3>

@@ -19,7 +19,7 @@ function BotWrapper() {
     setOpenWrap(true)
     setTimeout(() => {
       setShowWrapContent(true)
-    }, 1500);
+    }, 800);
   }
   function handleClose() {
 
@@ -33,7 +33,6 @@ function BotWrapper() {
 
     }, 1000);
   } 
-  console.log("openWrap",openWrap)
 
   return (
     <div className={`bw_main ${openWrap}`}>

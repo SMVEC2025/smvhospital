@@ -13,7 +13,6 @@ const DoctorDetail = () => {
   const { setShowSideBar,setAnimCase }=useContext(AppContext)
   const location = useLocation();
   const doctor = location.state?.doctor; 
-  console.log(doctor)
   if (!doctor) {
     return <h2>Doctor not found!</h2>;
   }

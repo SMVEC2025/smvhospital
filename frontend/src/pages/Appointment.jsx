@@ -125,7 +125,6 @@ const Appointment = () => {
         setShowSideBar(false)
     }, [])
 
-    console.log("selectedPackage", process)
     const handleTimeSelect = (time) => {
         setSelectedTime(time);
     };

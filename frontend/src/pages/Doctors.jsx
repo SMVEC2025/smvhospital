@@ -132,7 +132,7 @@ const Doctors = () => {
                     </span>
                   </div>
                   <div className="bottom-bottom">
-                  <div class="social-links-container">
+                  <div className="social-links-container">
         <svg
           viewBox="0 0 16 15.999"
           height="15.999"

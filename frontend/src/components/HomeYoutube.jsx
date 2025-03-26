@@ -39,7 +39,6 @@ const HomeYoutube = () => {
           modestbranding: 1,
         },
         events: {
-          onReady: (event) => console.log("YouTube Player Ready"),
           onStateChange: handleStateChange,
         },
       });
@@ -50,18 +49,15 @@ const HomeYoutube = () => {
   const handleStateChange = (event) => {
     switch (event.data) {
       case window.YT.PlayerState.PLAYING:
-        console.log("Video is playing");
         setIsPlaying(true);
         setIsPaused(false);
         setIsEnded(false);
         break;
       case window.YT.PlayerState.PAUSED:
-        console.log("Video is paused");
         setIsPaused(true);
         setIsPlaying(false);
         break;
       case window.YT.PlayerState.ENDED:
-        console.log("Video has ended");
         setIsEnded(true);
         setIsPlaying(false);
         setIsPaused(false);
@@ -110,7 +106,6 @@ const HomeYoutube = () => {
         src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=0&controls=1&showinfo=0&modestbranding=1`}
         frameBorder="0"
         allow="autoplay; fullscreen"
-        allowFullScreen
         title="Background Video"
       ></iframe>
     </div>

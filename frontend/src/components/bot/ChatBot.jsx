@@ -175,8 +175,6 @@ const Chatbot = ({ openLang }) => {
     
                 setMessages(prev => [...prev, botMessage]);
                 setBotTyping(false);
-                console.log("Messages:", messages);
-                console.log("Bot Message:", botMessage);
             } catch (err) {
                 
                 console.error("Chatbot Error:", err);
@@ -188,7 +186,6 @@ const Chatbot = ({ openLang }) => {
         }, 500);
         
     };
-console.log(userData)
     const postUserData = async (data) => {
         const googleFormURL ="https://docs.google.com/forms/u/0/d/e/1FAIpQLScOCZvXCksjUJEQwutB3skeHEZjH4VS8ihtQLwYwd781MkAfw/formResponse"; 
       

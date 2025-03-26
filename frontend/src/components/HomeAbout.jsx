@@ -5,10 +5,12 @@ import mobileapp from '../assets/images/mobileapp.png'
 import { useTranslation } from "react-i18next";
 import { AppContext } from "../context/AppContext";
 import '../i18n'
+import { useNavigate } from "react-router-dom";
 const HomeAbout = () => {
   const [activeSection, setActiveSection] = useState("about");
   const { t } = useTranslation("home");
   const { isMobile } =useContext(AppContext)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const sections = document.querySelectorAll(".section");
@@ -67,7 +69,7 @@ const HomeAbout = () => {
           <h3>{t("abouttitle")}</h3>
           <p>{t("aboutdescription")}</p>
          <div >
-         <Button  name="About us"/>
+         <Button event='/about'  name="About us"/>
          </div>
         </div>
         <div id="mobile" className="section">
@@ -80,7 +82,7 @@ const HomeAbout = () => {
           <h2>Book an Appointment</h2>
           <h3>{t("appointmenthead")}</h3>
           <p>{t("appointmentdesc")}</p>
-          <Button name='Book Appointment'/>
+          <Button  event='/appointment' name='Book Appointment'/>
         </div>
       </div>
     </div>

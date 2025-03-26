@@ -7,7 +7,6 @@ const HomeSectionTwo = () => {
     const { t } = useTranslation("home");
     const specialties = Object.entries(t("specialtydesc", { returnObjects: true }));
 
-  console.log(specialties)
   const speacialitymain=[
     {
      title:"General Medicine",
@@ -38,11 +37,11 @@ const HomeSectionTwo = () => {
     <div className="hst_container">
       <div className="hst_wrapper">
         <div className="sticky-heading">
-         <HomeHeadings title={t("specialtyhead")}/>
+         <HomeHeadings event='/specialty' title={t("specialtyhead") }/>
         </div>
         {
           specialties.map(([id,value])=>(
-            <div id={id} className={`card card${Number(id)+1}`}>
+            <div id={id} key={id} className={`card card${Number(id)+1}`}>
                 <div className="hst_card_div1">
                   <p>00{Number(id)+1}</p>
 
