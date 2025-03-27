@@ -19,14 +19,14 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/navbar/Navbar";
 
 const glitchVariants = {
-  initial: { opacity: 0, filter: "blur(10px) contrast(0.8)" },
+  initial: { opacity: 0.4, filter: "blur(10px) contrast(0.8)" },
   animate: {
     opacity: 1,
     filter: "blur(0px) contrast(1)",
     transition: { duration: 0.5, ease: "easeInOut" },
   },
   exit: {
-    opacity: 0,
+    opacity:  0.4,
     filter: "blur(50px) contrast(1.5) hue-rotate(90deg)",
     transition: { duration: 0, ease: "easeInOut" },
   },

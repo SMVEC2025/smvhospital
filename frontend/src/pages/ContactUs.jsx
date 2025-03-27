@@ -132,7 +132,6 @@ function ContactUs() {
 
   return (
     <>
-    <Navbar/>
     <ScrollToTop/>
     <MobileSideBar/>
     <Hero6 data={heroData} />   

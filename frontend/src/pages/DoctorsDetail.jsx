@@ -24,7 +24,6 @@ const DoctorDetail = () => {
   return (
     <>
       <ScrollToTop/>
-      <Navbar />
       <MobileSideBar/>
       <div className="doctorshead">
         {doctor.acf.name}

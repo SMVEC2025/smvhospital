@@ -72,7 +72,6 @@ function MainNewsAndEvents() {
     return (
       <>
         <ScrollToTop/>
-      <Navbar/>
       <MobileSideBar/>
       <BotWrapper/>
 

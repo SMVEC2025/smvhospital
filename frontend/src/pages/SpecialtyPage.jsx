@@ -47,7 +47,6 @@ function SpecialtyPage() {
 
   return (
    <>
-   <Navbar/>
    <ScrollToTop/>
    <MobileSideBar/>
    <Hero6 data={heroData}/>

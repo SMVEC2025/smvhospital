@@ -54,7 +54,6 @@ const heroData = {
   return (
     <>
      <ScrollToTop/>
-            <Navbar/>
             <MobileSideBar/>
             <Hero6 data={heroData} />
     <div ref={sectionRef} className="appointment-success">

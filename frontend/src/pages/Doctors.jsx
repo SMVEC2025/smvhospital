@@ -82,7 +82,6 @@ const Doctors = () => {
   return (
     <>
      <ScrollToTop/>
-      <Navbar />
       <MobileSideBar/>
       <Hero6 data={heroData} />
 
