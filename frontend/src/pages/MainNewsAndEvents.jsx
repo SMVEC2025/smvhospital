@@ -14,6 +14,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import Hero6 from '../components/Hero6';
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
+import BotWrapper from "../components/bot/BotWrapper";
 
 function MainNewsAndEvents() {
     const [newsAndEvents,setNewsAndEvents]=useState([])
@@ -73,6 +74,7 @@ function MainNewsAndEvents() {
         <ScrollToTop/>
       <Navbar/>
       <MobileSideBar/>
+      <BotWrapper/>
 
      
         <div className='mnae_main'>
