@@ -181,4 +181,7 @@
 
 
 }
+.hd_container1 .sticky-heading h4{
+  font-size: calc(1.5rem + 0.5vw);
+}
 }
