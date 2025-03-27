@@ -46,13 +46,13 @@ function Home() {
   return (
     <div>
        <ScrollToTop/>
-        {/* <BotWrapper/> */}
-        {/* <MobileSideBar/> */}
-        {/* <Navbar/> */}
+        <BotWrapper/>
+        <MobileSideBar/>
+        <Navbar/>
         <Hero/>
-        {/* <HomeAbout/> */}
+        <HomeAbout/>
         {/* <LedContainer/> */}
-        <HomeYoutube/>
+        {!isMobile &&(<HomeYoutube/>)}
         <HomeSectionTwo/>
        
         <WhySmv/>

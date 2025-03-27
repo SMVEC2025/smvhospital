@@ -392,5 +392,17 @@
     width: 100px;
     height: 70px;
   }
-
+  
+  .ticket-card::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: #f0efed;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  
 }
