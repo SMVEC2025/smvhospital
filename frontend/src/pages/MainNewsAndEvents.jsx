@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from "react";
 import '../styles/MainNewsAndEvents.css'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -7,9 +7,20 @@ import "swiper/css/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { IoCalendarOutline } from "react-icons/io5";
 import axios from 'axios';
+import Footer from '../components/footer/Footer';
+import MobileSideBar from '../components/navbar/MobileSideBar';
+import Navbar from '../components/navbar/Navbar';
+import ScrollToTop from '../components/ScrollToTop';
+import Hero6 from '../components/Hero6';
+import { AppContext } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 function MainNewsAndEvents() {
     const [newsAndEvents,setNewsAndEvents]=useState([])
+    const [count,setCount]=useState(0)
+      const { setRefreshAnim,doctorsList,setAnimCase,setShowSideBar } = useContext(AppContext);
+      const navigate = useNavigate();
+
     useEffect(() => {
       const fetchnewsandevents = async () => {
         try {
@@ -24,30 +35,65 @@ function MainNewsAndEvents() {
       fetchnewsandevents();
   
     }, []);
-    console.log(newsAndEvents)
+    function handleIncrement(){
+        const totalCount = newsAndEvents.length
+        if (count<(totalCount-1)){
+            setCount(count+1)
+        }else{
+            return
+        }
+    }
+    function handleDecrement(){
+        if (count>0){
+            setCount(count-1)
+        }else{
+            return
+        }
+    }
+    const [animate, setAnimate] = useState("fade-in");
+
+    useEffect(() => {
+        // Step 1: Trigger fade-out animation
+        setAnimate("fade-out");
+
+        // Step 2: Wait for fade-out to complete, then change content
+        const timeout = setTimeout(() => {
+           
+            setAnimate("fade-in"); // Step 3: Trigger fade-in animation
+        }, 300); // Duration should match fade-out CSS
+
+        return () => clearTimeout(timeout);
+    }, [count]); // Runs every time content changes
+    const handleClick = (event) => {
+        navigate(`/newsandevents/${event.acf.shorttitle}`, { state: { event } });
+      };
+      
     return (
-        // <div className="ticket-card">
-        //   <img src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg" alt="Event" className="ticket-image" />
-        // </div>
+      <>
+        <ScrollToTop/>
+      <Navbar/>
+      <MobileSideBar/>
+
+     
         <div className='mnae_main'>
             <header>
                 <div>
                     <h2>Mar 27th - April 25th</h2>
                     <div className='mnae_slider'>
                         <div className='mnae_slider1'>
-                            <h3>Blood donation program</h3>
+                            <h3>{newsAndEvents[count]?.acf?.shorttitle}</h3>
                             <div>
                                 <span><IoCalendarOutline /></span>
-                                <span>Jan 31</span>
+                                <span>{newsAndEvents[count]?.acf?.date.split(',')[0]}</span>
                             </div>
                             <button>View More</button>
 
                         </div>
                         <div className="ticket-card">
-                            <img src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg" alt="Event" className="ticket-image" />
+                            <img src={newsAndEvents[count]?.acf?.image} alt="Event" className={`ticket-image ${animate}`} />
                         </div>
-                        <div className='leftarrow'><FaChevronLeft /></div>
-                        <div className='rightarrow'><FaChevronRight /></div>
+                        <div className='leftarrow' onClick={()=>handleDecrement(count)}><FaChevronLeft /></div>
+                        <div className='rightarrow' onClick={()=>handleIncrement(count)} ><FaChevronRight /></div>
                     </div>
 
                 </div>
@@ -56,7 +102,7 @@ function MainNewsAndEvents() {
                 <h1 className='allnewsevent_headings'>Our All Events</h1>
                 <div className='allevents'>
                  {newsAndEvents?.map((e,i)=>(
-                    <div className='allevents_card'>
+                    <div key={i} onClick={()=>{handleClick(e)}} className='allevents_card'>
                     <div className='allevents_card1'>
                         <div className='allevents_card11'>
                             <span>{e.acf.date.split(" ").slice(0, 1)}</span>
@@ -70,7 +116,7 @@ function MainNewsAndEvents() {
                         <h3>{e.acf?.shorttitle}</h3>
                         <div>
                             <span><IoCalendarOutline /></span>
-                            <span>{e.acf.date.split(" ").slice(0, 2)}</span>
+                            <span>{e.acf.date.split(",")[0]}</span>
                         </div>
                         <button>View More</button>
 
@@ -86,6 +132,9 @@ function MainNewsAndEvents() {
                 </div>
             </section>
         </div>
+        <Footer />
+
+        </>
     )
 }
 
