@@ -1,43 +1,44 @@
-import React, { useContext } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { AppProvider } from "./context/AppContext";
+import { ToastContainer, Bounce } from "react-toastify";
+import { AnimatePresence, motion } from "framer-motion";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import { AppContext, AppProvider } from "./context/AppContext";
-import "./App.css";
-import "./i18n";
 import Doctors from "./pages/Doctors";
 import DoctorsDetail from "./pages/DoctorsDetail";
 import SpecialtyPage from "./pages/SpecialtyPage";
 import ContactUs from "./pages/ContactUs";
-import Maintenance from "./pages/Maintenance";
-import { ToastContainer,Bounce } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Appointment from "./pages/Appointment";
 import AppointmentSuccess from "./pages/AppointmentSuccess";
 import NewsAndEvents from "./pages/NewsAndEvents";
 import MainNewsAndEvents from "./pages/MainNewsAndEvents";
+import "./App.css";
+import "./i18n";
+import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./components/navbar/Navbar";
 
-function App() {
+const glitchVariants = {
+  initial: { opacity: 0, filter: "blur(10px) contrast(0.8)" },
+  animate: {
+    opacity: 1,
+    filter: "blur(0px) contrast(1)",
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+  exit: {
+    opacity: 0,
+    filter: "blur(50px) contrast(1.5) hue-rotate(90deg)",
+    transition: { duration: 0, ease: "easeInOut" },
+  },
+};
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
   return (
-    <AppProvider>
-  <ToastContainer
-position="top-right"
-autoClose={3000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick={false}
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
-transition={Bounce}
-/>
-      <Router>
-        <Routes>
-         
+    <AnimatePresence mode="wait">
+      <motion.div key={location.pathname} variants={glitchVariants} initial="initial" animate="animate" exit="exit">
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/" element={<Maintenance />} /> */}
           <Route path="/about" element={<About />} />
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/doctor/:id" element={<DoctorsDetail />} />
@@ -47,8 +48,20 @@ transition={Bounce}
           <Route path="/AppointmentSuccess" element={<AppointmentSuccess />} />
           <Route path="/newsandevents/:name" element={<NewsAndEvents />} />
           <Route path="/news-events" element={<MainNewsAndEvents />} />
-
         </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
+function App() {
+  return (
+    <AppProvider>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} theme="dark" transition={Bounce} />
+      <Router>
+      <Navbar/> 
+
+        <AnimatedRoutes />
       </Router>
     </AppProvider>
   );

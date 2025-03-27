@@ -48,7 +48,6 @@ function Home() {
        <ScrollToTop/>
         <BotWrapper/>
         <MobileSideBar/>
-        <Navbar/>
         <Hero/>
         <HomeAbout/>
         {/* <LedContainer/> */}

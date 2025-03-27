@@ -83,7 +83,6 @@ const About = () => {
      }, [])
   return (
     <>
-    <Navbar/>
     <ScrollToTop/>
     <MobileSideBar/>
     <div className='about_main'>

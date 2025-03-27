@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { format } from "date-fns";
 import '../styles/AppointmentSuccess.css'
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import Lottie from "lottie-react";
 import successanimation from "../assets/successanimation.json";
