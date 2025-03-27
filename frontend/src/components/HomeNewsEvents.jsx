@@ -37,7 +37,7 @@ function HomeNewsEvents( {newsAndEvents} ) {
   return (
     <div className="hne_container" onMouseMove={handleMouseMove}>
           <div className="sticky-heading">
-          <HomeHeadings event='/new' title={t("newsandeventshead")}/>
+          <HomeHeadings event='/news-events' title={t("newsandeventshead")}/>
          
         </div>
       <ul className="event-list">

@@ -21,4 +21,7 @@
     .homeheadings_main>h1{
         font-size: 1.2rem;
     }
+    .homeheadings_main button{
+        margin-top: 1rem;
+    }
 }
