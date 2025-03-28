@@ -130,6 +130,10 @@ function ContactUs() {
         title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
       };
 
+      const makeCall = () => {
+        window.location.href = "tel:+914132000999";
+      };
+      
   return (
     <>
     <ScrollToTop/>
@@ -151,8 +155,8 @@ function ContactUs() {
             <p>We value your feedback and strive to continuously improve our services. If you have any comments, suggestions, or concerns, please don't hesitate to let us know. Your input helps us serve you better.</p>
             <h3>Pondicherry</h3>
             <div><span><IoLocationSharp/></span><span>madhagadipet, Pondicherry, India</span></div>
-            <div><span><IoCall/></span><span>0413-875686</span></div>
-            <div><span><IoIosMail/></span><span>info@smvmch.in</span></div>
+            <div onClick={makeCall}><span><IoCall/></span><span>0413-2000999</span></div>
+            <div><span><IoIosMail/></span><span>info@smvssh.in</span></div>
 
         </div>
         <div className='contact_con_div2'>

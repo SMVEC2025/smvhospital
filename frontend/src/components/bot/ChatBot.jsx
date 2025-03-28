@@ -169,7 +169,7 @@ const Chatbot = ({ openLang }) => {
                 }
     
                 // Ensure botMessage is properly constructed
-                if (!botMessage.text) {
+                if (!botMessage.text) { 
                     botMessage = { text: "Sorry, I didn't understand that.", user: false };
                 }
     
@@ -187,16 +187,16 @@ const Chatbot = ({ openLang }) => {
         
     };
     const postUserData = async (data) => {
-        const googleFormURL ="https://docs.google.com/forms/u/0/d/e/1FAIpQLScOCZvXCksjUJEQwutB3skeHEZjH4VS8ihtQLwYwd781MkAfw/formResponse"; 
+        const googleFormURL ="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdqVa6zczlrknumEI9CCNHkDqPvu3BD8cZuXTFTM1er1jiHPA/formResponse?pli=1"; 
       
         const formPayload = new FormData();
-        formPayload.append("entry.1334534231", data.name); 
-        formPayload.append("entry.1617454534", data.package); 
-        formPayload.append("entry.617143351", data.packageType);
-        formPayload.append("entry.410812961", data.age);
-        formPayload.append("entry.876016914", data.gender);
-        formPayload.append("entry.1306757982", data.concern);
-        formPayload.append("entry.1305942355", data.phone);
+        formPayload.append("entry.926659219", data.name); 
+        formPayload.append("entry.1575907916", data.package); 
+        formPayload.append("entry.20165285", data.packageType);
+        formPayload.append("entry.2039278650", data.age);
+        formPayload.append("entry.1532981415", data.gender);
+        formPayload.append("entry.1179171910", data.concern);
+        formPayload.append("entry.1359209483", data.phone);
 
         try {
 
