@@ -3,6 +3,7 @@ import "../styles/HorizontalScroll.css";
 import TreatmentCard from "./TreatmentCard";
 import '../i18n'
 import { useTranslation } from "react-i18next";
+import TitleHeader from "./TitleHeader";
 const HorizontalScroll = () => {
   const stickyRef = useRef(null);
   const stickyParentRef = useRef(null);
@@ -32,11 +33,7 @@ const HorizontalScroll = () => {
   return (
     <>
      <div className="hs_main1">
-     <div className="sticky-heading">
-        <div>
-        <h4>{t("treatmenthead")}</h4>
-        </div>
-        </div>
+     <TitleHeader name='TREATMENTS' color='#f7f4ef'/>
      </div>
       
       <div className="sticky-parent" ref={stickyParentRef}>  

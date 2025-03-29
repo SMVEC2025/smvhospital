@@ -3,6 +3,7 @@ import "../styles/HomeSectionTwo.css";
 import '../i18n'
 import { useTranslation } from "react-i18next";
 import HomeHeadings from "./HomeHeadings";
+import TitleHeader from "./TitleHeader";
 const HomeSectionTwo = () => {
     const { t } = useTranslation("home");
     const specialties = Object.entries(t("specialtydesc", { returnObjects: true }));
@@ -37,7 +38,7 @@ const HomeSectionTwo = () => {
     <div className="hst_container">
       <div className="hst_wrapper">
         <div className="sticky-heading">
-         <HomeHeadings event='/specialty' title={t("specialtyhead") }/>
+          <TitleHeader name="specialty"/>
         </div>
         {
           specialties.map(([id,value])=>(

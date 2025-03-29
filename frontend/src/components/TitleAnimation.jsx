@@ -14,7 +14,7 @@ const TitleAnimation = () => {
         <motion.svg  viewBox="0 0 100px 100" xmlns="http://www.w3.org/2000/svg"
 
         initial={{ scale: 1.5}}
-        animate={{ scale: 0.5}}
+        animate={{ scale: 0.4}}
         transition={{ duration: 2  }}
         onAnimationEnd={()=>{setControlAnim('two')}}
         >

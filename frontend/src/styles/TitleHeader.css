@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+
+
+.thheading {
+    background: 50% 100% / 50% 50% no-repeat
+      radial-gradient(ellipse at bottom, #5f5f5f, transparent, transparent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: calc(40px + 2vw);
+    opacity: 0; /* Initially hidden */
+    text-transform: uppercase;
+    font-weight: 600;
+
+  }
+  
+  /* Animation only when in view */
+  .thheading.animate {
+    animation: reveal 2500ms ease-in-out forwards 200ms,
+               glow 1000ms linear forwards 1000ms;
+    opacity: 1;
+  }
+  
+  @keyframes reveal {
+    80% {
+      letter-spacing: 2px;
+    }
+    100% {
+      background-size: 600% 600%;
+      letter-spacing: 2px;
+
+    }
+  }
+  
+  @keyframes glow {
+    40% {
+      text-shadow: 0 0 8px #ffc16450;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+
+    .thheading {
+        font-size: calc(20px + 2vw);
+        font-weight: 600;
+        text-align: left;
+    
+      }
+      
+  }

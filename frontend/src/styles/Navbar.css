@@ -1,20 +1,22 @@
 .nav_main{
-    width: 98%;
-    margin-left: 1%;
-    height: 70px;
+  top: 0;
+  margin: 0;
+  width: 100%;
+    height: 0;
     position: fixed;
     z-index: 20;
-    top: 10px;
     left: 0;
     display: flex;
     flex-direction: row; 
     justify-content: space-between;
     color: white;
-    transition: all 0.1s ease-out;
+    transition: height 0.3s ease-out;
 
 
 }
-.ns_con1{}
+.ns_con1{
+  height: 70px;
+}
 
 .ns_con2{
     display: flex;
@@ -24,26 +26,28 @@
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 400;
+    letter-spacing: 1px;
     gap: 2rem;
     padding: 0 2rem;
+    height: 70px;
+
 }
 .ns_con2 span{
   cursor: pointer;
 }
 .nav_main.true{
-    background-color:#fefff9;
-    color: chocolate;
-    backdrop-filter: blur(5px);
-    top: 0;
-    margin: 0;
-    width: 100%;
+    color: #ef6126;
+    height: 70px;
+   
+    background-color: #fdfdfb;
   
 }
+
 
 .emergency_main{
   width: 150px;
   height: 40px;
-  background-color: chocolate;
+  background-color: #f06125;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,14 +63,15 @@
   display: none;
   transition: all 1s ease-out;
 }
-.emergency_expand.true{
+.nav_main .emergency_expand.true{
+  
   position: absolute;
   right: 20px;
-  bottom: calc(-100% - 80px);
+  bottom: calc(-100% - 220px);
   width: 200px;
   gap: 10px;
   display: block;
-  background-color: rgba(173, 173, 173, 0.192);
+  background-color: rgba(126, 126, 126, 0.438);
   backdrop-filter: blur(5px);
   border-radius: 5px;
   padding: 5px;
@@ -76,6 +81,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  
+}
+.nav_main.true .emergency_expand.true{
+ 
+  bottom: calc(-100% - 80px);
+  
 }
 
 .mbile_menu_button{
@@ -110,7 +122,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: rgb(150, 80, 34);
+  background-color: #b34c20;
   border: 1px solid rgb(119, 87, 60);
   border-radius: 5px;
   color: rgb(255, 255, 255);
@@ -128,6 +140,7 @@
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
+    height: 70px;
 
 }
 .ns_con1>img{

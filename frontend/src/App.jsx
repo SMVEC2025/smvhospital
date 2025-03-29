@@ -54,7 +54,6 @@ const AnimatedRoutes = () => {
     </AnimatePresence>
   );
 };
-
 function App() {
   return (
     <AppProvider>

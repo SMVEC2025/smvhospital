@@ -4,6 +4,7 @@ import '../i18n'
 import { useTranslation } from "react-i18next";
 import HomeHeadings from './HomeHeadings';
 import { useNavigate } from "react-router-dom";
+import TitleHeader from './TitleHeader';
 
 function HomeNewsEvents( {newsAndEvents} ) {
     const [hoveredImage, setHoveredImage] = useState(null);
@@ -36,10 +37,8 @@ function HomeNewsEvents( {newsAndEvents} ) {
   
   return (
     <div className="hne_container" onMouseMove={handleMouseMove}>
-          <div className="sticky-heading">
-          <HomeHeadings event='/news-events' title={t("newsandeventshead")}/>
+     <TitleHeader name='news & events' color='gray'/>
          
-        </div>
       <ul className="event-list">
         {newsAndEvents.map((event,index) => (
           <li

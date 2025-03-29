@@ -43,7 +43,7 @@
   .ha_right-section h2 {
     font-size: calc(0.5rem + 0.5vw);
     font-weight: 400;
-    background: linear-gradient(45deg, #ff8c00, #ff7402);
+    background: linear-gradient(45deg, #c76d31,#ff9900);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -52,14 +52,14 @@
     font-size: calc(1.8rem + 0.5vw);
     margin: 0.5rem 0;
     font-weight: 500;
-    color:  rgb(238, 111, 20);
+    color:  #fa9145;
   }
 
   .ha_right-section p{
     font-size: calc(0.4rem + 0.5vw);
     width: calc(70%);
     font-weight: 400;
-    color: #5C4033;
+    color: #6e564bce;
     line-height: calc(0.8rem + 1vw);
 
   }

@@ -45,7 +45,7 @@ function Home() {
 
   return (
     <div>
-       <ScrollToTop/>
+       <ScrollToTop/> 
         <MobileSideBar/>
         <Hero/>
         <HomeAbout/>

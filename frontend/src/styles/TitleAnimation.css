@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
 .ta_main {
   display: flex;
   flex-direction: row;
@@ -5,53 +8,61 @@
 }
 
 .ta_s1, .ta_s2, .ta_s3 {
-  font-size: 70px;
-  font-weight: 500;
+  font-size: 50px;
+  font-weight:500;
   display: flex;
   flex-direction: row;
   color:white;
   transition: background 0.3s ease-in-out;
- 
+  font-family: "Inter", sans-serif;
+   color: #fdfdfc;
+  text-shadow: 2px 2px 4px rgba(143, 143, 143, 0.479);
+  letter-spacing: 4px;
+
 }
 .ta_s1.true{
-  background-image: url('../assets/images/textbackk.webp');
+  /* background-image: url('../assets/images/textbackk.webp');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 100%;
   -webkit-background-clip: text; 
    background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   
 }
+
+
+
 .ta_s2.true{
-  background-image: url("https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?cs=srgb&dl=pexels-pixabay-235994.jpg&fm=jpg");
+  /* background-image: url("https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?cs=srgb&dl=pexels-pixabay-235994.jpg&fm=jpg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 100%;
   -webkit-background-clip: text; 
    background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   
 }
 .ta_s3.true{
-  background-image: url('https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?cs=srgb&dl=pexels-pixabay-235994.jpg&fm=jpg');
+  /* background-image: url('https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?cs=srgb&dl=pexels-pixabay-235994.jpg&fm=jpg');
 
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 100%;
   -webkit-background-clip: text; 
    background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 
 .ta_main .box {
-  font-size: 40px;
-  font-weight: 600;
+  font-size: 50px;
+  font-weight:500;
   text-transform: uppercase;
   display: flex;
   justify-content: start;
   align-items: end;
-  height: 90%;
+  letter-spacing: 4px;
+  
 }
 svg text {
 	text-transform: uppercase;
@@ -59,6 +70,7 @@ svg text {
 	stroke-width: 1;
 	stroke: #ffffff;
 	font-size: 140px;
+  
 }
 @keyframes stroke {
 	0%   {

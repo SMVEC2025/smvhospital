@@ -9,6 +9,7 @@ import DoctorsCard from './DoctorsCard';
 import '../i18n'
 import { useTranslation } from "react-i18next";
 import { AppContext } from '../context/AppContext';
+import TitleHeader from './TitleHeader';
 export default function HomeDoctors() {
   const swiperRef = useRef(null);
       const { t } = useTranslation("home");
@@ -26,11 +27,8 @@ export default function HomeDoctors() {
   return (
     <div className='hd_main'>
       <div className='hd_container1'>
-        <div className="sticky-heading">
-          <div>
-            <h4>{t("doctorshead")}</h4>
-          </div>
-        </div>
+     <TitleHeader name='our specialists'/>
+        
       </div>
 
       <div className='hd_container2'>

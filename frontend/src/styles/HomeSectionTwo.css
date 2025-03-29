@@ -52,35 +52,36 @@
 		margin-bottom: 10px;
 		transition: transform 0.3s ease;
 		padding: 30px;
+		box-shadow: 0 0 5px 1px #00000018;
 	  }
  }
   
   /* Individual card colors */
   .hst_wrapper .card1 {
-	background: #F5E1C4;
+	background: #fff2e4;
 	z-index: 1;
 	margin-top: 50px;
-	top: 150px;
+	top: 70px;
   }
   
   .hst_wrapper .card2 {
-	background: #E3CDA8;
+	background: #f1e0ce;
 	z-index: 2;
-	top: 230px;
+	top: 150px;
   }
   
   /* This is where we control the gap between the second and third card */
   .hst_wrapper .card3 {
-	background: #d4bb9b;
+	background: #e7d2bc;
 	z-index: 3;
-	top: 310px;
+	top: 230px;
 
 
   }
   .hst_wrapper .card4 {
-	background: #D2B48C;
+	background: #d4c0ab;
 	z-index: 3;
-	top: 390px;
+	top: 310px;
 
   }
   .hst_wrapper .card5 {
@@ -102,20 +103,20 @@
 	gap: 1.5rem;
   }
   .hst_card_div1>p{
-	color: chocolate;
+	color: #E65100;
 	font-size: 2.5rem;
 	font-weight: 600;
   }
   .hst_card_div2>span{
 	font-size: calc(1rem + 0.5vw);
 	font-weight: 500;
-	color: rgb(77, 42, 11);
+	color: #5D4037;
 	text-transform: uppercase;
   }
   .hst_card_div2>div{
 	font-size: calc(0.4rem + 0.5vw);
 	font-weight: 400;
-	color: rgb(77, 42, 11);
+	color: #424242;
 	width: 100%;
 	
   }

@@ -33,7 +33,6 @@ useEffect(() => {
     setShowEndContent(false)
    }
 }, [scrollWidth])
-console.log("showEndContent",showEndContent)
 
   return (
     <div className="ia-container-main">
@@ -106,7 +105,7 @@ console.log("showEndContent",showEndContent)
     {!isMobile &&(
       <>
           <div className='testcon'>
-                <div style={{width:`calc(100% - ${scrollWidth}px)`,height:`calc(100vh - ${scrollWidth*1.5}px)`, transform:`translateY(-${scrollWidth*0.3}px)`}}>
+                <div style={{width:`calc(100% - ${scrollWidth}px)`,height:`calc(100vh - ${scrollWidth*1.9}px)`, transform:`translateY(-${scrollWidth*0.3}px)`}}>
 
                 </div>
             </div>

@@ -11,20 +11,16 @@ import '../styles/HomeTestimonial.css'
 // import required modules
 import { EffectCards } from 'swiper/modules';
 import TestimonialCard from './TestimonialCard';
+import TitleHeader from './TitleHeader';
 
 export default function HomeTestimonial() {
     const { t } = useTranslation("home");
     
     return (
-        <>  
+        <>   
         <div className='ht_main1'>
-        <div className="sticky-heading">
-          <div>
-          <h5></h5>
-          <h4 >{t("testimonialhead")}</h4>
-          </div>
-      
-        </div>
+     <TitleHeader name='international patients' color='#0d233a'/>
+       
         </div>
             <div className='ht_main'>
                 <div className='ht_container1'>
