@@ -46,7 +46,6 @@ function Home() {
   return (
     <div>
        <ScrollToTop/>
-        <BotWrapper/>
         <MobileSideBar/>
         <Hero/>
         <HomeAbout/>

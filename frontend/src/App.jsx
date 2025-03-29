@@ -17,6 +17,7 @@ import "./App.css";
 import "./i18n";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/navbar/Navbar";
+import BotWrapper from "./components/bot/BotWrapper";
 
 const glitchVariants = {
   initial: { opacity: 0.4, filter: "blur(10px) contrast(0.8)" },
@@ -60,6 +61,7 @@ function App() {
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} theme="dark" transition={Bounce} />
       <Router>
       <Navbar/> 
+      <BotWrapper/>
 
         <AnimatedRoutes />
       </Router>

@@ -27,7 +27,7 @@ export default function ShapeAnimation({ videoRef }) {
       }, []);
 useEffect(() => {
 
-   if(scrollWidth.toString() >= 190 ){
+   if(scrollWidth.toString() >= 170 ){
     setShowEndContent(true)
    }else{
     setShowEndContent(false)
@@ -117,7 +117,7 @@ console.log("showEndContent",showEndContent)
           </div>
           <div className="ia-container-end2">
               <p>We are dedicated to providing top-quality medical care with advanced treatments, experienced doctors, and a patient-first approach to ensure your well-being.</p>
-              <button>Book an Appointment</button>
+              <button onClick={()=>{navigate('/appointment')}}>Book an Appointment</button>
           </div>
        </div>
       </>

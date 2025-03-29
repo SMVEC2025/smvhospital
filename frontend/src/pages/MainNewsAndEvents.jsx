@@ -73,7 +73,6 @@ function MainNewsAndEvents() {
       <>
         <ScrollToTop/>
       <MobileSideBar/>
-      <BotWrapper/>
 
      
         <div className='mnae_main'>
