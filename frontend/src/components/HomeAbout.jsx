@@ -89,7 +89,7 @@ const HomeAbout = () => {
          <div>
          <img 
          style={{
-           transition: "opacity 0.3s ease-in-out"}} src={`../../public/images/${imageIndex}.webp`}  />
+           transition: "opacity 0.3s ease-in-out"}} src={`/images/${imageIndex}.webp`}  />
          </div>
          </div>
        )}
