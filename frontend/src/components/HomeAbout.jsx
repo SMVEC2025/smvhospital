@@ -88,8 +88,12 @@ const HomeAbout = () => {
          <div className="frame_images">
          <div>
          <img 
+        src={`/images/${imageIndex}.webp`} 
          style={{
-           transition: "opacity 0.3s ease-in-out"}} src={`/images/${imageIndex}.webp`}  />
+    transition: "opacity 0.3s ease-in-out",
+  }}
+  loading="lazy"
+        />
          </div>
          </div>
        )}
