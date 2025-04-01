@@ -7,7 +7,7 @@ import { IoMdCall } from "react-icons/io";
 import { IoTimeOutline,IoMail } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-function MobileSideBar() {
+function MobileSideBar() { 
 
   const { showSideBar,setShowSideBar,animCase,isMobile } = useContext(AppContext)
   const navigate = useNavigate()

@@ -180,7 +180,6 @@ const Appointment = () => {
     return (
         <>
             <ScrollToTop />
-            <MobileSideBar />
             <Hero6 data={heroData} />
             <div className="appointment_main" ref={sectionRef}>
                 <div className="app_progress">

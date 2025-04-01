@@ -10,7 +10,7 @@ import ScrollImageChanger from "./ScrollImageChanger";
 
 function WhySmv() {
   const  navigate = useNavigate()
-  const {darkmode,setDarkmode} =useContext(AppContext)
+  const {darkmode,isMobile} =useContext(AppContext)
 
   const whysmvdata=[
      {
@@ -76,9 +76,11 @@ function WhySmv() {
        
           
       </div>
-      <div className="svg_pattern">
-            <ScrollImageChanger/>
-          </div>
+   {!isMobile &&(
+       <div className="svg_pattern">
+       <ScrollImageChanger/>
+     </div>
+   )}
     </div>
  
 

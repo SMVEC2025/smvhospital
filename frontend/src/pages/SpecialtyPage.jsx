@@ -48,7 +48,6 @@ function SpecialtyPage() {
   return (
    <>
    <ScrollToTop/>
-   <MobileSideBar/>
    <Hero6 data={heroData}/>
    <div className='sp_main'>
     <div className='sp_container1'>

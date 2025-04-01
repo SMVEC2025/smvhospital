@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	padding-top: 80px;
-	transition: all 0.6s ease-out;
+	transition: all 0.5s ease-out;
 	
   }
   .hst_container.darkmode{
@@ -43,6 +43,7 @@
 		width: 90vw;
 		margin-top: 20px;
 
+
 		
 
 	  }
@@ -61,7 +62,6 @@
 		transition: transform 0.3s ease;
 		padding: 30px;
 		box-shadow: 0 0 5px 1px #00000018;
-		transition: all 6s ease-out;
 
 		
 	  }
@@ -74,7 +74,6 @@
 	top: 70px;
 	background-image: linear-gradient(90deg,#fff2e4,#fff2e4);
 
-	transition: all 6s ease-out;
 
   }
   
@@ -83,7 +82,6 @@
 	top: 150px;
 	background-image: linear-gradient(90deg,#eed7c1,#eed7c1);
 
-	transition: all 0.3s ease-out;
 
   }
   
@@ -93,7 +91,6 @@
 	top: 230px;
 	background-image: linear-gradient(90deg,#e7d2bc,#e7d2bc);
 
-	transition: all 0.3s ease-out;
 
 
 
@@ -103,7 +100,6 @@
 	top: 310px;
 	background-image: linear-gradient(90deg,#d4c0ab,#d4c0ab);
 
-	transition: all 0.3s ease-out;
 
 
   }
@@ -125,22 +121,22 @@
   /* cards darkmode */
   
   /* Individual card colors */
-  .hst_wrapper.darkmode .card1 {
+  .hst_wrapper .card1.darkmode {
 	
 	background-image: linear-gradient(90deg,#2e2f33,black);
   }
   
-  .hst_wrapper.darkmode .card2 {
+  .hst_wrapper .card2.darkmode {
 	background-image: linear-gradient(90deg,#303133,#161616);
 
   }
   
   /* This is where we control the gap between the second and third card */
-  .hst_wrapper.darkmode .card3 {
+  .hst_wrapper .card3.darkmode {
 	background-image: linear-gradient(90deg,#383a3f,#1f1e20);
 
   }
-  .hst_wrapper.darkmode .card4 {
+  .hst_wrapper .card4.darkmode {
 	background-image: linear-gradient(90deg,#2e2f33,#32323b);
 
 

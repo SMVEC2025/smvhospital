@@ -82,7 +82,6 @@ const Doctors = () => {
   return (
     <>
      <ScrollToTop/>
-      <MobileSideBar/>
       <Hero6 data={heroData} />
 
       <div className="doctor-container">

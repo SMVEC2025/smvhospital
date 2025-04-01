@@ -57,7 +57,7 @@ console.log(darkmode)
         </div>
         {
           specialties.map(([id,value])=>(
-            <div  id={id} key={id} className={`card card${Number(id)+1}`}>
+            <div  id={id} key={id} className={`card card${Number(id)+1} ${darkmode?"darkmode":""}`}>
                 <div className="hst_card_div1">
                   <p>00{Number(id)+1}</p>
 

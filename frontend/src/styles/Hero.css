@@ -1,7 +1,7 @@
 .hero_main{
     height: calc(100vh + 500px);
     width: calc(100%);
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
     
     color: white;
     transition: all 0.3s ease-out;
@@ -61,6 +61,9 @@
     width: calc(100%);
     margin: 0;
     border-radius: 0;
+}
+.hero_main{
+    height: 100vh;
 }
 }
 

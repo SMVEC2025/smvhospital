@@ -84,7 +84,7 @@ const HomeAbout = () => {
 
       {/* Right Scrollable Section */}
       <div className="ha_right-section" >
-       {isMobile && (
+       {!isMobile && (
          <div className="frame_images">
         
          <div>

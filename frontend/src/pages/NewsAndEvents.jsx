@@ -19,7 +19,6 @@ function NewsAndEvents() {
   return (
     <>
     <ScrollToTop/>
-      <MobileSideBar/>
       <div className='nae_main'>
         <div>
             News And Events

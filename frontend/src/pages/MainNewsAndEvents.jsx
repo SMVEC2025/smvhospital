@@ -72,7 +72,6 @@ function MainNewsAndEvents() {
     return (
       <>
         <ScrollToTop/>
-      <MobileSideBar/>
 
      
         <div className='mnae_main'>

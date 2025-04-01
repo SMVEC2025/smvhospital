@@ -84,7 +84,6 @@ const About = () => {
   return (
     <>
     <ScrollToTop/>
-    <MobileSideBar/>
     <div className='about_main'>
       <Hero6 data={heroData}/>
       <AboutSection1/>

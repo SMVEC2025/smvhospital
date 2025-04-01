@@ -137,7 +137,6 @@ function ContactUs() {
   return (
     <>
     <ScrollToTop/>
-    <MobileSideBar/>
     <Hero6 data={heroData} />   
      <div className="marquee-container">
       <div className="marquee">
