@@ -18,6 +18,7 @@ import "./i18n";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/navbar/Navbar";
 import BotWrapper from "./components/bot/BotWrapper";
+import ScrollImageChanger from "./components/ScrollImageChanger";
 
 const glitchVariants = {
   initial: { opacity: 0.4, filter: "blur(10px) contrast(0.8)" },
@@ -49,6 +50,7 @@ const AnimatedRoutes = () => {
           <Route path="/AppointmentSuccess" element={<AppointmentSuccess />} />
           <Route path="/newsandevents/:name" element={<NewsAndEvents />} />
           <Route path="/news-events" element={<MainNewsAndEvents />} />
+          <Route path="/test" element={<ScrollImageChanger />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

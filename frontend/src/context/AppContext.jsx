@@ -12,6 +12,8 @@ export function AppProvider({ children }) {
   const [animCase,setAnimCase] = useState("welcome")
   const [doctorsList,setDoctorsList] = useState()
   const [showSideBar,setShowSideBar] = useState(false)
+  const [darkmode,setDarkmode] = useState(false)
+
   // Effect to track screen size changes
   useEffect(() => {
     const handleResize = () => {
@@ -31,14 +33,13 @@ export function AppProvider({ children }) {
       value={{
         introOne,
         setIntroOne,
-      
         introAnim,
         setIntroAnim,
         isMobile,
         refreshAnim,
         setRefreshAnim,
         animCase,setAnimCase,doctorsList,setDoctorsList,
-        showSideBar,setShowSideBar
+        showSideBar,setShowSideBar,darkmode,setDarkmode
         
       }}
     >

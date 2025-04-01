@@ -11,7 +11,8 @@
   font-family: sans-serif;
   letter-spacing: 2px;
   overflow: hidden;
-  background: rgb(216, 98, 30);
+  background: #f06326d8;
+  backdrop-filter: blur(5px);
 }
 .button:before {
   content: "";
@@ -51,7 +52,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: #e06767;
+  background: #ffffff;
 }
 .button:hover span:nth-child(1) {
   width: 100%;

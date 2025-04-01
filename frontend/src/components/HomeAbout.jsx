@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 import { AppContext } from "../context/AppContext";
 import '../i18n'
 import { useNavigate } from "react-router-dom";
+import { gsap } from "gsap";
+
 const HomeAbout = () => {
   const [activeSection, setActiveSection] = useState("about");
   const { t } = useTranslation("home");
@@ -14,6 +16,7 @@ const HomeAbout = () => {
 
   useEffect(() => {
     const sections = document.querySelectorAll(".section");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -28,7 +31,24 @@ const HomeAbout = () => {
     sections.forEach((section) => observer.observe(section));
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
+  const [imageIndex, setImageIndex] = useState(0);
 
+  // Replace with actual image URLs
+  const images = Array.from({ length: 81 }, (_, i) => `https://via.placeholder.com/300?text=Image+${i}`);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const index = Math.min(301, Math.max(0, Math.floor((scrollTop / maxScroll) * 1000)));
+      setImageIndex(index);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  console.log(imageIndex,"imageIndex")
   const getLeftContent = () => {
     switch (activeSection) {
       case "about":
@@ -40,7 +60,7 @@ const HomeAbout = () => {
       case "mobile":
         return {
           image: mobileapp,
-          background: "#d1e8ff",
+          background: "#ffdfd8",
           text: "Our Mobile Application",
         };
       case "appointment":
@@ -63,8 +83,18 @@ const HomeAbout = () => {
       </div>
 
       {/* Right Scrollable Section */}
-      <div className="ha_right-section">
-        <div id="about" className="section">
+      <div className="ha_right-section" >
+       {isMobile && (
+         <div className="frame_images">
+        
+         <div>
+         <img  alt="Scrolling Image"
+         style={{
+           transition: "opacity 0.3s ease-in-out"}} src={`../../public/images/${imageIndex}.webp`}  />
+         </div>
+         </div>
+       )}
+        <div id="about" className="section" >
           <h2>SMV Super Speciality Hospital</h2>
           <h3>{t("abouttitle")}</h3>
           <p>{t("aboutdescription")}</p>

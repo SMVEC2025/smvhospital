@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useContext, useEffect, useRef } from "react";
 import { FaHandHoldingHeart,FaHospital,FaHandHoldingMedical   } from "react-icons/fa";
 import { FaUserDoctor,FaTruckMedical } from "react-icons/fa6";
 import { MdBloodtype } from "react-icons/md";
 import '../styles/WhySmv.css'
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from "../context/AppContext";
+import ScrollImageChanger from "./ScrollImageChanger";
+
 
 function WhySmv() {
   const  navigate = useNavigate()
+  const {darkmode,setDarkmode} =useContext(AppContext)
+
   const whysmvdata=[
      {
       title:"Empathy",
@@ -42,9 +47,9 @@ function WhySmv() {
   ]
 
       return (
-        <div className="why-smv-container">
+        <div className={`why-smv-container ${darkmode?"darkmode":""}`}>
       {/* Left Section */}
-      <div className="why-smv-left">
+      <div className={`why-smv-left ${darkmode?"darkmode":""}`}>
         <h2>Why SMV Super Specialty hospital?</h2> 
         <p>
         We are a leading, multi-speciality hospital offering best-in-class medical services for nearly 2 decades. With paramount focus on patient care, patient safety and patient satisfaction, we are committed to offer exemplary medical services going beyond the norm of healthcare.
@@ -58,7 +63,7 @@ function WhySmv() {
       <div className="why-smv-right">
        
           {whysmvdata.map((e,i)=>(
-             <div key={i} className="feature-box">
+             <div key={i} className={`feature-box ${darkmode?"darkmode":""}`}>
               <div className='logo'>{e.logo}</div>
             <div>
             <h3>{e.title}</h3>
@@ -67,8 +72,13 @@ function WhySmv() {
           
         </div> 
           ))}
+
+       
           
       </div>
+      <div className="svg_pattern">
+            <ScrollImageChanger/>
+          </div>
     </div>
  
 

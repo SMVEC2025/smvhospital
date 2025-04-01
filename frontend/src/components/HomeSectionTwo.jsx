@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import "../styles/HomeSectionTwo.css";
 import '../i18n'
 import { useTranslation } from "react-i18next";
 import HomeHeadings from "./HomeHeadings";
 import TitleHeader from "./TitleHeader";
+import { AppContext } from "../context/AppContext";
 const HomeSectionTwo = () => {
     const { t } = useTranslation("home");
+    const {darkmode,setDarkmode} =useContext(AppContext)
     const specialties = Object.entries(t("specialtydesc", { returnObjects: true }));
+    const targetRef = useRef(null);
 
   const speacialitymain=[
     {
@@ -34,20 +37,32 @@ const HomeSectionTwo = () => {
     },
   
  ]
+ useEffect(() => {
+  const handleScroll = () => {
+    if (targetRef.current) {
+      const rect = targetRef.current.getBoundingClientRect();
+      setDarkmode(rect.top <= -200);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+console.log(darkmode)
   return (
-    <div className="hst_container">
-      <div className="hst_wrapper">
+    <div className={`hst_container ${darkmode?'darkmode':""}`}>
+      <div className={`hst_wrapper ${darkmode?'darkmode':""}`} ref ={targetRef}>
         <div className="sticky-heading">
           <TitleHeader name="specialty"/>
         </div>
         {
           specialties.map(([id,value])=>(
-            <div id={id} key={id} className={`card card${Number(id)+1}`}>
+            <div  id={id} key={id} className={`card card${Number(id)+1}`}>
                 <div className="hst_card_div1">
                   <p>00{Number(id)+1}</p>
 
                 </div>
-                <div  className="hst_card_div2">
+                <div  className={`hst_card_div2 ${darkmode?'darkmode':""}`}>
                     <span>{value.title}</span>
                     <div style={{whiteSpace:"pre-line"}}>{value.desc}</div>
                 </div>

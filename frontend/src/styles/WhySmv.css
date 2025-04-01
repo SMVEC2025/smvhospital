@@ -4,6 +4,11 @@
     align-items: start;
     gap: 10%;
     padding: 10rem 50px;
+    position: relative;
+  }
+  .why-smv-container.darkmode{
+    background-color: #151515;
+    
   }
   .feature-box .logo{
     font-size: 2rem;
@@ -15,6 +20,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .feature-box.darkmode .logo{
+    color: #ef6226d5;
+    box-shadow: 0 1px 1px 1px #ef6226d5;
   }
   .why-smv-left {
     width: 30%;
@@ -35,6 +44,9 @@
     line-height: 22px;
     margin-bottom: 2rem;
   }
+  .why-smv-left.darkmode p {
+    color: #b1b0af;
+  }
   .why-smv-left button {
     background-color: transparent;
     border: 1px solid #8b5e3b;
@@ -45,6 +57,10 @@
     transition: all 0.2s ease-in-out;
     cursor: pointer;
   }
+  .why-smv-left.darkmode button {
+    border: 1px solid #ef6226d5;
+    color: #ef6226d5;
+  }
   .why-smv-left button:hover{
     background-color: #8b5e3b;
     color: white;
@@ -54,6 +70,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+    position: relative;
   }
   
   .feature-box {
@@ -88,6 +105,17 @@
     font-weight: 400;
     font-size: calc(0.4rem + 0.5vw);
 
+  }
+    
+  .feature-box.darkmode p {
+    color: #b1b0af;
+
+  }
+  .svg_pattern{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
   }
   @media screen and (max-width: 900px) {
     .why-smv-container {
