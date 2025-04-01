@@ -86,9 +86,8 @@ const HomeAbout = () => {
       <div className="ha_right-section" >
        {!isMobile && (
          <div className="frame_images">
-        
          <div>
-         <img  alt="Scrolling Image"
+         <img 
          style={{
            transition: "opacity 0.3s ease-in-out"}} src={`../../public/images/${imageIndex}.webp`}  />
          </div>
