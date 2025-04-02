@@ -48,7 +48,6 @@ const HomeAbout = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log(imageIndex,"imageIndex")
   const getLeftContent = () => {
     switch (activeSection) {
       case "about":

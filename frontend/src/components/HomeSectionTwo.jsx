@@ -48,7 +48,6 @@ const HomeSectionTwo = () => {
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
-console.log(darkmode)
   return (
     <div className={`hst_container ${darkmode?'darkmode':""}`}>
       <div className={`hst_wrapper ${darkmode?'darkmode':""}`} ref ={targetRef}>
