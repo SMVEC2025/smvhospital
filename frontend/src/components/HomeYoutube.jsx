@@ -35,6 +35,7 @@ const HomeYoutube = () => {
         playerVars: {
           enablejsapi: 1,
           autoplay: 0,
+          mute:1,
           controls: 1,
           modestbranding: 1,
         },

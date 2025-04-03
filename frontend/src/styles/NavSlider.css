@@ -1,0 +1,137 @@
+.navslider_main{
+    background-color: rgb(255, 255, 255);
+    height: 0;
+    width: 80vw;
+   top: 70px;
+    position: fixed;
+    z-index: 21;
+    transition: height 0.2s ease-out;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    left: 50%;
+    transform: translateX(-50%);
+
+
+}
+.navslider_main.opened{
+    height: 80vh;
+    border: 3px solid #faae8d7b;
+
+
+}
+.navslider_div1{
+}
+.navslider_titles{
+   
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next row */
+    flex-direction: column; /* Flow items horizontally */
+    align-content: flex-start; /* Align wrapped rows to the top */
+    height: 70vh;
+    gap: 15px;
+    margin-left: 30px;
+    
+    
+}
+.navslider_div1>h2{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: 400;
+    font-size: 23px;
+    position: relative;
+    margin-bottom: 10px;
+    color: chocolate;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+}
+
+.navslider_titles>span{
+    font-size: 17px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    color: rgba(55, 55, 55, 0.904);
+    position: relative;
+    padding-left: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+.navslider_titles>span:hover{
+   color: chocolate;
+}
+.navslider_titles>span::after{
+    content:" ";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color:chocolate;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.navslider_div2{
+    margin: 20px;
+    width: 400px;
+    border-radius: 10px;
+}
+.navslider_div22>img{
+    width: 100%;
+    height: calc(80vh - 40px);
+    border-radius: 10px;
+    object-fit: cover;
+    overflow: hidden;
+
+}
+.navslider_div22{
+    height: 100%;
+    width: 100%;
+}
+
+.test{
+    position: absolute;
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-7%);
+    height: 70vh;
+    opacity: 0.3;
+    z-index: -1;
+}
+.child_h2{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    padding-left: 10px;
+    cursor: pointer;
+
+}
+
+.child_h2 .leftarrow{
+    font-size: 15px;
+    margin-left: 13px;
+
+}
+.navslider_titles>span .arrowright{
+    color: chocolate;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 13px;
+    opacity: 0;
+    transform: translateX(-10px);
+    margin-top: 3px;
+    transition: all 0.2s ease-out;
+
+}
+.navslider_titles>span:hover .arrowright{
+    opacity: 1;
+    transform: translateX(5px);
+
+}

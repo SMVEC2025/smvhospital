@@ -84,9 +84,11 @@
     border-radius: 35px;
     border: none;
     margin-top: 2rem;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
     color: rgb(20, 19, 19);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
   .oc_1{
     width: 100%;
@@ -161,20 +163,20 @@
 .ia-container-end1>h2{
   font-size: 2rem;
   width: 80%;
-  color: #fa9145;
+  color: #f15f23;
 
 }
 .ia-container-end1>p{
-  color:#a16c3ac5;
+  color:#a3431d;
   font-size: 1.2rem;
 
 }
 .ia-container-end2{
   margin-right: 2rem;
-  margin-top: 2rem;
+  margin-top: 2rem; 
 }
 .ia-container-end2>p{
-  color:#a16c3ac5;
+  color:#a3431d;
   font-size: 1rem;
   width: 80%;
 
@@ -184,7 +186,7 @@
   margin-top: 20px;
   padding: 10px 25px;
   border-radius: 30px;
-  background-color: #fa9145;
+  background-color: #f15f23;
   color: white;
   font-size: 1rem;
 }

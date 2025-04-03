@@ -7,7 +7,7 @@ import TitleHeader from "./TitleHeader";
 const HorizontalScroll = () => {
   const stickyRef = useRef(null);
   const stickyParentRef = useRef(null);
-    const { t } = useTranslation("home");
+    const { t } = useTranslation("home"); 
 
   useEffect(() => {
     const horizontalScroll = () => {

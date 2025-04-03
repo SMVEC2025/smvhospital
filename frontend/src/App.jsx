@@ -20,6 +20,8 @@ import Navbar from "./components/navbar/Navbar";
 import BotWrapper from "./components/bot/BotWrapper";
 import ScrollImageChanger from "./components/ScrollImageChanger";
 import MobileSideBar from "./components/navbar/MobileSideBar";
+import NavSlider from "./components/navbar/NavSlider";
+import LogoAnimation from "./components/LogoAnimation";
 
 const glitchVariants = {
   initial: { opacity: 0.4, filter: "blur(10px) contrast(0.8)" },
@@ -51,7 +53,7 @@ const AnimatedRoutes = () => {
           <Route path="/AppointmentSuccess" element={<AppointmentSuccess />} />
           <Route path="/newsandevents/:name" element={<NewsAndEvents />} />
           <Route path="/news-events" element={<MainNewsAndEvents />} />
-          <Route path="/test" element={<ScrollImageChanger />} />
+          <Route path="/test" element={<LogoAnimation />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
@@ -65,7 +67,7 @@ function App() {
       <Navbar/> 
       <MobileSideBar/>
       <BotWrapper/>
-
+      <NavSlider/>
         <AnimatedRoutes />
       </Router>
     </AppProvider>

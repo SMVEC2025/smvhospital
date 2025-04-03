@@ -14,7 +14,7 @@ import { IoMenu } from "react-icons/io5";
 function Navbar() {
   const navigate = useNavigate()
   const [scrolled, setScrolled] = useState(false);
-  const { isMobile,animCase,setShowSideBar,showSideBar} = useContext(AppContext)
+  const { isMobile,animCase,setShowSideBar,showSideBar,setOpenNavSlider} = useContext(AppContext)
   const [showEmer,setShowEmer] = useState(false)
 
   useEffect(() => {
@@ -43,10 +43,12 @@ function Navbar() {
           <>
             <div className='ns_con2'>
               <span onClick={()=>{navigate('/')}}>Home</span>
-              <span onClick={()=>{navigate('/about')}}>About us</span>
               {/* <span onClick={()=>{navigate('/doctors')}}>Doctors</span> */}
+              <span onClick={()=>{navigate('/specialty')}} onMouseEnter={()=>{setOpenNavSlider(true)}} >Medical services</span>
+
               <span onClick={()=>{navigate('/specialty')}}>Speacialty</span>
               <span onClick={()=>{navigate('/appointment')}}>Appointment</span>
+              <span onClick={()=>{navigate('/about')}}>About us</span>
               <span onClick={()=>{navigate('/contact-us')}}>Contact us</span>
             </div>
 

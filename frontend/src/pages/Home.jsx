@@ -56,8 +56,8 @@ function Home() {
         <WhySmv/>
         {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)}
         <HomeNewsEvents  newsAndEvents={newsAndEvents}/>
-        <HomeTestimonial/>
-      <HomeDoctors/>
+        {/* <HomeTestimonial/> */}
+      {/* <HomeDoctors/> */}
       <Footer/>
     </div>
   )

@@ -1,6 +1,6 @@
 .sticky-parent {
   height: 200vh;
-  background: linear-gradient(#365eb3ea,rgba(180, 112, 48, 0.918)), 
+  background: linear-gradient(#151515,#312436,#633837,#de652a), 
   url('../assets/images/Gradientnoise.jpg');
   background-position: center;
 }
@@ -13,7 +13,7 @@
 
 } 
 .hs_main1{
-  background-color: #3458a6;
+  background-color: #151515;
   color: #ece9e2;
   padding: 30px;
   display: flex;
@@ -56,7 +56,7 @@
   }
   
 .hs_mainend{
-  background-color:#a5672e ;
+  background-color:#de652a ;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -64,10 +64,10 @@
 
 }
 .hs_mainend>button{
-  border: 1px solid rgb(162, 162, 163);
-  background-color: chocolate;
+  border: 1px solid rgb(245, 245, 245);
+  background-color: rgb(244, 236, 231);
   padding: 12px 35px;
-  color: #f9f9f9;
+  color: #dd6529;
   border-radius: 35px;
 
 

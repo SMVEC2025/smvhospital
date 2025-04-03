@@ -99,7 +99,7 @@ useEffect(() => {
             onClick={()=>navigate('/about')}
             transition={{ duration: 0.5, ease: "easeOut",  delay: `${animCase=='allset'?0.3:5.2}`}}
           >
-            About Us
+            Discover
           </motion.button>
         </div>
     {!isMobile &&(
