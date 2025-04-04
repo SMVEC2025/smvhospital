@@ -22,7 +22,7 @@
   
 @media (max-width: 576px) {
     .logoanim >svg{
-        scale: 0.1;
+        scale: 0.15;
         /* transform: translate(-120%,-25%); */
         transform: translateX(calc(-100% - 100vw));
      
