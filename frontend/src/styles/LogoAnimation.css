@@ -43,7 +43,7 @@
   @media (min-width: 450px) and (max-width: 500px){
     .logoanim >svg{
         scale: 0.2;
-        transform: translateX(calc(-200% + 50vw));
+        transform: translateX(calc(-225% + 50vw));
         position: fixed;
         left: 0;
         top: 0;
