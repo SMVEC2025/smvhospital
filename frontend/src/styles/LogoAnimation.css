@@ -19,38 +19,48 @@
 }
 /* Extra small devices: 0px to 575px */
 
-@media (max-width: 450px) {
-    .logoanim >svg{
-        scale: 0.2;
-        /* transform: translate(-120%,-25%); */
-        transform: translateX(calc(-100% - 80vw));
-     
-    } 
-  }
- @media (min-width: 450px) and (max-width: 570px){
-    .logoanim >svg{
-        scale: 0.2;
-        /* transform: translate(-120%,-25%); */
-        transform: translateX(calc(-100% - 80vw));
-     
-    } 
-  }
   @media (min-width: 300px) and (max-width: 400px){
     .logoanim >svg{
         scale: 0.2;
-        /* transform: translate(-120%,-25%); */
-        transform: translateX(calc(-100% - 100vw));
+        transform: translateX(calc(-250% + 50vw));
+        position: fixed;
+        left: 0;
+        top: 0;
      
     } 
   }
-@media  (min-width: 470px) and (max-width: 576px)  {
+  
+  @media (min-width: 400px) and (max-width: 450px){
     .logoanim >svg{
         scale: 0.2;
-        /* transform: translate(-120%,-25%); */
-        transform: translateX(calc(-100% - 100vw));
+        transform: translateX(calc(-200% + 50vw));
+        position: fixed;
+        left: 0;
+        top: 0;
      
     } 
   }
+  @media (min-width: 450px) and (max-width: 500px){
+    .logoanim >svg{
+        scale: 0.2;
+        transform: translateX(calc(-200% + 50vw));
+        position: fixed;
+        left: 0;
+        top: 0;
+     
+    } 
+  }
+  @media (min-width: 500px) and (max-width: 600px){
+    .logoanim >svg{
+        scale: 0.2;
+        transform: translateX(calc(-200% + 50vw));
+        position: fixed;
+        left: 0;
+        top: 0;
+     
+    } 
+  }
+
   
   /* Small devices: 576px to 767px */
   @media (min-width: 576px) and (max-width: 767px) {
