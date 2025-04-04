@@ -5,7 +5,6 @@ import { IoAppsSharp } from "react-icons/io5";
 import { AppContext } from '../../context/AppContext';
 import logofull from '../../assets/images/logofull.png'
 import smvwhite from '../../assets/images/smvwhite.png'
-
 import { IoMdCall } from "react-icons/io";
 import { IoTimeOutline,IoMail } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
@@ -32,6 +31,11 @@ function Navbar() {
 
   }, []);
 
+  function handleNavigate(val){
+    setOpenNavSlider(false)
+    navigate(val)
+  }
+
   return (
     <>
       {animCase=='allset' ? (<div className={`nav_main ${scrolled}`}>
@@ -42,14 +46,14 @@ function Navbar() {
          
           <>
             <div className='ns_con2'>
-              <span onClick={()=>{navigate('/')}}>Home</span>
+              <span onClick={()=>{handleNavigate('/')}}>Home</span>
               {/* <span onClick={()=>{navigate('/doctors')}}>Doctors</span> */}
-              <span onClick={()=>{navigate('/specialty')}} onMouseEnter={()=>{setOpenNavSlider(true)}} >Medical services</span>
+              <span onClick={()=>{handleNavigate('')}} onMouseEnter={()=>{setOpenNavSlider(true)}} >Medical services</span>
 
-              <span onClick={()=>{navigate('/specialty')}}>Speacialty</span>
-              <span onClick={()=>{navigate('/appointment')}}>Appointment</span>
-              <span onClick={()=>{navigate('/about')}}>About us</span>
-              <span onClick={()=>{navigate('/contact-us')}}>Contact us</span>
+              {/* <span onClick={()=>{handleNavigate('/specialty')}}>Speacialty</span> */}
+              <span onClick={()=>{handleNavigate('/appointment')}}>Appointment</span>
+              <span onClick={()=>{handleNavigate('/about')}}>About us</span>
+              <span onClick={()=>{handleNavigate('/contact-us')}}>Contact us</span>
             </div>
 
             <div className='ns_con3'>

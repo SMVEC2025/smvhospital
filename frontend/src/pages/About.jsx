@@ -12,7 +12,7 @@ import MobileSideBar from '../components/navbar/MobileSideBar';
 import ScrollToTop from '../components/ScrollToTop';
 
 const heroData = {
-  bgImg: 'images/hero-bg9.jpg',
+  bgImg: 'images/aboutmainpic.JPG',
   bgShape: 'shape/hero-shape.png', 
   page:"About SMV",
 

@@ -14,8 +14,8 @@ const LogoAnimation = () => {
 
   const FrameComponent = frames[currentFrame];
 
-  return (
-    <div className="logoanim" style={{ width: "500px", height: "500px" }}>
+  return ( 
+    <div className="logoanim" >
       <FrameComponent />
     </div>
   );

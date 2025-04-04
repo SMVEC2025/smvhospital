@@ -17,6 +17,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import { FaNotesMedical } from "react-icons/fa";
+import { FaAnglesRight } from "react-icons/fa6";
 
 
 const heroData = {
@@ -38,6 +39,7 @@ const Appointment = () => {
     const { setAnimCase, setShowSideBar } = useContext(AppContext);
     const [continuePackage, setContinuePackage] = useState('with')
     const [selectedPackage, setSelectedPackage] = useState()
+    const [showDetails, setShowdetails] = useState(false)
     const [selectedDate, setSelectedDate] = useState(new Date()); // Set default date to today
     const [selectedTime, setSelectedTime] = useState(null);
     const processes = ['services', 'date&time', 'basicdetail']
@@ -50,69 +52,185 @@ const Appointment = () => {
     const healthPackages = [
         {
             id: 1,
-            name: "Basic Health Checkup",
-            price: 2999,
+            name: "Pro health checkup - male (SSH)",
+            price: 1999,
             description: "A fundamental health checkup covering essential tests to assess overall well-being.",
             testsIncluded: [
-                "Complete Blood Count (CBC)",
-                "Blood Sugar (Fasting & PP)",
+                "USG Whole Abdomen",
+                "Glucose Post Prandial",
                 "Lipid Profile",
-                "Liver Function Test (LFT)",
-                "Kidney Function Test (KFT)",
-                "Urine Routine & Microscopy"
+                "Liver Function Test",
+                "Urine Complete Analysis",
+                "HbA1c",
+                "X Ray-Chest PA",
+                "Hepatitis B Surface Antigen",
+                "Echo Cardiogram",
+                "Renal Function Test",
+                "CBC with ESR",
+                "ECG",
+                "Pap Smear (LBC)",
+                "Ferritin",
+                "Glucose - Fasting",
+                "Rheumatoid Factor",
+                "VITAMIN D",
+                "Consultation - General physician"
             ],
             duration: "1 Day",
             suitableFor: "Individuals looking for routine health assessment."
         },
         {
             id: 2,
-            name: "Advanced Full Body Checkup",
-            price: 5999,
+            name: "Comprehensive Senior Citizen - Female (SSH)",
+            price: 1999,
             description: "Comprehensive health screening including organ function tests and vitamin analysis.",
             testsIncluded: [
-                "Complete Blood Count (CBC)",
-                "Blood Sugar (Fasting & PP)",
+                "Complete Blood Count",
+                "Blood Sugar Fasting & PP",
+                "HBA1C",
+                "Serum Calcium",
+                "Vitamin D",
+                "Complete Urine Examination",
+                "Liver Function Test",
+                "Rheumatoid Factor",
+                "Renal Function Test",
                 "Lipid Profile",
-                "Liver Function Test (LFT)",
-                "Kidney Function Test (KFT)",
-                "Thyroid Function Test (TFT)",
-                "Vitamin D & B12",
-                "ECG & Chest X-ray"
+                "ECG",
+                "X-Ray Chest PA View",
+                "TFT",
+                "Pulmonary Function Test",
+                "Consultation - General physician",
+                "Consultation - Cardiologist",
+                "ECHO",
+                "USG ABDOMEN"
             ],
             duration: "1-2 Days",
             suitableFor: "Adults over 30 or those with lifestyle-related risks."
         },
         {
             id: 3,
-            name: "Cardiac Health Package",
-            price: 7999,
+            name: "Comprehensive Senior Citizen - Male (SSH)",
+            price: 1999,
             description: "Specialized tests for heart health assessment, ideal for individuals with heart risks.",
             testsIncluded: [
-                "ECG",
-                "2D Echocardiography",
+                "Complete Blood Count with ESR",
+                "Blood Sugar Fasting & PP",
+                "HBA1C",
+                "Serum Calcium",
+                "Vitamin D",
+                "Complete Urine Examination",
+                "Liver Function Test",
+                "Rheumatoid Factor",
+                "Renal Function Test",
                 "Lipid Profile",
-                "Blood Sugar (Fasting & PP)",
-                "Liver Function Test (LFT)",
-                "Kidney Function Test (KFT)",
-                "Treadmill Test (TMT)",
-                "Cardiologist Consultation"
+                "ECG",
+                "X-Ray Chest PA View",
+                "PSA",
+                "Pulmonary Function Test",
+                "Consultation - General physician",
+                "Consultation - Cardiologist",
+                "ECHO",
+                "USG ABDOMEN"
             ],
             duration: "1-2 Days",
             suitableFor: "People with heart conditions, high BP, or cholesterol issues."
         },
         {
             id: 4,
-            name: "Diabetes Care Package",
-            price: 4999,
+            name: "premier health checkup (SSH)",
+            price: 999,
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
-                "Blood Sugar (Fasting, PP, HbA1c)",
                 "Lipid Profile",
-                "Kidney Function Test (KFT)",
-                "Liver Function Test (LFT)",
-                "Urine Routine & Microalbuminuria",
-                "Foot Examination",
-                "Ophthalmologist Consultation"
+                "PSA Total (only for male)",
+                "Complete Blood Count & ESR",
+                "Glucose - Fasting",
+                "Liver Function Test",
+                "Renal Function Test",
+                "PFT (Pulmonary Function Test)",
+                "Urine Complete Analysis",
+                "HbA1c Glycated",
+                "ECG",
+                "TFT",
+                "X Ray Chest PA",
+                "Glucose Post Prandial",
+                "Consultation - General physician"
+            ],
+            duration: "1 Day",
+            suitableFor: "Diabetic patients or individuals at risk of diabetes."
+        },
+        {
+            id: 5,
+            name: "Diabetic Care Check-Up (SSH)",
+            price: 999,
+            description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
+            testsIncluded: [
+                "Glucose - Fasting",
+                "Glucose Post Prandial",
+                "HbA1c",
+                "TFT",
+                "Liver Function Test",
+                "Urine Complete Analysis",
+                "X-Ray - Chest PA",
+                "ECG",
+                "Lipid Profile",
+                "Renal Function Test",
+                "Complete Blood Count & ESR",
+                "Consultation - General Physician"
+            ],
+            duration: "1 Day",
+            suitableFor: "Diabetic patients or individuals at risk of diabetes."
+        },
+        {
+            id: 5,
+            name: "pro health checkup - female (SSH)",
+            price: 1999,
+            description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
+            testsIncluded: [
+                "USG Whole Abdomen",
+                "Glucose Post Prandial",
+                "Lipid Profile",
+                "Liver Function Test",
+                "Urine Complete Analysis",
+                "HbA1c",
+                "TFT",
+                "X Ray-Chest PA",
+                "Hepatitis B Surface Antigen",
+                "Echo Cardiogram",
+                "Mammogram",
+                "Renal Function Test",
+                "CBC with ESR",
+                "ECG",
+                "Pap Smear (LBC)",
+                "Ferritin",
+                "CA125",
+                "Glucose-Fasting",
+                "Rheumatoid Factor",
+                "VITAMIN D",
+                "Consultation - General physician",
+                "Consultation Gynaecologist"
+            ],
+            duration: "1 Day",
+            suitableFor: "Diabetic patients or individuals at risk of diabetes."
+        },
+        {
+            id: 6,
+            name: "Basic Health Check-up for Female (SSH)",
+            price: 999,
+            description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
+            testsIncluded: [
+                "Urine Complete Analysis",
+                "Glucose - Fasting",
+                "Glucose Post Prandial",
+                "HbA1c",
+                "Lipid Profile",
+                "Renal Function Test",
+                "Liver Function Test",
+                "Complete Blood Count & ESR",
+                "TFT",
+                "X Ray-Chest PA",
+                "ECG",
+                "PFT (Pulmonary Function Test)",
+                "Consultation - General physician"
             ],
             duration: "1 Day",
             suitableFor: "Diabetic patients or individuals at risk of diabetes."
@@ -141,7 +259,7 @@ const Appointment = () => {
         phone: "",
         note: "",
     });
-
+ const Hello = ["hello","pillo"]
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -227,7 +345,17 @@ const Appointment = () => {
                                             <div>
                                                 <h2 className="packages_name">{e.name}</h2>
                                                 <p>Price:<span className="packages_price"> ₹{e.price}</span></p>
-                                                <p className="packages_desc">{e.description}</p>
+                                                <p className="packages_desc">{e.description} <span > {showDetails?(<span onClick={()=>{setShowdetails(false)}}>ShowLess</span>):(<span onClick={()=>{setShowdetails(true)}}>ShowDetails</span>)}</span> </p>
+                                                <div className={`testlist ${showDetails?"open":""}`}>
+                                                    {selectedPackage==i &&(
+                                                        <>
+                                                         {e.testsIncluded.map((hel,pil)=>(
+                                                    <p >{hel}</p>
+                                                   ))}
+                                                        </>
+                                                    )}
+                                                  
+                                                </div>
                                             </div>
                                             {selectedPackage == i && (
                                                 <div className={`app_service_selected`}>

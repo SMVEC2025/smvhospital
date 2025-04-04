@@ -29,7 +29,7 @@ const AboutSection1 = () => {
       <div className="about-image">
         <img src="https://picsum.photos/350/300" alt="Team" className="main-image" />
         <div className="experience-box">
-          <h3>25</h3>
+          <h3>20</h3>
           <p>Years Of Experience</p>
         </div>
       </div>

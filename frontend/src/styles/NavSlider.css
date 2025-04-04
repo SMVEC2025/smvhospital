@@ -2,10 +2,9 @@
     background-color: rgb(255, 255, 255);
     height: 0;
     width: 80vw;
-   top: 70px;
+    top: 70px;
     position: fixed;
     z-index: 21;
-    transition: height 0.2s ease-out;
     border-radius: 15px;
     overflow: hidden;
     display: flex;
@@ -19,8 +18,12 @@
 }
 .navslider_main.opened{
     height: 80vh;
-    border: 3px solid #faae8d7b;
+    transition: all 0.2s ease-out;
 
+
+}
+.navslider_main.closed{
+    transition: none;
 
 }
 .navslider_div1{
