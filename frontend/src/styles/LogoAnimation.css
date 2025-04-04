@@ -19,10 +19,18 @@
 }
 /* Extra small devices: 0px to 575px */
 
-  
-@media (max-width: 576px) {
+@media (max-width: 470px) {
     .logoanim >svg{
-        scale: 0.15;
+        scale: 0.2;
+        /* transform: translate(-120%,-25%); */
+        transform: translateX(calc(-100% - 80vw));
+     
+    } 
+  }
+  
+@media  (min-width: 470px) and (max-width: 576px)  {
+    .logoanim >svg{
+        scale: 0.2;
         /* transform: translate(-120%,-25%); */
         transform: translateX(calc(-100% - 100vw));
      
