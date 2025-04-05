@@ -14,29 +14,23 @@ import Footer from "../components/footer/Footer";
 const AppointmentSuccess = () => {
   const location = useLocation();
    const sectionRef = useRef(null);
-  const { name,date,time,service} = location.state || {};
+  const { data,date,time,service} = location.state || {};
+  console.log(location.state)
  useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: "smooth" });
 
  }, [])
  
-
-  // Format the date for different calendar links
-  const formattedDate = format(new Date(date), "yyyyMMdd");
-  const formattedTime = time.replace(":", ""); // Convert 12:00 to 1200
-
   // Calendar Links
-  const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=Appointment &dates=${formattedDate}T${formattedTime}00Z/${formattedDate}T${formattedTime}00Z`;
-  const yahooCalendarUrl = `https://calendar.yahoo.com/?v=60&view=d&type=20&title=Appointment &st=${formattedDate}T${formattedTime}00Z`;
-  const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=Appointment {doctor}&startdt=${formattedDate}T${formattedTime}00Z`;
+  const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=Appointment &dates=${date}T${time}00Z/${date}T${time}00Z`;
+  const yahooCalendarUrl = `https://calendar.yahoo.com/?v=60&view=d&type=20&title=Appointment &st=${date}T${time}00Z`;
+  const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=Appointment {doctor}&startdt=${date}T${time}00Z`;
   const icalCalendarUrl = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0A...%0AEND:VCALENDAR`;
 
   // Print function
   const handlePrint = () => {
     window.print();
   };
-
-  
 const heroData = {
   bgImg: 'images/hero-bg9.jpg',
   bgShape: 'shape/hero-shape.png',
@@ -66,7 +60,7 @@ const heroData = {
         <div className="details">
           <div><strong>Service</strong> {service}</div>
           <div><strong>Date & Time</strong> {date} at {time}</div>
-          <div><strong>Patient Name</strong> {name}</div>
+          <div><strong>Patient Name</strong>{data.firstname} </div>
         </div>
 
         {/* Calendar Buttons */}

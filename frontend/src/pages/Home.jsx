@@ -55,7 +55,7 @@ function Home() {
        
         <WhySmv/>
         {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)}
-        <HomeNewsEvents  newsAndEvents={newsAndEvents}/>
+        {/* <HomeNewsEvents  newsAndEvents={newsAndEvents}/> */}
         {/* <HomeTestimonial/> */}
       {/* <HomeDoctors/> */}
       <Footer/>

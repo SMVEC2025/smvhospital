@@ -29,14 +29,14 @@
   }
   
   .sub-title {
-    color: #b88871;
+    color: #f58c5b;
     font-weight: bold;
     text-transform: uppercase;
   }
   
   .as_title {
     font-size: 32px;
-    color: #da7647;
+    color: #f19971;
     font-weight: bold;
   }
   
@@ -60,13 +60,13 @@
   }
   
   .stat-item h3 {
-    color: #0047ab;
+    color: #f76b34;
     font-size: 24px;
     margin: 5px 0;
   }
   
   .contact-btn {
-    background: #0047ab;
+    background: #f76b34;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -90,7 +90,7 @@
   }
   
   .experience-box {
-    background: #0047ab;
+    background: #f76b34;
     color: white;
     padding: 20px;
     text-align: center;

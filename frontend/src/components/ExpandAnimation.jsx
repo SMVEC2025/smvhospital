@@ -27,7 +27,7 @@ export default function ExpandAnimation( {restartVideo}) {
           initial={{ y: 500, scale: 1, borderRadius: "100px" }}
           animate={{
             y: [500, 500, 0],
-            transition: { duration: 2.5, ease: "easeOut" }
+            transition: { duration: 1.5, ease: "easeOut" }
           }}
           onAnimationComplete={()=>setExpand(true)}
         />

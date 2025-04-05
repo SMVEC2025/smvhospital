@@ -86,13 +86,13 @@
   
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 20px;
     font-weight: 500;
   }
   
   /* Transition Text */
   .hero-title-transition {
-    font-size: 2.5rem;
+    font-size: 20px;
     font-weight: 500;
     margin-left: 5px;
   }

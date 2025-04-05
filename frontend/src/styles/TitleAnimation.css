@@ -90,12 +90,22 @@ svg text {
 
 @media screen and (max-width: 500px) {
   .ta_main .box {
-    font-size: 19px;
-    height: 80%;
+    font-size: 25px;
+  font-weight:500;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  letter-spacing: 4px;
 
   }
   .ta_s1, .ta_s2, .ta_s3 {
-    font-size:50px;
+    font-size:25px;
+  }
+  .ta_main {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
   }
   
 }

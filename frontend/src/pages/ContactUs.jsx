@@ -103,7 +103,7 @@ function ContactUs() {
       ];
       const items = Array.from({ length: 9 }, (_, index) => `Item ${index + 1}`);
       const heroData = {
-        bgImg: 'images/hero-bg9.jpg',
+        bgImg: 'images/contactus.JPG',
         bgShape: 'shape/hero-shape.png', 
         page:"Contact Us",
       

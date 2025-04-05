@@ -12,8 +12,8 @@ function MobileSideBar() {
   const { showSideBar,setShowSideBar,animCase,isMobile } = useContext(AppContext)
   const navigate = useNavigate()
 
-  const menuItems = ['Home', 'About us', 'Doctors', 'Speacialty','Appointment', 'Contact us'];
-  const redirect =[ '/', '/about', '/doctors', '/specialty','/appointment', '/contact-us' ]
+  const menuItems = ['Home', 'Medical services','Appointment', 'About us', 'Contact us'];
+  const redirect =[ '/', ' ','/appointment','/about', '/contact-us' ]
   return (
    <>
     <div className={`msb_main ${showSideBar}`}>

@@ -54,35 +54,36 @@ const HorizontalScroll = () => {
       desc: "Surgery to fix or replace damaged heart valves to improve blood flow.",
       image: "https://img.freepik.com/free-photo/view-anatomic-heart-model-educational-purpose-with-medical-instruments_23-2149894480.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740"
     },
+  
     {
       id: 5,
-      name: "Coronary Artery Bypass Grafting (CABG)",
-      desc: "A procedure to bypass blocked heart arteries and improve blood flow.",
-      image: "https://img.freepik.com/free-photo/person-holding-anatomic-heart-model-educational-purpose_23-2149894442.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740"
-    },
-    {
-      id: 6,
       name: "PTCA",
       desc: "A non-surgical procedure to open blocked coronary arteries using a balloon catheter.",
       image: "https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367411.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740"
     },
     {
-      id: 7,
+      id: 6,
       name: "Joint Replacement",
       desc: "Surgical replacement of damaged joints with artificial implants to relieve pain.",
       image: "https://img.freepik.com/free-photo/old-woman-nursing-home-walking-with-crutches-with-help-from-female-nurse_482257-45331.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740"
     },
     {
-      id: 8,
+      id: 7,
       name: "Spine Surgery",
       desc: "Surgical treatment for spine-related disorders such as herniated discs or scoliosis.",
       image: "https://img.freepik.com/free-photo/osteopathy-specialist-relieving-pressure-from-back-bones-aged-patient-physiotherapy-chiropractor-giving-support-helping-senior-woman-with-spinal-cord-ache-physical-recovery_482257-31871.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740"
     },
     {
-      id: 9,
+      id: 8,
       name: "Plastic and Reconstructive Surgery",
       desc: "Surgery to restore appearance and function due to injury, disease, or birth defects.",
       image: "https://img.freepik.com/free-photo/doctor-drawing-with-marker-face-high-angle_23-2149352181.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740"
+    },
+    {
+      id: 9,
+      name: "Coronary Artery Bypass Grafting (CABG)",
+      desc: "A procedure to bypass blocked heart arteries and improve blood flow.",
+      image: "https://img.freepik.com/free-photo/person-holding-anatomic-heart-model-educational-purpose_23-2149894442.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740"
     },
     {
       id: 10,

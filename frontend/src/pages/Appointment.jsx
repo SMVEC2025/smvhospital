@@ -18,10 +18,11 @@ import "react-phone-input-2/lib/style.css";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import { FaNotesMedical } from "react-icons/fa";
 import { FaAnglesRight } from "react-icons/fa6";
+import { formatDate } from "date-fns";
 
 
 const heroData = {
-    bgImg: 'images/hero-bg9.jpg',
+    bgImg: 'images/appointmentheader.png',
     bgShape: 'shape/hero-shape.png',
     page: "Book Appointment",
     sliderImages: [
@@ -54,6 +55,7 @@ const Appointment = () => {
             id: 1,
             name: "Pro health checkup - male (SSH)",
             price: 1999,
+            image:'https://img.freepik.com/free-photo/male-doctor-examining-patient_1170-2165.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740',
             description: "A fundamental health checkup covering essential tests to assess overall well-being.",
             testsIncluded: [
                 "USG Whole Abdomen",
@@ -82,6 +84,7 @@ const Appointment = () => {
             id: 2,
             name: "Comprehensive Senior Citizen - Female (SSH)",
             price: 1999,
+            image:"https://img.freepik.com/free-photo/patient-doctor-with-masks-medium-shot_23-2149856216.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             description: "Comprehensive health screening including organ function tests and vitamin analysis.",
             testsIncluded: [
                 "Complete Blood Count",
@@ -110,6 +113,7 @@ const Appointment = () => {
             id: 3,
             name: "Comprehensive Senior Citizen - Male (SSH)",
             price: 1999,
+            image:"https://img.freepik.com/free-photo/high-angle-doctor-bandaging-patient-hand_23-2148285673.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             description: "Specialized tests for heart health assessment, ideal for individuals with heart risks.",
             testsIncluded: [
                 "Complete Blood Count with ESR",
@@ -138,6 +142,7 @@ const Appointment = () => {
             id: 4,
             name: "premier health checkup (SSH)",
             price: 999,
+            image:"https://img.freepik.com/free-photo/female-specialist-welcoming-her-indian-male-patient-check-up-visit_482257-117043.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
                 "Lipid Profile",
@@ -162,6 +167,7 @@ const Appointment = () => {
             id: 5,
             name: "Diabetic Care Check-Up (SSH)",
             price: 999,
+            image:"https://img.freepik.com/free-photo/high-angle-diabetic-woman-checking-her-glucose-level_23-2150775196.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
                 "Glucose - Fasting",
@@ -184,6 +190,7 @@ const Appointment = () => {
             id: 5,
             name: "pro health checkup - female (SSH)",
             price: 1999,
+            image:"https://img.freepik.com/free-photo/two-women-beautician-doctor-client-stand-mirror-consultation-doctor-applies-cream-woman-s-hands-makes-light-massage_343596-4173.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
                 "USG Whole Abdomen",
@@ -215,6 +222,7 @@ const Appointment = () => {
         {
             id: 6,
             name: "Basic Health Check-up for Female (SSH)",
+            image:"https://img.freepik.com/free-photo/medium-shot-patient-getting-vaccinated_23-2149726934.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             price: 999,
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
@@ -292,7 +300,7 @@ const Appointment = () => {
 
     }
     function handleSubmit() {
-        navigate("/appointmentsuccess", { state: { name: "John Doe", date: "March 21, 2025", time: "12:00 PM", service: "NA" } });
+        navigate("/appointmentsuccess", { state: { data: formData, date: selectedDate.toLocaleDateString('en-GB').split('/').join('-'), time: selectedTime, service: selectedPackage?healthPackages[selectedPackage].name:"Package N/A" } });
 
     }
     return (
@@ -341,7 +349,7 @@ const Appointment = () => {
                                 <div className={`app_service_package_wrap`}>
                                     {healthPackages.map((e, i) => (
                                         <div key={i} className={`app_service_package ${selectedPackage == i ? "true" : ""}`} onClick={() => setSelectedPackage(i)}>
-                                            <span><img src="https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dXJsfGVufDB8fDB8fHww" alt="" /></span>
+                                            <span><img src={e.image} alt="" /></span>
                                             <div>
                                                 <h2 className="packages_name">{e.name}</h2>
                                                 <p>Price:<span className="packages_price"> ₹{e.price}</span></p>
@@ -466,10 +474,12 @@ const Appointment = () => {
                                 <div className="form-group">
                                     <label>Phone Number <span>*</span></label>
                                     <PhoneInput
+                                        className="hello"
                                         country={"us"}
+                                       
                                         value={formData.phone}
                                         onChange={(phone) => setFormData({ ...formData, phone })}
-                                        inputStyle={{ width: "100%" }}
+                                        inputStyle={{ width: "102%", backgroundColor: "transparent",  }}
                                     />
                                 </div>
 

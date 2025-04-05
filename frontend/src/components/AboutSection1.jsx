@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/About.css";
-
+import frontview from '../assets/images/frontview.jpg'
 const AboutSection1 = () => {
   return (
     <section className="about-section">
@@ -14,8 +14,8 @@ const AboutSection1 = () => {
         <div className="stats">
           <div className="stat-item">
             <i className="icon"></i>
-            <h3>152K</h3>
-            <p>Total Cases</p>
+            <h3>250 +</h3>
+            <p>Doctors</p>
           </div>
           <div className="stat-item">
             <i className="icon"></i>
@@ -27,7 +27,7 @@ const AboutSection1 = () => {
         <button className="contact-btn">CONTACT WITH US →</button>
       </div>
       <div className="about-image">
-        <img src="https://picsum.photos/350/300" alt="Team" className="main-image" />
+        <img src={frontview} alt="Team" className="main-image" />
         <div className="experience-box">
           <h3>20</h3>
           <p>Years Of Experience</p>
