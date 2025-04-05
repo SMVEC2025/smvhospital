@@ -103,8 +103,14 @@
   top: 20px;
   right: 20px;
   z-index: 1005;
-  color: chocolate;
+  color: #f26e3a;
   font-size: 35px;
+}
+.mbile_menu_button.true.true{
+  color: #f26e3a;
+}
+.mbile_menu_button.false.true{
+  color: #f26e3a;
 }
 @keyframes emergencryEnter {
   from {

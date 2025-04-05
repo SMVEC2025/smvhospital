@@ -74,7 +74,7 @@ function Navbar() {
       {isMobile && (
         <>
          {animCase == 'allset'&&(
-         <div className={`mbile_menu_button ${scrolled}`} onClick={()=>setShowSideBar(!showSideBar)}>
+         <div className={`mbile_menu_button ${scrolled} ${showSideBar}`} onClick={()=>setShowSideBar(!showSideBar)}>
          {showSideBar?(<IoClose/>):(
        <IoMenu/>
        )}
