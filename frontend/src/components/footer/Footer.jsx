@@ -11,6 +11,13 @@ import { Link } from 'react-router-dom';
 
 
 function Footer() {
+
+    const handleAndroidDownload = () => {
+      // Replace this with your actual Play Store app URL
+      const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.yourapp.package';
+      window.open(playStoreUrl, '_blank'); // Open in new tab
+    };
+
   return (
     <footer className="footer">
     <div className="footer-container">
@@ -65,8 +72,8 @@ function Footer() {
           <div className="footer-app">
             <h4>Download App</h4>
             <p>Get easy access to healthcare services anytime, anywhere. Download our app for appointments, medical records, and more.</p>
-            <Link to="/"><img src={playstore} className="footer-app-img" alt="Play Store" /></Link>
-            <Link to="/"><img src={appstore} style={{marginLeft:"1rem"}} className="footer-app-img" alt="App Store" /></Link>
+        <img onClick={handleAndroidDownload} src={playstore} className="footer-app-img" alt="Play Store" />
+            <img src={appstore} style={{marginLeft:"1rem"}} className="footer-app-img" alt="App Store" />
           </div>
         </div>
       </div>
