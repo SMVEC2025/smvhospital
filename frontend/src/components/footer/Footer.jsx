@@ -14,7 +14,7 @@ function Footer() {
 
     const handleAndroidDownload = () => {
       // Replace this with your actual Play Store app URL
-      const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.yourapp.package';
+      const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.healthray.patient&hl=en';
       window.open(playStoreUrl, '_blank'); // Open in new tab
     };
     const handleAppleDownload = () => {
