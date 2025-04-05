@@ -196,13 +196,7 @@ function MobileSideBar() {
                   </motion.h1>
                 ))}
                 <div className='msb_container_end'>
-                  {/* <h2>Get In touch</h2>
-   <p>We're here to help you explore how mobile waste disposal plants can support and improve your waste management needs. If you have any questions or want to dive deeper into our technology, get in touch with us directly!</p>
-   <span></span>
-   <h4>For all Inquires</h4>
-   <p>info@smvmch.in</p>
-   <h4>Contact number</h4>
-   <p>+91 9562561695</p> */}
+               
 
                   <div> <IoMdCall /> +91 5545145451</div>
                   <div><IoMail /> emergency@smvmch.in</div>
