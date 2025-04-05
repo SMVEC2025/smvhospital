@@ -17,6 +17,12 @@ function Footer() {
       const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.yourapp.package';
       window.open(playStoreUrl, '_blank'); // Open in new tab
     };
+    const handleAppleDownload = () => {
+      // Replace this with your actual Play Store app URL
+      const playStoreUrl = '    https://apps.apple.com/in/app/healthray-for-patients/id6470002190';
+      window.open(playStoreUrl, '_blank'); // Open in new tab
+    };
+
 
   return (
     <footer className="footer">
@@ -73,7 +79,7 @@ function Footer() {
             <h4>Download App</h4>
             <p>Get easy access to healthcare services anytime, anywhere. Download our app for appointments, medical records, and more.</p>
         <img onClick={handleAndroidDownload} src={playstore} className="footer-app-img" alt="Play Store" />
-            <img src={appstore} style={{marginLeft:"1rem"}} className="footer-app-img" alt="App Store" />
+            <img onClick={handleAppleDownload} src={appstore} style={{marginLeft:"1rem"}} className="footer-app-img" alt="App Store" />
           </div>
         </div>
       </div>
