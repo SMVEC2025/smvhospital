@@ -6,6 +6,9 @@ import { IoClose } from "react-icons/io5";
 import { IoMdCall } from "react-icons/io";
 import { IoTimeOutline, IoMail } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
+
 import { useNavigate } from "react-router-dom";
 function MobileSideBar() {
 
@@ -212,7 +215,7 @@ function MobileSideBar() {
         )}
                 {sideBarContent == 'medicalservices' && (
  <div className='msb_container_medicals'>
- <h2 onClick={()=>{setSideBarContent('main')}}>Medical Services</h2>
+ <h2 onClick={()=>{setSideBarContent('main')}}><span ><FaArrowLeft/></span> Medical Services</h2>
   <div>
   {medicalServices.map((item, index) => (
    <motion.h1 key={index}
@@ -224,6 +227,7 @@ function MobileSideBar() {
      transition={{ type: "spring", stiffness: 100, damping: 16, duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
    >
      {item.title}
+     <span><FaAngleRight/></span>
    </motion.h1>
  ))}
   </div>
