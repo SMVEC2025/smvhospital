@@ -7,14 +7,15 @@ import { AppContext } from '../context/AppContext';
 const TitleAnimation = () => {
     const [controlAnim,setControlAnim] = useState('one')
     const [gradient,setGradient] = useState(false)
-    const {setAnimCase} = useContext(AppContext)
+    const {setAnimCase,isMobile} = useContext(AppContext)
     return (
       <>
        {controlAnim == 'one' && (
         <motion.svg  viewBox="0 0 100px 100" xmlns="http://www.w3.org/2000/svg"
 
+
         initial={{ scale: 1.5}}
-        animate={{ scale: 0.4}}
+        animate={{ scale: isMobile?0.2:0.4}}
         transition={{ duration: 2  }}
         onAnimationEnd={()=>{setControlAnim('two')}}
         >
@@ -40,12 +41,12 @@ const TitleAnimation = () => {
          <motion.span className='box' 
           initial={{ rotateY: 90, opacity: 0 }}
           animate={{ rotateY: 0, opacity: 1 }}
-          transition={{ duration: 0.3,delay: 1.1 }}
+          transition={{ duration: 0.5,delay: 1.1 }}
          >v</motion.span>
      </motion.div>
 
      <motion.div className={`ta_s2 ${gradient}`}
-        initial={{ x: 90, opacity: 1 }}
+        initial={{ x: isMobile?40:140, opacity: 1 }}
          animate={{ x: 0, opacity: 1 }}
          transition={{ duration: 0.5, ease:'easeInOut' }}>
          S{['u', 'p', 'e', 'r'].map((letter, i) => (
@@ -58,7 +59,7 @@ const TitleAnimation = () => {
      </motion.div>
      <motion.div
          className={`ta_s3 ${gradient}`}
-         initial={{ x: -40, opacity: 1 }}
+         initial={{ x: isMobile?-10:-40, opacity: 1 }}
          animate={{ x: 0, opacity: 1 }}
          transition={{ duration: 0.5, ease:'easeInOut' }}
      >

@@ -120,6 +120,12 @@
     .Ia-shape-1.true{
       display: none;
     }
+    .overlay-content>button{
+      padding: 10px 25px;
+      margin-top: 1rem;
+      font-size: 12px;
+      letter-spacing: 0.6px;
+    }
   }
 
   .testcon{
