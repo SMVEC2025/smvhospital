@@ -20,7 +20,7 @@ function Footer() {
     };
     const handleAppleDownload = () => {
       // Replace this with your actual Play Store app URL
-      const playStoreUrl = '    https://apps.apple.com/in/app/healthray-for-patients/id6470002190';
+      const playStoreUrl = 'https://apps.apple.com/in/app/healthray-for-patients/id6470002190';
       window.open(playStoreUrl, '_blank'); // Open in new tab
     };
     const handleCallClick = () => {

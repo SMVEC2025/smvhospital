@@ -40,13 +40,13 @@ const HorizontalScroll = () => {
       id: 2,
       name: "Heart Transplant",
       desc: "Replacement of a failing heart with a healthy donor heart to restore normal function.",
-      image: "https://img.freepik.com/free-photo/surgeons-performing-operation-operation-room_1170-2232.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740"
+      image: "https://images.pexels.com/photos/4483323/pexels-photo-4483323.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       id: 3,
       name: "Kidney Transplant",
       desc: "Surgical placement of a healthy kidney from a donor to treat kidney failure.",
-      image: "https://img.freepik.com/free-photo/healthcare-concept-clinic_23-2151117937.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740"
+      image: "https://img.freepik.com/free-photo/medium-shot-doctor-talking-patient_23-2149352164.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740"
     },
     {
       id: 4,

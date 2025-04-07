@@ -128,13 +128,13 @@ const About = () => {
     </div>
       <Headings data={specialtyHeading}  />
       <AboutSpeciality/>
-      <div className='as_end'>
+      {/* <div className='as_end'>
       <p className="hero-subtitle">
               To Know More About Our Speciality
               </p>
         <Button name="View All"/>
 
-        </div>
+        </div> */}
      
 
         <div className='about_testimonial'>
@@ -152,7 +152,7 @@ const About = () => {
         <div className='about_end'>
             <h3>Take the next step</h3>
             <p>Let’s talk about how we can work together to make healthcare work for all of us.</p>
-            <Button name="Book Apoointment"/>
+            <Button event='/appointment' name="Book Apoointment"/>
             </div>
 
     </div>

@@ -56,3 +56,21 @@ html[dir="ltr"] body {
   }
 }
 
+
+@font-face {
+  font-family: 'TheSignature';
+  src: url('../src/fonts/Thesignature.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HighSpirited';
+  src: url('../src/fonts/High\ Spirited.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AuthenticSignature';
+  src: url('../src/fonts/Authentic\ Signature.otf') format('truetype');
+  font-style: normal;
+}

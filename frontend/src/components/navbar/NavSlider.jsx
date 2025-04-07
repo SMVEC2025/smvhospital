@@ -8,151 +8,136 @@ function NavSlider() {
     const {openNavSlider,setOpenNavSlider}=useContext(AppContext)
     const [showContent,setShowContent]=useState()
     const [showChild,setShowChild]= useState(false)
-    const medicalServices=[
+    const medicalServices = [
         {
-            title:"trauma care",
-            child:["trauma care","neuro sciences","neuro sciences"],
-            image:"https://img.freepik.com/free-photo/nurse-bandaging-patients-arm_53876-63313.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid"
+          title: "Trauma Care",
+          child: ["Trauma Care", "Neuro Sciences", "Neuro Sciences"],
+          image: "https://img.freepik.com/free-photo/nurse-bandaging-patients-arm_53876-63313.jpg"
         },
         {
-            title:"neuro sciences",
-            child:[],
-            image:"https://img.freepik.com/free-photo/images-that-simulate-x-rays-with-neon-colors_23-2151521265.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid"
-
+          title: "Neuro Sciences",
+          child: [],
+          image: "https://img.freepik.com/free-photo/images-that-simulate-x-rays-with-neon-colors_23-2151521265.jpg"
         },
         {
-            title:"cardiac sciences",
-            child:[],
-            image:"https://img.freepik.com/free-photo/doctor-showing-cardiovascular-image-tablet-ill-patient-hospital-bed-senior-woman-with-sickness-looking-cardiology-figure-with-blood-vessel-display-diagnosis_482257-41352.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid"
-
+          title: "Cardiac Sciences",
+          child: [],
+          image: "https://img.freepik.com/free-photo/doctor-showing-cardiovascular-image-tablet-ill-patient-hospital-bed-senior-woman-with-sickness-looking-cardiology-figure-with-blood-vessel-display-diagnosis_482257-41352.jpg"
         },
         {
-            title:"organ transplantation",
-            child:[],
-            image:"https://img.freepik.com/free-photo/surgical-procedure-made-by-doctor-special-equipment_23-2148962513.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid"
-
+          title: "Organ Transplantation",
+          child: [],
+          image: "https://img.freepik.com/free-photo/surgical-procedure-made-by-doctor-special-equipment_23-2148962513.jpg"
         },
         {
-            title:"plastic surgery",
-            child:[],
-            image:""
-
+          title: "Plastic Surgery",
+          child: [],
+          image: ""
         },
         {
-            title:"vascular surgery",
-            child:[],
-            image:""
-
+          title: "Vascular Surgery",
+          child: [],
+          image: ""
         },
         {
-            title:"cosmetology",
-            child:[],
-            image:""
-
+          title: "Cosmetology",
+          child: [],
+          image: ""
         },
         {
-            title:"cloology",
-            child:[],
-            image:""
-
+          title: "Urology", // Assuming this was meant
+          child: [],
+          image: ""
         },
         {
-            title:"orthopaedies",
-            child:["joint replacement and reunion surgery","knee and hip replacement","spine surgery","trauma care","crush injuries","sports medicine","paedi"],
-            image:""
-
+          title: "Orthopaedics",
+          child: [
+            "Joint Replacement and Reunion Surgery",
+            "Knee and Hip Replacement",
+            "Spine Surgery",
+            "Trauma Care",
+            "Crush Injuries",
+            "Sports Medicine",
+            "Paediatric Orthopaedics"
+          ],
+          image: ""
         },
         {
-            title:"podiatrics",
-            child:[],
-            image:""
-
+          title: "Podiatrics",
+          child: [],
+          image: ""
         },
         {
-            title:"obstetries & gynaecology",
-            child:[],
-            image:""
-
+          title: "Obstetrics & Gynaecology",
+          child: [],
+          image: ""
         },
         {
-            title:"paediatrics & Neonotology",
-            child:[],
-            image:""
-
+          title: "Paediatrics & Neonatology",
+          child: [],
+          image: ""
         },
         {
-            title:"gastreaterology",
-            child:[],
-            
-
+          title: "Gastroenterology",
+          child: [],
+          image: ""
         },
         {
-            title:"pulmonology & sleep medicine",
-            child:[],
-            image:""
-
+          title: "Pulmonology & Sleep Medicine",
+          child: [],
+          image: ""
         },
         {
-            title:"oncology",
-            child:[],
-            image:""
-
+          title: "Oncology",
+          child: [],
+          image: ""
         },
         {
-            title:"rheumatology",
-            child:[],
-            image:""
-
+          title: "Rheumatology",
+          child: [],
+          image: ""
         },
         {
-            title:"ndocrinology",
-            child:[],
-            image:""
-
+          title: "Endocrinology",
+          child: [],
+          image: ""
         },
         {
-            title:"radio frequency ablation (RFA)",
-            child:[],
-            image:""
-
+          title: "Radio Frequency Ablation (RFA)",
+          child: [],
+          image: ""
         },
         {
-            title:"ENT",
-            child:[],
-            image:""
-
+          title: "ENT",
+          child: [],
+          image: ""
         },
         {
-            title:"dermatology & trichology",
-            child:[],
-            image:""
-
+          title: "Dermatology & Trichology",
+          child: [],
+          image: ""
         },
         {
-            title:"international radiology",
-            child:[],
-            image:""
-
+          title: "Interventional Radiology",
+          child: [],
+          image: ""
         },
         {
-            title:"craafacial surgery",
-            child:[],
-            image:""
-
+          title: "Craniofacial Surgery",
+          child: [],
+          image: ""
         },
         {
-            title:"transfusion medicine",
-            child:[],
-            image:""
-
+          title: "Transfusion Medicine",
+          child: [],
+          image: ""
         },
         {
-            title:"internal medicine",
-            child:[],
-            image:""
-
+          title: "Internal Medicine",
+          child: [],
+          image: ""
         }
-    ]
+      ];
     function handleClick(index){
         setShowContent(medicalServices[index])
       setShowChild(true)
