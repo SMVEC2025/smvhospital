@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useRef, useState, useEffect,useContext } from 'react';
 import "../styles/HomeAbout.css"; // External CSS
 import Button from "./Button";
 import mobileapp from '../assets/images/mobileapp.png'
@@ -72,7 +72,110 @@ const HomeAbout = () => {
         return {};
     }
   };
+  const containerRef = useRef(null);
+  const canvasRef = useRef(null);
 
+  const [loadedImages, setLoadedImages] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+
+  // Load images
+  useEffect(() => {
+    const loadImage = (index) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = `/images/${index}.webp`;
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(`Failed to load image ${index}`);
+      });
+    };
+
+    const loadAllImages = async () => {
+      try {
+        const promises = Array.from({ length: 252 }, (_, i) => loadImage(i + 1));
+        const images = await Promise.all(promises);
+        setLoadedImages(images);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    loadAllImages();
+  }, []);
+
+  // Draw image to canvas
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (canvas && loadedImages.length > 0) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(loadedImages[currentIndex], 0, 0, canvas.width, canvas.height);
+      }
+    }
+  }, [currentIndex, loadedImages]);
+
+  // Handle scroll
+  useEffect(() => {
+    let scrollTimeout;
+
+    const handleScroll = () => {
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+
+      scrollTimeout = setTimeout(() => {
+        if (loadedImages.length > 0 && isInView) {
+          const scrollPosition = window.scrollY;
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercentage = scrollPosition / totalHeight;
+
+          const speedFactor = 3; // adjust as needed
+          const index = Math.floor(scrollPercentage * (loadedImages.length - 1) * speedFactor);
+          setCurrentIndex(Math.min(Math.max(index, 0), loadedImages.length - 1));
+        }
+      }, 10);
+    };
+
+    if (isInView) {
+      window.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    };
+  }, [isInView, loadedImages]);
+
+  // IntersectionObserver to detect visibility
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => setIsInView(entries[0].isIntersecting),
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
+  // Resize canvas on mount
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const resize = () => {
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize', resize);
+  }, []);
   return (
     <div className="ha_container">
       {/* Left Sticky Section */}
@@ -85,15 +188,12 @@ const HomeAbout = () => {
       <div className="ha_right-section" >
        {!isMobile && (
          <div className="frame_images">
-         <div>
-         <img 
-        src={`/images/${imageIndex}.webp`} 
-         style={{
-    transition: "opacity 0.3s ease-in-out",
-  }}
-  loading="lazy"
-        />
-         </div>
+        <div ref={containerRef}>
+      <canvas
+        ref={canvasRef}
+       
+      />
+    </div>
          </div>
        )}
         <div id="about" className="section" >
@@ -122,3 +222,8 @@ const HomeAbout = () => {
 };
 
 export default HomeAbout;
+
+
+
+
+

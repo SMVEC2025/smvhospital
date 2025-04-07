@@ -30,7 +30,7 @@ function InternationalPatients() {
       ]
       
 const heroData = {
-    bgImg: 'images/aboutmainpic.JPG',
+    bgImg: 'https://images.pexels.com/photos/7010203/pexels-photo-7010203.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     bgShape: 'shape/hero-shape.png', 
     page:"International Patients",
     sliderImages: [
