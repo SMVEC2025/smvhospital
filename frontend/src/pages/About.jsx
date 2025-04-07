@@ -96,7 +96,7 @@ const About = () => {
       <img src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
       <div className='about_what_content'>
         <h2>Mission</h2>
-        <p>At SMV Hospital, our mission is to provide compassionate, patient-centered healthcare with a commitment to excellence in medical care, innovation, and education. We strive to improve lives by delivering affordable, accessible, and high-quality healthcare using advanced medical technology and a dedicated team of professionals.</p>
+        <p>At SMV Hospital, our mission is to deliver compassionate, accessible, and affordable healthcare that places patients at the heart of everything we do. We are dedicated to excellence in clinical outcomes, innovation in medical practice, and leadership in health education. Through advanced technology and a skilled healthcare team, we aim to enhance lives and promote well-being in every community we serve.</p>
       </div>
 
       </div>
@@ -108,7 +108,7 @@ const About = () => {
       <img src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
       <div className='about_what_content'>
         <h2>Vision</h2>
-        <p>To be a leading healthcare institution recognized for excellence in clinical care, research, and innovation. We envision a future where every individual has access to world-class medical care, fostering a healthier and more resilient community.</p>
+        <p>Our vision is to be a global leader in patient-focused healthcare, setting benchmarks in quality, safety, and innovation. We strive to build a future where every individual, regardless of background, has access to exceptional medical care. SMV Hospital aims to lead with integrity and innovation, shaping a healthier world through continuous improvement and compassionate service.</p>
       </div>
 
       </div>          <span>01</span>
@@ -118,7 +118,7 @@ const About = () => {
       <img src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
       <div className='about_what_content'>
         <h2>Our Values</h2>
-        <p>At SMV Hospital, we are committed to delivering compassionate and patient-centered care while upholding the highest standards of integrity, excellence, and innovation. We believe in fostering a culture of empathy, ethical practice, and continuous learning, ensuring that every patient receives the best possible treatment. Our team works collaboratively, leveraging cutting-edge medical technology and expertise to provide accessible, inclusive, and high-quality healthcare for all.</p>
+        <p>At SMV Hospital, our core values guide every interaction and decision. We believe in compassion, integrity, and excellence, ensuring each patient receives respectful and personalized care. Innovation, teamwork, and continuous growth define our approach, while inclusivity and empathy remain at our foundation. Together, we commit to delivering healthcare that empowers lives and strengthens communities.</p>
       </div>
 
       </div>          <span>01</span>

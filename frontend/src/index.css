@@ -4,10 +4,6 @@
 *{
   margin: 0;
   padding: 0;
-  user-select: none; 
-    -webkit-user-select: none; /* For Safari */
-    -moz-user-select: none; /* For Firefox */
-    -ms-user-select: none; /* For old versions of Edge */
 }
 button{
   cursor: pointer;
