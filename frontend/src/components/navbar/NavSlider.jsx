@@ -3,7 +3,6 @@ import '../../styles/NavSlider.css'
 import { AppContext } from '../../context/AppContext'
 import SMV_icon from '../../assets/images/SMV_icon.png'
 import { FaArrowLeft,FaArrowRight } from "react-icons/fa6";
-
 function NavSlider() {
     const {openNavSlider,setOpenNavSlider}=useContext(AppContext)
     const [showContent,setShowContent]=useState()
@@ -12,42 +11,42 @@ function NavSlider() {
         {
           title: "Trauma Care",
           child: ["Trauma Care", "Neuro Sciences", "Neuro Sciences"],
-          image: "https://img.freepik.com/free-photo/nurse-bandaging-patients-arm_53876-63313.jpg"
+          image: '/medicalservices/traumacare.jpg'
         },
-        {
+        { 
           title: "Neuro Sciences",
           child: [],
-          image: "https://img.freepik.com/free-photo/images-that-simulate-x-rays-with-neon-colors_23-2151521265.jpg"
+          image: '/medicalservices/neuroscience.jpg'
         },
         {
           title: "Cardiac Sciences",
           child: [],
-          image: "https://img.freepik.com/free-photo/doctor-showing-cardiovascular-image-tablet-ill-patient-hospital-bed-senior-woman-with-sickness-looking-cardiology-figure-with-blood-vessel-display-diagnosis_482257-41352.jpg"
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "Organ Transplantation",
           child: [],
-          image: "https://img.freepik.com/free-photo/surgical-procedure-made-by-doctor-special-equipment_23-2148962513.jpg"
+          image: '/medicalservices/organtransplantation.jpg'
         },
         {
           title: "Plastic Surgery",
           child: [],
-          image: ""
+          image: '/medicalservices/plasticsurgery.jpg'
         },
         {
           title: "Vascular Surgery",
           child: [],
-          image: ""
+          image: '/medicalservices/podiatrics.jpg'
         },
         {
           title: "Cosmetology",
           child: [],
-          image: ""
+          image: '/medicalservices/cosmotelogy.jpg'
         },
         {
           title: "Urology", // Assuming this was meant
           child: [],
-          image: ""
+          image: '/medicalservices/urology.jpg'
         },
         {
           title: "Orthopaedics",
@@ -60,82 +59,82 @@ function NavSlider() {
             "Sports Medicine",
             "Paediatric Orthopaedics"
           ],
-          image: ""
+          image: '/medicalservices/orthopaedics.jpg'
         },
         {
           title: "Podiatrics",
           child: [],
-          image: ""
+          image: '/medicalservices/podiatrics.jpg'
         },
         {
           title: "Obstetrics & Gynaecology",
           child: [],
-          image: ""
+          image: "/medicalservices/obstetrics&gynaecology.jpg"
         },
         {
           title: "Paediatrics & Neonatology",
           child: [],
-          image: ""
+          image: '/medicalservices/pediatricsandneonatology.jpg'
         },
         {
           title: "Gastroenterology",
           child: [],
-          image: ""
+          image: '/medicalservices/Gastroenterology-1.jpg'
         },
         {
           title: "Pulmonology & Sleep Medicine",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "Oncology",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "Rheumatology",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "Endocrinology",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "Radio Frequency Ablation (RFA)",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "ENT",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "Dermatology & Trichology",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "Interventional Radiology",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "Craniofacial Surgery",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "Transfusion Medicine",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         },
         {
           title: "Internal Medicine",
           child: [],
-          image: ""
+          image: '/medicalservices/cardiaccare.jpg'
         }
       ];
     function handleClick(index){
