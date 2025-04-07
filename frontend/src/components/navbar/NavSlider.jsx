@@ -15,12 +15,31 @@ function NavSlider() {
         },
         { 
           title: "Neuro Sciences",
-          child: [],
+          child: [
+            "Craniotomy",
+            "Endoscopic Endonasal Surgery",
+            "Neuro endoscopy",
+            "Biopsy",
+            "Stereotactic Brain Surgery",
+            "Anterior Cervical Discectomy",
+            "Epilepsy Neurosurgery",
+            "Chiari decompression"
+          ],
           image: '/medicalservices/neuroscience.jpg'
         },
         {
           title: "Cardiac Sciences",
-          child: [],
+          child: [
+            "Thoracic and Cardiovascular Surgery",
+            "Interventional Cardiology",
+            "Coronary artery bypass Grafting (CABG)",
+            "Heart Valve repair / replacement",
+            "Arrhythmia Correction",
+            "Heart transplants",
+            "Aortic Aneurysm and Dissections",
+            "TAVI / TAVR",
+            "Angioplasty / Stenting"
+          ],
           image: '/medicalservices/cardiaccare.jpg'
         },
         {
@@ -77,39 +96,45 @@ function NavSlider() {
           image: '/medicalservices/pediatricsandneonatology.jpg'
         },
         {
-          title: "Gastroenterology",
-          child: [],
+          title: "Gastroenterology ",
+          child: [
+            "Medical Gastroenterology",
+            "Surgical Gastroenterology",
+            "Hepato Pancreato Biliary Surgery",
+            "Bariatric Surgery",
+            "Liver transplants"
+          ],
           image: '/medicalservices/Gastroenterology-1.jpg'
         },
         {
           title: "Pulmonology & Sleep Medicine",
           child: [],
-          image: '/medicalservices/cardiaccare.jpg'
+          image: 'https://img.freepik.com/free-photo/clinical-team-monitoring-patient-putting-oxigen-mask-analyzing-respiratory-condition-respiratory-emergency-hospital-ward_482257-2214.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
         },
         {
           title: "Oncology",
           child: [],
-          image: '/medicalservices/cardiaccare.jpg'
+          image: 'https://img.freepik.com/free-photo/patient-getting-chemotherapy-treatment_23-2149261076.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
         },
         {
           title: "Rheumatology",
           child: [],
-          image: '/medicalservices/cardiaccare.jpg'
+          image: 'https://img.freepik.com/free-photo/osteopathist-treating-patient-s-arms_23-2148776265.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
         },
         {
           title: "Endocrinology",
           child: [],
-          image: '/medicalservices/cardiaccare.jpg'
+          image: 'https://img.freepik.com/free-photo/plastic-surgeon-drawing-dashed-lines-her-patient-s-face_1301-7777.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
         },
         {
           title: "Radio Frequency Ablation (RFA)",
           child: [],
-          image: '/medicalservices/cardiaccare.jpg'
+          image: 'https://img.freepik.com/free-photo/young-doctor-checking-patient-before-ct-scan_23-2149341517.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
         },
         {
           title: "ENT",
           child: [],
-          image: '/medicalservices/cardiaccare.jpg'
+          image: 'https://img.freepik.com/free-photo/man-getting-ultrasound-thyroid-from-doctor_1170-2181.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
         },
         {
           title: "Dermatology & Trichology",
@@ -119,27 +144,31 @@ function NavSlider() {
         {
           title: "Interventional Radiology",
           child: [],
-          image: '/medicalservices/cardiaccare.jpg'
+          image: 'https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367402.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
         },
         {
           title: "Craniofacial Surgery",
           child: [],
-          image: '/medicalservices/cardiaccare.jpg'
+          image: 'https://img.freepik.com/free-photo/doctors-performing-rhinoplasty-young-patient_23-2149352204.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
         },
         {
           title: "Transfusion Medicine",
           child: [],
-          image: '/medicalservices/cardiaccare.jpg'
+          image: 'https://img.freepik.com/free-photo/patient-getting-chemotherapy-treatment_23-2149261099.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
         },
         {
           title: "Internal Medicine",
           child: [],
-          image: '/medicalservices/cardiaccare.jpg'
+          image: 'https://img.freepik.com/free-photo/healthcare-concept-clinic_23-2151117900.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
         }
       ];
     function handleClick(index){
-        setShowContent(medicalServices[index])
+        if(medicalServices[index].child.length > 0){
+          setShowContent(medicalServices[index])
       setShowChild(true)
+        }else{
+          return
+        }
     }
     function handleContentClose(){
         setShowContent()
@@ -170,7 +199,8 @@ function NavSlider() {
             <div className='navslider_titles'>
              {medicalServices.map((services,index)=>(
                  <>
-                 <span key={index} onMouseEnter={()=>{setOnHover(medicalServices[index])}} onClick={()=>{handleClick(index)}}>{services.title}                  <span className='arrowright'><FaArrowRight/></span>
+                 <span key={index} onMouseEnter={()=>{setOnHover(medicalServices[index])}} onClick={()=>{handleClick(index)}}>{services.title}
+                 {services.child?.length > 0&&(<span className='arrowright'><FaArrowRight/></span>)}
                  </span>
                  </>
              ))}
