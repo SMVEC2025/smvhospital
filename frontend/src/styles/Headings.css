@@ -7,6 +7,7 @@
 .headings_main>h3{
     font-size: calc(1.8rem + 0.5vw);
     text-transform: uppercase;
+    text-align: center;
 
 }
 .headings_main>p{

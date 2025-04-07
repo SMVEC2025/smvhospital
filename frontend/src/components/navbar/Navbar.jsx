@@ -49,6 +49,7 @@ function Navbar() {
               <span onClick={()=>{handleNavigate('/')}}>Home</span>
               {/* <span onClick={()=>{navigate('/doctors')}}>Doctors</span> */}
               <span  onMouseEnter={()=>{setOpenNavSlider(true)}} >Medical services</span>
+              <span onClick={()=>{handleNavigate('/international-patients')}}>International patients</span>
 
               {/* <span onClick={()=>{handleNavigate('/specialty')}}>Speacialty</span> */}
               <span onClick={()=>{handleNavigate('/appointment')}}>Appointment</span>

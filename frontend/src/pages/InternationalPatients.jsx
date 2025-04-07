@@ -24,8 +24,8 @@ function InternationalPatients() {
       ]
       const facilityHeading=[
         {
-          title:"global health destination",
-          subTitle:"Advanced care, thoughtful healing, and a space built for comfort — welcoming you from wherever you are."
+          title:"Our Advanced Healthcare Facilities",
+          subTitle:"Every facility is thoughtfully designed to ensure comfort, safety, and the highest standard of care."
         }
       ]
       
@@ -80,6 +80,79 @@ const heroData = {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   }
   
+  const hospitalFacilities = [
+    {
+      name: "Radiology & Imaging Sciences",
+      image: "https://images.pexels.com/photos/7088524/pexels-photo-7088524.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description: "Advanced diagnostic imaging services including X-rays, ultrasound, and more. Ensures accurate detection and monitoring of health conditions."
+    },
+    {
+      name: "Digital Cath Lab",
+      image: "https://images.pexels.com/photos/9574569/pexels-photo-9574569.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description: "State-of-the-art cardiac catheterization lab for heart procedures. Enhances precision in diagnosing and treating heart diseases."
+    },
+    {
+      name: "MRI",
+      image: "https://images.pexels.com/photos/7089017/pexels-photo-7089017.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description: "High-resolution magnetic resonance imaging for detailed internal views. Ideal for brain, spine, and soft tissue diagnostics."
+    },
+    {
+      name: "Critical & Intensive Care",
+      image: "https://images.pexels.com/photos/19976471/pexels-photo-19976471/free-photo-of-nurse-hand-over-newborn.png?auto=compress&cs=tinysrgb&w=600",
+      description: "Round-the-clock care for patients in life-threatening conditions. Equipped with advanced monitoring and life support systems."
+    },
+    {
+      name: "Laboratory Services",
+      image: "https://images.pexels.com/photos/8442110/pexels-photo-8442110.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description: "Comprehensive pathology and diagnostic testing facility. Supports fast and accurate health assessments."
+    },
+    {
+      name: "Digital Mammography",
+      image: "https://media.licdn.com/dms/image/v2/C5112AQHojQ1BX_u72A/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1546093084929?e=2147483647&v=beta&t=dxR0tRrVgVo3xaNQljlQ0LAETnqiL0nMlkOzUSVzwEQ",
+      description: "Advanced breast imaging for early detection of cancer. Offers enhanced clarity and comfort during screening."
+    },
+    {
+      name: "CT Scan",
+      image: "https://sjra.com/wp-content/uploads/2024/02/CT-Technologist-Smiling-At-Patient-As-She-Starts-CT-Scan.webp",
+      description: "High-speed scanning for quick and precise imaging. Helps diagnose injuries, infections, and internal diseases."
+    },
+    {
+      name: "Blood Bank",
+      image: "https://t4.ftcdn.net/jpg/02/21/47/99/360_F_221479946_2yUmWRmVPBka6d4zcXbBhJbRra8WcpQV.jpg",
+      description: "Well-stocked and safe blood storage and transfusion services. Supports emergency and planned medical procedures."
+    },
+    {
+      name: "Operation Theatres",
+      image: "https://images.pexels.com/photos/4769133/pexels-photo-4769133.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description: "Modern surgical suites with cutting-edge equipment. Designed for all types of routine and emergency surgeries."
+    },
+    {
+      name: "Physiotherapy",
+      image: "https://images.pexels.com/photos/5473182/pexels-photo-5473182.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description: "Personalized rehabilitation programs for pain relief and recovery. Enhances mobility and restores physical function."
+    },
+    {
+      name: "Palliative Care",
+      image: "https://images.pexels.com/photos/6010809/pexels-photo-6010809.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description: "Compassionate care focused on comfort for chronic illnesses. Supports emotional and physical well-being of patients."
+    },
+    {
+      name: "Geriatric Care",
+      image: "https://images.pexels.com/photos/8949877/pexels-photo-8949877.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description: "Specialized care for elderly patients with age-related issues. Promotes health, dignity, and quality of life."
+    },
+    {
+      name: "Telemedicine",
+      image: "https://images.pexels.com/photos/4031710/pexels-photo-4031710.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description: "Remote consultation services for convenient access to doctors. Ideal for follow-ups and minor health concerns."
+    },
+    {
+      name: "Ambulatory Services",
+      image: "",
+      description: "Emergency and non-emergency transport equipped with medical aid. Ensures safe patient transfer with trained staff."
+    }
+  ];
+  
   return (
     <>
         <ScrollToTop/>
@@ -112,15 +185,19 @@ const heroData = {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {hospitalFacilities.map((element,index)=>(
+          <SwiperSlide>
+            <div className='ipp_swiperdiv' style={{backgroundImage:`url('${element.image}')`}}>
+             <div>
+ 
+              <section>
+                <h1>{element.name}</h1>
+                <p>{element.description}</p>
+              </section>
+               </div>
+            </div>
+          </SwiperSlide>
+        ))}
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>

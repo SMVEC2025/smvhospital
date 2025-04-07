@@ -16,8 +16,8 @@ function MobileSideBar() {
   const navigate = useNavigate()
   const [sideBarContent, setSideBarContent] = useState('main')
 
-  const menuItems = ['Home', 'Medical services', 'Appointment', 'About us', 'Contact us'];
-  const redirect = ['/', ' ', '/appointment', '/about', '/contact-us']
+  const menuItems = ['Home', 'Medical services','international patients', 'Appointment', 'About us', 'Contact us'];
+  const redirect = ['/', ' ','/international-patients', '/appointment', '/about', '/contact-us']
   function handleNavigate(item,index){
     if(item != 'Medical services' ){
       navigate(redirect[index])
