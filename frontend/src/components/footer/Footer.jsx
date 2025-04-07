@@ -24,7 +24,7 @@ function Footer() {
       window.open(playStoreUrl, '_blank'); // Open in new tab
     };
     const handleCallClick = () => {
-      const phoneNumber = '+911234567890'; // Replace with your phone number
+      const phoneNumber = '+914132000999'; // Replace with your phone number
       window.location.href = `tel:${phoneNumber}`;
     };
 
@@ -78,11 +78,9 @@ function Footer() {
             <ul>
               <li><span><MdLocationOn/></span><a href="#">Kalitheerthal kuppam, Madagadipet, <br/>
               Puducherry - 605 107</a></li>
-              <li><span><MdCall/></span><a href="#">0413-</a></li>
-              <li><span><FaAmbulance/></span><a href="#"> +91 98765 43210</a></li>
-              <li><span><IoMailSharp/></span><a href="#">contact@smvssh.com</a></li>
-              
-
+              <li onClick={handleCallClick}><span><MdCall/></span><a href="#">0413-2000999</a></li>
+              <li onClick={handleEmailClick}><span><IoMailSharp/></span><a href="#">contact@smvssh.com</a></li>
+            
 
             </ul>
           </div>
