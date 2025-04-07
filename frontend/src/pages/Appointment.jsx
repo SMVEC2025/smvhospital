@@ -19,6 +19,7 @@ import { BsFillCalendarDateFill } from "react-icons/bs";
 import { FaNotesMedical } from "react-icons/fa";
 import { FaAnglesRight } from "react-icons/fa6";
 import { formatDate } from "date-fns";
+import { toast } from "react-toastify";
 
 
 const heroData = {
@@ -39,7 +40,7 @@ const heroData = {
 const Appointment = () => {
     const { setAnimCase, setShowSideBar } = useContext(AppContext);
     const [continuePackage, setContinuePackage] = useState('with')
-    const [selectedPackage, setSelectedPackage] = useState()
+    const [selectedPackage, setSelectedPackage] = useState('')
     const [showDetails, setShowdetails] = useState(false)
     const [selectedDate, setSelectedDate] = useState(new Date()); // Set default date to today
     const [selectedTime, setSelectedTime] = useState(null);
@@ -277,16 +278,27 @@ const Appointment = () => {
 
     function handleIncrement(val) {
         if (process == 'services') {
-            setProcess(processes[1])
-            scrollToRef()
+            if(String(selectedPackage).trim() === ""){
+                
+              toast.error('Select Any Packages or continue without package')
+            }else{
+                setProcess(processes[1])
+                scrollToRef()
+            }
         } else if (process == 'date&time') {
-            setProcess(processes[2])
-            scrollToRef()
+           
+            if(selectedTime == null){
+                toast.error('Select Date and slot')
+              }else{
+                setProcess(processes[2])
+                scrollToRef()
+              }
         } else {
             return
         }
 
     }
+    console.log("selectedPackage",selectedPackage)
     function handleDecrement(val) {
         if (process == 'date&time') {
             setProcess(processes[0])
@@ -300,9 +312,28 @@ const Appointment = () => {
 
     }
     function handleSubmit() {
-        navigate("/appointmentsuccess", { state: { data: formData, date: selectedDate.toLocaleDateString('en-GB').split('/').join('-'), time: selectedTime, service: selectedPackage?healthPackages[selectedPackage].name:"Package N/A" } });
+        if(formData.firstname.trim() ==''){
+            toast.error('Enter FirstName')
+            return
+        }
+         if(formData.lastname.trim() ==''){
+            toast.error('Enter LastName')
+            return
+        }
+         if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)){
+            toast.error('Enter a Valid Email')
+            return
+        }
+         if(!/^\+?[1-9]\d{1,14}$/.test(formData.phone)){
+            toast.error('Enter a valid phone number')
+            return
+        }
+        else{
+            navigate("/appointmentsuccess", { state: { data: formData, date: selectedDate.toLocaleDateString('en-GB').split('/').join('-'), time: selectedTime, service: selectedPackage?healthPackages[selectedPackage].name:"Package N/A" } });
+        }
 
     }
+
     return (
         <>
             <ScrollToTop />
@@ -335,12 +366,12 @@ const Appointment = () => {
                             <h2>Select Package</h2>
                             <div className="service_select">
                                 <div className={`service_select1 ${continuePackage == 'with' ? 'true' : ''}`}
-                                    onClick={() => setContinuePackage('with')}
+                                    onClick={() => {setContinuePackage('with')}}
                                 >
                                     Continue With Package
                                 </div>
                                 <div className={`service_select1 ${continuePackage == 'without' ? 'true' : ''}`}
-                                    onClick={() => setContinuePackage('without')}
+                                    onClick={() => {setContinuePackage('without');;setSelectedPackage('NA')}}
                                 >
                                     Continue Without Package
                                 </div>

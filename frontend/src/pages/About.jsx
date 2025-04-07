@@ -140,7 +140,7 @@ const About = () => {
         <div className='about_testimonial'>
      
             <div>
-        <img src='https://img.freepik.com/premium-photo/she39s-well-cared-portrait-smiling-nurse-with-her-senior-patient-hospital_590464-867.jpg?w=360' alt="" />
+        <img src='https://media.istockphoto.com/id/1418999473/photo/doctors-comforting-disabled-elderly-patient.jpg?s=612x612&w=0&k=20&c=ggVR5D9U8IY7irIrgvfqSmlLwA7se4vc2fRSAjV2lSs=' alt="" />
             </div>
             <div className='about_testimonial_div2'>
             <h3>Life-Changing Care at SMV Hospital</h3>

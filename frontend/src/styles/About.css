@@ -434,7 +434,7 @@
   .about_testimonial{
     display: flex;
     background-color: #000000;
-    height: 50vh !important;
+    height: 70vh !important;
     flex-direction: row;
   }
   .about_testimonial>div{
@@ -458,13 +458,15 @@
     margin-bottom: 10px;
     margin-left: 20px;
     margin-top: 20px;
-    font-weight: 500;
+    font-weight: 400;
   }
   .about_testimonial_div2 p{
     width: 80%;
-    font-style: italic;
     margin-bottom: 8px;
-    font-size: 1.3rem;
+    font-family: 'AuthenticSignature';
+
+    font-size: 2.1rem;
+    line-height: 30px;
     color: rgb(216, 216, 216);
     margin-left: 20px;
 
@@ -521,7 +523,7 @@
 
   .about_end{
     width: 100%;
-    background-color: #5f7385;
+    background-color:#0c0c16;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -543,18 +545,20 @@
 
   @media (max-width: 480px) {
     .about_end>h3{
-      font-size: calc(1.8rem + 0.5vw);
+      font-size: calc(1.2rem + 0.5vw);
     }
     .about_end>p{
-      font-size:calc(12px + 0.4vw);
+      font-size:calc(8px + 0.4vw);
     font-weight: 400;
      line-height: 18px;
-
       text-align: center;
     }
     .about_end{
       padding: 1rem 0;
       gap:5px;
+    }
+    .about_end button{
+      margin-top: 1rem;
     }
   }
   .aboutwhy-container {
