@@ -8,8 +8,8 @@ const Button = ({ name,event }) => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
     // Define your app store URLs
-    const iosAppStoreURL = "https://apps.apple.com/app/idYOUR_APP_ID";
-    const androidPlayStoreURL = "https://play.google.com/store/apps/details?id=YOUR_APP_PACKAGE";
+    const iosAppStoreURL = "https://apps.apple.com/in/app/healthray-for-patients/id6470002190";
+    const androidPlayStoreURL = "https://play.google.com/store/apps/details?id=com.healthray.patient&hl=en";
 
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
       // iOS device
