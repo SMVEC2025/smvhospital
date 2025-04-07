@@ -17,9 +17,8 @@
   }
   
   .ha_left-image {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
-    margin-bottom: 20px;
     transition: all 0.5s ease-in-out;
 
   }

@@ -52,19 +52,19 @@ const HomeAbout = () => {
     switch (activeSection) {
       case "about":
         return {
-          image: "https://cdn.pixabay.com/photo/2016/11/08/05/29/surgery-1807541_1280.jpg",
+          image: "/homeabout/hospital.jpg",
           background: "#f5f5f5",
           text: "About Our Company",
         };
       case "mobile":
         return {
-          image: mobileapp,
+          image: "/homeabout/hospital.jpg",
           background: "#ffdfd8",
           text: "Our Mobile Application",
         };
       case "appointment":
         return {
-          image: "https://img.freepik.com/free-vector/appointment-booking-landing-page-illustrated_23-2148579922.jpg?t=st=1734563485~exp=1734567085~hmac=bf33d91e52c03b4fef8f9596fe169cc8bfe080056ac6b7e65b789c506853582a",
+          image: "/homeabout/hospital.jpg",
           background: "#ffdfd4",
           text: "Book an Appointment",
         };
@@ -180,7 +180,7 @@ const HomeAbout = () => {
     <div className="ha_container">
       {/* Left Sticky Section */}
       <div className="ha_left-section" style={{ background: getLeftContent().background }}>
-        <img src={getLeftContent().image} alt="Section" className="ha_left-image" />
+        <img src={getLeftContent().image} alt="Section" className="ha_left-image" style={{width:"100%",height:"100%"}} />
         {/* <h2>{getLeftContent().text}</h2> */}
       </div>
 
