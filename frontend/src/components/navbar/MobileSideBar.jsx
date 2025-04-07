@@ -31,151 +31,161 @@ function MobileSideBar() {
   }, [showSideBar])
   
 
-  const medicalServices=[
+  const medicalServices = [
     {
-        title:"trauma care",
-        child:["trauma care","neuro sciences","neuro sciences"],
-        image:"https://img.freepik.com/free-photo/nurse-bandaging-patients-arm_53876-63313.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid"
+      title: "Trauma Care",
+      child: ["Trauma Care", "Neuro Sciences", "Neuro Sciences"],
+      image: '/medicalservices/traumacare.jpg'
+    },
+    { 
+      title: "Neuro Sciences",
+      child: [
+        "Craniotomy",
+        "Endoscopic Endonasal Surgery",
+        "Neuro endoscopy",
+        "Biopsy",
+        "Stereotactic Brain Surgery",
+        "Anterior Cervical Discectomy",
+        "Epilepsy Neurosurgery",
+        "Chiari decompression"
+      ],
+      image: '/medicalservices/neuroscience.jpg'
     },
     {
-        title:"neuro sciences",
-        child:[],
-        image:"https://img.freepik.com/free-photo/images-that-simulate-x-rays-with-neon-colors_23-2151521265.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid"
-
+      title: "Cardiac Sciences",
+      child: [
+        "Thoracic and Cardiovascular Surgery",
+        "Interventional Cardiology",
+        "Coronary artery bypass Grafting (CABG)",
+        "Heart Valve repair / replacement",
+        "Arrhythmia Correction",
+        "Heart transplants",
+        "Aortic Aneurysm and Dissections",
+        "TAVI / TAVR",
+        "Angioplasty / Stenting"
+      ],
+      image: '/medicalservices/cardiaccare.jpg'
     },
     {
-        title:"cardiac sciences",
-        child:[],
-        image:"https://img.freepik.com/free-photo/doctor-showing-cardiovascular-image-tablet-ill-patient-hospital-bed-senior-woman-with-sickness-looking-cardiology-figure-with-blood-vessel-display-diagnosis_482257-41352.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid"
-
+      title: "Organ Transplantation",
+      child: [],
+      image: '/medicalservices/organtransplantation.jpg'
     },
     {
-        title:"organ transplantation",
-        child:[],
-        image:"https://img.freepik.com/free-photo/surgical-procedure-made-by-doctor-special-equipment_23-2148962513.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid"
-
+      title: "Plastic Surgery",
+      child: [],
+      image: '/medicalservices/plasticsurgery.jpg'
     },
     {
-        title:"plastic surgery",
-        child:[],
-        image:""
-
+      title: "Vascular Surgery",
+      child: [],
+      image: '/medicalservices/podiatrics.jpg'
     },
     {
-        title:"vascular surgery",
-        child:[],
-        image:""
-
+      title: "Cosmetology",
+      child: [],
+      image: '/medicalservices/cosmotelogy.jpg'
     },
     {
-        title:"cosmetology",
-        child:[],
-        image:""
-
+      title: "Urology", // Assuming this was meant
+      child: [],
+      image: '/medicalservices/urology.jpg'
     },
     {
-        title:"cloology",
-        child:[],
-        image:""
-
+      title: "Orthopaedics",
+      child: [
+        "Joint Replacement and Reunion Surgery",
+        "Knee and Hip Replacement",
+        "Spine Surgery",
+        "Trauma Care",
+        "Crush Injuries",
+        "Sports Medicine",
+        "Paediatric Orthopaedics"
+      ],
+      image: '/medicalservices/orthopaedics.jpg'
     },
     {
-        title:"orthopaedies",
-        child:["joint replacement and reunion surgery","knee and hip replacement","spine surgery","trauma care","crush injuries","sports medicine","paedi"],
-        image:""
-
+      title: "Podiatrics",
+      child: [],
+      image: '/medicalservices/podiatrics.jpg'
     },
     {
-        title:"podiatrics",
-        child:[],
-        image:""
-
+      title: "Obstetrics & Gynaecology",
+      child: [],
+      image: "/medicalservices/obstetrics&gynaecology.jpg"
     },
     {
-        title:"obstetries & gynaecology",
-        child:[],
-        image:""
-
+      title: "Paediatrics & Neonatology",
+      child: [],
+      image: '/medicalservices/pediatricsandneonatology.jpg'
     },
     {
-        title:"paediatrics & Neonotology",
-        child:[],
-        image:""
-
+      title: "Gastroenterology ",
+      child: [
+        "Medical Gastroenterology",
+        "Surgical Gastroenterology",
+        "Hepato Pancreato Biliary Surgery",
+        "Bariatric Surgery",
+        "Liver transplants"
+      ],
+      image: '/medicalservices/Gastroenterology-1.jpg'
     },
     {
-        title:"gastreaterology",
-        child:[],
-        
-
+      title: "Pulmonology & Sleep Medicine",
+      child: [],
+      image: 'https://img.freepik.com/free-photo/clinical-team-monitoring-patient-putting-oxigen-mask-analyzing-respiratory-condition-respiratory-emergency-hospital-ward_482257-2214.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     },
     {
-        title:"pulmonology & sleep medicine",
-        child:[],
-        image:""
-
+      title: "Oncology",
+      child: [],
+      image: 'https://img.freepik.com/free-photo/patient-getting-chemotherapy-treatment_23-2149261076.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     },
     {
-        title:"oncology",
-        child:[],
-        image:""
-
+      title: "Rheumatology",
+      child: [],
+      image: 'https://img.freepik.com/free-photo/osteopathist-treating-patient-s-arms_23-2148776265.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     },
     {
-        title:"rheumatology",
-        child:[],
-        image:""
-
+      title: "Endocrinology",
+      child: [],
+      image: 'https://img.freepik.com/free-photo/plastic-surgeon-drawing-dashed-lines-her-patient-s-face_1301-7777.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     },
     {
-        title:"ndocrinology",
-        child:[],
-        image:""
-
+      title: "Radio Frequency Ablation (RFA)",
+      child: [],
+      image: 'https://img.freepik.com/free-photo/young-doctor-checking-patient-before-ct-scan_23-2149341517.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     },
     {
-        title:"radio frequency ablation (RFA)",
-        child:[],
-        image:""
-
+      title: "ENT",
+      child: [],
+      image: 'https://img.freepik.com/free-photo/man-getting-ultrasound-thyroid-from-doctor_1170-2181.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     },
     {
-        title:"ENT",
-        child:[],
-        image:""
-
+      title: "Dermatology & Trichology",
+      child: [],
+      image: '/medicalservices/cardiaccare.jpg'
     },
     {
-        title:"dermatology & trichology",
-        child:[],
-        image:""
-
+      title: "Interventional Radiology",
+      child: [],
+      image: 'https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367402.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     },
     {
-        title:"international radiology",
-        child:[],
-        image:""
-
+      title: "Craniofacial Surgery",
+      child: [],
+      image: 'https://img.freepik.com/free-photo/doctors-performing-rhinoplasty-young-patient_23-2149352204.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     },
     {
-        title:"craafacial surgery",
-        child:[],
-        image:""
-
+      title: "Transfusion Medicine",
+      child: [],
+      image: 'https://img.freepik.com/free-photo/patient-getting-chemotherapy-treatment_23-2149261099.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     },
     {
-        title:"transfusion medicine",
-        child:[],
-        image:""
-
-    },
-    {
-        title:"internal medicine",
-        child:[],
-        image:""
-
+      title: "Internal Medicine",
+      child: [],
+      image: 'https://img.freepik.com/free-photo/healthcare-concept-clinic_23-2151117900.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     }
-]
+  ];
   return (
     <>
       <div className={`msb_main ${showSideBar}`}>
@@ -221,7 +231,6 @@ function MobileSideBar() {
      transition={{ type: "spring", stiffness: 100, damping: 16, duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
    >
      {item.title}
-     <span><FaAngleRight/></span>
    </motion.h1>
  ))}
   </div>
