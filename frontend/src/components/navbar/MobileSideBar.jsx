@@ -214,7 +214,7 @@ function MobileSideBar() {
                 <div className='msb_container_end'>
                
 
-                  <div onClick={handleCall}> <IoMdCall /> +91 5545145451</div>
+                  <div onClick={handleCall}> <IoMdCall /> 0413-2000999</div>
                   <div onClick={handleMail}><IoMail /> emergency@smvmch.in</div>
                 </div>
 

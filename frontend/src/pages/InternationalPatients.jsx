@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import ScrollToTop from '../components/ScrollToTop';
 import Hero6 from '../components/Hero6';
 import Headings from '../components/Headings';
@@ -14,7 +14,15 @@ import 'swiper/css/navigation';
 
 
 import chairs from '../assets/images/chairs.jpg'
+import { AppContext } from '../context/AppContext';
 function InternationalPatients() {
+
+
+  const { setAnimCase,setShowSideBar } = useContext(AppContext)
+  useEffect(() => {
+    setAnimCase('allset');
+    setShowSideBar(false)
+   }, [])
 
     const cardHeading=[
         {
