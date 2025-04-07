@@ -85,14 +85,14 @@ useEffect(() => {
                </div>
             )}
           </div>
-          <motion.div
+          {/* <motion.div
             className="oc_2"
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: `${animCase=='allset'?0.3:5}`}}
           >
             Advanced Care, Expert Hands, Your Health First!
-          </motion.div>
+          </motion.div> */}
           <motion.button 
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

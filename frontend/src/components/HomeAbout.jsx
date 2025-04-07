@@ -108,7 +108,7 @@ const HomeAbout = () => {
           <h2>Mobile Application</h2>
           <h3>{t("mobileapphead")}</h3>
           <p style={{ whiteSpace: "pre-line" }}>{t("mobileappdesc")}</p>
-          <Button name="Download mobile app"/>
+          <Button name="Download mobile app" event='handleRedirect'/>
         </div>
         <div id="appointment" className="section">
           <h2>Book an Appointment</h2>

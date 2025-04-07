@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 function Footer() {
+    
 
     const handleAndroidDownload = () => {
       // Replace this with your actual Play Store app URL
@@ -22,8 +23,21 @@ function Footer() {
       const playStoreUrl = '    https://apps.apple.com/in/app/healthray-for-patients/id6470002190';
       window.open(playStoreUrl, '_blank'); // Open in new tab
     };
+    const handleCallClick = () => {
+      const phoneNumber = '+911234567890'; // Replace with your phone number
+      window.location.href = `tel:${phoneNumber}`;
+    };
 
-
+    const handleEmailClick = () => {
+      const email = 'example@email.com'; // Replace with your email
+      const subject = 'Hello from Website';
+      const body = 'Hi, I wanted to get in touch with you.';
+  
+      // Create mailto link
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      window.location.href = mailtoLink;
+    };
   return (
     <footer className="footer">
     <div className="footer-container">
@@ -48,11 +62,11 @@ function Footer() {
             <h4>About Company</h4>
             <ul>
               <li><a href="#">About us</a></li>
-              <li><a href="#">Blog & news</a></li>
-              <li><a href="#">Treatments</a></li>
-              <li><a href="#">Speciality</a></li>
+              {/* <li><a href="#">Blog & news</a></li> */}
+              {/* <li><a href="#">Treatments</a></li> */}
+              {/* <li><a href="#">Speciality</a></li> */}
               <li><a href="#">International Patients</a></li>
-              <li><a href="#">Our Doctors</a></li>
+              {/* <li><a href="#">Our Doctors</a></li> */}
               <li><a href="#">Contact us</a></li> 
             </ul>
           </div>
@@ -64,7 +78,7 @@ function Footer() {
             <ul>
               <li><span><MdLocationOn/></span><a href="#">Kalitheerthal kuppam, Madagadipet, <br/>
               Puducherry - 605 107</a></li>
-              <li><span><MdCall/></span><a href="#"> +91 98765 43210</a></li>
+              <li><span><MdCall/></span><a href="#">0413-</a></li>
               <li><span><FaAmbulance/></span><a href="#"> +91 98765 43210</a></li>
               <li><span><IoMailSharp/></span><a href="#">contact@smvssh.com</a></li>
               

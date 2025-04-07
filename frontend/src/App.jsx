@@ -22,6 +22,7 @@ import ScrollImageChanger from "./components/ScrollImageChanger";
 import MobileSideBar from "./components/navbar/MobileSideBar";
 import NavSlider from "./components/navbar/NavSlider";
 import LogoAnimation from "./components/LogoAnimation";
+import InternationalPatients from "./pages/InternationalPatients";
 
 const glitchVariants = {
   initial: { opacity: 0.4, filter: "blur(10px) contrast(0.8)" },
@@ -54,6 +55,7 @@ const AnimatedRoutes = () => {
           <Route path="/newsandevents/:name" element={<NewsAndEvents />} />
           <Route path="/news-events" element={<MainNewsAndEvents />} />
           <Route path="/test" element={<LogoAnimation />} />
+          <Route path="/international-patients" element={<InternationalPatients />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
