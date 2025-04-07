@@ -186,6 +186,12 @@ function MobileSideBar() {
       image: 'https://img.freepik.com/free-photo/healthcare-concept-clinic_23-2151117900.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740'
     }
   ];
+  function handleCall (){
+    window.location.href = 'tel:+914132000999';
+  }
+  function handleMail(){
+    window.location.href = 'mailto:info@yourhospital.com'; 
+  }
   return (
     <>
       <div className={`msb_main ${showSideBar}`}>
@@ -208,8 +214,8 @@ function MobileSideBar() {
                 <div className='msb_container_end'>
                
 
-                  <div> <IoMdCall /> +91 5545145451</div>
-                  <div><IoMail /> emergency@smvmch.in</div>
+                  <div onClick={handleCall}> <IoMdCall /> +91 5545145451</div>
+                  <div onClick={handleMail}><IoMail /> emergency@smvmch.in</div>
                 </div>
 
               </div>
