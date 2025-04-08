@@ -9,9 +9,6 @@ import Footer from '../components/footer/Footer'
 import { AppContext } from '../context/AppContext';
 import MobileSideBar from '../components/navbar/MobileSideBar';
 import ScrollToTop from '../components/ScrollToTop';
-import { supportsWebGLAndFloatTextures } from "./utils/webglCheck";
-import $ from "jquery"; // Make sure jQuery is available globally
-import "path-to/jquery.ripples"; // your ripples plugin path
 
 const heroData = {
   bgImg: 'images/aboutmainpic.JPG',
@@ -83,23 +80,11 @@ const About = () => {
       setAnimCase('allset');
       setShowSideBar(false)
      }, [])
-     useEffect(() => {
-      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-      if (!isMobile && supportsWebGLAndFloatTextures()) {
-        try {
-          $(".some-element").ripples({ resolution: 512 });
-        } catch (e) {
-          console.warn("Ripple effect error:", e);
-        }
-      } else {
-        console.log("Ripple effect skipped: Not supported on this browser.");
-      }
-    }, []);
   return (
     <>
     <ScrollToTop/>
     <div className='about_main'>
-      {/* <Hero6 data={heroData}/> */}
+    
       <AboutSection1/>
       <Headings data={careHeading}  />
       <AboutCare/>
