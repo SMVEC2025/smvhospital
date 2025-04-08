@@ -122,7 +122,7 @@ const About = () => {
         <p>At SMV Hospital, our core values guide every interaction and decision. We believe in compassion, integrity, and excellence, ensuring each patient receives respectful and personalized care. Innovation, teamwork, and continuous growth define our approach, while inclusivity and empathy remain at our foundation. Together, we commit to delivering healthcare that empowers lives and strengthens communities.</p>
       </div>
 
-      </div>          <span>03</span>
+      </div>           <span>03</span>
     </div>
 
 
