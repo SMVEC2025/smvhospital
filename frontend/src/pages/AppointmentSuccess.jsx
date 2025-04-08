@@ -11,13 +11,15 @@ import Navbar from "../components/navbar/Navbar";
 import MobileSideBar from "../components/navbar/MobileSideBar";
 import Hero6 from "../components/Hero6";
 import Footer from "../components/footer/Footer";
+import { AppContext } from "../context/AppContext";
 const AppointmentSuccess = () => {
+      const { setAnimCase, setShowSideBar,isMobile } = useContext(AppContext);
+  
   const location = useLocation();
    const sectionRef = useRef(null);
   const { data,date,time,service} = location.state || {};
  useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: "smooth" });
-
  }, [])
  
   // Calendar Links
@@ -30,6 +32,7 @@ const AppointmentSuccess = () => {
   const handlePrint = () => {
     window.print();
   };
+  
 const heroData = {
   bgImg: 'images/hero-bg9.jpg',
   bgShape: 'shape/hero-shape.png',
@@ -44,11 +47,12 @@ const heroData = {
   ],
   title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
 };
+
   return (
     <>
      <ScrollToTop/>
-            <Hero6 data={heroData} />
-    <div ref={sectionRef} className="appointment-success">
+     {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
+     <div ref={sectionRef} className="appointment-success">
       <div className="success-card">
       <div className="lottie" style={{ width: "100px", margin: "auto" }}>
       <Lottie animationData={successanimation} loop={false} />
@@ -74,7 +78,6 @@ const heroData = {
         <button className="print-button" onClick={handlePrint}>🖨️ Print Receipt</button>
       </div>
     </div>
-    
     <Footer/>
     
     </>

@@ -18,7 +18,7 @@ import { AppContext } from '../context/AppContext';
 function InternationalPatients() {
 
 
-  const { setAnimCase,setShowSideBar } = useContext(AppContext)
+  const { setAnimCase,setShowSideBar,isMobile } = useContext(AppContext)
   useEffect(() => {
     setAnimCase('allset');
     setShowSideBar(false)
@@ -164,7 +164,7 @@ const heroData = {
   return (
     <>
         <ScrollToTop/>
-        <Hero6 data={heroData}/>
+        {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
         <div className='ipp_main'>
           <Headings data={cardHeading}  />
          <div className='ipp_card_wrapper'>

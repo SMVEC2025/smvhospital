@@ -10,6 +10,7 @@ import Footer from '../components/footer/Footer'
 import { AppContext } from '../context/AppContext';
 import MobileSideBar from '../components/navbar/MobileSideBar';
 import ScrollToTop from '../components/ScrollToTop';
+import MobileHero6 from '../components/MobileHero6';
 
 const heroData = {
   bgImg: 'images/aboutmainpic.JPG',
@@ -80,12 +81,12 @@ const About = () => {
     useEffect(() => {
       setAnimCase('allset');
       setShowSideBar(false)
-     }, [])
-  return (
+     }, []) 
+  return ( 
     <>
     <ScrollToTop/>
     <div className='about_main'>
-      {isMobile?(null):<Hero6 data={heroData}/>}
+      {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
       <AboutSection1/>
       <Headings data={careHeading}  />
       <AboutCare/>

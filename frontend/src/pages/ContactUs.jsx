@@ -11,7 +11,7 @@ import MobileSideBar from '../components/navbar/MobileSideBar';
 import ScrollToTop from '../components/ScrollToTop';
 
 function ContactUs() {
-  const { setAnimCase,setShowSideBar } = useContext(AppContext)
+  const { setAnimCase,setShowSideBar,isMobile } = useContext(AppContext)
     const [faqExpand, setFaqExpand] = useState();
     const [formData, setFormData] = useState({
         name: "",
@@ -137,8 +137,8 @@ function ContactUs() {
   return (
     <>
     <ScrollToTop/>
-    <Hero6 data={heroData} />   
-     <div className="marquee-container">
+    {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
+    <div className="marquee-container">
       <div className="marquee">
         {[...images, ...images].map((img, index) => (
           <img key={index} src={img} alt={`marquee-img-${index}`} className="marquee-image" />
