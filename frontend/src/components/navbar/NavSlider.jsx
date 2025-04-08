@@ -55,7 +55,7 @@ function NavSlider() {
         {
           title: "Vascular Surgery",
           child: [],
-          image: '/medicalservices/podiatrics.jpg'
+          image: '/medicalservices/vascularsurgery.jpg'
         },
         {
           title: "Cosmetology",

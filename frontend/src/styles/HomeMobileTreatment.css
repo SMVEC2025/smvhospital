@@ -2,9 +2,13 @@
     .hmt_main{
         width: 100%;
         height: 70vh;
-        background: linear-gradient(#365eb3ea,#192e5cf5), 
-        url('../assets/images/Gradientnoise.jpg');    }
-    .hmt_main{
+        background: linear-gradient(#151515,#312436,#633837,#76391a), 
+        url('../assets/images/Gradientnoise.jpg');
+      
+      }
+
+
+.hmt_main{
         
 .swiper {
     width: 100%;
