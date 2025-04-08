@@ -112,7 +112,7 @@ const About = () => {
         <p>Our vision is to be a global leader in patient-focused healthcare, setting benchmarks in quality, safety, and innovation. We strive to build a future where every individual, regardless of background, has access to exceptional medical care. SMV Hospital aims to lead with integrity and innovation, shaping a healthier world through continuous improvement and compassionate service.</p>
       </div>
 
-      </div>          <span>01</span>
+      </div>          <span>02</span>
     </div>
     <div className='about_what_con1 rigth'>
     <div>
@@ -122,7 +122,7 @@ const About = () => {
         <p>At SMV Hospital, our core values guide every interaction and decision. We believe in compassion, integrity, and excellence, ensuring each patient receives respectful and personalized care. Innovation, teamwork, and continuous growth define our approach, while inclusivity and empathy remain at our foundation. Together, we commit to delivering healthcare that empowers lives and strengthens communities.</p>
       </div>
 
-      </div>          <span>01</span>
+      </div>          <span>03</span>
     </div>
 
 

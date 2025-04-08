@@ -461,6 +461,8 @@
     font-weight: 500;
     color: rgb(216, 82, 19);
     text-transform: uppercase;
+    letter-spacing: 1px;
+
 
   }
   .about_testimonial_div2 p{
@@ -494,9 +496,9 @@
   
     }
     .about_testimonial_div2 h3{
-      font-size:calc(1.8rem + 0.5vw);
+      font-size:calc(1rem + 0.5vw);
       margin-left: 10px;
-      font-weight: 400;
+      font-weight: 500;
     }
     .about_testimonial_div2 p{
       width: 95%;
@@ -550,7 +552,7 @@
 
   @media (max-width: 480px) {
     .about_end>h3{
-      font-size: calc(1.2rem + 0.5vw);
+      font-size:calc(1rem + 0.5vw);
     }
     .about_end>p{
       font-size:calc(8px + 0.4vw);
