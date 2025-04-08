@@ -197,11 +197,11 @@ function NavSlider() {
             <h2>Medical Services</h2>
             <div className='navslider_titles'>
              {medicalServices.map((services,index)=>(
-                 <>
+                 
                  <span key={index} onMouseEnter={()=>{setOnHover(medicalServices[index])}} onClick={()=>{handleClick(index)}}>{services.title}
                  {services.child?.length > 0&&(<span className='arrowright'><FaArrowRight/></span>)}
                  </span>
-                 </>
+                 
              ))}
             </div>
             </>

@@ -388,7 +388,7 @@ const Appointment = () => {
                                                     {selectedPackage==i &&(
                                                         <>
                                                          {e.testsIncluded.map((hel,pil)=>(
-                                                    <p >{hel}</p>
+                                                    <p key={pil} >{hel}</p>
                                                    ))}
                                                         </>
                                                     )}

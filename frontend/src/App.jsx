@@ -43,6 +43,8 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <motion.div key={location.pathname} variants={glitchVariants} initial="initial" animate="animate" exit="exit">
+      <Router>
+
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -57,6 +59,8 @@ const AnimatedRoutes = () => {
           <Route path="/test" element={<LogoAnimation />} />
           <Route path="/international-patients" element={<InternationalPatients />} />
         </Routes>
+        </Router>
+
       </motion.div>
     </AnimatePresence>
   );
@@ -65,13 +69,11 @@ function App() {
   return (
     <AppProvider>
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} theme="dark" transition={Bounce} />
-      <Router>
       <Navbar/> 
       <MobileSideBar/>
       <BotWrapper/>
       <NavSlider/>
         <AnimatedRoutes />
-      </Router>
     </AppProvider>
   );
 }
