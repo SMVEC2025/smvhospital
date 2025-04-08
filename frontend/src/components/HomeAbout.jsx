@@ -64,7 +64,7 @@ const HomeAbout = () => {
         };
       case "appointment":
         return {
-          image: "/homeabout/hospital.jpg",
+          image: "/homeabout/laptop.jpg",
           background: "#ffdfd4",
           text: "Book an Appointment",
         };

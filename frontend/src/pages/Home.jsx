@@ -52,12 +52,11 @@ function Home() {
         {/* <LedContainer/> */}
         {!isMobile &&(<HomeYoutube/>)}
         <HomeSectionTwo/>
-       
         <WhySmv/>
         {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)}
         {/* <HomeNewsEvents  newsAndEvents={newsAndEvents}/> */}
-        {/* <HomeTestimonial/> */}
-        {/* <HomeDoctors/> */}
+        <HomeTestimonial/>
+      {/* <HomeDoctors/> */}
       <Footer/>
     </div>
   )
