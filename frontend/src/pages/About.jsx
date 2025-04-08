@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import Hero6 from '../components/Hero6';
 import AboutSection1 from '../components/AboutSection1';
 import AboutSpeciality from '../components/AboutSpeciality';
 import Headings from '../components/Headings';
@@ -75,7 +76,7 @@ const content = [
 
 
 const About = () => {
-    const { setAnimCase,setShowSideBar } = useContext(AppContext)
+    const { setAnimCase,setShowSideBar,isMobile } = useContext(AppContext)
     useEffect(() => {
       setAnimCase('allset');
       setShowSideBar(false)
@@ -84,7 +85,7 @@ const About = () => {
     <>
     <ScrollToTop/>
     <div className='about_main'>
-    
+      {isMobile?(null):<Hero6 data={heroData}/>}
       <AboutSection1/>
       <Headings data={careHeading}  />
       <AboutCare/>

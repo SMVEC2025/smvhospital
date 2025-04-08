@@ -41,6 +41,8 @@ const AnimatedRoutes = () => {
   const location = useLocation();
 
   return (
+    <AnimatePresence mode="wait">
+      <motion.div key={location.pathname} variants={glitchVariants} initial="initial" animate="animate" exit="exit">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -55,6 +57,8 @@ const AnimatedRoutes = () => {
           <Route path="/test" element={<LogoAnimation />} />
           <Route path="/international-patients" element={<InternationalPatients />} />
         </Routes>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 function App() {
