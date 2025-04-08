@@ -12,6 +12,8 @@ import MobileSideBar from "../components/navbar/MobileSideBar";
 import Hero6 from "../components/Hero6";
 import Footer from "../components/footer/Footer";
 import { AppContext } from "../context/AppContext";
+import MobileHero6 from '../components/MobileHero6';
+
 const AppointmentSuccess = () => {
       const { setAnimCase, setShowSideBar,isMobile } = useContext(AppContext);
   
@@ -32,7 +34,7 @@ const AppointmentSuccess = () => {
   const handlePrint = () => {
     window.print();
   };
-  
+
 const heroData = {
   bgImg: 'images/hero-bg9.jpg',
   bgShape: 'shape/hero-shape.png',

@@ -20,6 +20,7 @@ import { FaNotesMedical } from "react-icons/fa";
 import { FaAnglesRight } from "react-icons/fa6";
 import { formatDate } from "date-fns";
 import { toast } from "react-toastify";
+import MobileHero6 from '../components/MobileHero6';
 
 
 const heroData = {

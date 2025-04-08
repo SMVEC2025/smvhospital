@@ -9,6 +9,7 @@ import { IoIosMail } from "react-icons/io";
 import { AppContext } from '../context/AppContext';
 import MobileSideBar from '../components/navbar/MobileSideBar';
 import ScrollToTop from '../components/ScrollToTop';
+import MobileHero6 from '../components/MobileHero6';
 
 function ContactUs() {
   const { setAnimCase,setShowSideBar,isMobile } = useContext(AppContext)

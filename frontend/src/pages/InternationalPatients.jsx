@@ -15,6 +15,7 @@ import 'swiper/css/navigation';
 
 import chairs from '../assets/images/chairs.jpg'
 import { AppContext } from '../context/AppContext';
+import MobileHero6 from '../components/MobileHero6';
 function InternationalPatients() {
 
 
