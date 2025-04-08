@@ -61,13 +61,13 @@ function Footer() {
           <div className="footer-links">
             <h4>About Company</h4>
             <ul>
-              <li><a href="#">About us</a></li>
+              <li><a href="/about">About us</a></li>
               {/* <li><a href="#">Blog & news</a></li> */}
               {/* <li><a href="#">Treatments</a></li> */}
               {/* <li><a href="#">Speciality</a></li> */}
-              <li><a href="#">International Patients</a></li>
+              <li><a href="/international-patients">International Patients</a></li>
               {/* <li><a href="#">Our Doctors</a></li> */}
-              <li><a href="#">Contact us</a></li> 
+              <li><a href="contact-us">Contact us</a></li> 
             </ul>
           </div>
         </div>
