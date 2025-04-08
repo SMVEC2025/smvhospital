@@ -74,7 +74,6 @@ const heroData = {
         {/* <button className="print-button" onClick={handlePrint}>🖨️ Print Receipt</button> */}
       </div>
     </div>
-    
     <Footer/>
     
     </>
