@@ -79,7 +79,7 @@ function ContactUs() {
       const constactFaq = [
         {
           question: "How can I contact customer support?",
-          answer: "You can reach our customer support team via email at support@example.com or call us at +91 98765 43210 during business hours."
+          answer: "You can reach our customer support team via email at support@smvmchac.in or call us at 0413 - 2000999 available 24 x 7."
         },
         {
           question: "What are your customer support hours?",
@@ -90,8 +90,8 @@ function ContactUs() {
           answer: "We usually respond within 24-48 hours. For urgent inquiries, please call our support number."
         },
         {
-          question: "Can I visit your office for support?",
-          answer: "Yes! You can visit our office at [Your Address] during our working hours. Please schedule an appointment before visiting."
+          question: "Can I visit your hospital for support?",
+          answer: "Yes! You can visit our hospital at Madagadipet,Pondicherry during our working hours. Please schedule an appointment before visiting."
         },
         {
           question: "What information should I provide when contacting support?",
@@ -156,7 +156,7 @@ function ContactUs() {
             <h3>Pondicherry</h3>
             <div><span><IoLocationSharp/></span><span>madhagadipet, Pondicherry, India</span></div>
             <div onClick={makeCall}><span><IoCall/></span><span>0413-2000999</span></div>
-            <div><span><IoIosMail/></span><span>info@smvssh.in</span></div>
+            <div><span><IoIosMail/></span><span>support@smvmch.ac.in</span></div>
 
         </div>
         <div className='contact_con_div2'>

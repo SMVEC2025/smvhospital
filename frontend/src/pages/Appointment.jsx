@@ -192,7 +192,7 @@ const Appointment = () => {
             id: 5,
             name: "pro health checkup - female (SSH)",
             price: 1999,
-            image:'/gifs/prohealth.gif',
+            image:'/gifs/womanpremium1.gif',
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
                 "USG Whole Abdomen",
@@ -224,7 +224,7 @@ const Appointment = () => {
         {
             id: 6,
             name: "Basic Health Check-up for Female (SSH)",
-            image:'/gifs/womanpremium.gif',
+            image:'/gifs/BasicCheckupFemale.gif',
             price: 999,
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
@@ -393,24 +393,24 @@ const Appointment = () => {
     }
 
 
-    return (
+    return ( 
         <>
             <ScrollToTop />
             {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
             <div className="appointment_main" ref={sectionRef}>
                 <div className="app_progress">
                     <div className={`app_progress1 ${process == 'services' ? "true" : ""}`}
-                        onClick={() => setProcess('services')}>
+                       >
                         <span><MdMedicalServices /></span>
                         <h2>Services</h2>
                     </div>
                     <div className={`app_progress1 ${process == 'date&time' ? "true" : ""}`}
-                        onClick={() => setProcess('date&time')}>
+                       >
                         <span><BsFillCalendarDateFill /></span>
                         <h2>Date & Time</h2>
                     </div>
                     <div className={`app_progress1 ${process == 'basicdetail' ? "true" : ""}`}
-                        onClick={() => setProcess('basicdetail')}>
+                        >
                         <span><FaNotesMedical /></span>
                         <h2>Basic Detail</h2>
                     </div>

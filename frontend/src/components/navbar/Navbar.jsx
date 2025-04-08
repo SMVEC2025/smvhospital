@@ -62,10 +62,10 @@ function Navbar() {
                 emergency
                 </div> 
                 <div className={`emergency_expand ${showEmer?"true":null}`}>
-                 <div> <IoMdCall/>818-758-4076
+                 <div> <IoMdCall/>0413-2000999
                  </div>
                  <div> <IoTimeOutline/> 24 x 7</div>
-                 <div><IoMail/> info@smvhospital.com</div>
+                 <div><IoMail/> support@smvmch.ac.in</div>
                 </div> 
             </div>
           </>
