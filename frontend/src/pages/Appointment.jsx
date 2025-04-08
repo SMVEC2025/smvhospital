@@ -20,6 +20,7 @@ import { FaNotesMedical } from "react-icons/fa";
 import { FaAnglesRight } from "react-icons/fa6";
 import { formatDate } from "date-fns";
 import { toast } from "react-toastify";
+import MobileHero6 from "../components/MobileHero6";
 
 
 const heroData = {
@@ -38,7 +39,7 @@ const heroData = {
 };
 
 const Appointment = () => {
-    const { setAnimCase, setShowSideBar } = useContext(AppContext);
+    const { setAnimCase, setShowSideBar,isMobile } = useContext(AppContext);
     const [continuePackage, setContinuePackage] = useState('with')
     const [selectedPackage, setSelectedPackage] = useState(1000)
     const [showDetails, setShowdetails] = useState(false)
@@ -395,7 +396,7 @@ const Appointment = () => {
     return (
         <>
             <ScrollToTop />
-            <Hero6 data={heroData} />
+            {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
             <div className="appointment_main" ref={sectionRef}>
                 <div className="app_progress">
                     <div className={`app_progress1 ${process == 'services' ? "true" : ""}`}

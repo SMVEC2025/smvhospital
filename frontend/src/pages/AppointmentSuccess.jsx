@@ -11,7 +11,12 @@ import Navbar from "../components/navbar/Navbar";
 import MobileSideBar from "../components/navbar/MobileSideBar";
 import Hero6 from "../components/Hero6";
 import Footer from "../components/footer/Footer";
+import MobileHero6 from '../components/MobileHero6';
+import { AppContext } from "../context/AppContext";
+
 const AppointmentSuccess = () => {
+      const { setAnimCase,setShowSideBar,isMobile } = useContext(AppContext)
+  
   const location = useLocation();
    const sectionRef = useRef(null);
   const { data,date,time,service} = location.state || {};
@@ -47,8 +52,8 @@ const heroData = {
   return (
     <>
      <ScrollToTop/>
-            <Hero6 data={heroData} />
-    <div ref={sectionRef} className="appointment-success">
+     {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
+     <div ref={sectionRef} className="appointment-success">
       <div className="success-card">
       <div className="lottie" style={{ width: "100px", margin: "auto" }}>
       <Lottie animationData={successanimation} loop={false} />
