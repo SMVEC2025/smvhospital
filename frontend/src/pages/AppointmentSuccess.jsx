@@ -20,10 +20,16 @@ const AppointmentSuccess = () => {
   const location = useLocation();
    const sectionRef = useRef(null);
   const { data,date,time,service} = location.state || {};
- useEffect(() => {
-    sectionRef.current?.scrollIntoView({ behavior: "smooth" });
-
- }, [])
+  useEffect(() => {
+    if (sectionRef.current) {
+      const topOffset = sectionRef.current.getBoundingClientRect().top + window.pageYOffset - 70;
+      window.scrollTo({ top: topOffset, behavior: "smooth" });
+    }
+  }, []);
+  useEffect(() => {
+    setAnimCase('allset');
+    setShowSideBar(false)
+   }, []) 
  
   // Calendar Links
   const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=Appointment &dates=${date}T${time}00Z/${date}T${time}00Z`;
