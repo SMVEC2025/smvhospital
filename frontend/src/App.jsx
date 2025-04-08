@@ -1,3 +1,4 @@
+// App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
@@ -18,7 +19,6 @@ import "./i18n";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/navbar/Navbar";
 import BotWrapper from "./components/bot/BotWrapper";
-import ScrollImageChanger from "./components/ScrollImageChanger";
 import MobileSideBar from "./components/navbar/MobileSideBar";
 import NavSlider from "./components/navbar/NavSlider";
 import LogoAnimation from "./components/LogoAnimation";
@@ -32,19 +32,24 @@ const glitchVariants = {
     transition: { duration: 0.5, ease: "easeInOut" },
   },
   exit: {
-    opacity:  0.4,
+    opacity: 0.4,
     filter: "blur(50px) contrast(1.5) hue-rotate(90deg)",
     transition: { duration: 0, ease: "easeInOut" },
   },
 };
+
 const AnimatedRoutes = () => {
   const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div key={location.pathname} variants={glitchVariants} initial="initial" animate="animate" exit="exit">
-      <Router>
-
+      <motion.div
+        key={location.pathname}
+        variants={glitchVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -59,21 +64,28 @@ const AnimatedRoutes = () => {
           <Route path="/test" element={<LogoAnimation />} />
           <Route path="/international-patients" element={<InternationalPatients />} />
         </Routes>
-        </Router>
-
       </motion.div>
     </AnimatePresence>
   );
 };
+
 function App() {
   return (
     <AppProvider>
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} theme="dark" transition={Bounce} />
-      <Navbar/> 
-      <MobileSideBar/>
-      <BotWrapper/>
-      <NavSlider/>
+      <Router>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          theme="dark"
+          transition={Bounce}
+        />
+        <Navbar />
+        <MobileSideBar />
+        <BotWrapper />
+        <NavSlider />
         <AnimatedRoutes />
+      </Router>
     </AppProvider>
   );
 }
