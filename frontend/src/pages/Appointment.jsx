@@ -298,7 +298,6 @@ const Appointment = () => {
         }
 
     }
-    console.log("selectedPackage",selectedPackage)
     function handleDecrement(val) {
         if (process == 'date&time') {
             setProcess(processes[0])

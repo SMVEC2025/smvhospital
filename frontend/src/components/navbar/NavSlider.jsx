@@ -175,7 +175,6 @@ function NavSlider() {
         setShowChild(false)
     }
     const [onHover,setOnHover] = useState(medicalServices[0])
-   console.log(onHover)
   return (
     <div className={`navslider_main ${openNavSlider?"opened":"closed"}`} onMouseLeave={()=>{setOpenNavSlider(false)}}  >
  {/* onMouseLeave={()=>{setOpenNavSlider(false)}}  */}

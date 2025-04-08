@@ -15,7 +15,6 @@ const AppointmentSuccess = () => {
   const location = useLocation();
    const sectionRef = useRef(null);
   const { data,date,time,service} = location.state || {};
-  console.log(location.state)
  useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: "smooth" });
 
