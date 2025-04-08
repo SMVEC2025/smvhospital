@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { format } from "date-fns";
 import '../styles/AppointmentSuccess.css'
 import { useLocation } from "react-router-dom";

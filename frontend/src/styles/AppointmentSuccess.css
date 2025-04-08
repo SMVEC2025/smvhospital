@@ -113,5 +113,27 @@
       background-color: gray;
       cursor: pointer;
     }
+    .appointment-success {
+      padding: 0 0;
+    }
+    .success-card {
+      background: #fff;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid rgba(128, 128, 128, 0.43);
+      width: calc(95vw - 20px );
+    }
+    
+    .appointment-success{
+    
+      h3 {
+        color: #333;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0;
+      }
+    }
     
   }
