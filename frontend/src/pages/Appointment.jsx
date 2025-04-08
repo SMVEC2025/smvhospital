@@ -57,7 +57,7 @@ const Appointment = () => {
             id: 1,
             name: "Pro health checkup - male (SSH)",
             price: 1999,
-            image:'/gifs/womanpremium.gif',
+            image:'/gifs/prohealth.gif',
             description: "A fundamental health checkup covering essential tests to assess overall well-being.",
             testsIncluded: [
                 "USG Whole Abdomen",
@@ -86,7 +86,7 @@ const Appointment = () => {
             id: 2,
             name: "Comprehensive Senior Citizen - Female (SSH)",
             price: 1999,
-            image:"https://img.freepik.com/free-photo/patient-doctor-with-masks-medium-shot_23-2149856216.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:'/gifs/ComprehensiveSeniorCitizen.gif',
             description: "Comprehensive health screening including organ function tests and vitamin analysis.",
             testsIncluded: [
                 "Complete Blood Count",
@@ -115,7 +115,7 @@ const Appointment = () => {
             id: 3,
             name: "Comprehensive Senior Citizen - Male (SSH)",
             price: 1999,
-            image:"https://img.freepik.com/free-photo/high-angle-doctor-bandaging-patient-hand_23-2148285673.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:'/gifs/Comprehensive SeniorCitizenM.gif',
             description: "Specialized tests for heart health assessment, ideal for individuals with heart risks.",
             testsIncluded: [
                 "Complete Blood Count with ESR",
@@ -144,7 +144,7 @@ const Appointment = () => {
             id: 4,
             name: "premier health checkup (SSH)",
             price: 999,
-            image:"https://img.freepik.com/free-photo/female-specialist-welcoming-her-indian-male-patient-check-up-visit_482257-117043.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:'/gifs/PremierHealth.gif',
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
                 "Lipid Profile",
@@ -169,7 +169,7 @@ const Appointment = () => {
             id: 5,
             name: "Diabetic Care Check-Up (SSH)",
             price: 999,
-            image:"https://img.freepik.com/free-photo/high-angle-diabetic-woman-checking-her-glucose-level_23-2150775196.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:'/gifs/diabetic.gif',
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
                 "Glucose - Fasting",
@@ -192,7 +192,7 @@ const Appointment = () => {
             id: 5,
             name: "pro health checkup - female (SSH)",
             price: 1999,
-            image:"https://img.freepik.com/free-photo/two-women-beautician-doctor-client-stand-mirror-consultation-doctor-applies-cream-woman-s-hands-makes-light-massage_343596-4173.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:'/gifs/prohealth.gif',
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
                 "USG Whole Abdomen",
@@ -224,7 +224,7 @@ const Appointment = () => {
         {
             id: 6,
             name: "Basic Health Check-up for Female (SSH)",
-            image:"https://img.freepik.com/free-photo/medium-shot-patient-getting-vaccinated_23-2149726934.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:'/gifs/womanpremium.gif',
             price: 999,
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
