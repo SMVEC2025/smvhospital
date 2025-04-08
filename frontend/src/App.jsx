@@ -1,9 +1,16 @@
 // App.jsx
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
 import { ToastContainer, Bounce } from "react-toastify";
 import { AnimatePresence, motion } from "framer-motion";
+
+// jQuery & ripples setup
+import $ from "jquery";
+window.jQuery = $;
+window.$ = $;
+import "jquery.ripples";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Doctors from "./pages/Doctors";
@@ -16,16 +23,30 @@ import NewsAndEvents from "./pages/NewsAndEvents";
 import MainNewsAndEvents from "./pages/MainNewsAndEvents";
 import InternationalPatients from "./pages/InternationalPatients";
 import LogoAnimation from "./components/LogoAnimation";
+
 import Navbar from "./components/navbar/Navbar";
-import BotWrapper from "./components/bot/BotWrapper";
 import MobileSideBar from "./components/navbar/MobileSideBar";
+import BotWrapper from "./components/bot/BotWrapper";
 import NavSlider from "./components/navbar/NavSlider";
 
-import $ from "jquery";
 import "./App.css";
 import "./i18n";
 import "react-toastify/dist/ReactToastify.css";
-import "jquery.ripples"; // make sure this plugin is imported
+
+// Helpers
+const supportsWebGL = () => {
+  try {
+    const canvas = document.createElement("canvas");
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+    );
+  } catch (e) {
+    return false;
+  }
+};
+
+const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
 
 const glitchVariants = {
   initial: { opacity: 0.4, filter: "blur(10px) contrast(0.8)" },
@@ -73,59 +94,32 @@ const AnimatedRoutes = () => {
 };
 
 function App() {
-  const rippleRef = useRef(null);
-
-  const supportsWebGL = () => {
-    try {
-      const canvas = document.createElement("canvas");
-      return !!window.WebGLRenderingContext && !!(
-        canvas.getContext("webgl") || canvas.getContext("experimental-webgl")
-      );
-    } catch (e) {
-      return false;
-    }
-  };
-
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
   useEffect(() => {
-    if (!isMobile && supportsWebGL()) {
+    if (!isMobile() && supportsWebGL()) {
       try {
-        $(rippleRef.current).ripples({
-          resolution: 512,
-          dropRadius: 20,
-          perturbance: 0.04,
-        });
-      } catch (err) {
-        console.warn("Ripple effect error:", err);
+        $(".some-element").ripples({ resolution: 512 });
+      } catch (e) {
+        console.warn("Ripple effect error:", e);
       }
     }
-
-    return () => {
-      try {
-        $(rippleRef.current).ripples("destroy");
-      } catch (e) {}
-    };
   }, []);
 
   return (
     <AppProvider>
-      <div ref={rippleRef} className="ripple-wrapper" style={{ minHeight: "100vh", background: "#000" }}>
-        <Router>
-          <ToastContainer
-            position="top-right"
-            autoClose={3000}
-            hideProgressBar={false}
-            theme="dark"
-            transition={Bounce}
-          />
-          <Navbar />
-          <MobileSideBar />
-          <BotWrapper />
-          <NavSlider />
-          <AnimatedRoutes />
-        </Router>
-      </div>
+      <Router>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          theme="dark"
+          transition={Bounce}
+        />
+        <Navbar />
+        <MobileSideBar />
+        <BotWrapper />
+        <NavSlider />
+        <AnimatedRoutes />
+      </Router>
     </AppProvider>
   );
 }
