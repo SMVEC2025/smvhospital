@@ -32,7 +32,7 @@ const heroData = {
         { img: 'images/hero-img1.png' },
         { img: 'images/hero-img2.png' },
         { img: 'images/hero-img.png' },
-        { img: 'images/hero-img1.png' },
+        { img: 'images/hero-img1.png' }, 
         { img: 'images/hero-img2.png' },
     ],
     title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
@@ -57,7 +57,7 @@ const Appointment = () => {
             id: 1,
             name: "Pro health checkup - male (SSH)",
             price: 1999,
-            image:'https://img.freepik.com/free-photo/male-doctor-examining-patient_1170-2165.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740',
+            image:'/gifs/womanpremium.gif',
             description: "A fundamental health checkup covering essential tests to assess overall well-being.",
             testsIncluded: [
                 "USG Whole Abdomen",

@@ -17,10 +17,11 @@
   }
   
   .ha_left-image {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height:100%;
     transition: all 0.5s ease-in-out;
-
+    object-fit: cover;
+    object-position: center center;
   }
   
   .ha_right-section {

@@ -58,7 +58,7 @@ const HomeAbout = () => {
         };
       case "mobile":
         return {
-          image: "/homeabout/hospital.jpg",
+          image: "/homeabout/mobile.jpg",
           background: "#ffdfd8",
           text: "Our Mobile Application",
         };
@@ -180,7 +180,7 @@ const HomeAbout = () => {
     <div className="ha_container">
       {/* Left Sticky Section */}
       <div className="ha_left-section" style={{ background: getLeftContent().background }}>
-        <img src={getLeftContent().image} alt="Section" className="ha_left-image" style={{width:"100%",height:"100%"}} />
+        <img src={getLeftContent().image} alt="Section" className="ha_left-image" />
         {/* <h2>{getLeftContent().text}</h2> */}
       </div>
 

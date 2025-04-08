@@ -52,10 +52,7 @@ function WhySmv() {
       <div className={`why-smv-left ${darkmode?"darkmode":""}`}>
         <h2>Why SMV Super Specialty hospital?</h2> 
         <p>
-        We are a leading, multi-speciality hospital offering best-in-class medical services for nearly 2 decades. With paramount focus on patient care, patient safety and patient satisfaction, we are committed to offer exemplary medical services going beyond the norm of healthcare.
-
-        We are a leading, multi-speciality hospital offering best-in-class medical services for nearly 2 decades. With paramount focus on patient care, patient safety and patient satisfaction, we are committed to offer exemplary medical services going beyond the norm of healthcare.
-        </p>
+        We are a leading, multi-speciality hospital offering best-in-class medical services for nearly 2 decades. With an unwavering focus on patient care, safety, and satisfaction, we are dedicated to delivering exemplary healthcare that goes beyond conventional standards. Our commitment lies in blending medical excellence with compassion, ensuring every patient receives personalized treatment, advanced technology, and the highest level of care throughout their journey with us.</p>
         <button onClick={()=>{navigate('/about')}}>Learn More</button>
       </div>
 

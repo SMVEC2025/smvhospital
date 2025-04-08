@@ -57,7 +57,7 @@ function Home() {
         {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)}
         {/* <HomeNewsEvents  newsAndEvents={newsAndEvents}/> */}
         {/* <HomeTestimonial/> */}
-      {/* <HomeDoctors/> */}
+        {/* <HomeDoctors/> */}
       <Footer/>
     </div>
   )
