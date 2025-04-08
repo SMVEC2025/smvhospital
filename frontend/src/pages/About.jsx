@@ -11,7 +11,9 @@ import { AppContext } from '../context/AppContext';
 import MobileSideBar from '../components/navbar/MobileSideBar';
 import ScrollToTop from '../components/ScrollToTop';
 import MobileHero6 from '../components/MobileHero6';
-
+import aboutus1 from '../assets/images/aboutus1.jpg'
+import aboutus2 from '../assets/images/aboutus2.jpg'
+import aboutus3 from '../assets/images/aboutus3.jpg'
 const heroData = {
   bgImg: 'images/aboutmainpic.JPG',
   bgShape: 'shape/hero-shape.png', 
@@ -94,7 +96,7 @@ const About = () => {
     <Headings data={whyHeading}  color='white'/>
     <div className='about_what_con1 rigth'>
       <div>
-      <img src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+      <img src={aboutus1} alt="" />
       <div className='about_what_content'>
         <h2>Mission</h2>
         <p>At SMV Hospital, our mission is to deliver compassionate, accessible, and affordable healthcare that places patients at the heart of everything we do. We are dedicated to excellence in clinical outcomes, innovation in medical practice, and leadership in health education. Through advanced technology and a skilled healthcare team, we aim to enhance lives and promote well-being in every community we serve.</p>
@@ -106,7 +108,7 @@ const About = () => {
     </div>
     <div className='about_what_con1 left'>
     <div>
-      <img src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+      <img src={aboutus2} alt="" />
       <div className='about_what_content'>
         <h2>Vision</h2>
         <p>Our vision is to be a global leader in patient-focused healthcare, setting benchmarks in quality, safety, and innovation. We strive to build a future where every individual, regardless of background, has access to exceptional medical care. SMV Hospital aims to lead with integrity and innovation, shaping a healthier world through continuous improvement and compassionate service.</p>
@@ -116,7 +118,7 @@ const About = () => {
     </div>
     <div className='about_what_con1 rigth'>
     <div>
-      <img src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+      <img src={aboutus3} alt="" />
       <div className='about_what_content'>
         <h2>Our Values</h2>
         <p>At SMV Hospital, our core values guide every interaction and decision. We believe in compassion, integrity, and excellence, ensuring each patient receives respectful and personalized care. Innovation, teamwork, and continuous growth define our approach, while inclusivity and empathy remain at our foundation. Together, we commit to delivering healthcare that empowers lives and strengthens communities.</p>
