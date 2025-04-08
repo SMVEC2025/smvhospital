@@ -167,7 +167,7 @@ function NavSlider() {
           setShowContent(medicalServices[index])
       setShowChild(true)
         }else{
-          return
+          return null
         }
     }
     function handleContentClose(){
