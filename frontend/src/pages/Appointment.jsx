@@ -20,7 +20,6 @@ import { FaNotesMedical } from "react-icons/fa";
 import { FaAnglesRight } from "react-icons/fa6";
 import { formatDate } from "date-fns";
 import { toast } from "react-toastify";
-import MobileHero6 from '../components/MobileHero6';
 
 
 const heroData = {
@@ -39,9 +38,9 @@ const heroData = {
 };
 
 const Appointment = () => {
-    const { setAnimCase, setShowSideBar,isMobile } = useContext(AppContext);
+    const { setAnimCase, setShowSideBar } = useContext(AppContext);
     const [continuePackage, setContinuePackage] = useState('with')
-    const [selectedPackage, setSelectedPackage] = useState('')
+    const [selectedPackage, setSelectedPackage] = useState(1000)
     const [showDetails, setShowdetails] = useState(false)
     const [selectedDate, setSelectedDate] = useState(new Date()); // Set default date to today
     const [selectedTime, setSelectedTime] = useState(null);
@@ -57,7 +56,7 @@ const Appointment = () => {
             id: 1,
             name: "Pro health checkup - male (SSH)",
             price: 1999,
-            image: 'https://img.freepik.com/free-photo/male-doctor-examining-patient_1170-2165.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740',
+            image:'https://img.freepik.com/free-photo/male-doctor-examining-patient_1170-2165.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740',
             description: "A fundamental health checkup covering essential tests to assess overall well-being.",
             testsIncluded: [
                 "USG Whole Abdomen",
@@ -86,7 +85,7 @@ const Appointment = () => {
             id: 2,
             name: "Comprehensive Senior Citizen - Female (SSH)",
             price: 1999,
-            image: "https://img.freepik.com/free-photo/patient-doctor-with-masks-medium-shot_23-2149856216.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:"https://img.freepik.com/free-photo/patient-doctor-with-masks-medium-shot_23-2149856216.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             description: "Comprehensive health screening including organ function tests and vitamin analysis.",
             testsIncluded: [
                 "Complete Blood Count",
@@ -115,7 +114,7 @@ const Appointment = () => {
             id: 3,
             name: "Comprehensive Senior Citizen - Male (SSH)",
             price: 1999,
-            image: "https://img.freepik.com/free-photo/high-angle-doctor-bandaging-patient-hand_23-2148285673.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:"https://img.freepik.com/free-photo/high-angle-doctor-bandaging-patient-hand_23-2148285673.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             description: "Specialized tests for heart health assessment, ideal for individuals with heart risks.",
             testsIncluded: [
                 "Complete Blood Count with ESR",
@@ -144,7 +143,7 @@ const Appointment = () => {
             id: 4,
             name: "premier health checkup (SSH)",
             price: 999,
-            image: "https://img.freepik.com/free-photo/female-specialist-welcoming-her-indian-male-patient-check-up-visit_482257-117043.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:"https://img.freepik.com/free-photo/female-specialist-welcoming-her-indian-male-patient-check-up-visit_482257-117043.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
                 "Lipid Profile",
@@ -169,7 +168,7 @@ const Appointment = () => {
             id: 5,
             name: "Diabetic Care Check-Up (SSH)",
             price: 999,
-            image: "https://img.freepik.com/free-photo/high-angle-diabetic-woman-checking-her-glucose-level_23-2150775196.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:"https://img.freepik.com/free-photo/high-angle-diabetic-woman-checking-her-glucose-level_23-2150775196.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
                 "Glucose - Fasting",
@@ -192,7 +191,7 @@ const Appointment = () => {
             id: 5,
             name: "pro health checkup - female (SSH)",
             price: 1999,
-            image: "https://img.freepik.com/free-photo/two-women-beautician-doctor-client-stand-mirror-consultation-doctor-applies-cream-woman-s-hands-makes-light-massage_343596-4173.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:"https://img.freepik.com/free-photo/two-women-beautician-doctor-client-stand-mirror-consultation-doctor-applies-cream-woman-s-hands-makes-light-massage_343596-4173.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
                 "USG Whole Abdomen",
@@ -224,7 +223,7 @@ const Appointment = () => {
         {
             id: 6,
             name: "Basic Health Check-up for Female (SSH)",
-            image: "https://img.freepik.com/free-photo/medium-shot-patient-getting-vaccinated_23-2149726934.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
+            image:"https://img.freepik.com/free-photo/medium-shot-patient-getting-vaccinated_23-2149726934.jpg?uid=R184073455&ga=GA1.1.33103983.1738217368&semt=ais_hybrid&w=740",
             price: 999,
             description: "Comprehensive diabetes screening to monitor and manage diabetes effectively.",
             testsIncluded: [
@@ -269,7 +268,7 @@ const Appointment = () => {
         phone: "",
         note: "",
     });
-    const Hello = ["hello", "pillo"]
+ const Hello = ["hello","pillo"]
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -279,26 +278,44 @@ const Appointment = () => {
 
     function handleIncrement(val) {
         if (process == 'services') {
-            if (String(selectedPackage).trim() === "") {
+            if(selectedPackage == 1000){
 
-                toast.error('Select Any Packages or continue without package')
-            } else {
+              toast.error('Select Any Packages or continue without package')
+            }else{
                 setProcess(processes[1])
                 scrollToRef()
             }
         } else if (process == 'date&time') {
 
-            if (selectedTime == null) {
+            if(selectedTime == null){
                 toast.error('Select Date and slot')
-            } else {
+              }else{
                 setProcess(processes[2])
                 scrollToRef()
-            }
+              }
         } else {
             return
         }
 
     }
+   
+    function packageCase1(){
+        if(selectedPackage !== 1000){
+            if(selectedPackage !== 'NA'){
+                return healthPackages[selectedPackage].name
+            }
+            else{
+                return 'NA'
+            }
+        }
+    }
+    // function gg(){
+    //     if(selectedPackage>=0){
+    //         return healthPackages[selectedPackage].name
+    //     }else{
+    //         return 'na'
+    //     }
+    // }
     function handleDecrement(val) {
         if (process == 'date&time') {
             setProcess(processes[0])
@@ -311,33 +328,74 @@ const Appointment = () => {
         }
 
     }
+
+
+    const postUserData = async () => {
+        const googleFormURL ="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdyS-oYyzXcBe4iMP-qkfyCVQpEIP7Jjzj44LvM6gBTuy3BvA/formResponse";
+        const pack = "Package N/A"
+        const formPayload = new FormData();
+        formPayload.append("entry.674254323", formData.firstname);
+        formPayload.append("entry.1531682664", formData.email);
+        formPayload.append("entry.1249408453", formData.phone);
+        formPayload.append("entry.1786264367", formData.note);
+        formPayload.append("entry.1642565703", selectedDate?.toLocaleDateString('en-GB').split('/').join('-'));
+        formPayload.append("entry.2086222", selectedTime);
+        formPayload.append("entry.2005215424",packageCase1() );
+
+        try {
+
+            fetch(googleFormURL, {
+              method: "POST",
+              body: formPayload,
+              mode: "no-cors", // Required for Google Forms submission
+            })
+              .then(() => {
+                toast.success("Appointment Sent");
+                setTimeout(() => {
+                    navigate("/appointmentsuccess", { state: { data: formData, date: selectedDate.toLocaleDateString('en-GB').split('/').join('-'), time: selectedTime, service: packageCase1() } });
+
+                }, 100);
+        })
+              .catch((error) =>  toast.error("Network error"));
+
+
+        } catch (error) {
+            console.error('Error posting user data:', error);
+            setError("Failed to submit details. Please try again.");
+            toast.error('Network error')
+        }
+
+    };
+
+
     function handleSubmit() {
-        if (formData.firstname.trim() == '') {
+        if(formData.firstname.trim() ==''){
             toast.error('Enter FirstName')
             return
         }
-        if (formData.lastname.trim() == '') {
+         if(formData.lastname.trim() ==''){
             toast.error('Enter LastName')
             return
         }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+         if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)){
             toast.error('Enter a Valid Email')
             return
         }
-        if (!/^\+?[1-9]\d{1,14}$/.test(formData.phone)) {
+         if(!/^\+?[1-9]\d{1,14}$/.test(formData.phone)){
             toast.error('Enter a valid phone number')
             return
         }
-        else {
-            navigate("/appointmentsuccess", { state: { data: formData, date: selectedDate.toLocaleDateString('en-GB').split('/').join('-'), time: selectedTime, service: selectedPackage ? healthPackages[selectedPackage].name : "Package N/A" } });
+        else{
+            postUserData()
         }
 
     }
 
+
     return (
         <>
             <ScrollToTop />
-            {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
+            <Hero6 data={heroData} />
             <div className="appointment_main" ref={sectionRef}>
                 <div className="app_progress">
                     <div className={`app_progress1 ${process == 'services' ? "true" : ""}`}
@@ -366,12 +424,12 @@ const Appointment = () => {
                             <h2>Select Package</h2>
                             <div className="service_select">
                                 <div className={`service_select1 ${continuePackage == 'with' ? 'true' : ''}`}
-                                    onClick={() => { setContinuePackage('with') }}
+                                    onClick={() => {setContinuePackage('with')}}
                                 >
                                     Continue With Package
                                 </div>
                                 <div className={`service_select1 ${continuePackage == 'without' ? 'true' : ''}`}
-                                    onClick={() => { setContinuePackage('without');; setSelectedPackage('NA') }}
+                                    onClick={() => {setContinuePackage('without');;setSelectedPackage('NA')}}
                                 >
                                     Continue Without Package
                                 </div>
@@ -384,13 +442,13 @@ const Appointment = () => {
                                             <div>
                                                 <h2 className="packages_name">{e.name}</h2>
                                                 <p>Price:<span className="packages_price"> ₹{e.price}</span></p>
-                                                <p className="packages_desc">{e.description} <span > {showDetails ? (<span onClick={() => { setShowdetails(false) }}>ShowLess</span>) : (<span onClick={() => { setShowdetails(true) }}>ShowDetails</span>)}</span> </p>
-                                                <div className={`testlist ${showDetails ? "open" : ""}`}>
-                                                    {selectedPackage == i && (
+                                                <p className="packages_desc">{e.description} <span > {showDetails?(<span onClick={()=>{setShowdetails(false)}}>ShowLess</span>):(<span onClick={()=>{setShowdetails(true)}}>ShowDetails</span>)}</span> </p>
+                                                <div className={`testlist ${showDetails?"open":""}`}>
+                                                    {selectedPackage==i &&(
                                                         <>
-                                                            {e.testsIncluded.map((hel, pil) => (
-                                                                <p key={pil} >{hel}</p>
-                                                            ))}
+                                                         {e.testsIncluded.map((hel,pil)=>(
+                                                    <p >{hel}</p>
+                                                   ))}
                                                         </>
                                                     )}
 
@@ -510,7 +568,7 @@ const Appointment = () => {
 
                                         value={formData.phone}
                                         onChange={(phone) => setFormData({ ...formData, phone })}
-                                        inputStyle={{ width: "102%", backgroundColor: "transparent", }}
+                                        inputStyle={{ width: "102%", backgroundColor: "transparent",  }}
                                     />
                                 </div>
 
