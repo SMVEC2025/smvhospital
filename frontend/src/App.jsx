@@ -1,16 +1,8 @@
-// App.jsx
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
 import { ToastContainer, Bounce } from "react-toastify";
 import { AnimatePresence, motion } from "framer-motion";
-
-// jQuery & ripples setup
-import $ from "jquery";
-window.jQuery = $;
-window.$ = $;
-import "jquery.ripples";
-
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Doctors from "./pages/Doctors";
@@ -21,32 +13,16 @@ import Appointment from "./pages/Appointment";
 import AppointmentSuccess from "./pages/AppointmentSuccess";
 import NewsAndEvents from "./pages/NewsAndEvents";
 import MainNewsAndEvents from "./pages/MainNewsAndEvents";
-import InternationalPatients from "./pages/InternationalPatients";
-import LogoAnimation from "./components/LogoAnimation";
-
-import Navbar from "./components/navbar/Navbar";
-import MobileSideBar from "./components/navbar/MobileSideBar";
-import BotWrapper from "./components/bot/BotWrapper";
-import NavSlider from "./components/navbar/NavSlider";
-
 import "./App.css";
 import "./i18n";
 import "react-toastify/dist/ReactToastify.css";
-
-// Helpers
-const supportsWebGL = () => {
-  try {
-    const canvas = document.createElement("canvas");
-    return !!(
-      window.WebGLRenderingContext &&
-      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
-    );
-  } catch (e) {
-    return false;
-  }
-};
-
-const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
+import Navbar from "./components/navbar/Navbar";
+import BotWrapper from "./components/bot/BotWrapper";
+import ScrollImageChanger from "./components/ScrollImageChanger";
+import MobileSideBar from "./components/navbar/MobileSideBar";
+import NavSlider from "./components/navbar/NavSlider";
+import LogoAnimation from "./components/LogoAnimation";
+import InternationalPatients from "./pages/InternationalPatients";
 
 const glitchVariants = {
   initial: { opacity: 0.4, filter: "blur(10px) contrast(0.8)" },
@@ -56,24 +32,15 @@ const glitchVariants = {
     transition: { duration: 0.5, ease: "easeInOut" },
   },
   exit: {
-    opacity: 0.4,
+    opacity:  0.4,
     filter: "blur(50px) contrast(1.5) hue-rotate(90deg)",
     transition: { duration: 0, ease: "easeInOut" },
   },
 };
-
 const AnimatedRoutes = () => {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={location.pathname}
-        variants={glitchVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-      >
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -88,36 +55,17 @@ const AnimatedRoutes = () => {
           <Route path="/test" element={<LogoAnimation />} />
           <Route path="/international-patients" element={<InternationalPatients />} />
         </Routes>
-      </motion.div>
-    </AnimatePresence>
   );
 };
-
 function App() {
-  useEffect(() => {
-    if (!isMobile() && supportsWebGL()) {
-      try {
-        $(".some-element").ripples({ resolution: 512 });
-      } catch (e) {
-        console.warn("Ripple effect error:", e);
-      }
-    }
-  }, []);
-
   return (
     <AppProvider>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} theme="dark" transition={Bounce} />
       <Router>
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          theme="dark"
-          transition={Bounce}
-        />
-        <Navbar />
-        <MobileSideBar />
-        <BotWrapper />
-        <NavSlider />
+      <Navbar/> 
+      <MobileSideBar/>
+      <BotWrapper/>
+      <NavSlider/>
         <AnimatedRoutes />
       </Router>
     </AppProvider>
