@@ -38,7 +38,7 @@
   /* 8b5e3b */
   /* 2f4858 */
   .why-smv-left p {
-    font-size: calc(0.4rem + 0.5vw);
+    font-size: var(--font-base);
     width: 90%;
     color: #5C4033;
     line-height: 22px;
@@ -103,7 +103,7 @@
     font-size: 0.9rem;
     color: #5C4033;
     font-weight: 400;
-    font-size: calc(0.4rem + 0.5vw);
+    font-size: var(--font-base);
 
   }
     
