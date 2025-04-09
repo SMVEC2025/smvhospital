@@ -225,3 +225,19 @@
     font-size: var(--font-base);
   }
   }
+
+
+  @media screen and (max-width: 769px) {
+    .ia-container-end1>h2{
+      font-size: 1.5rem;
+      width: 100%;
+      color: #f15f23;
+    
+    }
+    
+.ia-container-end1,.ia-container-end2{
+  margin-left: 3rem;
+  margin-top: 0rem;
+}
+
+  }

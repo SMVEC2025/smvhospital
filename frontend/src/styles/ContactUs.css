@@ -288,3 +288,41 @@
 }
 
 }
+
+@media screen and (max-width: 769px) {
+
+    .marquee-container {
+        padding: 1rem 0;
+      } 
+      .marquee-image {
+        width: 150px;
+      }
+      .contact_container{
+        flex-direction: column;
+        padding: 5px 5px;
+        gap: 2rem;
+    }
+    .contact_con_div1{
+        width: fit-content !important;
+        margin-top: 1rem;
+        padding: 30px;
+    }
+    .contact_con_div2{
+        width: calc(98% - 60px);
+        background-image: linear-gradient(45deg,rgb(24, 24, 24),rgb(41, 41, 41),rgb(59, 59, 59));
+        border-radius: 20px;
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        margin: 30px;
+    }
+    .contact_faq_head{
+        font-size: x-large;
+    }
+    .contact_con_div3{
+        grid-template-columns: repeat(1, 1fr); /* 3 columns */
+        grid-template-rows: repeat(6, auto); /* 3 rows */
+        gap: 10px; /* Spacing between items */
+        width: 90%;
+        margin-bottom: 1rem;
+      }
+}

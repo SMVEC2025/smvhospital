@@ -49,7 +49,7 @@
 	  }
 	  
 	  .hst_wrapper .card {
-		width: 100%;
+		width: calc(100% - 60px);
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -275,4 +275,15 @@
  
   
 
+}
+@media screen and (max-width: 769px) {
+	.hst_card_div3{
+		display: none;
+	}
+	.hst_card_div2{
+		width: fit-content;
+	}
+	.hst_wrapper .card {
+      gap: 2rem;
+	}
 }

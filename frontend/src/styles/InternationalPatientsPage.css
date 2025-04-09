@@ -178,3 +178,21 @@
       }
     }
 }
+@media screen and (max-width: 769px) {
+  .ipp_card_wrapper{
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+  }
+  .ipp_card{
+    width: 85%;
+}
+.ipp_swipper{
+    
+  .swiper {
+      width: 90vw;
+      height: 80vh;
+    }
+  }
+}

@@ -92,7 +92,8 @@
 
   .ha_right-section p{
     font-size: var(--font-base);
-    width: 80%;
+    width: calc(60% + 10vw);
+    max-width: 98%;
     font-weight: 400;
     color:  #2e2d2de5;
     line-height: calc(0.8rem + 1vw);
@@ -129,4 +130,19 @@
   .ha_right-section h2 {
     font-size: 14px;
   }
+}
+
+@media screen and (max-width: 769px) {
+.ha_left-section{
+  display: none;
+}
+.ha_right-section{
+  width: 100%;
+}
+.ha_right-section p{
+  width: calc(100%);
+}
+.section{
+  height: fit-content;
+}
 }
