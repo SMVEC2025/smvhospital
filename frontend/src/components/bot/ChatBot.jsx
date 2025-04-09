@@ -79,6 +79,26 @@ const Chatbot = ({ openLang }) => {
                     setBotTyping(false);
                     return;
                 }
+                if (lowerInput === 'Pro Health Checkup M/F') {
+                    showMainMenu();
+                    setBotTyping(false);
+                    return;
+                }
+                if (lowerInput === 'Comprehensive Senior citizen M/F') {
+                    showMainMenu();
+                    setBotTyping(false);
+                    return;
+                }
+                if (lowerInput === 'Basic Health Checkup for Female') {
+                    showMainMenu();
+                    setBotTyping(false);
+                    return;
+                }
+                if (lowerInput === 'Diabetic Care Checkup') {
+                    showMainMenu();
+                    setBotTyping(false);
+                    return;
+                }
     
                 switch (currentStep) {
                     case 'mainMenu':
@@ -89,10 +109,10 @@ const Chatbot = ({ openLang }) => {
                                 text: "Please select a health package:",
                                 user: false,
                                 options: [
-                                    { text: 'Basic Health Checkup', value: 'basic' },
-                                    { text: 'Comprehensive Health Checkup', value: 'comprehensive' },
-                                    { text: 'Cardiac Health Checkup', value: 'cardiac' },
-                                    { text: 'Diabetes Health Checkup', value: 'diabetes' },
+                                    { text: 'Pro Health Checkup M/F', value: 'pro' },
+                                    { text: 'Comprehensive Senior citizen M/F', value: 'comprehensive' },
+                                    { text: 'Basic Health Checkup for Female', value: 'basic' },
+                                    { text: 'Diabetic Care Checkup', value: 'diabetic' },
                                 ],
                             };
                         } else if (lowerInput === 'book appointment') {
@@ -101,7 +121,7 @@ const Chatbot = ({ openLang }) => {
                             botMessage = { text: "What is your name?", user: false };
                         } else if (lowerInput === 'emergency inquiry' || lowerInput === 'emergency') {
                             botMessage = {
-                                text: "For emergency services, please call our emergency hotline at 123-456-7890 or visit the nearest hospital immediately.",
+                                text: "For emergency services, please call our emergency hotline at 0413 - 2000999 or visit our hospital immediately.",
                                 user: false,
                                 options: [{ text: 'Main Menu', value: 'main menu' }],
                             };
