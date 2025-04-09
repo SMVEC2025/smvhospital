@@ -79,26 +79,7 @@ const Chatbot = ({ openLang }) => {
                     setBotTyping(false);
                     return;
                 }
-                if (lowerInput === 'Pro Health Checkup M/F') {
-                    showMainMenu();
-                    setBotTyping(false);
-                    return;
-                }
-                if (lowerInput === 'Comprehensive Senior citizen M/F') {
-                    showMainMenu();
-                    setBotTyping(false);
-                    return;
-                }
-                if (lowerInput === 'Basic Health Checkup for Female') {
-                    showMainMenu();
-                    setBotTyping(false);
-                    return;
-                }
-                if (lowerInput === 'Diabetic Care Checkup') {
-                    showMainMenu();
-                    setBotTyping(false);
-                    return;
-                }
+            
     
                 switch (currentStep) {
                     case 'mainMenu':
