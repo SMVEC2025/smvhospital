@@ -33,6 +33,8 @@
 .ipp_card>p{
     color: rgb(119, 117, 117);
     margin-top: 10px;
+    font-size: var(--font-base);
+
 }
 .ipp_swipper{
     padding-top: 5rem;
@@ -149,7 +151,7 @@
  }
 
 .ipp_swiperdiv section>p{
-  font-size: 0.8rem;
+  font-size: var(--font-base);
   font-weight: 400;
   width: 60%;
   text-transform: capitalize;

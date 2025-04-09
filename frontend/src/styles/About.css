@@ -43,6 +43,8 @@
   .as_description {
     color: #555;
     margin: 15px 0;
+    font-size: var(--font-base);
+
   }
   
   .stats {
@@ -697,7 +699,7 @@
 .about_what_content>p{
   color: rgb(199, 199, 199);
   width: 90%;
-  font-size: calc(0.5rem + 0.4vw);
+  font-size: var(--font-base);
 }
 .about_what_con1.left .about_what_content{
   display: flex;
