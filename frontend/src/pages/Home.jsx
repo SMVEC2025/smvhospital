@@ -23,7 +23,7 @@ import ScrollToTop from '../components/ScrollToTop'
 import '../styles/Home.css'
 import HomeYoutube from '../components/HomeYoutube'
 function Home() {
-  const { isMobile,refreshAnim,setShowSideBar } = useContext(AppContext)
+  const { isMobile,refreshAnim,setShowSideBar,modalOpen,setModalOpen } = useContext(AppContext)
   const [newsAndEvents,setNewsAndEvents]=useState([])
   const navigate =useNavigate()
   useEffect(() => {
@@ -41,10 +41,25 @@ function Home() {
     setShowSideBar(false)
 
   }, []);
-
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  
+    return () => {
+      document.body.style.overflow = "auto"; // Ensure cleanup
+    };
+  }, [modalOpen]);
+useEffect(() => {
+  setTimeout(() => {
+      setModalOpen(false)
+  }, 3000);
+}, [])
 
   return (
-    <div>
+    <div >
        <ScrollToTop/> 
         <Hero/>
         <HomeAbout/>

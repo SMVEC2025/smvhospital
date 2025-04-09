@@ -14,6 +14,7 @@ export function AppProvider({ children }) {
   const [showSideBar,setShowSideBar] = useState(false)
   const [darkmode,setDarkmode] = useState(false)
   const [openNavSlider,setOpenNavSlider]=useState(false)
+  const [modalOpen,setModalOpen]= useState(true)
 
   // Effect to track screen size changes
   useEffect(() => {
@@ -41,7 +42,8 @@ export function AppProvider({ children }) {
         setRefreshAnim,
         animCase,setAnimCase,doctorsList,setDoctorsList,
         showSideBar,setShowSideBar,darkmode,setDarkmode,
-        openNavSlider,setOpenNavSlider 
+        openNavSlider,setOpenNavSlider,
+        modalOpen,setModalOpen
       }}
     >
       {children}
