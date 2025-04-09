@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
+:root {
+  --font-base: clamp(14px, 1vw, 17px);
+}
+
 .Ia-fullscreen {
   height: 100vh;
   width: 100%;
@@ -178,7 +182,7 @@
 }
 .ia-container-end1>p{
   color:#a3431d;
-  font-size: 1.2rem;
+  font-size: var(--font-base);
 
 }
 .ia-container-end2{
@@ -210,3 +214,13 @@
   transition: all 0.3s ease-out;
   transform: translateY(20px);
 }
+
+
+
+
+@media (max-width: 1280px){
+
+  .ia-container-end1 p{
+    font-size: var(--font-base);
+  }
+  }
