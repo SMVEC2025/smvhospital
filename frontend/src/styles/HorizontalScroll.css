@@ -81,3 +81,35 @@
   .dim{
   }
 }
+
+
+@media screen and (max-width: 1024px) {
+
+  
+  .horizontal {
+    gap: 10px;
+  }
+  .sticky-parent {
+  }
+  .dim {
+    display: block;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  
+  }
+  
+  .horizontal {
+    display: flex;
+  }
+  .sticky-parent {
+    height: 500vh;
+    background: linear-gradient(#151515,#312436,#633837,#de652a), 
+    url('../assets/images/Gradientnoise.jpg');
+    background-position: center;
+    padding-left: 20px;
+  }
+}

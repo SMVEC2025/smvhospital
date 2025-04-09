@@ -134,3 +134,11 @@
     -webkit-text-stroke: 1px rgb(255, 115, 0); 
 }
 }
+
+
+@media screen and (max-width: 1024px) {
+    .tc_main{
+        width: 400px;
+        height: 70%;
+    }
+}

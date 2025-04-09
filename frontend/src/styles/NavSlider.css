@@ -138,3 +138,14 @@
     transform: translateX(5px);
 
 }
+
+
+@media screen and (max-width: 1024px) {
+    .navslider_main{
+        width: 90vw;
+    }
+   .navslider_div2{
+    width: 250px;
+   }
+
+}

@@ -130,7 +130,6 @@
   @media screen and (max-width: 500px) {
     .why-smv-left p {
       width: 100%;
-      font-size: calc(0.8rem + 0.5vw);
       line-height: 19px;
     }
    
@@ -144,10 +143,14 @@
     .feature-box{
       width: 100%;
     }
-    .feature-box p{
-      font-size: calc(0.8rem + 0.5vw);
+ 
+  }
+  @media screen and (max-width: 1024px) {
+    .why-smv-container {
+      flex-direction: column;
+      gap: 5rem;
     }
-    .feature-box h3 {
-      font-size: calc(1.2rem + 0.5vw);
+    .why-smv-container>div{
+      width: 100%;
     }
   }

@@ -112,3 +112,17 @@
 }
 
 }
+
+@media screen and (max-width: 1024px) {
+  .ytvideo-container {
+    h2,p{
+      margin-left: 1rem;
+  
+    }
+   
+    p{
+      margin-bottom: 1rem;
+      width: 70%;
+    }
+  }
+}

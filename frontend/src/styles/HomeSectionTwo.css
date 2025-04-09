@@ -287,3 +287,15 @@
       gap: 2rem;
 	}
 }
+
+@media screen and (max-width: 1024px) {
+	.hst_card_div3{
+		display: none;
+	}
+	.hst_card_div2{
+		width: fit-content;
+	}
+	.hst_wrapper .card {
+      gap: 2rem;
+	}
+}

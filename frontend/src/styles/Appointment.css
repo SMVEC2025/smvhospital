@@ -664,3 +664,13 @@ textarea {
 }
 
 }
+
+@media screen and (max-width: 1024px) {
+
+  .booking-content {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+  }
+
+}
