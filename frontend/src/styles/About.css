@@ -464,6 +464,7 @@
     color: rgb(216, 82, 19);
     text-transform: uppercase;
     letter-spacing: 1px;
+
     
 
 
@@ -475,7 +476,7 @@
     font-style: normal;
     font-family: "Dancing Script", cursive; 
 
-    font-size: 2rem;
+    font-size:calc(14px + 0.6vw);
     line-height: 30px;
     color: rgb(203, 203, 203);
     margin-left: 20px;
