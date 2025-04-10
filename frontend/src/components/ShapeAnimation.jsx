@@ -115,7 +115,7 @@ useEffect(() => {
               <h2>We help hospitals deliver exceptional care with advanced medical technology.</h2>
           </div>
           <div className="ia-container-end2">
-              <p>We are dedicated to providing top-quality medical care with advanced treatments, experienced doctors, and a patient-first approach to ensure your well-being.</p>
+              <p>We provide quality medical care with advanced treatments, expert doctors, and a patient-first approach.</p>
               <button onClick={()=>{navigate('/appointment')}}>Book an Appointment</button>
           </div>
        </div>

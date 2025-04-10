@@ -95,7 +95,6 @@
     color: rgb(49, 49, 49);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-family: "Caveat", cursive;
     font-optical-sizing: auto;
   }
   .oc_1{
@@ -129,11 +128,12 @@
       display: none;
     }
     .overlay-content>button{
-      padding: 10px 25px;
+      padding: 10px 20px;
       margin-top: 1rem;
-      font-size: 12px;
-      letter-spacing: 0.6px;
+      font-size: 10px;
+      letter-spacing: 0.8px;
     }
+    
   }
 
   .testcon{
@@ -175,8 +175,9 @@
   margin-top: 2rem;
 }
 .ia-container-end1>h2{
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 80%;
+  font-weight: 500;
   color: #f15f23;
 
 }

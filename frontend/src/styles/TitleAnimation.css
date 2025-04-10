@@ -110,8 +110,8 @@ svg text {
   
 }
 
+@media (min-width: 501px) and (max-width: 800px) {
 
-@media screen and (max-width: 769px) {
 
 .ta_s1, .ta_s2, .ta_s3 {
   font-size: 40px;
@@ -128,3 +128,29 @@ svg text {
 
 
 }
+
+
+
+
+@media (min-width: 300px) and (max-width: 360px) {
+
+
+  .ta_s1, .ta_s2, .ta_s3 {
+    font-size: 30px;
+    letter-spacing: 0;
+
+   
+  }
+  .ta_main .box {
+    font-size: 30px;
+    letter-spacing: 0;
+  
+  }
+  .ta_main {
+    gap: 5px;
+  }
+  
+  
+  }
+  
+  
