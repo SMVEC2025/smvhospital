@@ -97,9 +97,12 @@ useEffect(() => {
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             onClick={()=>navigate('/about')}
+            className="aboutusmain-button"
             transition={{ duration: 0.5, ease: "easeOut",  delay: `${animCase=='allset'?0.3:5.2}`}}
           >
-            Discover
+            <span className="aboutusmain-buttontext">DISCOVER</span>
+            <span>            <img className="aboutusmain-buttonimg" src="/images/buttonpng.png" alt="" />
+            </span>
           </motion.button>
         </div>
     {!isMobile &&(

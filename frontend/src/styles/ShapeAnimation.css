@@ -86,16 +86,49 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
   .overlay-content>button{
-    padding: 11px 30px;
+    padding: 11px 12px;
     border-radius: 35px;
     border: none;
     margin-top: 2rem;
     font-size: 13px;
     font-weight: normal;
-    color: rgb(49, 49, 49);
+    color: rgb(58, 58, 58);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     font-optical-sizing: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .overlay-content>button span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay-content>button span>img{
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+  .aboutusmain-button:hover .aboutusmain-buttonimg{
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  .aboutusmain-buttontext{
+    transform: translateX(12px);
+    transition: all 0.3s ease-out;
+
+ 
+  }
+  .aboutusmain-button:hover .aboutusmain-buttontext{
+    opacity: 1;
+    transform: translateX(0);
   }
   .oc_1{
     width: 100%;
