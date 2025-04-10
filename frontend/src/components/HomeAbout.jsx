@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect,useContext } from 'react';
 import "../styles/HomeAbout.css"; // External CSS
 import Button from "./Button";
-import mobileapp from '../assets/images/mobileapp.png'
 import { useTranslation } from "react-i18next";
 import { AppContext } from "../context/AppContext";
 import '../i18n'
