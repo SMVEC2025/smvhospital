@@ -15,7 +15,7 @@ import aboutus1 from '../assets/images/aboutus1.jpg'
 import aboutus2 from '../assets/images/aboutus2.jpg'
 import aboutus3 from '../assets/images/aboutus3.jpg'
 const heroData = {
-  bgImg: 'images/aboutmainpic.JPG',
+  bgImg: 'images/aboutmainpic.jpg',
   bgShape: 'shape/hero-shape.png', 
   page:"About SMV",
 
@@ -39,7 +39,7 @@ const heroData = {
       img: 'images/hero-img2.png',
     },
   ],
-  title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
+  title: ['ENT', 'Plastic Surgery', 'Cardiology', 'Dental', 'Neurology'],
 };
 const specialtyHeading=[
   {

@@ -16,7 +16,7 @@ function SpecialtyPage() {
     const heroData = {
         bgImg: 'images/hero-bg9.jpg',
         page:"Specialties",
-        title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
+        title: ['ENT', 'Plastic Surgery', 'Cardiology', 'Dental', 'Neurology'],
       };
       
       useEffect(() => {

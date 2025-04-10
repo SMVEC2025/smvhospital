@@ -62,7 +62,7 @@ const heroData = {
         img: 'images/hero-img2.png',
       },
     ],
-    title: ['Crutches', 'Laboratory', 'Cardiology', 'Dentist', 'Neurology'],
+    title: ['ENT', 'Plastic Surgery', 'Cardiology', 'Dental', 'Neurology'],
   };
   const cardDetails =[
     {
