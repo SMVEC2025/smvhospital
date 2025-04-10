@@ -77,7 +77,7 @@ const HomeAbout = () => {
   const [loadedImages, setLoadedImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isInView, setIsInView] = useState(false);
-
+console.log("index",currentIndex)
   // Load images
   useEffect(() => {
     const loadImage = (index) => {
@@ -175,6 +175,8 @@ const HomeAbout = () => {
     window.addEventListener('resize', resize);
     return () => window.removeEventListener('resize', resize);
   }, []);
+
+
   return (
     <div className="ha_container">
       {/* Left Sticky Section */}
