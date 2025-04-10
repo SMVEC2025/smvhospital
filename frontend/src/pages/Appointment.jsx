@@ -115,7 +115,7 @@ const Appointment = () => {
             id: 3,
             name: "Comprehensive Senior Citizen - Male (SSH)",
             price: 1999,
-            image:'/gifs/Comprehensive SeniorCitizenM.gif',
+            image:'/gifs/ComprehensiveSeniorCitizenM.gif',
             description: "Specialized tests for heart health assessment, ideal for individuals with heart risks.",
             testsIncluded: [
                 "Complete Blood Count with ESR",
