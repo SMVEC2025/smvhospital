@@ -50,7 +50,7 @@ const AnimatedRoutes = () => {
           {/* <Route path="/doctor/:id" element={<DoctorsDetail />} /> */}
           {/* <Route path="/Specialty" element={<SpecialtyPage />} /> */}
           <Route path="/contact-us" element={<ContactUs />} />
-          {/* <Route path="/appointment" element={<Appointment />} /> */}
+          <Route path="/appointment" element={<Appointment />} />
           <Route path="/AppointmentSuccess" element={<AppointmentSuccess />} />
           {/* <Route path="/newsandevents/:name" element={<NewsAndEvents />} /> */}
           {/* <Route path="/news-events" element={<MainNewsAndEvents />} /> */}

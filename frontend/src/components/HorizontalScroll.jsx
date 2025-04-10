@@ -114,7 +114,7 @@ const HorizontalScroll = () => {
 </div>
           <div className="horizontal">
           {treatments.map((e,i)=>(
-              <div className="dim">
+              <div key={i} className="dim">
               <TreatmentCard data={e} />
             </div>
           ))}

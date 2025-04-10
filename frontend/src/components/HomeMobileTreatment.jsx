@@ -95,7 +95,7 @@ export default function HomeMobileTreatment() {
             >
 
 {treatments.map((e,i)=>(
-                <SwiperSlide>
+                <SwiperSlide key={i}>
               <TreatmentCard data={e} />
               </SwiperSlide>
 

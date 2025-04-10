@@ -195,7 +195,7 @@ const heroData = {
         className="mySwiper"
       >
         {hospitalFacilities.map((element,index)=>(
-          <SwiperSlide>
+          <SwiperSlide key={index}>
             <div className='ipp_swiperdiv' style={{backgroundImage:`url('${element.image}')`}}>
              <div>
  
