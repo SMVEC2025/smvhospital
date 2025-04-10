@@ -1,6 +1,6 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Moon+Dance&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Dancing+Script:wght@400..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Satisfy&display=swap');
 .about_main{
     background-color: rgb(255, 255, 255);
 }
@@ -456,7 +456,7 @@
     color: white;
   }
   .about_testimonial_div2 h3{
-    font-size: 1.7rem;
+    font-size: 2rem;
     margin-bottom: 10px;
     margin-left: 20px;
     margin-top: 20px;
@@ -464,19 +464,21 @@
     color: rgb(216, 82, 19);
     text-transform: uppercase;
     letter-spacing: 1px;
+    
 
 
   }
   .about_testimonial_div2 p{
     width: 80%;
     margin-bottom: 8px;
-    font-family: 'AuthenticSignature';
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Dancing Script", cursive; 
 
-    font-size: 2.1rem;
+    font-size: 2rem;
     line-height: 30px;
     color: rgb(203, 203, 203);
     margin-left: 20px;
-    font-weight: lighter;
     letter-spacing: 2px;
 
 
@@ -505,11 +507,10 @@
     .about_testimonial_div2 p{
       width: 95%;
       margin-bottom: 4px;
-      font-size: 0.9rem;
       margin-left: 10px;
-      font-size:calc(12px + 0.4vw);
+      font-size:calc(8px + 0.1vw);
     font-weight: 400;
-     line-height: 18px;
+     line-height: 25px;
   
   
     }
@@ -724,6 +725,19 @@
     height: auto;
     width: 30%;
   } 
+  .about_testimonial{
+    display: flex;
+    background-color: #000000;
+    height: 100vh !important;
+    flex-direction: row;
+  }
+  .about_testimonial>div{
+    width: 50%;
+    height: 100%;
+  }
+  .about_testimonial_div2 p{
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 800px) {
   .about_what_con1>div>img{
