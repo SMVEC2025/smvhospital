@@ -23,7 +23,7 @@ import ScrollToTop from '../components/ScrollToTop'
 import '../styles/Home.css'
 import HomeYoutube from '../components/HomeYoutube'
 function Home() {
-  const { isMobile,refreshAnim,setShowSideBar,modalOpen,setModalOpen } = useContext(AppContext)
+  const { isMobile,refreshAnim,setShowSideBar,modalOpen,setModalOpen,animCase } = useContext(AppContext)
   const [newsAndEvents,setNewsAndEvents]=useState([])
   const navigate =useNavigate()
   useEffect(() => {
@@ -53,9 +53,11 @@ function Home() {
     };
   }, [modalOpen]);
 useEffect(() => {
-  setTimeout(() => {
+  if(animCase !== 'allset'){
+    setTimeout(() => {
       setModalOpen(false)
   }, 3000);
+  }
 }, [])
 
   return (
