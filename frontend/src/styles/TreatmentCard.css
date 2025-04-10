@@ -104,18 +104,27 @@
 
 @media screen and (max-width: 500px) {
     .tc_main{
-        width: 80%;
-        background-size: cover;
+        width: 80vw !important;
+        height: 70% !important;
+        background-size: cover !important;
         border: 1px solid rgb(92, 55, 37);
-        box-sizing: 100%;
+       
 
         
     }
+    .tc_title{
+    color: rgb(255, 241, 236);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
     
 .tc_content{
     opacity: 1;
     padding:5px;
     height: 100%;
+    width: calc(100% - 10px);
     background-image: linear-gradient(rgba(54, 54, 54, 0) 20%,rgba(0, 0, 0, 0.822) 80%);
     text-align: left;
 
