@@ -105,11 +105,9 @@ const Chatbot = ({handleplaysound}) => {
                     setBotTyping(false);
                     return;
                 }
-            console.log(input.includes('call'))
-            console.log("currentStep",currentStep)
                 switch (currentStep) {
                     case 'mainMenu':
-                        if (input.includes('call') || input.includes('phone') || input.includes('talk') || (input.includes('mobile') && input.includes('number'))) {
+                        if (lowerInput.includes('call') || lowerInput.includes('phone') || lowerInput.includes('talk') || (lowerInput.includes('mobile') && lowerInput.includes('number'))) {
                             
                             botMessage = {
                                 text: `Thank you for Contacting us, I'll Connect with us`,
@@ -120,7 +118,7 @@ const Chatbot = ({handleplaysound}) => {
                             handleCall()
 
                             break;
-                         } else if (input.includes('hi') || input.includes('hello') || input.includes('hey') || input.includes('helo')) {
+                         } else if (lowerInput.includes('hi') || lowerInput.includes('hello') || lowerInput.includes('hey') || lowerInput.includes('helo')) {
                             botMessage = { text: `${input}, Im doing great, How can i assist you!`, user: false,
                             options: [
                                 { text: 'Make a call', value: 'call' },
@@ -128,17 +126,17 @@ const Chatbot = ({handleplaysound}) => {
                                 { text: 'Emergency assistance', value: 'emergency assistance' },
                             ],
                          };
-                    }  else if (input.includes('bye') || input.includes('tata') || (input.includes('take') && input.includes('care'))) {
+                    }  else if (lowerInput.includes('bye') || lowerInput.includes('tata') || (lowerInput.includes('take') && lowerInput.includes('care'))) {
                         botMessage = { text: `Bye, Im here to assist you always!`, user: false,
                         
                      };
-                } else if (input.includes('info') || input.includes('information') || input.includes('contact') || (input.includes('contact') && input.includes('detail'))) {
+                } else if (lowerInput.includes('info') || lowerInput.includes('information') || lowerInput.includes('contact') || (lowerInput.includes('contact') && lowerInput.includes('detail'))) {
                                 botMessage = { text: hospitalInfo, user: false,
                                 options: [{ text: 'Main Menu', value: 'main menu' }],
 
 
                              };
-                            } else if (input.includes('emergency') || input.includes('ambulance') || input.includes('urgent') || (input.includes('emergency') && input.includes('assistance')) || input.includes('accident')  || input.includes('trauma')) {
+                            } else if (lowerInput.includes('emergency') || lowerInput.includes('ambulance') || lowerInput.includes('urgent') || (lowerInput.includes('emergency') && lowerInput.includes('assistance')) || lowerInput.includes('accident')  || lowerInput.includes('trauma')) {
                                 botMessage = {
                                 text: emergencyInfo,
                                 user: false,
