@@ -1,0 +1,32 @@
+.cba_main{
+    padding: 10px;
+}
+.cba_container1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+}
+.cbaleft{
+    background-color: gray;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.cba_heading{
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    font-size: 20px;
+    color: rgb(83, 82, 82);
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}

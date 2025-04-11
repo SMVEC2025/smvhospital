@@ -53,7 +53,7 @@ function BotInterface() {
             </div>
 
     </div>
-    <div className='boti_wrapper3' onClick={()=>{handleClick('book')}}>
+    <div className='boti_wrapper3' onClick={()=>{handleClick('bookappointment')}}>
             <span>
                 <RiMacbookLine/>
             </span>
