@@ -59,7 +59,7 @@ function Footer() {
 
         <div className="footer-column">
           <div className="footer-links">
-            <h4>About Company</h4>
+            <h4>Quick Links</h4>
             <ul>
               <li><a href="/about">About us</a></li>
               {/* <li><a href="#">Blog & news</a></li> */}
