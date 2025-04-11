@@ -204,3 +204,67 @@ animation: expandWidthThenHeight 0.3s ease-in-out forwards;
     justify-content: center;
     align-items: center;
 }
+.chatoptions{
+   position: relative;
+}
+.chatoptiondetails{
+    padding: 15px 5px;
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0.48px 2.41px -0.38px, rgba(0, 0, 0, 0.17) 0px 4px 20px -0.75px;
+}
+.chatoptiondetails1{
+    height: 50px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 0 10px;
+    gap: 5px;
+}
+.chatoptiondetails1:hover{
+    background-color: rgb(77, 77, 77);
+    color: white;
+    
+}
+.chatoptiondetails1 .toggle{
+    background-color: #949494;
+    position: relative;
+    width: 50px;
+    height: 26px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.chatoptiondetails1>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.chatoptiondetails1 .toggle::after{
+    width: 18px;
+    height: 18px;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translate(0,-50%);
+    transition: transform 0.2s ease-out;
+}
+.toggle.true::after{
+    transform: translate(24px,-50%);
+
+
+
+}
+.toggle.true{
+    background-color: rgb(72, 173, 72);
+}

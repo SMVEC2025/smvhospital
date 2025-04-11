@@ -1,25 +1,28 @@
 import React, { useContext, useState } from 'react';
 import '../../styles/BotWrapper.css';
-import logotopleft from '../../assets/images/logotopleft.png';
-import logotopright from '../../assets/images/logotopright.png';
-import logobottomleft from '../../assets/images/logobottomleft.png';
-import logobottomright from '../../assets/images/logobottomright.png';
 import { FiMinus } from "react-icons/fi";
 import { AppContext } from '../../context/AppContext';
-import LanguageSwitcher from './LanguageSwitcher';
 import ChatBot from './ChatBot';
-import { HiMiniLanguage } from "react-icons/hi2";
 import { RiRadioButtonLine } from "react-icons/ri";
 import smviconwhite from '../../assets/images/smviconwhite.png'
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import BotInterface from './BotInterface';
 import { FaArrowLeft } from "react-icons/fa6";
 import { SlOptions } from "react-icons/sl";
+import { VscMute,VscUnmute } from "react-icons/vsc";
+import chatsound from "/sounds/chatsound.mp3";
 
 function BotWrapper() {
   const [openWrap, setOpenWrap] = useState(null);
-  const [openLang, setOpenLang] = useState(false)
+  const [openLang, setOpenLang] = useState(false);
+  const [showOptions,setShowOptions] = useState(false)
+  const [makeSound,setMakeSound] = useState(true)
   const { showWrapContent, setShowWrapContent } = useContext(AppContext)
+  const audio = new Audio(chatsound);
+  const handleplaysound = () => {
+    audio.play();
+    console.log('playing...sound')
+  };
   function handleOpen() {
     setOpenWrap(true)
     setTimeout(() => {
@@ -71,11 +74,27 @@ function BotWrapper() {
   <div className={`bw_big_chatbot ${openLang}`}>
             <div className='bw_big_chatbot1'>
               <div className='bw_big_chatbot11'>
-                <span>
-                  <FaArrowLeft/>
+                <span >
+                  <FaArrowLeft onClick={()=>{setShowWrapContent('interface')}}/>
                 </span>
-                <span>
-                  <SlOptions/>
+                <span className='chatoptions'>
+                  <SlOptions onClick={()=>{setShowOptions(!showOptions)}}/>
+                  {showOptions &&(
+                    <div className='chatoptiondetails'>
+                    <div className={`chatoptiondetails1 ${makeSound}`} onClick={()=>{setMakeSound(!makeSound)}}>
+                    <div>
+                            {makeSound?(<VscUnmute/>):(<VscMute/>)}
+                       </div>
+                       <div>
+                            Sounds
+                       </div>
+                       <div className={`toggle ${makeSound}`}>
+                           
+                       </div>
+                    </div>
+                    
+              </div>
+                  )}
                 </span>
                 
               </div>
@@ -89,7 +108,7 @@ function BotWrapper() {
 
             </div>
             <div className={`chatbotcontainer`}>
-              <ChatBot  />
+              <ChatBot  handleplaysound={handleplaysound} />
             </div>
           </div>
         </div>
