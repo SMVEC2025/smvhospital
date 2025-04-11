@@ -4,54 +4,80 @@ import logotopleft from '../../assets/images/logotopleft.png';
 import logotopright from '../../assets/images/logotopright.png';
 import logobottomleft from '../../assets/images/logobottomleft.png';
 import logobottomright from '../../assets/images/logobottomright.png';
-import { IoMdClose } from "react-icons/io";
+import { FiMinus } from "react-icons/fi";
 import { AppContext } from '../../context/AppContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import ChatBot from './ChatBot';
 import { HiMiniLanguage } from "react-icons/hi2";
 import { RiRadioButtonLine } from "react-icons/ri";
 import smviconwhite from '../../assets/images/smviconwhite.png'
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import BotInterface from './BotInterface';
+import { FaArrowLeft } from "react-icons/fa6";
+import { SlOptions } from "react-icons/sl";
+
 function BotWrapper() {
   const [openWrap, setOpenWrap] = useState(null);
-  const [showWrapContent, setShowWrapContent] = useState(false)
   const [openLang, setOpenLang] = useState(false)
+  const { showWrapContent, setShowWrapContent } = useContext(AppContext)
   function handleOpen() {
     setOpenWrap(true)
     setTimeout(() => {
-      setShowWrapContent(true)
-    }, 800);
+      setShowWrapContent('interface')
+    }, 200);
   }
   function handleClose() {
 
-    setShowWrapContent(false)
+    setShowWrapContent('null')
     setTimeout(() => {
       setOpenWrap(false)
 
     }, 0);
-    setTimeout(() => {
-      setOpenWrap(null)
-
-    }, 1000);
+   
   } 
 
   return (
     <div className={`bw_main ${openWrap}`}>
       {openWrap ? (
         <div className='bw_big_container'>
-{showWrapContent ? (
-        <div className='bw_big'>
+        {showWrapContent == 'interface' && (
+          <div className='bw_big'>
           <div className='bw_big_close' onClick={handleClose}>
-            <IoMdClose />
+            <FiMinus />
           </div>
           {/* <div className={`bw_big_translator ${openLang}`} >
             <span onClick={() => setOpenLang(!openLang)}>Language Transalator <span><HiMiniLanguage /></span></span>
             <LanguageSwitcher />
 
           </div> */}
-          <div className={`bw_big_chatbot ${openLang}`}>
+         
+          <BotInterface/>
+
+        </div>
+        )}
+
+{showWrapContent == 'livechat' && (
+  
+<div className='bw_big'>
+          <div className='bw_big_close' onClick={handleClose}>
+            <FiMinus />
+          </div>
+          {/* <div className={`bw_big_translator ${openLang}`} >
+            <span onClick={() => setOpenLang(!openLang)}>Language Transalator <span><HiMiniLanguage /></span></span>
+            <LanguageSwitcher />
+
+          </div> */}
+         
+  <div className={`bw_big_chatbot ${openLang}`}>
             <div className='bw_big_chatbot1'>
               <div className='bw_big_chatbot11'>
-                <img src={smviconwhite} alt="" />
+                <span>
+                  <FaArrowLeft/>
+                </span>
+                <span>
+                  <SlOptions/>
+                </span>
+                
               </div>
               <div className='bw_big_chatbot12'>
                 <h2>SMV hospital</h2>
@@ -63,16 +89,17 @@ function BotWrapper() {
 
             </div>
             <div className={`chatbotcontainer`}>
-              <ChatBot openLang={openLang} />
+              <ChatBot  />
             </div>
           </div>
-
         </div>
-      ) : null}
+)}
+
+       
         </div>
       ) : (
         <div className='bw_small' onClick={handleOpen}>
-          <div className='bw_small_div1'>
+          {/* <div className='bw_small_div1'>
             <img src={logotopleft} alt="" />
           </div>
           <div className='bw_small_div2'>
@@ -83,7 +110,10 @@ function BotWrapper() {
           </div>
           <div className='bw_small_div4'>
             <img src={logobottomright} alt="" />
-          </div>
+          </div> */}
+          <span>
+            <IoChatbubbleEllipsesOutline/>
+          </span>
         </div>
       )}
       

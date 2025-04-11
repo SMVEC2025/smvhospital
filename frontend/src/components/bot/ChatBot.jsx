@@ -32,8 +32,8 @@ const Chatbot = ({ openLang }) => {
                     text: "Hello! How can I assist you today? Please choose an option:",
                     user: false,
                     options: [
-                        { text: 'Health Packages', value: 'health package' },
-                        { text: 'Book Appointment', value: 'book appointment' },
+                        { text: 'Make a call', value: 'call' },
+                        { text: 'contact details', value: 'contactdetails' },
                         { text: 'Emergency Inquiry', value: 'emergency' },
                     ],
                 }
@@ -64,7 +64,9 @@ const Chatbot = ({ openLang }) => {
         setMessages([...messages, { text: optionValue, user: true }]);
         handleBotResponse(optionValue);
     };
-
+    const handleCall = () => {
+        window.location.href = `tel:+916382688488`;
+      };
     const handleBotResponse = (input) => {
         setBotTyping(true);
         setError(null);
@@ -79,23 +81,18 @@ const Chatbot = ({ openLang }) => {
                     setBotTyping(false);
                     return;
                 }
-            
+            console.log(lowerInput)
     
                 switch (currentStep) {
                     case 'mainMenu':
-                        if (lowerInput === 'health package') {
-                            setUserData({ ...userData, packageType: 'Health Packages' });
-                            setCurrentStep('healthPackage');
+                        if (lowerInput === 'call') {
+                            setCurrentStep('call');
+                            
                             botMessage = {
-                                text: "Please select a health package:",
+                                text: `Thank you for Contacting us`,
                                 user: false,
-                                options: [
-                                    { text: 'Pro Health Checkup M/F', value: 'pro' },
-                                    { text: 'Comprehensive Senior citizen M/F', value: 'comprehensive' },
-                                    { text: 'Basic Health Checkup for Female', value: 'basic' },
-                                    { text: 'Diabetic Care Checkup', value: 'diabetic' },
-                                ],
                             };
+                            handleCall()
                         } else if (lowerInput === 'book appointment') {
                             setUserData({ ...userData, package: 'Appointment Booking' });
                             setCurrentStep('collectDetails');
@@ -221,14 +218,21 @@ const Chatbot = ({ openLang }) => {
         <div className="chatbot-container">
             <div className="chatbot-messages">
                 {messages.map((message, index) => (
-                    <div key={index} className={`message ${message.user ? 'user' : 'bot'}`}>
+                      <>
+                      
+                          <div key={index} className={`message ${message.user ? 'user' : 'bot'}`}>
                         {message.text}
-                        {message.options && message.options.map((option, idx) => (
-                            <button key={idx} className="option-button" onClick={() => handleOptionClick(option.value)}>
-                                {option.text}
-                            </button>
-                        ))}
+                           
                     </div>
+                    <>
+                       {message.options && message.options.map((option, idx) => (
+                        <button key={idx} className="option-button" onClick={() => handleOptionClick(option.value)}>
+                            {option.text}
+                        </button>
+                    ))}
+                    </>
+                      </>
+                    
                 ))}
                 {botTyping && <div className="message bot">Typing...</div>}
                 <div ref={messagesEndRef} />
