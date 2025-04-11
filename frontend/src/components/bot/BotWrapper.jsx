@@ -20,8 +20,12 @@ function BotWrapper() {
   const { showWrapContent, setShowWrapContent } = useContext(AppContext)
   const audio = new Audio(chatsound);
   const handleplaysound = () => {
-    audio.play();
-    console.log('playing...sound')
+    if(makeSound){
+      audio.play();
+      console.log('playingsound')
+    }else{
+      return
+    }
   };
   function handleOpen() {
     setOpenWrap(true)
