@@ -57,6 +57,10 @@ useEffect(() => {
       setModalOpen(false)
   }, 3000);
   }
+  if(animCase == 'allset' ){
+      document.body.style.overflow = "auto"; // Ensure cleanup
+    
+  }
 }, [])
 
   return (
