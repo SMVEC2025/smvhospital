@@ -12,6 +12,7 @@ import { SlOptions } from "react-icons/sl";
 import { VscMute, VscUnmute } from "react-icons/vsc";
 import chatsound from "/sounds/chatsound.mp3";
 import ChatAppointment from './ChatAppointment';
+import LanguageTranslator from './LanguageTranslator';
 
 function BotWrapper() {
   const [openWrap, setOpenWrap] = useState(null);
@@ -122,18 +123,27 @@ function BotWrapper() {
 
 
 
-{showWrapContent == 'bookappointment' && (
+          {showWrapContent == 'bookappointment' && (
 
-<div className='bw_big'>
-  <div className='bw_big_close' onClick={handleClose}>
-    <FiMinus />
-  </div>
-  <div className='cba_container'>
-  <ChatAppointment/>
-  </div>
-</div>
-)}
-
+            <div className='bw_big'>
+              <div className='bw_big_close' onClick={handleClose}>
+                <FiMinus />
+              </div>
+              <div className='cba_container'>
+                <ChatAppointment setShowWrapContent={setShowWrapContent} />
+              </div>
+            </div>
+          )}
+           {showWrapContent == 'language' &&(
+              <div className='bw_big'>
+              <div className='bw_big_close' onClick={handleClose}>
+                <FiMinus />
+              </div>
+              <div className='cba_container'>
+                <LanguageTranslator/>
+              </div>
+            </div>
+           )}
 
         </div>
       ) : (

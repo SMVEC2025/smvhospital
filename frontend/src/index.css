@@ -4,10 +4,10 @@
 *{
   margin: 0;
   padding: 0;
-  /* user-select: none; 
+  user-select: none; 
     -webkit-user-select: none; 
     -moz-user-select: none;
-    -ms-user-select: none;  */
+    -ms-user-select: none; 
 }
 button{
   cursor: pointer;
@@ -73,4 +73,26 @@ html[dir="ltr"] body {
   font-family: 'AuthenticSignature';
   src: url('../src/fonts/Authentic\ Signature.otf') format('truetype');
   font-style: normal;
+}
+
+/* Hide the top Google Translate banner */
+body .goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+/* Hide the body offset added by the banner */
+body {
+  top: 0px !important;
+}
+
+/* Optional: Remove white space left by iframe */
+.goog-te-banner-frame {
+  height: 0 !important;
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
 }

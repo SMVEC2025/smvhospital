@@ -74,6 +74,7 @@ animation: expandWidthThenHeight 0.3s ease-in-out forwards;
     right: 10px;
     font-size: 25px;
     color: black;
+    z-index: 1;
 }
 .bw_big_translator{
     width: 100%;
