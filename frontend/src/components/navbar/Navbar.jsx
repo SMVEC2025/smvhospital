@@ -48,7 +48,7 @@ function Navbar() {
             <div className='ns_con2'>
               <span onClick={()=>{handleNavigate('/')}}>Home</span>
               {/* <span onClick={()=>{navigate('/doctors')}}>Doctors</span> */}
-              <span  onMouseEnter={()=>{setOpenNavSlider(true)}} >Medical services</span>
+              <span  onClick={()=>{handleNavigate('/our-services')}} >Medical services</span>
               <span onClick={()=>{handleNavigate('/international-patients')}}>International patients</span>
 
               {/* <span onClick={()=>{handleNavigate('/specialty')}}>Speacialty</span> */}

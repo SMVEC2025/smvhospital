@@ -17,14 +17,10 @@ function MobileSideBar() {
   const [sideBarContent, setSideBarContent] = useState('main')
 
   const menuItems = ['Home', 'Medical services','international patients', 'Appointment', 'About us', 'Contact us'];
-  const redirect = ['/', ' ','/international-patients', '/appointment', '/about', '/contact-us']
+  const redirect = ['/', '/our-services','/international-patients', '/appointment', '/about', '/contact-us']
   function handleNavigate(item,index){
-    if(item != 'Medical services' ){
-      navigate(redirect[index])
-      setShowSideBar(false)
-    }else{
-      setSideBarContent('medicalservices')
-    }
+    navigate(redirect[index])
+    setShowSideBar(false)
   }
   useEffect(() => {
     setSideBarContent('main')

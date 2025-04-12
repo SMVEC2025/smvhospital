@@ -48,7 +48,7 @@ const AnimatedRoutes = () => {
           <Route path="/about" element={<About />} />
           {/* <Route path="/doctors" element={<Doctors />} /> */}
           {/* <Route path="/doctor/:id" element={<DoctorsDetail />} /> */}
-          {/* <Route path="/Specialty" element={<SpecialtyPage />} /> */}
+          <Route path="/our-services" element={<SpecialtyPage />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/AppointmentSuccess" element={<AppointmentSuccess />} />

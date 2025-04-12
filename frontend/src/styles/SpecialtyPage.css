@@ -10,7 +10,9 @@
     width: 50%;
 }
 .sp_container1>img{
-    width: 100%;
+    width: 90%;
+    height: 400px;
+    object-fit: cover;
     border-radius: 25px;
 }
 .sp_container2{
@@ -100,13 +102,15 @@ width: 40px;
     color: rgb(65, 65, 65);
 }
 .sp_title{
-    font-size: 1.8rem;
+    font-size: clamp(18px, 2vw, 35px);
     color: chocolate;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
+    text-transform: capitalize;
 }
 .sp_desc{
     color: rgb(83, 83, 83);
+    font-size: clamp(14px, 2vw, 19px);
 }
 
 @media screen and (max-width: 500px) {
@@ -123,6 +127,7 @@ width: 40px;
 }
 .sp_container1>img{
     border-radius: 10px;
+    width: 100%;
 }
 .sp_container2{
   
