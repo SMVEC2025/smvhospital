@@ -4,6 +4,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import PhoneInput from "react-phone-input-2";
 import { toast } from 'react-toastify';
+import { supabase } from '../../supabaseClient'
 
 import Lottie from "lottie-react";
 import successanimation from "../../assets/successanimation.json";
@@ -326,7 +327,20 @@ function ChatAppointment({ setShowWrapContent }) {
 
   }
 
+  const handleSubmitData = async (e) => {
+    const { data, error } = await supabase
+      .from('appointments')
+      .insert([formData])
 
+    if (error) {
+      console.error(error)
+    } else {
+      
+      setProcess('success')
+      startCountDown()
+      toast.success('Appointment Booked')
+    }
+  }
   function handleSubmit() {
     if (formData.name.trim() == '') {
       toast.error('Enter FirstName')
@@ -341,12 +355,11 @@ function ChatAppointment({ setShowWrapContent }) {
       return
     }
     else {
-      setProcess('success')
-      startCountDown()
-      toast.success('Appointment Booked')
+      handleSubmitData()
     }
 
   }
+
   function handleFirstComplete() {
     if (formData.date.trim() == '') {
       toast.error('Pick a Date')

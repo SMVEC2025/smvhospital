@@ -184,6 +184,7 @@ animation: expandWidthThenHeight 0.3s ease-in-out forwards;
 }
 .chatbotcontainer{
     height: calc(100% - 60px);
+    width: 100%;
 }
 
 

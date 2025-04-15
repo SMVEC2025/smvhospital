@@ -2,12 +2,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { supabase } from '../../supabaseClient';
 
-const ChatToHuman = ({ userId }) => {
+const ChatToHuman = ({ userId,handleplaysound }) => {
   const [messages, setMessages] = useState([]);
   const [newMsg, setNewMsg] = useState('');
   const messagesEndRef = useRef(null);
   const room_id = userId; // Each user has their own room_id
-
+  useEffect(() => {
+        setTimeout(() => {
+            handleplaysound() 
+        }, 500);
+        
+    }, [messages])
+  
   useEffect(() => {
     const fetchMessages = async () => {
       const { data } = await supabase
@@ -45,25 +51,35 @@ const ChatToHuman = ({ userId }) => {
     });
     setNewMsg('');
   };
-
+ 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
-
+  console.log(messages)
   return (
-    <div>
-      <h3>User Chat</h3>
-      <div className="chat-box">
-        {messages.map((msg, i) => (
-          <div key={i} style={{ textAlign: msg.sender === 'user' ? 'right' : 'left' }}>
-            <strong>{msg.sender}</strong>: {msg.content}
-          </div>
-        ))}
-        <div ref={messagesEndRef}></div>
-      </div>
-      <input value={newMsg} onChange={e => setNewMsg(e.target.value)} />
-      <button onClick={sendMessage}>Send</button>
-    </div>
+<div className="chatbot-container">
+            <div className="chatbot-messages">
+                {messages.map((message, index) => (
+                      <>
+                      
+                          <div key={index} className={`message ${message.sender_type == 'user' ? 'user' : 'bot'}`} style={{whiteSpace:"pre-line"}}>
+                        {message.content}
+                           
+                    </div>
+                    <>
+      
+                    </>
+                      </>
+                    
+                ))}
+                <div ref={messagesEndRef} />
+            </div>
+
+            <div className="chatbot-input">
+            <input value={newMsg} onChange={e => setNewMsg(e.target.value)} />
+               <button onClick={sendMessage}>Send</button>
+            </div>
+        </div>
   );
 };
 

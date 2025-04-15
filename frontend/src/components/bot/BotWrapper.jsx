@@ -20,7 +20,7 @@ function BotWrapper() {
   const [openLang, setOpenLang] = useState(false);
   const [showOptions, setShowOptions] = useState(false)
   const [makeSound, setMakeSound] = useState(true)
-  const [showBotText,setShowBotText] = useState(true)
+  const [showBotText, setShowBotText] = useState(true)
   const { showWrapContent, setShowWrapContent } = useContext(AppContext)
   const audio = new Audio(chatsound);
   const handleplaysound = () => {
@@ -51,7 +51,7 @@ function BotWrapper() {
       setShowBotText(false)
     }, 3000);
   }, [])
-  const userId = 'user-helo'; // or agent-001
+  const userId = 'user-234'; // or agent-001
   const roomId = 'room-abc'; // could be per user or department
 
   console.log(showWrapContent)
@@ -81,12 +81,76 @@ function BotWrapper() {
               <div className='bw_big_close' onClick={handleClose}>
                 <FiMinus />
               </div>
-              {/* <div className={`bw_big_translator ${openLang}`} >
-            <span onClick={() => setOpenLang(!openLang)}>Language Transalator <span><HiMiniLanguage /></span></span>
-            <LanguageSwitcher />
+              <div className={`bw_big_chatbot ${openLang}`}>
+                <div className='bw_big_chatbot1'>
+                  <div className='bw_big_chatbot11'>
+                    <span >
+                      <FaArrowLeft onClick={() => { setShowWrapContent('interface') }} />
+                    </span>
+                    <span className='chatoptions'>
+                      <SlOptions onClick={() => { setShowOptions(!showOptions) }} />
+                      {showOptions && (
+                        <div className='chatoptiondetails'>
+                          <div className={`chatoptiondetails1 ${makeSound}`} onClick={() => { setMakeSound(!makeSound) }}>
+                            <div>
+                              {makeSound ? (<VscUnmute />) : (<VscMute />)}
+                            </div>
+                            <div>
+                              Sounds
+                            </div>
+                            <div className={`toggle ${makeSound}`}>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </span>
 
-          </div> */}
+                  </div>
+                  <div className='bw_big_chatbot12'>
+                    <h2>SMV hospital</h2>
+                    <span className='bw_big_chatbot12_2'>
+                      <span><RiRadioButtonLine /></span>
+                      <p>Online</p>
+                    </span>
+                  </div>
 
+                </div>
+                <div className={`chatbotcontainer`}>
+                  <ChatBot handleplaysound={handleplaysound} />
+                </div>
+              </div>
+            </div>
+          )}
+
+
+
+
+          {showWrapContent == 'bookappointment' && (
+
+            <div className='bw_big'>
+              <div className='bw_big_close' onClick={handleClose}>
+                <FiMinus />
+              </div>
+              <div className='cba_container'>
+                <ChatAppointment setShowWrapContent={setShowWrapContent} />
+              </div>
+            </div>
+          )}
+          {showWrapContent == 'language' && (
+            <div className='bw_big'>
+              <div className='bw_big_close' onClick={handleClose}>
+                <FiMinus />
+              </div>
+              <div className='cba_container'>
+                <LanguageTranslator />
+              </div>
+            </div>
+          )}
+          {showWrapContent == 'livechat' && (
+            <div className='bw_big'>
+              <div className='bw_big_close' onClick={handleClose}>
+                <FiMinus />
+              </div>
               <div className={`bw_big_chatbot ${openLang}`}>
                 <div className='bw_big_chatbot1'>
                   <div className='bw_big_chatbot11'>
@@ -124,69 +188,23 @@ function BotWrapper() {
 
                 </div>
                 <div className={`chatbotcontainer`}>
-                  <ChatBot handleplaysound={handleplaysound} />
+                  <ChatToHuman userId={userId} senderType="user" roomId={roomId} handleplaysound={handleplaysound} />
                 </div>
               </div>
             </div>
           )}
 
-
-
-
-          {showWrapContent == 'bookappointment' && (
-
-            <div className='bw_big'>
-              <div className='bw_big_close' onClick={handleClose}>
-                <FiMinus />
-              </div>
-              <div className='cba_container'>
-                <ChatAppointment setShowWrapContent={setShowWrapContent} />
-              </div>
-            </div>
-          )}
-           {showWrapContent == 'language' &&(
-              <div className='bw_big'>
-              <div className='bw_big_close' onClick={handleClose}>
-                <FiMinus />
-              </div>
-              <div className='cba_container'>
-                <LanguageTranslator/>
-              </div>
-            </div>
-           )}
-           {showWrapContent == 'livechat' &&(
-              <div className='bw_big'>
-              <div className='bw_big_close' onClick={handleClose}>
-                <FiMinus />
-              </div>
-              <div className='cba_container'>
-              <ChatToHuman userId={userId} senderType="user" roomId={roomId}/>
-              </div>
-            </div>
-           )}
-
         </div>
       ) : (
-        <div className='bw_small' onMouseEnter={()=>{setShowBotText(true)}}  onMouseLeave={()=>{setShowBotText(false)}} onClick={handleOpen}>
-          {/* <div className='bw_small_div1'>
-            <img src={logotopleft} alt="" />
-          </div>
-          <div className='bw_small_div2'>
-            <img src={logotopright} alt="" />
-          </div>
-          <div className='bw_small_div3'>
-            <img src={logobottomleft} alt="" />
-          </div>
-          <div className='bw_small_div4'>
-            <img src={logobottomright} alt="" />
-          </div> */}
+        <div className='bw_small' onMouseEnter={() => { setShowBotText(true) }} onMouseLeave={() => { setShowBotText(false) }} onClick={handleOpen}>
+         
           <span>
             <IoChatbubbleEllipsesOutline />
           </span>
-             <div className={`botw_quotes ${showBotText?"show":"unshow"}`}>
-             Welcome back! <br/>
-              how may i help you today
-           </div>
+          <div className={`botw_quotes ${showBotText ? "show" : "unshow"}`}>
+            Welcome back! <br />
+            how may i help you today
+          </div>
         </div>
       )}
 
