@@ -9,6 +9,7 @@ import { AppContext } from '../context/AppContext';
 import MobileSideBar from '../components/navbar/MobileSideBar';
 import ScrollToTop from '../components/ScrollToTop';
 import MobileHero6 from '../components/MobileHero6';
+import { useLocation } from 'react-router-dom';
 
 function SpecialtyPage() {
   const [specialty,setSpecialty] = useState([]) 
@@ -21,7 +22,8 @@ function SpecialtyPage() {
         page:"Medical Services",
         title: ['ENT', 'Plastic Surgery', 'Cardiology', 'Dental', 'Neurology'],
       };
-      
+      const location = useLocation();
+      const newIndex = location.state?.newIndex; 
     //   useEffect(() => {
     //     const fetchSpecialties = async () => {
     //       try {
@@ -48,8 +50,14 @@ function SpecialtyPage() {
       setAnimCase('allset');
       setShowSideBar(false)
      }, []) 
+
+
     useEffect(() => {
-      setShowSpecialty(medicalServices[0])
+      if(newIndex){
+        setShowSpecialty(medicalServices[newIndex])
+      }else{
+        setShowSpecialty(medicalServices[0])
+      }
       setLoading(false)
     }, [])
     

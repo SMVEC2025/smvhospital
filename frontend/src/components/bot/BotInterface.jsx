@@ -77,7 +77,7 @@ function BotInterface() {
                     </span>
 
                 </div>
-                <div className='boti_wrapper41'>
+                <div className='boti_wrapper41' onClick={()=>{handleClick('livechathuman')}}>
                     <span className='contact'>
                         <AiOutlineWechatWork />
                     </span>

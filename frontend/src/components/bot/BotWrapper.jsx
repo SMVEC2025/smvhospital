@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../../styles/BotWrapper.css';
 import { FiMinus } from "react-icons/fi";
 import { AppContext } from '../../context/AppContext';
@@ -13,12 +13,14 @@ import { VscMute, VscUnmute } from "react-icons/vsc";
 import chatsound from "/sounds/chatsound.mp3";
 import ChatAppointment from './ChatAppointment';
 import LanguageTranslator from './LanguageTranslator';
+import ChatToHuman from './ChatToHuman';
 
 function BotWrapper() {
   const [openWrap, setOpenWrap] = useState(null);
   const [openLang, setOpenLang] = useState(false);
   const [showOptions, setShowOptions] = useState(false)
   const [makeSound, setMakeSound] = useState(true)
+  const [showBotText,setShowBotText] = useState(true)
   const { showWrapContent, setShowWrapContent } = useContext(AppContext)
   const audio = new Audio(chatsound);
   const handleplaysound = () => {
@@ -41,10 +43,18 @@ function BotWrapper() {
     setTimeout(() => {
       setOpenWrap(false)
 
-    }, 0);
+    }, 100);
 
   }
+  useEffect(() => {
+    setTimeout(() => {
+      setShowBotText(false)
+    }, 3000);
+  }, [])
+  const userId = 'user-helo'; // or agent-001
+  const roomId = 'room-abc'; // could be per user or department
 
+  console.log(showWrapContent)
   return (
     <div className={`bw_main ${openWrap}`}>
       {openWrap ? (
@@ -144,10 +154,20 @@ function BotWrapper() {
               </div>
             </div>
            )}
+           {showWrapContent == 'livechathuman' &&(
+              <div className='bw_big'>
+              <div className='bw_big_close' onClick={handleClose}>
+                <FiMinus />
+              </div>
+              <div className='cba_container'>
+              <ChatToHuman userId={userId} senderType="user" roomId={roomId}/>
+              </div>
+            </div>
+           )}
 
         </div>
       ) : (
-        <div className='bw_small' onClick={handleOpen}>
+        <div className='bw_small' onMouseEnter={()=>{setShowBotText(true)}}  onMouseLeave={()=>{setShowBotText(false)}} onClick={handleOpen}>
           {/* <div className='bw_small_div1'>
             <img src={logotopleft} alt="" />
           </div>
@@ -163,6 +183,10 @@ function BotWrapper() {
           <span>
             <IoChatbubbleEllipsesOutline />
           </span>
+             <div className={`botw_quotes ${showBotText?"show":"unshow"}`}>
+             Welcome back! <br/>
+              how may i help you today
+           </div>
         </div>
       )}
 

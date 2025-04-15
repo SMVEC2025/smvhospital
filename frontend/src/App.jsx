@@ -23,6 +23,7 @@ import MobileSideBar from "./components/navbar/MobileSideBar";
 import NavSlider from "./components/navbar/NavSlider";
 import LogoAnimation from "./components/LogoAnimation";
 import InternationalPatients from "./pages/InternationalPatients";
+import AgentChat from "./pages/AgentChat";
 
 const glitchVariants = {
   initial: { opacity: 0.4, filter: "blur(10px) contrast(0.8)" },
@@ -56,6 +57,7 @@ const AnimatedRoutes = () => {
           {/* <Route path="/news-events" element={<MainNewsAndEvents />} /> */}
           {/* <Route path="/test" element={<LogoAnimation />} />  */}
           <Route path="/international-patients" element={<InternationalPatients />} />
+          <Route path="/admin"  element={<AgentChat roomId="room_abc" agentId="agent_123" />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
