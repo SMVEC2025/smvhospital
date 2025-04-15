@@ -75,7 +75,7 @@ function BotWrapper() {
             </div>
           )}
 
-          {showWrapContent == 'livechat' && (
+          {showWrapContent == 'livechathuman' && (
 
             <div className='bw_big'>
               <div className='bw_big_close' onClick={handleClose}>
@@ -154,7 +154,7 @@ function BotWrapper() {
               </div>
             </div>
            )}
-           {showWrapContent == 'livechathuman' &&(
+           {showWrapContent == 'livechat' &&(
               <div className='bw_big'>
               <div className='bw_big_close' onClick={handleClose}>
                 <FiMinus />
