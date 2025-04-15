@@ -67,10 +67,8 @@ const ChatToHuman = ({ userId,handleplaysound }) => {
                            
                     </div>
                     <>
-      
                     </>
-                      </>
-                    
+                      </>  
                 ))}
                 <div ref={messagesEndRef} />
             </div>

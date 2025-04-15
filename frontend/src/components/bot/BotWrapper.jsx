@@ -51,9 +51,8 @@ function BotWrapper() {
       setShowBotText(false)
     }, 3000);
   }, [])
-  const userId = 'user-234'; // or agent-001
-  const roomId = 'room-abc'; // could be per user or department
-
+  const userId = localStorage.getItem('roomId') || localStorage.setItem('roomId', crypto.randomUUID()) || localStorage.getItem('roomId');
+  const roomId = 'room-abc'; 
   console.log(showWrapContent)
   return (
     <div className={`bw_main ${openWrap}`}>
