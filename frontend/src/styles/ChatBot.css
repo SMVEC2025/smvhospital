@@ -126,3 +126,24 @@
       opacity: 1;
     }
   }
+.cba_clientabovecontent{
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cba_clientabovecontent p{
+ font-size: 15px;
+ color: gray;
+}
+.cba_clientabovecontent div{
+  font-size: 12px;
+  color: gray;
+  margin-top: 10px;
+  padding: 4px 10px;
+  background-color:rgba(128, 128, 128, 0.24);
+  border-radius: 20px;
+ }

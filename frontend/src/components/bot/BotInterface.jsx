@@ -25,7 +25,7 @@ function BotInterface() {
                     how can i help you today?
                 </div>
             </div>
-            <div className='boti_wrapper2' onClick={() => { handleClick('livechat') }}>
+            <div className='boti_wrapper2' onClick={() => { handleClick('connecttoagent') }}>
                 <div className='boti_wrapper21'>
                     {/* <img src={SMV_icon} alt="" /> */
                     }

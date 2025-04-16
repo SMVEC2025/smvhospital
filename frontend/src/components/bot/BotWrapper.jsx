@@ -14,6 +14,7 @@ import chatsound from "/sounds/chatsound.mp3";
 import ChatAppointment from './ChatAppointment';
 import LanguageTranslator from './LanguageTranslator';
 import ChatToHuman from './ChatToHuman';
+import ConnectToAgent from './ConnectToAgent';
 
 function BotWrapper() {
   const [openWrap, setOpenWrap] = useState(null);
@@ -51,7 +52,6 @@ function BotWrapper() {
       setShowBotText(false)
     }, 3000);
   }, [])
-  const userId = localStorage.getItem('roomId') || localStorage.setItem('roomId', crypto.randomUUID()) || localStorage.getItem('roomId');
   const roomId = 'room-abc'; 
   console.log(showWrapContent)
   return (
@@ -121,7 +121,52 @@ function BotWrapper() {
             </div>
           )}
 
+{showWrapContent == 'connecttoagent' && (
 
+<div className='bw_big'>
+  <div className='bw_big_close' onClick={handleClose}>
+    <FiMinus />
+  </div>
+  <div className={`bw_big_chatbot ${openLang}`}>
+    <div className='bw_big_chatbot1'>
+      <div className='bw_big_chatbot11'>
+        <span >
+          <FaArrowLeft onClick={() => { setShowWrapContent('interface') }} />
+        </span>
+        <span className='chatoptions'>
+          <SlOptions onClick={() => { setShowOptions(!showOptions) }} />
+          {showOptions && (
+            <div className='chatoptiondetails'>
+              <div className={`chatoptiondetails1 ${makeSound}`} onClick={() => { setMakeSound(!makeSound) }}>
+                <div>
+                  {makeSound ? (<VscUnmute />) : (<VscMute />)}
+                </div>
+                <div>
+                  Sounds
+                </div>
+                <div className={`toggle ${makeSound}`}>
+                </div>
+              </div>
+            </div>
+          )}
+        </span>
+
+      </div>
+      <div className='bw_big_chatbot12'>
+        <h2>SMV hospital</h2>
+        <span className='bw_big_chatbot12_2'>
+          <span><RiRadioButtonLine /></span>
+          <p>Online</p>
+        </span>
+      </div>
+
+    </div>
+    <div className={`chatbotcontainer`}>
+      <ConnectToAgent setShowWrapContent={setShowWrapContent} />
+    </div>
+  </div>
+</div>
+)}
 
 
           {showWrapContent == 'bookappointment' && (
@@ -187,7 +232,7 @@ function BotWrapper() {
 
                 </div>
                 <div className={`chatbotcontainer`}>
-                  <ChatToHuman userId={userId} senderType="user" roomId={roomId} handleplaysound={handleplaysound} />
+                  <ChatToHuman senderType="user" roomId={roomId} handleplaysound={handleplaysound} />
                 </div>
               </div>
             </div>

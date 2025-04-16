@@ -2,10 +2,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { supabase } from '../../supabaseClient';
 
-const ChatToHuman = ({ userId,handleplaysound }) => {
+const ChatToHuman = ({ handleplaysound }) => {
   const [messages, setMessages] = useState([]);
   const [newMsg, setNewMsg] = useState('');
   const messagesEndRef = useRef(null);
+  const userId = localStorage.getItem('roomId')
+
   const room_id = userId; // Each user has their own room_id
   useEffect(() => {
         setTimeout(() => {
@@ -25,8 +27,13 @@ const ChatToHuman = ({ userId,handleplaysound }) => {
     };
     fetchMessages();
   }, [room_id]);
-
-  useEffect(() => {
+  const now = new Date();
+  const time = now.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+  });
+    useEffect(() => {
     const channel = supabase
       .channel(`realtime:user_${userId}`)
       .on('postgres_changes', {
@@ -58,7 +65,7 @@ const ChatToHuman = ({ userId,handleplaysound }) => {
   console.log(messages)
   return (
 <div className="chatbot-container">
-            <div className="chatbot-messages">
+            <div className="chatbot-messages" style={{paddingTop:"40px",height:"calc(100% - 90px)",position:'relative'}}>
                 {messages.map((message, index) => (
                       <>
                       
@@ -71,6 +78,11 @@ const ChatToHuman = ({ userId,handleplaysound }) => {
                       </>  
                 ))}
                 <div ref={messagesEndRef} />
+            </div>
+            <div className='cba_clientabovecontent'>
+              <p>You were Now Connected to SMV</p>
+              <div>{time}</div>
+
             </div>
 
             <div className="chatbot-input">
