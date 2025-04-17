@@ -52,7 +52,7 @@ function BotWrapper() {
       setShowBotText(false)
     }, 3000);
   }, [])
-  const roomId = 'room-abc'; 
+  const roomId = 'room-abc';
   console.log(showWrapContent)
   return (
     <div className={`bw_main ${openWrap}`}>
@@ -87,8 +87,9 @@ function BotWrapper() {
                       <FaArrowLeft onClick={() => { setShowWrapContent('interface') }} />
                     </span>
                     <span className='chatoptions'>
-                      <SlOptions onClick={() => { setShowOptions(!showOptions) }} />
-                      {showOptions && (
+                      {/* <SlOptions onClick={() => { setShowOptions(!showOptions) }} /> */}
+                      {makeSound ? (<VscUnmute onClick={() => { setMakeSound(!makeSound) }} />) : (<VscMute onClick={() => { setMakeSound(!makeSound) }} />)}
+                      {/* {showOptions && (
                         <div className='chatoptiondetails'>
                           <div className={`chatoptiondetails1 ${makeSound}`} onClick={() => { setMakeSound(!makeSound) }}>
                             <div>
@@ -98,10 +99,12 @@ function BotWrapper() {
                               Sounds
                             </div>
                             <div className={`toggle ${makeSound}`}>
+
                             </div>
                           </div>
+
                         </div>
-                      )}
+                      )} */}
                     </span>
 
                   </div>
@@ -121,52 +124,55 @@ function BotWrapper() {
             </div>
           )}
 
-{showWrapContent == 'connecttoagent' && (
+          {showWrapContent == 'connecttoagent' && (
 
-<div className='bw_big'>
-  <div className='bw_big_close' onClick={handleClose}>
-    <FiMinus />
-  </div>
-  <div className={`bw_big_chatbot ${openLang}`}>
-    <div className='bw_big_chatbot1'>
-      <div className='bw_big_chatbot11'>
-        <span >
-          <FaArrowLeft onClick={() => { setShowWrapContent('interface') }} />
-        </span>
-        <span className='chatoptions'>
-          <SlOptions onClick={() => { setShowOptions(!showOptions) }} />
-          {showOptions && (
-            <div className='chatoptiondetails'>
-              <div className={`chatoptiondetails1 ${makeSound}`} onClick={() => { setMakeSound(!makeSound) }}>
-                <div>
-                  {makeSound ? (<VscUnmute />) : (<VscMute />)}
+            <div className='bw_big'>
+              <div className='bw_big_close' onClick={handleClose}>
+                <FiMinus />
+              </div>
+              <div className={`bw_big_chatbot ${openLang}`}>
+                <div className='bw_big_chatbot1'>
+                  <div className='bw_big_chatbot11'>
+                    <span >
+                      <FaArrowLeft onClick={() => { setShowWrapContent('interface') }} />
+                    </span>
+                    <span className='chatoptions'>
+                      {/* <SlOptions onClick={() => { setShowOptions(!showOptions) }} /> */}
+                      {makeSound ? (<VscUnmute onClick={() => { setMakeSound(!makeSound) }} />) : (<VscMute onClick={() => { setMakeSound(!makeSound) }} />)}
+                      {/* {showOptions && (
+                        <div className='chatoptiondetails'>
+                          <div className={`chatoptiondetails1 ${makeSound}`} onClick={() => { setMakeSound(!makeSound) }}>
+                            <div>
+                              {makeSound ? (<VscUnmute />) : (<VscMute />)}
+                            </div>
+                            <div>
+                              Sounds
+                            </div>
+                            <div className={`toggle ${makeSound}`}>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      )} */}
+                    </span>
+
+                  </div>
+                  <div className='bw_big_chatbot12'>
+                    <h2>SMV hospital</h2>
+                    <span className='bw_big_chatbot12_2'>
+                      <span><RiRadioButtonLine /></span>
+                      <p>Online</p>
+                    </span>
+                  </div>
+
                 </div>
-                <div>
-                  Sounds
-                </div>
-                <div className={`toggle ${makeSound}`}>
+                <div className={`chatbotcontainer`}>
+                  <ConnectToAgent setShowWrapContent={setShowWrapContent} />
                 </div>
               </div>
             </div>
           )}
-        </span>
-
-      </div>
-      <div className='bw_big_chatbot12'>
-        <h2>SMV hospital</h2>
-        <span className='bw_big_chatbot12_2'>
-          <span><RiRadioButtonLine /></span>
-          <p>Online</p>
-        </span>
-      </div>
-
-    </div>
-    <div className={`chatbotcontainer`}>
-      <ConnectToAgent setShowWrapContent={setShowWrapContent} />
-    </div>
-  </div>
-</div>
-)}
 
 
           {showWrapContent == 'bookappointment' && (
@@ -202,8 +208,9 @@ function BotWrapper() {
                       <FaArrowLeft onClick={() => { setShowWrapContent('interface') }} />
                     </span>
                     <span className='chatoptions'>
-                      <SlOptions onClick={() => { setShowOptions(!showOptions) }} />
-                      {showOptions && (
+                      {/* <SlOptions onClick={() => { setShowOptions(!showOptions) }} /> */}
+                      {makeSound ? (<VscUnmute onClick={() => { setMakeSound(!makeSound) }} />) : (<VscMute onClick={() => { setMakeSound(!makeSound) }} />)}
+                      {/* {showOptions && (
                         <div className='chatoptiondetails'>
                           <div className={`chatoptiondetails1 ${makeSound}`} onClick={() => { setMakeSound(!makeSound) }}>
                             <div>
@@ -218,7 +225,7 @@ function BotWrapper() {
                           </div>
 
                         </div>
-                      )}
+                      )} */}
                     </span>
 
                   </div>
@@ -240,8 +247,8 @@ function BotWrapper() {
 
         </div>
       ) : (
-        <div className='bw_small' onMouseEnter={() => { setShowBotText(true) }} onMouseLeave={() => { setShowBotText(false) }} onClick={handleOpen}>
-         
+        <div className={`bw_small ${openWrap}`} onMouseEnter={() => { setShowBotText(true) }} onMouseLeave={() => { setShowBotText(false) }} onClick={handleOpen}>
+
           <span>
             <IoChatbubbleEllipsesOutline />
           </span>

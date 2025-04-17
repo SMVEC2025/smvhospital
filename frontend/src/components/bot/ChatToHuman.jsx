@@ -65,7 +65,7 @@ const ChatToHuman = ({ handleplaysound }) => {
   console.log(messages)
   return (
 <div className="chatbot-container">
-            <div className="chatbot-messages" style={{paddingTop:"40px",height:"calc(100% - 90px)",position:'relative'}}>
+            <div className="chatbot-messages" style={{paddingTop:"60px",height:"calc(100% - 110px)",position:'relative'}}>
                 {messages.map((message, index) => (
                       <>
                       

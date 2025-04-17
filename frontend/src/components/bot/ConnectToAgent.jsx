@@ -20,7 +20,7 @@ function ConnectToAgent({setShowWrapContent}) {
       const sendEmailForOtp = async () => {
         setLoading(true)
         try {
-            const response = await axios.post('http://localhost:3000/api/send-otp', formData);
+            const response = await axios.post('https://smvserver.vercel.app/api/send-otp', formData);
             
             // If the API returns a success message, run the success function
             if (response.data && !response.data.error) {
@@ -46,7 +46,7 @@ function ConnectToAgent({setShowWrapContent}) {
         setLoading(true)
 
         try {
-            const response = await axios.post('http://localhost:3000/api/verify-otp', formData);
+            const response = await axios.post('https://smvserver.vercel.app/api/verify-otp', formData);
             
             // If the API returns a success message, run the success function
             if (response.data && !response.data.error) {
