@@ -356,11 +356,11 @@ animation: expandWidthThenHeight 0.3s ease-in-out forwards;
         }
    
         100% {
-            width: 90vw;
+            width: calc(100vw - 20px);
             height: 80vh;
             border-radius: 5px;
-            right: 10px;
-            bottom: 10px;
+            right: 8px;
+            bottom: 5px;
 
         }
       }
@@ -381,53 +381,6 @@ animation: expandWidthThenHeight 0.3s ease-in-out forwards;
         }
       }
       
-      .bw_main.true.expanded{
-        width: 100vw;
-        z-index: 1000;
-        border-radius: 15px;
-    animation: expandWidthThenHeight 0.3s ease-in-out forwards;
-    
-
-      }
- 
-    .bw_main.true.depand{
-        animation: depandWidthThnHeight 0.3s ease-in-out forwards;
-       }   
-    @keyframes expandWidthThenHeight {
-        0% {
-            width: 90vw;
-            height: 80vh;
-            border-radius: 5px;
-            right: 10px;
-            bottom: 10px;
-
-        }
    
-        100% {
-            width: 100vw;
-            height: 100vh;
-            border-radius: 0;
-            right: 0px;
-            bottom: 0px;
-
-        }
-      }
-      @keyframes depandWidthThnHeight {
-        0% {
-            width: 100vw;
-            height: 100vh;
-            border-radius: 0;
-            right: 0px;
-            bottom: 0px;
-
-    
-        }
-        100% {
-            width: 90vw;
-            height: 80vh;
-            border-radius: 5px;
-            right: 10px;
-            bottom: 10px;
-        }
-      }
+      
   } 
