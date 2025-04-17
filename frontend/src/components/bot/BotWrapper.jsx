@@ -15,6 +15,7 @@ import ChatAppointment from './ChatAppointment';
 import LanguageTranslator from './LanguageTranslator';
 import ChatToHuman from './ChatToHuman';
 import ConnectToAgent from './ConnectToAgent';
+import { AiOutlineExpandAlt } from "react-icons/ai";
 
 function BotWrapper() {
   const [openWrap, setOpenWrap] = useState(null);
@@ -23,6 +24,7 @@ function BotWrapper() {
   const [makeSound, setMakeSound] = useState(true)
   const [showBotText, setShowBotText] = useState(true)
   const { showWrapContent, setShowWrapContent } = useContext(AppContext)
+  const [expand,setExpand] = useState(false)
   const audio = new Audio(chatsound);
   const handleplaysound = () => {
     if (makeSound) {
@@ -47,6 +49,9 @@ function BotWrapper() {
     }, 100);
 
   }
+  function handleExpand(){
+    setExpand(!expand)
+  }
   useEffect(() => {
     setTimeout(() => {
       setShowBotText(false)
@@ -55,13 +60,16 @@ function BotWrapper() {
   const roomId = 'room-abc';
   console.log(showWrapContent)
   return (
-    <div className={`bw_main ${openWrap}`}>
+    <div className={`bw_main ${openWrap} ${expand?"expanded":"depand"}`}>
       {openWrap ? (
         <div className='bw_big_container'>
           {showWrapContent == 'interface' && (
             <div className='bw_big'>
               <div className='bw_big_close' onClick={handleClose}>
                 <FiMinus />
+              </div>
+<div className='bw_big_expand' onClick={handleExpand}>
+                <AiOutlineExpandAlt/>
               </div>
               {/* <div className={`bw_big_translator ${openLang}`} >
             <span onClick={() => setOpenLang(!openLang)}>Language Transalator <span><HiMiniLanguage /></span></span>
@@ -79,6 +87,9 @@ function BotWrapper() {
             <div className='bw_big'>
               <div className='bw_big_close' onClick={handleClose}>
                 <FiMinus />
+              </div>
+<div className='bw_big_expand' onClick={handleExpand}>
+                <AiOutlineExpandAlt/>
               </div>
               <div className={`bw_big_chatbot ${openLang}`}>
                 <div className='bw_big_chatbot1'>
@@ -129,6 +140,9 @@ function BotWrapper() {
             <div className='bw_big'>
               <div className='bw_big_close' onClick={handleClose}>
                 <FiMinus />
+              </div>
+<div className='bw_big_expand' onClick={handleExpand}>
+                <AiOutlineExpandAlt/>
               </div>
               <div className={`bw_big_chatbot ${openLang}`}>
                 <div className='bw_big_chatbot1'>
@@ -181,6 +195,9 @@ function BotWrapper() {
               <div className='bw_big_close' onClick={handleClose}>
                 <FiMinus />
               </div>
+<div className='bw_big_expand' onClick={handleExpand}>
+                <AiOutlineExpandAlt/>
+              </div>
               <div className='cba_container'>
                 <ChatAppointment setShowWrapContent={setShowWrapContent} />
               </div>
@@ -191,6 +208,9 @@ function BotWrapper() {
               <div className='bw_big_close' onClick={handleClose}>
                 <FiMinus />
               </div>
+<div className='bw_big_expand' onClick={handleExpand}>
+                <AiOutlineExpandAlt/>
+              </div>
               <div className='cba_container'>
                 <LanguageTranslator />
               </div>
@@ -200,6 +220,9 @@ function BotWrapper() {
             <div className='bw_big'>
               <div className='bw_big_close' onClick={handleClose}>
                 <FiMinus />
+              </div>
+<div className='bw_big_expand' onClick={handleExpand}>
+                <AiOutlineExpandAlt/>
               </div>
               <div className={`bw_big_chatbot ${openLang}`}>
                 <div className='bw_big_chatbot1'>
