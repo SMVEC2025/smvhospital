@@ -227,11 +227,13 @@ function ConnectToAgent({ setShowWrapContent }) {
   const sendEmailForOtp = async () => {
     setLoading(true)
     try {
-      const response = await axios.post('https://smvserver.vercel.app/api/send-otp', formData);
+      const response = await axios.post('https://smvserver.vercel.app/api/create-room', formData);
 
       // If the API returns a success message, run the success function
       if (response.data && !response.data.error) {
         setInProcess('process3')
+        console.log(response.data.roomId)
+        setRoomid(response.data.roomId)
         setLoading(false)
 
       }

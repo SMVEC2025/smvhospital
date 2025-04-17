@@ -86,7 +86,12 @@ const ChatToHuman = ({ handleplaysound }) => {
             </div>
 
             <div className="chatbot-input">
-            <input value={newMsg} onChange={e => setNewMsg(e.target.value)} />
+            <input placeholder='Type a message' value={newMsg} onChange={e => setNewMsg(e.target.value)}  onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  sendMessage();
+                }
+              }} />
                <button onClick={sendMessage}>Send</button>
             </div>
         </div>
