@@ -17,6 +17,8 @@ function ConnectToAgent({setShowWrapContent}) {
       };
       const[inProcess,setInProcess]=useState('process1')
       console.log(formData)
+
+      
       const sendEmailForOtp = async () => {
         setLoading(true)
         try {
@@ -42,9 +44,12 @@ function ConnectToAgent({setShowWrapContent}) {
             };
           }
       };
+
+
+
        const verifyOtp = async () => {
         setLoading(true)
-
+        if(formData.name.trim())
         try {
             const response = await axios.post('https://smvserver.vercel.app/api/verify-otp', formData);
             
@@ -70,7 +75,29 @@ function ConnectToAgent({setShowWrapContent}) {
           }
       };
 
-      
+        function handleSubmitEmail() {
+          if (formData.name.trim() == '') {
+            toast.error('Enter FirstName')
+            return
+          }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            toast.error('Enter a Valid Email')
+            return
+          }
+          else {
+            sendEmailForOtp()
+          }
+        }
+        function handleSubmitOtp() {
+          if (formData.otp.trim() == '') {
+            toast.error('Enter a valid otp')
+            return
+          }
+
+          else {
+            verifyOtp()
+          }
+        }
   return (
          <>
          {inProcess == 'process1' && (
@@ -98,7 +125,7 @@ function ConnectToAgent({setShowWrapContent}) {
         </div>
 
          {!loading?(
-            <button className='cba_button' onClick={()=>{sendEmailForOtp(formData.email)}}>
+            <button className='cba_button' onClick={handleSubmitEmail}>
             Send OTP
           </button>
          ):(
@@ -126,9 +153,15 @@ function ConnectToAgent({setShowWrapContent}) {
 
             </div>
     
-            <button className='cba_button' onClick={verifyOtp}>
+            {!loading?(
+              <button className='cba_button' onClick={handleSubmitOtp}>
               Verify OTP
             </button>
+            ):(
+              <button className='cba_button'>
+              Loading..
+            </button>
+            )}
           </div>
              )}
              {inProcess == 'process3' && (
