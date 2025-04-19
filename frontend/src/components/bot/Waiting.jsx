@@ -61,24 +61,10 @@ const Waiting = ({ roomId }) => {
   //   };
   // }, [roomId]);
   useEffect(() => {
-    const sendInitialMessage = async () => {
-  
-      const { error } = await supabase.from("messages").insert({
-        room_id: roomId,
-        content: "Hello! How can i help you today",
-        sender_type: "agent", // even though it's the user side, you're asking to send agent type
-      });
-  
-      if (error) {
-        console.error("Failed to send message:", error.message);
-      } else {
-      
-    setShowWrapContent('livechat')
-      }
-    };
     localStorage.setItem('roomId',roomId)
+   setTimeout(() => {
     setShowWrapContent('livechat')
-    // sendInitialMessage();
+   }, 1000);
   }, []);
   useEffect(() => {
     if (Timerr <= 0) return;

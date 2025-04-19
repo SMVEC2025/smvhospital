@@ -211,9 +211,14 @@ import { FaArrowLeft } from "react-icons/fa6";
 import axios from 'axios';
 import Waiting from './Waiting';
 import { toast } from 'react-toastify';
+import { supabase } from '../../supabaseClient';
 function ConnectToAgent({ setShowWrapContent }) {
   const [roomid, setRoomid] = useState()
   const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
+  const generateRoomId = () => crypto.randomUUID();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',  });
@@ -223,34 +228,132 @@ function ConnectToAgent({ setShowWrapContent }) {
   const [inProcess, setInProcess] = useState('process1')
   console.log(formData)
 
-
-  const sendEmailForOtp = async () => {
+// Create or join room based on email
+const handleStartChat = async () => {
+  try {
     setLoading(true)
-    try {
-      const response = await axios.post('https://smvserver.vercel.app/api/create-room', formData);
+  const { data: existingRoom } = await supabase
+    .from('room')
+    .select('*')
+    .eq('email', formData.email)
+    .single();
 
-      // If the API returns a success message, run the success function
-      if (response.data && !response.data.error) {
-        setInProcess('process3')
-        console.log(response.data.roomId)
-        setRoomid(response.data.roomId)
-        setLoading(false)
+  let room;
 
-      }
+  if (existingRoom) {
+    room = existingRoom;
+     // Auto message from agent (use returned room_id just to be 100% safe)
+     const { error: messageError } = await supabase.from('messages').insert([
+      {
+        room_id: room.room_id,
+        content: 'How can I help you today?',
+        sender_type: 'agent',
+        created_at: new Date().toISOString(),
+      },
+    ]);
 
-      return response.data;
+    if (messageError) {
+      console.error('Agent message failed:', messageError);
+      toast.error('Network error')
 
-    } catch (error) {
-      console.error('Error verifying OTP:', error?.response?.data || error.message);
+    } else {
+      setInProcess('process3')
       setLoading(false)
-      toast.error(error?.response?.data?.message)
-
-
-      return {
-        error: error?.response?.data?.error || 'Something went wrong',
-      };
     }
-  };
+  console.log("existigroom",existingRoom)
+
+
+  } else {
+    const newRoomId = generateRoomId(); // browser-safe UUID
+    const { data: newRoom, error } = await supabase
+      .from('room')
+      .insert([
+        {
+          room_id: newRoomId,
+          name: formData.name,
+          email: formData.email,
+          last_msg: 'How can I help you today?',
+          last_msg_at: new Date().toISOString(),
+          unseen_count: 1000,
+        },
+      ])
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Room creation failed:', error);
+      toast.error('Network error')
+
+      return;
+    }
+
+    room = newRoom;
+
+    // Auto message from agent (use returned room_id just to be 100% safe)
+    const { error: messageError } = await supabase.from('messages').insert([
+      {
+        room_id: room.room_id,
+        content: 'How can I help you today?',
+        sender_type: 'agent',
+        created_at: new Date().toISOString(),
+      },
+    ]);
+
+    if (messageError) {
+      console.error('Agent message failed:', messageError);
+      toast.error('Network error')
+      setLoading(false)
+
+    } else {
+      setInProcess('process3')
+      setLoading(false)
+
+    }
+  }
+
+  setRoomid(room.room_id);
+  fetchMessages(room.room_id);
+  } catch (error) {
+    toast.error('network error')
+  }
+};
+const fetchMessages = async (roomId) => {
+  const { data } = await supabase
+    .from('messages')
+    .select('*')
+    .eq('room_id', roomId)
+    .order('created_at', { ascending: true });
+
+  setMessages(data || []);
+};
+
+  // const sendEmailForOtp = async () => {
+  //   setLoading(true)
+  //   try {
+  //     const response = await axios.post('https://smvserver.vercel.app/api/create-room', formData);
+
+  //     // If the API returns a success message, run the success function
+  //     if (response.data && !response.data.error) {
+  //       setInProcess('process3')
+  //       console.log(response.data.roomId)
+  //       setRoomid(response.data.roomId)
+  //       setLoading(false)
+
+  //     }
+
+  //     return response.data;
+
+  //   } catch (error) {
+  //     console.error('Error verifying OTP:', error?.response?.data || error.message);
+  //     setLoading(false)
+  //     toast.error(error?.response?.data?.message)
+
+
+  //     return {
+  //       error: error?.response?.data?.error || 'Something went wrong',
+  //     };
+  //   }
+  // };
 
   function handleSubmitEmail() {
     if (formData.name.trim() == '') {
@@ -262,7 +365,7 @@ function ConnectToAgent({ setShowWrapContent }) {
       return
     }
     else {
-      sendEmailForOtp()
+      handleStartChat()
     }
   }
 

@@ -6,9 +6,8 @@ const ChatToHuman = ({ handleplaysound }) => {
   const [messages, setMessages] = useState([]);
   const [newMsg, setNewMsg] = useState('');
   const messagesEndRef = useRef(null);
-  const userId = localStorage.getItem('roomId')
-
-  const room_id = userId; // Each user has their own room_id
+  const room_id = localStorage.getItem('roomId')
+const userId = room_id
   useEffect(() => {
         setTimeout(() => {
             handleplaysound() 
@@ -33,6 +32,9 @@ const ChatToHuman = ({ handleplaysound }) => {
     minute: 'numeric',
     hour12: true,
   });
+
+
+
     useEffect(() => {
     const channel = supabase
       .channel(`realtime:user_${userId}`)
@@ -50,19 +52,59 @@ const ChatToHuman = ({ handleplaysound }) => {
   }, [room_id]);
 
   const sendMessage = async () => {
-    if (!newMsg.trim()) return;
-    await supabase.from('messages').insert({
+
+  if (!newMsg.trim()) return;
+  
+  // 1. Insert the message first
+  const { error: insertError } = await supabase.from('messages').insert([
+    {
       content: newMsg,
       sender_type: 'user',
       room_id,
-    });
-    setNewMsg('');
-  };
+      created_at: new Date().toISOString(), // optional, but explicit
+    },
+  ]);
+
+  if (insertError) {
+    console.error('Message insert failed:', insertError);
+    return;
+  }
+
+  // 2. Get current unseen count from room table
+  const { data: roomData, error: fetchError } = await supabase
+    .from('room')
+    .select('unseen_count')
+    .eq('room_id', room_id)
+    .single();
+
+  if (fetchError) {
+    console.error('Room fetch failed:', fetchError);
+    return;
+  }
  
+  const newCount = parseInt(roomData?.unseen_count) == 1000? 2 : parseInt(roomData?.unseen_count || '0', 10) + 1;
+
+  // 3. Update the room table
+  const { error: updateError } = await supabase
+    .from('room')
+    .update({
+      last_msg: newMsg,
+      last_msg_at: new Date().toISOString(),
+      unseen_count: newCount,
+    })
+    .eq('room_id', room_id);
+
+  if (updateError) {
+    console.error('Room update failed:', updateError);
+  }
+
+  setNewMsg('');
+};
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
-  console.log(messages)
+  
   return (
 <div className="chatbot-container">
             <div className="chatbot-messages" style={{paddingTop:"60px",height:"calc(100% - 110px)",position:'relative'}}>
