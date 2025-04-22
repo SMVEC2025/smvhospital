@@ -226,7 +226,6 @@ function ConnectToAgent({ setShowWrapContent }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const [inProcess, setInProcess] = useState('process1')
-  console.log(formData)
 
 // Create or join room based on email
 const handleStartChat = async () => {
@@ -260,7 +259,6 @@ const handleStartChat = async () => {
       setInProcess('process3')
       setLoading(false)
     }
-  console.log("existigroom",existingRoom)
 
 
   } else {

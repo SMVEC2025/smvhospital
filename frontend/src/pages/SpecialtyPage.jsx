@@ -543,7 +543,6 @@ function SpecialtyPage() {
                     <div className='sp_container1_faq_ans'>{e.answer}</div>
                 </div>
             ))}
-            {console.log(showSpecialty)}
           </>
         )}
             

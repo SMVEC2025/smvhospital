@@ -67,7 +67,6 @@ function ChatAppointment({ setShowWrapContent }) {
       return
     }
   }
-  console.log(selectedMonth)
   function handleDecrement() {
     if (showMonth > 0) {
       setShowMonth(showMonth - 1)
@@ -100,7 +99,6 @@ function ChatAppointment({ setShowWrapContent }) {
       slot: e
     }));
   }
-  console.log(formData)
 
   function handleSelectPackage(e) {
     setFormData(prevData => ({
@@ -389,7 +387,6 @@ function ChatAppointment({ setShowWrapContent }) {
       setProcess('final')
     }
   }
-  console.log("process", process)
 
 
   const [count, setCount] = useState(5);

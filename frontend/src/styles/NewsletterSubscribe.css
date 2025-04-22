@@ -118,12 +118,18 @@
   
     .newsletter-form input[type="email"],
     .newsletter-form button {
-      width: 100%;
+      width: 90%;
     }
     .newsletter-form input[type="email"]{
         height: 10px;
         max-height: 20px;
     }
-
+   .newsletter-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+   }
+   .subscribe-now{
+    font-size: 2rem;
+   }
   }
   

@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/NewsletterSubscribe.css";
-
+import { useSSR } from "react-i18next";
+ 
 const NewsletterSubscribe = () => {
+  const [value,setValue] = useState('')
+  function handleClick(e){
+    e.preventDefault()
+    setValue('')
+  }
   return (
     <section className="newsletter-wrapper">
       <div className="newsletter-box">
@@ -11,8 +17,8 @@ const NewsletterSubscribe = () => {
             Subscriber To <span className="highlight">Our</span> <br /> Newsletter
           </h2>
           <form className="newsletter-form">
-            <input type="email" placeholder="Email Address" required />
-            <button type="submit">Subscribe</button>
+            <input type="email" placeholder="Email Address" required  value={value} onChange={(e)=>{setValue(e.target.value)}} />
+            <button onClick={handleClick} >Subscribe</button>
           </form>
           <p className="signin-note">
           </p>

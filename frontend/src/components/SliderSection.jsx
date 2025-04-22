@@ -102,7 +102,6 @@ function SliderSection() {
 
 
     const [expand, setExpand] = useState(null)
-    console.log(expand)
     const handlePrev = () => {
         if (sliderRef.current) {
             sliderRef.current.scrollBy({ left: -400, behavior: 'smooth' });

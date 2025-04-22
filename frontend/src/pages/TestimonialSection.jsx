@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/TestimonialSection.css";
-import profile1 from "/images/1.webp";
-import profile2 from "/images/1.webp";
+
 
 const TestimonialSection = () => {
   return (
@@ -25,7 +24,7 @@ const TestimonialSection = () => {
                 concerns or questions
               </p>
               <div className="testimonial-user">
-                <img src={profile1} alt="Jang Wonyoung" />
+                <img  alt="Jang Wonyoung" />
                 <div>
                   <strong>Jang Wonyoung</strong>
                   <p>Korea</p>
@@ -38,7 +37,7 @@ const TestimonialSection = () => {
                 issues and ensure your complete satisfaction.
               </p>
               <div className="testimonial-user">
-                <img src={profile2} alt="Jennie Kim" />
+                <img  alt="Jennie Kim" />
                 <div>
                   <strong>Jennie Kim</strong>
                   <p>USA</p>

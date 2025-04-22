@@ -28,7 +28,6 @@ function BotWrapper() {
   const handleplaysound = () => {
     if (makeSound) {
       audio.play();
-      console.log('playingsound')
     } else {
       return
     }
@@ -54,7 +53,6 @@ function BotWrapper() {
     }, 3000);
   }, [])
   const roomId = 'room-abc';
-  console.log(showWrapContent)
   return (
     <div className={`bw_main ${openWrap}`}>
       {openWrap ? (
