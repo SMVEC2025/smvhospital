@@ -54,7 +54,7 @@ const FeaturedCareAreas = () => {
             {rightColumn.map((item, idx) => (
               <a key={idx} onClick={()=>{handleNavigate(item.id-1)}} className="featured-care-item">
                 {item.title}
-                <span className="arrow">→</span>
+                <span className="arrow">→</span> 
               </a>
             ))}
           </div>
