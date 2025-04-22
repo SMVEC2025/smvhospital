@@ -47,9 +47,9 @@ function WhySmv() {
   ]
 
       return (
-        <div className={`why-smv-container ${darkmode?"darkmode":""}`}>
+        <div className={`why-smv-container ${darkmode?'nill':""}`}>
       {/* Left Section */}
-      <div className={`why-smv-left ${darkmode?"darkmode":""}`}>
+      <div className={`why-smv-left ${darkmode?'nill':""}`}>
         <h2>Why SMV Super Specialty hospital?</h2> 
         <p>
         We are a leading, multi-speciality hospital offering best-in-class medical services for nearly 2 decades. With an unwavering focus on patient care, safety, and satisfaction, we are dedicated to delivering exemplary healthcare that goes beyond conventional standards. Our commitment lies in blending medical excellence with compassion, ensuring every patient receives personalized treatment, advanced technology, and the highest level of care throughout their journey with us.</p>
@@ -60,7 +60,7 @@ function WhySmv() {
       <div className="why-smv-right">
        
           {whysmvdata.map((e,i)=>(
-             <div key={i} className={`feature-box ${darkmode?"darkmode":""}`}>
+             <div key={i} className={`feature-box ${darkmode?'nill':""}`}>
               <div className='logo'>{e.logo}</div>
             <div>
             <h3>{e.title}</h3>
@@ -73,11 +73,7 @@ function WhySmv() {
        
           
       </div>
-   {!isMobile &&(
-       <div className="svg_pattern">
-       <ScrollImageChanger/>
-     </div>
-   )}
+ 
     </div>
  
 

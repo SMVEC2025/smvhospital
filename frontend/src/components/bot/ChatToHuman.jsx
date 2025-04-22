@@ -5,6 +5,7 @@ import { supabase } from '../../supabaseClient';
 const ChatToHuman = ({ handleplaysound }) => {
   const [messages, setMessages] = useState([]);
   const [newMsg, setNewMsg] = useState('');
+  const [tempMsg,setTempMsg]=useState('')
   const messagesEndRef = useRef(null);
   const room_id = localStorage.getItem('roomId')
 const userId = room_id
@@ -54,7 +55,7 @@ const userId = room_id
   const sendMessage = async () => {
 
   if (!newMsg.trim()) return;
-  
+  setTempMsg('')
   // 1. Insert the message first
   const { error: insertError } = await supabase.from('messages').insert([
     {
@@ -128,7 +129,7 @@ const userId = room_id
             </div>
 
             <div className="chatbot-input">
-            <input placeholder='Type a message' value={newMsg} onChange={e => setNewMsg(e.target.value)}  onKeyDown={(e) => {
+            <input placeholder='Type a message' value={tempMsg} onChange={e => {setNewMsg(e.target.value);setTempMsg(e.target.value)}}  onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   e.preventDefault();
                   sendMessage();

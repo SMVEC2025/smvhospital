@@ -21,6 +21,10 @@ import ScrollToTop from '../components/ScrollToTop'
  
 import '../styles/Home.css'
 import HomeYoutube from '../components/HomeYoutube'
+import SliderSection from '../components/SliderSection'
+import TreatmentsSection from '../components/TreatmentsSection'
+import TestimonialSection from './TestimonialSection'
+import NewsletterSubscribe from '../components/NewsletterSubscribe'
 function Home() {
   const { isMobile,refreshAnim,setShowSideBar,modalOpen,setModalOpen,animCase } = useContext(AppContext)
   const [newsAndEvents,setNewsAndEvents]=useState([])
@@ -68,14 +72,18 @@ useEffect(() => {
        <ScrollToTop/> 
         <Hero/>
         <HomeAbout/>
-        
         {/* <LedContainer/> */}
         {!isMobile &&(<HomeYoutube/>)}
         <HomeSectionTwo/>
+        <TreatmentsSection/>
         <WhySmv/>
-        {isMobile?(<HomeMobileTreatment/>):(<HorizontalScroll/>)}
+
+
+        {isMobile?(<HomeMobileTreatment/>):(<SliderSection/>)}
         {/* <HomeNewsEvents  newsAndEvents={newsAndEvents}/> */}
         {/* <HomeTestimonial/> */}
+        {/* <TestimonialSection/> */}
+        <NewsletterSubscribe/>
       {/* <HomeDoctors/> */}
       <Footer/>
     </div>

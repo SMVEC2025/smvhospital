@@ -338,16 +338,16 @@
         justify-content: end;
         text-align: center;
         height: 100%;
-        background-image: linear-gradient(0, rgba(0, 0, 0, 0.527) 30%, rgba(0, 0, 0, 0))
+        background-image: linear-gradient(0, rgba(0, 0, 0, 0.678) 30%, rgba(0, 0, 0, 0))
       }
       
       .card-content .card-title {
         font-size: 24px;
         font-weight: 500;
         text-transform: uppercase;
-        background-color: rgb(206, 197, 197);
         padding: 2px 15px;
         border-radius: 35px;
+        color: white;
       }
       
       .card-content .card-para {
@@ -461,7 +461,7 @@
     margin-left: 20px;
     margin-top: 20px;
     font-weight: 500;
-    color: rgb(216, 82, 19);
+    color: rgb(212, 211, 211);
     text-transform: uppercase;
     letter-spacing: 1px;
 

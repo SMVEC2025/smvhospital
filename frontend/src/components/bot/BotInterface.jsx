@@ -9,11 +9,31 @@ import { AiOutlineWechatWork } from "react-icons/ai";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import { RiMacbookLine } from "react-icons/ri";
 import { AppContext } from '../../context/AppContext';
+import {toast} from 'react-toastify'
 
 function BotInterface() {
     const { showWrapContent, setShowWrapContent } = useContext(AppContext)
     function handleClick(val) {
         setShowWrapContent(val)
+    }
+    function handleCheck() {
+        const now = new Date();
+        const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+
+        // Check if not Sunday and time between 9:30 AM and 5:00 PM
+        if (
+            day !== 0 && // not Sunday
+            (
+                (hours > 9 || (hours === 9 && minutes >= 30)) && // after 9:30 AM
+                (hours < 17) // before 5:00 PM
+            )
+        ) {
+            handleClick('connecttoagent')
+        } else {
+            toast.error('Live Chat Available between Mon-sat(9.30 AM - 5 PM)')
+        }
     }
     return (
         <div className='boti_main'>
@@ -25,7 +45,7 @@ function BotInterface() {
                     how can i help you today?
                 </div>
             </div>
-            <div className='boti_wrapper2' onClick={() => { handleClick('connecttoagent') }}>
+            <div className='boti_wrapper2' onClick={handleCheck}>
                 <div className='boti_wrapper21'>
                     {/* <img src={SMV_icon} alt="" /> */
                     }
@@ -36,10 +56,10 @@ function BotInterface() {
                     <h6>Let me know if you have any questions!</h6>
                 </div>
                 <button>
-                    Chat with us
+                    Live Chat
                 </button>
             </div>
-            <div className='boti_wrapper3' onClick={() => { handleClick('language') }}>
+            {/* <div className='boti_wrapper3' onClick={() => { handleClick('language') }}>
                 <span>
                     <IoLanguageOutline />
                 </span>
@@ -52,7 +72,7 @@ function BotInterface() {
                     </span>
                 </div>
 
-            </div>
+            </div> */}
             <div className='boti_wrapper3' onClick={() => { handleClick('bookappointment') }}>
                 <span>
                     <RiMacbookLine />
@@ -77,7 +97,7 @@ function BotInterface() {
                     </span>
 
                 </div>
-                <div className='boti_wrapper41' onClick={()=>{handleClick('livechathuman')}}>
+                <div className='boti_wrapper41' onClick={() => { handleClick('livechathuman') }}>
                     <span className='contact'>
                         <AiOutlineWechatWork />
                     </span>

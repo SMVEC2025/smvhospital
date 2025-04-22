@@ -2,8 +2,9 @@
     .hmt_main{
         width: 100%;
         height: 70vh;
-        background: linear-gradient(#151515,#312436,#633837,#76391a), 
-        url('../assets/images/Gradientnoise.jpg');
+        /* background: linear-gradient(#151515,#312436,#633837,#76391a), 
+        url('../assets/images/Gradientnoise.jpg'); */
+        background-color: #f7f4ef;
       
       }
 
@@ -40,8 +41,9 @@
   .hmt_main{
     width: 100%;
     height: 90vh;
-    background: linear-gradient(#151515,#312436,#633837,#76391a), 
-    url('../assets/images/Gradientnoise.jpg');
+ /* background: linear-gradient(#151515,#312436,#633837,#76391a), 
+        url('../assets/images/Gradientnoise.jpg'); */
+        background-color: #f7f4ef;
   
   }
 

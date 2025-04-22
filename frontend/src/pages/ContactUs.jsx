@@ -10,7 +10,10 @@ import { AppContext } from '../context/AppContext';
 import MobileSideBar from '../components/navbar/MobileSideBar';
 import ScrollToTop from '../components/ScrollToTop';
 import MobileHero6 from '../components/MobileHero6';
+import {toast} from 'react-toastify'
+import { supabase } from '../supabaseClient';
 
+ 
 function ContactUs() {
   const { setAnimCase,setShowSideBar,isMobile } = useContext(AppContext)
     const [faqExpand, setFaqExpand] = useState();
@@ -39,32 +42,30 @@ function ContactUs() {
         setErrorMessage("");
 
         try {
-            const response = await fetch("http://localhost:1337/api/contactforms", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    data: {
-                        name: formData.name,
-                        email: formData.email,
-                        message: formData.message,
-                    },
-                }),
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-                setSuccessMessage("Your message has been sent successfully!");
-                setFormData({ name: "", email: "", message: "" }); // Reset form
-            } else {
-                setErrorMessage(result?.error?.message || "Something went wrong. Please try again.");
+          const { error } = await supabase
+          .from('queries')
+          .insert([
+            {
+              name: formData.name,
+              email: formData.email,
+              message: formData.message,
             }
+          ]);
+    
+        if (error) {
+          console.error(error);
+        setLoading(false);
+        toast.error("Network error")
+
+        } else {
+          setFormData({ name: '', email: '', message: '' });
+        setLoading(false);
+        toast.success("Your Queries Submited")
+
+        }
         } catch (error) {
-            setErrorMessage("Failed to submit. Please check your internet connection.");
-        } finally {
-            setLoading(false);
+          setLoading(false);
+          toast.success("Your Queries Submited")
         }
     };
 

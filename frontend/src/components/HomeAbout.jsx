@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect,useContext } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import "../styles/HomeAbout.css"; // External CSS
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
@@ -10,7 +10,7 @@ import { gsap } from "gsap";
 const HomeAbout = () => {
   const [activeSection, setActiveSection] = useState("about");
   const { t } = useTranslation("home");
-  const { isMobile } =useContext(AppContext)
+  const { isMobile } = useContext(AppContext)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const HomeAbout = () => {
   const [loadedImages, setLoadedImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isInView, setIsInView] = useState(false);
-console.log("index",currentIndex)
+  console.log("index", currentIndex)
   // Load images
   useEffect(() => {
     const loadImage = (index) => {
@@ -180,42 +180,42 @@ console.log("index",currentIndex)
   return (
     <div className="ha_container">
       {/* Left Sticky Section */}
-      <div className="ha_left-section" style={{ background: getLeftContent().background }}>
+      <div className="ha_left-section" >
         <img src={getLeftContent().image} alt="Section" className="ha_left-image" />
         {/* <h2>{getLeftContent().text}</h2> */}
       </div>
 
       {/* Right Scrollable Section */}
       <div className="ha_right-section" >
-       {!isMobile && (
-         <div className="frame_images">
-        <div ref={containerRef}>
-      <canvas
-        ref={canvasRef}
-       
-      />
-    </div>
-         </div>
-       )}
+        {/* {!isMobile && (
+          <div className="frame_images">
+            <div ref={containerRef}>
+              <canvas
+                ref={canvasRef}
+
+              />
+            </div>
+          </div>
+        )} */}
         <div id="about" className="section" >
           <h2>SMV Super Speciality Hospital</h2>
           <h3>{t("abouttitle")}</h3>
           <p>{t("aboutdescription")}</p>
-         <div >
-         <Button event='/about'  name="About us"/>
-         </div>
+          <div >
+            <Button event='/about' name="About us" />
+          </div>
         </div>
         <div id="mobile" className="section">
           <h2>Mobile Application</h2>
           <h3>{t("mobileapphead")}</h3>
           <p style={{ whiteSpace: "pre-line" }}>{t("mobileappdesc")}</p>
-          <Button name="Download mobile app" event='handleRedirect'/>
+          <Button name="Download mobile app" event='handleRedirect' />
         </div>
         <div id="appointment" className="section">
           <h2>Book an Appointment</h2>
           <h3>{t("appointmenthead")}</h3>
           <p>{t("appointmentdesc")}</p>
-          <Button  event='/appointment' name='Book Appointment'/>
+          <Button event='/appointment' name='Book Appointment' />
         </div>
       </div>
     </div>

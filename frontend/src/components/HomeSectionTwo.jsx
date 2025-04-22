@@ -49,19 +49,19 @@ const HomeSectionTwo = () => {
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
   return (
-    <div className={`hst_container ${darkmode?'darkmode':""}`}>
-      <div className={`hst_wrapper ${darkmode?'darkmode':""}`} ref ={targetRef}>
+    <div className={`hst_container ${darkmode?'nill':""}`}>
+      <div className={`hst_wrapper ${darkmode?'nill':""}`} ref ={targetRef}>
         <div className="sticky-heading">
           <TitleHeader name="specialty"/>
         </div>
         {
           specialties.map(([id,value])=>(
-            <div  id={id} key={id} className={`card card${Number(id)+1} ${darkmode?"darkmode":""}`}>
+            <div  id={id} key={id} className={`card card${Number(id)+1} ${darkmode?'nill':""}`}>
                 <div className="hst_card_div1">
                   <p>00{Number(id)+1}</p>
 
                 </div>
-                <div  className={`hst_card_div2 ${darkmode?'darkmode':""}`}>
+                <div  className={`hst_card_div2 ${darkmode?'nill':""}`}>
                     <span>{value.title}</span>
                     <div style={{whiteSpace:"pre-line"}}>{value.desc}</div>
                 </div>

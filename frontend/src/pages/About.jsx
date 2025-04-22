@@ -14,6 +14,7 @@ import MobileHero6 from '../components/MobileHero6';
 import aboutus1 from '../assets/images/aboutus1.jpg'
 import aboutus2 from '../assets/images/aboutus2.jpg'
 import aboutus3 from '../assets/images/aboutus3.jpg'
+import FeaturedCareAreas from './FeaturedCareAreas';
 const heroData = {
   bgImg: 'images/aboutmainpic.jpg',
   bgShape: 'shape/hero-shape.png', 
@@ -43,7 +44,7 @@ const heroData = {
 };
 const specialtyHeading=[
   {
-    title:"Our Specialty",
+    title:"Medical Services",
     subTitle:"SMV Superspecialty Hospital is a leader in advanced medical care, offering specialized treatments across Neurology, Cardiology, Orthopaedics, Oncology, and more. With cutting-edge technology and expert doctors, we are committed to delivering excellence in patient care."
   }
 ]
@@ -130,7 +131,8 @@ const About = () => {
 
     </div>
       <Headings data={specialtyHeading}  />
-      <AboutSpeciality/>
+      {/* <AboutSpeciality/> */}
+      <FeaturedCareAreas/>
       {/* <div className='as_end'>
       <p className="hero-subtitle">
               To Know More About Our Speciality

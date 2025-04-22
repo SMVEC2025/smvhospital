@@ -1,0 +1,214 @@
+.sss_slider{
+    width: 350px !important;
+    min-width: 300px;
+    height: 458px;
+    border-radius: 10px;
+    background-size: cover;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    background-repeat: no-repeat;
+}
+.sss_slider.expand{
+   min-width: 550px;
+   width: 550px;
+
+}
+.ss_slidercontent{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: relative;
+    background-image: linear-gradient(90deg,rgba(0, 0, 0, 0.781),rgba(0, 0, 0, 0));
+
+}
+.ss_slidercontent .desc{
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+ 
+}
+.ss_slidercontent .desc>div{
+
+width: 70%;
+background-color: rgba(236, 236, 236, 0.301);
+text-align: left;
+backdrop-filter: blur(5px);
+padding: 7px 10px;
+border-radius: 10px;
+}
+.ss_div2 {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  margin-left: 300px;
+  overflow: hidden;
+  max-width: calc(100% - 300px);
+  padding-right: 100px;
+}
+.ss_main{
+    padding: 5rem 0;
+    position: relative;
+}
+.sss_slider .tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    height: fit-content;
+    max-width: 100%;
+}
+.sss_slider .tags>div{
+    background-color: rgba(236, 236, 236, 0.301);
+    text-align: left;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;align-items: center;
+    padding: 10px 25px;
+    border-radius: 40px;
+}
+.sss_slider .title{
+    color: white;
+    font-size: 2rem;
+    margin-top: 20px;
+    top: 300px;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    text-transform: capitalize;
+}
+.sss_slider.expand .title{
+    color: white;
+    font-size: 2rem;
+    margin-top: 20px;
+    top: 70px;
+
+
+}
+.sss_slider .expand-btn{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(63, 63, 63);
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+.ss_div1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 10rem;
+}
+.ss_div12>button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}
+.ss-right{
+    background-color: black;
+    margin-left: 10px;
+    transform: scaleY(-1);
+}
+.ss-left{
+    background-color: gray;
+}
+.ss_div11{
+    font-size: 1rem;
+    color: rgb(73, 72, 72);
+    width: 50%;
+    padding-left: calc(150px);
+}
+.imagetest{
+    height: 100% !important;
+    width: 550px;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.imagetest>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.ss_main .sticky-heading{
+    padding-left: 5.5rem;
+}
+
+@media (max-width: 769px){
+
+    .ss_div2 {
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+        margin-left: 20px;
+        overflow: hidden;
+        max-width: calc(100% - 20px);
+        padding-right: 100px;
+      }
+      .ss_div11{
+        font-size: 1rem;
+        color: rgb(73, 72, 72);
+        width: 50%;
+        padding-left: calc(10px);
+    }
+    .ss_div1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 3rem 2rem;
+    }
+    .ss_div11{
+        width: 80%;
+    }
+}
+
+@media (max-width: 1024px){
+
+    .ss_div2 {
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+        margin-left: 20px;
+        overflow: hidden;
+        max-width: calc(100% - 0px);
+        padding-right: 100px;
+      }
+      .ss_div11{
+        font-size: 1rem;
+        color: rgb(73, 72, 72);
+        width: 50%;
+        padding-left: calc(10px);
+    }
+    .ss_div1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 3rem 2rem;
+    }
+    .ss_div11{
+        width: 80%;
+    }
+    .ss_main .sticky-heading{
+        padding-left: 2rem;
+    }
+}
+.sv_pat{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateX(-50%);
+}

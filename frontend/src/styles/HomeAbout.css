@@ -1,6 +1,7 @@
 .ha_container {
     display: flex;
     width: 100%;
+    background-image: url("https://hertilityhealth.com/_next/static/media/homeBgTexture.32d688cc.webp");
   }
   
   .ha_left-section {
@@ -28,6 +29,7 @@
     width: 60%;
     background-size: cover;
     position: relative;
+    background-color: #fbf9f8cc;
   }
   .frame_images{
     position: absolute;

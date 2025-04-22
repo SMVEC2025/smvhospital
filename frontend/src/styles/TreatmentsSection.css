@@ -1,0 +1,112 @@
+.treatments-section {
+    background-image: url('/path-to-your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #7f6962;
+    padding: 4rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+  
+  .heading em {
+  }
+  
+  .marquee-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  
+  .marquee {
+    display: flex;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    white-space: nowrap;
+    will-change: transform;
+  }
+  
+  /* Left-to-right scroll */
+  .marquee-left {
+    animation-name: scrollLeft;
+    animation-duration: 60s;
+    animation-delay: 0s;  /* Starts immediately */
+  }
+  
+  .marquee-right {
+    animation-name: scrollRight;
+    animation-duration: 10s;
+    animation-delay: 0s;  /* Starts immediately */
+  }
+  
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
+  
+  .tag {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-right: 1rem;
+    border: 1px solid #7f6962;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    font-size: 1.25rem;
+    white-space: nowrap;
+  }
+  
+  /* Clone content to make it look infinite */
+  .marquee::after {
+    content: attr(data-duplicate);
+    display: inline-block;
+    margin-left: 1rem;
+  }
+  
+  .footer {
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+  
+  .footer em {
+    font-style: italic;
+  }
+  
+  /* Mobile Friendly */
+  @media (max-width: 600px) {
+    .heading {
+      font-size: 1.8rem;
+    }
+  
+    .tag {
+      font-size: 1rem;
+      padding: 0.6rem 1rem;
+    }
+  
+    .footer {
+      font-size: 1.1rem;
+    }
+  }
+  
