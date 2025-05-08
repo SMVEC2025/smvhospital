@@ -21,10 +21,10 @@ import { FaAnglesRight } from "react-icons/fa6";
 import { formatDate } from "date-fns";
 import { toast } from "react-toastify";
 import MobileHero6 from "../components/MobileHero6";
-
+import { supabase } from "../supabaseClient";
 
 const heroData = {
-    bgImg: 'images/appointmentheader.png',
+    bgImg: 'images/appointment.jpg',
     bgShape: 'shape/hero-shape.png',
     page: "Book Appointment",
     sliderImages: [
@@ -344,14 +344,13 @@ const Appointment = () => {
         formPayload.append("entry.2005215424",packageCase1() );
 
         try {
-
+ 
             fetch(googleFormURL, {
               method: "POST",
               body: formPayload,
               mode: "no-cors", // Required for Google Forms submission
             })
               .then(() => {
-                toast.success("Appointment Sent");
                 setTimeout(() => {
                     navigate("/appointmentsuccess", { state: { data: formData, date: selectedDate.toLocaleDateString('en-GB').split('/').join('-'), time: selectedTime, service: packageCase1() } });
 
@@ -367,7 +366,31 @@ const Appointment = () => {
         }
 
     };
+  const handleSubmitData = async (e) => {
+    
+      const formedData ={
+        date: selectedDate?.toLocaleDateString('en-GB').split('/').join('-'),
+        package: packageCase1(),
+        slot: selectedTime,
+        selectedPackage: '',
+        phone: formData.phone,
+        name: formData.firstname,
+        email: formData.email,
+        message:formData.note
+      }
+    
+    
+    const { data, error } = await supabase
+      .from('appointments')
+      .insert([formedData])
 
+    if (error) {
+      console.error(error)
+    } else {
+      
+      toast.success('Appointment Booked')
+    }
+  }
 
     function handleSubmit() {
         if(formData.firstname.trim() ==''){
@@ -387,7 +410,11 @@ const Appointment = () => {
             return
         }
         else{
-            postUserData()
+           
+            handleSubmitData()
+            setTimeout(() => {
+                postUserData()  
+            }, 50);
         }
 
     }

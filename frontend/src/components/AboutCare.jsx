@@ -19,7 +19,7 @@ function AboutCare() {
 
             <div className="card" style={{ backgroundImage: 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD-GhfFjyLZWPxqX8gdBArHKMbVOEF2HnvQA&s")' }}>
                 <div className="card-content">
-                    <p className="card-title">Urget Care
+                    <p className="card-title">Urgent Care
                     </p><p className="card-para">Immediate care for minor emergencies without the wait.</p>
                 </div>
             </div>

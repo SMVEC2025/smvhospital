@@ -28,8 +28,12 @@ function Footer() {
       window.location.href = `tel:${phoneNumber}`;
     };
 
+   function handleLocation(){
+    window.open('https://www.google.com/maps?ll=11.921386,79.628235&z=16&t=h&hl=en&gl=IN&mapclient=embed&cid=9800051434606671923', '_blank');
+
+   }
     const handleEmailClick = () => {
-      const email = 'example@email.com'; // Replace with your email
+      const email = 'contact@smvmch.ac.in'; // Replace with your email
       const subject = 'Hello from Website';
       const body = 'Hi, I wanted to get in touch with you.';
   
@@ -76,10 +80,10 @@ function Footer() {
           <div className="footer-links">
             <h4>Contact US</h4>
             <ul>
-              <li><span><MdLocationOn/></span><a href="#">Kalitheerthal kuppam, Madagadipet, <br/>
+              <li onClick={handleLocation}><span><MdLocationOn/></span><a >Kalitheerthal kuppam, Madagadipet, <br/>
               Puducherry - 605 107</a></li>
-              <li onClick={handleCallClick}><span><MdCall/></span><a href="#">0413-2000999</a></li>
-              <li onClick={handleEmailClick}><span><IoMailSharp/></span><a href="#">contact@smvssh.com</a></li>
+              <li onClick={handleCallClick}><span><MdCall/></span><a >0413-2000999</a></li>
+              <li onClick={handleEmailClick}><span><IoMailSharp/></span><a >contact@smvmch.ac.in</a></li>
             
 
             </ul>

@@ -70,7 +70,7 @@ const Chatbot = ({handleplaysound}) => {
         handleBotResponse(optionValue);
     };
     const handleCall = () => {
-        window.location.href = `tel:+916382688488`;
+        window.location.href = `tel:+917540057896`;
       };
       const hospitalInfo = [
         
