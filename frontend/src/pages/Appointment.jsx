@@ -22,6 +22,7 @@ import { formatDate } from "date-fns";
 import { toast } from "react-toastify";
 import MobileHero6 from "../components/MobileHero6";
 import { supabase } from "../supabaseClient";
+import { Helmet } from "react-helmet";
 
 const heroData = {
     bgImg: 'images/appointment.jpg',
@@ -422,6 +423,12 @@ const Appointment = () => {
 
     return ( 
         <>
+        <Helmet>
+  <title>Book an Appointment - SMV Super Specialty Hospital</title>
+  <meta name="description" content="Schedule a consultation with top doctors at SMV Super Specialty Hospital. Easy online booking for all specialties." />
+  <meta name="keywords" content="book appointment, doctor consultation, hospital booking, online appointment, SMV hospital Pondicherry" />
+  <meta property="og:title" content="Book Your Appointment | SMV Super Specialty Hospital" />
+  <meta property="og:description" content="Book your appointment with expert doctors at SMV Super Specialty Hospital. Get timely and quality care." />
             <ScrollToTop />
             {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
             <div className="appointment_main" ref={sectionRef}>
@@ -626,6 +633,8 @@ const Appointment = () => {
             </div>
 
             <Footer />
+            </Helmet>
+
         </>
     );
 };

@@ -12,6 +12,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import MobileHero6 from '../components/MobileHero6';
 import {toast} from 'react-toastify'
 import { supabase } from '../supabaseClient';
+import { Helmet } from 'react-helmet';
 
  
 function ContactUs() {
@@ -138,6 +139,12 @@ function ContactUs() {
       
   return (
     <>
+    <Helmet>
+  <title>Contact Us - SMV Super Specialty Hospital</title>
+  <meta name="description" content="Get in touch with SMV Super Specialty Hospital for appointments, inquiries, or emergency care. Visit us in Madagadipet, Pondicherry." />
+  <meta name="keywords" content="contact hospital, SMV hospital address, book appointment, emergency contact, hospital location, Pondicherry healthcare" />
+  <meta property="og:title" content="Contact SMV Super Specialty Hospital" />
+  <meta property="og:description" content="Reach out to SMV Super Specialty Hospital for appointments or questions. We're here to help." />
     <ScrollToTop/>
     {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
     <div className="marquee-container">
@@ -185,6 +192,8 @@ function ContactUs() {
            ))}
         </div>
     <Footer/>
+    </Helmet>
+
     </>
   )
 }

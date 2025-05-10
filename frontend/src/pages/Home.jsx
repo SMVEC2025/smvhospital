@@ -66,7 +66,19 @@ useEffect(() => {
     
   }
 }, [])
-
+const data={
+  "@context": "https://schema.org",
+  "@type": "Hospital",
+  "name": "SMV Super Specialty Hospital",
+  "image": "https://www.smvhospitals.com/path-to-your-image.jpg",
+  "url": "https://www.smvhospitals.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Madagadipet",
+    "addressRegion": "Puducherry",
+    "addressCountry": "India"
+  }
+}
   return (
     <div >
        <ScrollToTop/> 

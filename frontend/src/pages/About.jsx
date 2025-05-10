@@ -5,10 +5,9 @@ import AboutSpeciality from '../components/AboutSpeciality';
 import Headings from '../components/Headings';
 import Button from '../components/Button';
 import AboutCare from '../components/AboutCare';
-import Navbar from '../components/navbar/Navbar'
+import { Helmet } from "react-helmet";
 import Footer from '../components/footer/Footer'
 import { AppContext } from '../context/AppContext';
-import MobileSideBar from '../components/navbar/MobileSideBar';
 import ScrollToTop from '../components/ScrollToTop';
 import MobileHero6 from '../components/MobileHero6';
 import aboutus1 from '../assets/images/aboutus1.jpg'
@@ -87,6 +86,9 @@ const About = () => {
      }, []) 
   return ( 
     <>
+    <Helmet>
+  <title>About Us - SMV Super Specialty Hospital</title>
+  <meta name="description" content="Know more about our mission, vision, and team of expert medical professionals." />
     <ScrollToTop/>
     <div className='about_main'>
       {isMobile?<MobileHero6 data={heroData}/>:<Hero6 data={heroData}/>}
@@ -135,7 +137,7 @@ const About = () => {
       <FeaturedCareAreas/>
       {/* <div className='as_end'>
       <p className="hero-subtitle">
-              To Know More About Our Speciality
+              To Know More About Ourspecialty
               </p>
         <Button name="View All"/>
 
@@ -162,6 +164,8 @@ const About = () => {
 
     </div>
     <Footer/>
+    </Helmet>
+
     </>
   );
 };
