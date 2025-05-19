@@ -1,11 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import Hero6 from '../components/Hero6';
 import AboutSection1 from '../components/AboutSection1';
-import AboutSpeciality from '../components/AboutSpeciality';
 import Headings from '../components/Headings';
 import Button from '../components/Button';
 import AboutCare from '../components/AboutCare';
-import { Helmet } from "react-helmet";
 import Footer from '../components/footer/Footer'
 import { AppContext } from '../context/AppContext';
 import ScrollToTop from '../components/ScrollToTop';
@@ -86,7 +84,8 @@ const About = () => {
      }, []) 
   return ( 
     <>
-    <Helmet>
+    
+    
   <title>About Us - SMV Super Specialty Hospital</title>
   <meta name="description" content="Know more about our mission, vision, and team of expert medical professionals." />
     <ScrollToTop/>
@@ -164,7 +163,7 @@ const About = () => {
 
     </div>
     <Footer/>
-    </Helmet>
+    
 
     </>
   );

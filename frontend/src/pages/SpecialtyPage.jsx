@@ -10,7 +10,6 @@ import MobileSideBar from '../components/navbar/MobileSideBar';
 import ScrollToTop from '../components/ScrollToTop';
 import MobileHero6 from '../components/MobileHero6';
 import { useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 
 function SpecialtyPage() {
   const [specialty,setSpecialty] = useState([]) 
@@ -523,7 +522,6 @@ function SpecialtyPage() {
   }
   return (
    <>
-   <Helmet>
   <title>Our Medical Services - SMV Super Specialty Hospital</title>
   <meta name="description" content="Explore a wide range of advanced medical services including Cardiology, Neurology, Orthopaedics, Nephrology, and more at SMV Super Specialty Hospital." />
   <meta name="keywords" content="medical services, cardiology, neurology, orthopaedics, nephrology, hospital in Pondicherry, SMV hospital, healthcare specialties" />
@@ -569,8 +567,6 @@ function SpecialtyPage() {
        
    </div>
    <Footer/>
-   </Helmet>
-
    </>
   )
 }

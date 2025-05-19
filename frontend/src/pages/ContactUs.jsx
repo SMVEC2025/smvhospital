@@ -12,7 +12,6 @@ import ScrollToTop from '../components/ScrollToTop';
 import MobileHero6 from '../components/MobileHero6';
 import {toast} from 'react-toastify'
 import { supabase } from '../supabaseClient';
-import { Helmet } from 'react-helmet';
 
  
 function ContactUs() {
@@ -139,7 +138,8 @@ function ContactUs() {
       
   return (
     <>
-    <Helmet>
+    
+    
   <title>Contact Us - SMV Super Specialty Hospital</title>
   <meta name="description" content="Get in touch with SMV Super Specialty Hospital for appointments, inquiries, or emergency care. Visit us in Madagadipet, Pondicherry." />
   <meta name="keywords" content="contact hospital, SMV hospital address, book appointment, emergency contact, hospital location, Pondicherry healthcare" />
@@ -192,7 +192,7 @@ function ContactUs() {
            ))}
         </div>
     <Footer/>
-    </Helmet>
+    
 
     </>
   )
